@@ -1,0 +1,122 @@
+.page-template-template-faq {
+  .content-block {
+    @include media-breakpoint-down("sm") {
+      padding: 0 15px 30px 15px;
+    }
+
+    padding: 0 15px 60px 15px;
+  }
+}
+
+#faqs {
+  @include media-breakpoint-down("sm") {
+    margin-bottom: 80px;
+    padding: 20px;
+  }
+
+  margin-bottom: 60px;
+  padding: 0;
+
+  .question {
+    //font-family: $font-open-sans;
+    font-family: $font-source-sans;
+    border-bottom: 1px solid #d8d8d8;
+
+    &:focus-within {
+      background: $kuvittaja-green-light;
+    }
+
+    .question-header {
+      @extend .btn;
+      @extend .btn-link;
+
+      display: flex;
+      align-items: center;
+      margin: 0;
+      color: #000;
+      font-size: 16px;
+      line-height: 1.25 !important;
+      //font-family: $font-open-sans;
+      font-family: $font-source-sans;
+      font-weight: bold;
+      width: 100%;
+      text-align: left;
+      padding: 10px 20px;
+
+      span {
+        flex: 1;
+      }
+
+      &:hover,
+      &:active {
+        text-decoration: none;
+      }
+
+      &:focus {
+        text-decoration: none;
+      }
+
+      &.collapsed {
+        &::after {
+          content: "\f107";
+          font-family: FontAwesome, sans-serif;
+          //float: right;
+          color: $primary-dark;
+        }
+      }
+
+      &::after {
+        content: "\f106";
+        font-family: FontAwesome, sans-serif;
+        float: right;
+        color: $primary-dark;
+      }
+    }
+
+    .question-answer {
+      padding: 20px 20px 20px;
+      font-size: 14px;
+      line-height: 1.25 !important;
+      //color: #6d6d6d;
+      background: $kuvittaja-pink-light;
+    }
+
+    &:nth-child(even) {
+      .question-header {
+        //background: #fbf6f6;
+      }
+
+      .question-answer {
+        //background: #fbf6f6;
+      }
+    }
+
+    &:first-child {
+      border-top: 1px solid #d8d8d8;
+    }
+
+    img {
+      display: block;
+      max-width: 75%;
+      margin: 20px auto 20px auto;
+    }
+  }
+
+  a {
+    color: $font-green;
+
+    &[href^=tel]::after {
+      content: "";
+      text-decoration: none;
+    }
+
+    &[href^=mailto]::after {
+      content: "";
+      text-decoration: none;
+    }
+  }
+}
+
+.faq-margin-top {
+  margin-top: 40px;
+}
