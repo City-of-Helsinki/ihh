@@ -1,5 +1,5 @@
 @php
-  $services = \App::services();
+  $services = \App\Controllers\App::services();
 
   $background_img = get_field('image') ? get_field('image') : false;
 @endphp

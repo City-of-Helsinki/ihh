@@ -1,6 +1,6 @@
 @php
-  $tweets = \App::tweets();
-  $info = \App::tweet_info();
+  $tweets = \App\Controllers\App::tweets();
+  $info = \App\Controllers\App::tweet_info();
 @endphp
 
 <section class="twitter container-wide">

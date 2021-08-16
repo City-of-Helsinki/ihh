@@ -9,7 +9,7 @@ if(get_sub_field('hide_service_status_element')){
 @endphp
 
 @php
-  $queues = \App::service_status();
+  $queues = \App\Controllers\App::service_status();
   if(isset($queues['timestamp'])){
     $timestamp = $queues['timestamp'];
     $updated = round((time() - $timestamp) / 60);

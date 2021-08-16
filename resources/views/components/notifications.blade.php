@@ -1,5 +1,5 @@
 @php
-  $notifications = \App::notifications();
+  $notifications = \App\Controllers\App::notifications();
 @endphp
 
 @if($notifications->have_posts())

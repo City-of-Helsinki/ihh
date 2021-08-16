@@ -1,5 +1,5 @@
 @php
-  $services = \App::services()
+  $services = \App\Controllers\App::services()
 
 @endphp
 
