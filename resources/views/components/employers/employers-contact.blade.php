@@ -1,6 +1,6 @@
 @if(have_rows('contact'))
   @while(have_rows('contact')) @php the_row() @endphp
-  <section class="contact-section container-wide has-wave"
+  <section class="contact-section contact-section--employers container-wide has-wave"
            style="padding-bottom: 100px; background-image: url({{the_sub_field('background')}})">
     <div class="container">
       <div class="content" @if(get_sub_field('color')) style="background-color: {!! get_sub_field('color') !!}" @endif>

@@ -56,10 +56,11 @@
                   <a href="{{ the_field('link') }}" target="_blank" class="read-more">{!! pll__('Read more from ') !!} @php echo $parserUrl['host']; @endphp <span class="ihh-visually-hidden">this link leads to external webpage</span></a>
                 @endif
               @endif
+
+              @include('partials.media-category', ['style' => 'accordion'])
             </div>
           </div>
         </div>
-
       </div>
     </div>
 

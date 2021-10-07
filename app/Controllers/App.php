@@ -5,15 +5,16 @@ namespace App\Controllers;
 use Sober\Controller\Controller;
 use IHH;
 
-class App extends Controller {
 
+class App extends Controller {
+    use Partials\MediaCategory;
     /**
      * @return string|void
      */
     public function siteName() {
         return get_bloginfo( 'name' );
     }
-
+    
     /**
      * @return \WP_Query
      */

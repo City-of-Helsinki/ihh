@@ -1,13 +1,13 @@
 {
     "key": "group_60b5d9b4e9607",
-    "title": "Media categories meta",
+    "title": "Media bank item's meta",
     "fields": [
         {
             "key": "field_60b60625a9682",
-            "label": "Media",
+            "label": "Media file",
             "name": "media_file",
             "type": "file",
-            "instructions": "",
+            "instructions": "Choose downloadable media file from WordPress media library",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -23,10 +23,10 @@
         },
         {
             "key": "field_60b60832a9683",
-            "label": "Video linkki",
+            "label": "Link to media",
             "name": "video_file",
-            "type": "text",
-            "instructions": "Tähän voit syöttää vaihtoehtoisen linkin jos et halua käyttää media-tiedostoja vaan ohjata käyttäjän esim. Youtubeen.",
+            "type": "url",
+            "instructions": "If media file is not in WordPress media library you can choose alternative link here. This can also be for example link to YouTube video.",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -35,17 +35,14 @@
                 "id": ""
             },
             "default_value": "",
-            "placeholder": "",
-            "prepend": "",
-            "append": "",
-            "maxlength": ""
+            "placeholder": ""
         },
         {
             "key": "field_60b61255962d4",
-            "label": "Median kuva",
+            "label": "Thumbnail Image",
             "name": "media_image",
             "type": "image",
-            "instructions": "Kuva joka näytetään media tiedostoa esittäessä.",
+            "instructions": "Select thumbnail image. Preferred size is 320x225.",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -56,20 +53,20 @@
             "return_format": "array",
             "preview_size": "medium",
             "library": "all",
-            "min_width": 0,
-            "min_height": 0,
-            "min_size": 0,
-            "max_width": 0,
-            "max_height": 0,
-            "max_size": 0,
+            "min_width": "",
+            "min_height": "",
+            "min_size": "",
+            "max_width": "",
+            "max_height": "",
+            "max_size": "",
             "mime_types": ""
         },
         {
             "key": "field_60b60df5a9684",
-            "label": "Käytettävä ikoni",
+            "label": "Select icon before text",
             "name": "media_icon",
-            "type": "text",
-            "instructions": "Tässä voit käyttää sanoja: teksti, pdf, tai video . Tekstin viereen ilmestyvä ikoni tulee käytetyn sanan mukaan.",
+            "type": "select",
+            "instructions": "",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -77,15 +74,22 @@
                 "class": "",
                 "id": ""
             },
-            "default_value": "",
-            "placeholder": "",
-            "prepend": "",
-            "append": "",
-            "maxlength": ""
+            "choices": {
+                "teksti": "teksti",
+                "pdf": "pdf",
+                "video": "video"
+            },
+            "default_value": false,
+            "allow_null": 1,
+            "multiple": 0,
+            "ui": 0,
+            "return_format": "value",
+            "ajax": 0,
+            "placeholder": ""
         },
         {
             "key": "field_60b60feca9685",
-            "label": "Media kategorian väri",
+            "label": "Background color",
             "name": "media_category_color",
             "type": "select",
             "instructions": "",
@@ -97,9 +101,9 @@
                 "id": ""
             },
             "choices": {
-                "vihrea": "Vihreä",
-                "oranssi": "Oranssi",
-                "keltainen": "Keltainen"
+                "vihrea": "Green",
+                "oranssi": "Orange",
+                "keltainen": "Yellow"
             },
             "default_value": false,
             "allow_null": 0,
@@ -125,7 +129,7 @@
     "label_placement": "top",
     "instruction_placement": "label",
     "hide_on_screen": "",
-    "active": 1,
+    "active": true,
     "description": "",
-    "modified": 1623132299
+    "modified": 1633599406
 }

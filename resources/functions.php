@@ -73,11 +73,13 @@ function amb_custom_post_type() {
     register_post_type('amb_media_catalogue',
         array(
             'labels'      => array(
-                'name'          => __('Media Categories', 'textdomain'),
-                'singular_name' => __('Media category', 'textdomain'),
+                'name'          => __('Media Bank', 'ihh'),
+                'singular_name' => __('Media Bank Item', 'ihh'),
             ),
-                'public'      => true,
-                'has_archive' => true,
+            'public'      => false,
+            'has_archive' => false,
+            'show_ui' => true,
+            'supports' => array('title')
         )
     );
 }

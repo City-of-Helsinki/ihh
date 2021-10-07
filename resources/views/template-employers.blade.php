@@ -15,7 +15,7 @@
     @include('components.employers.employers-contact')
     @include('components.employers.employers-faq')
     @include('components.employers.employers-events')
-    @include('components.home.media-category')
+    @include('partials.media-category')
     
   @endwhile
 @endsection
