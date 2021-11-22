@@ -20,10 +20,10 @@
       @endif
         <div class="media-container">
           <div class="image-wrap" {!! \App\Controllers\App::get_media_category_thumbnail($media)  !!}>
-          </div> 
-          <div class="title {{ \App\Controllers\App::get_media_category_bg($media) }}">               
+          </div>
+          <div class="title {{ \App\Controllers\App::get_media_category_bg($media) }}">
             {!! \App\Controllers\App::get_media_category_icon($media) !!}
-            <p>{{ get_the_title($media) }}</p>
+            <p>{!! get_the_title($media) !!}</p>
           </div>
         </div>
       @if($media_file_link = \App\Controllers\App::get_media_category_link($media) )
