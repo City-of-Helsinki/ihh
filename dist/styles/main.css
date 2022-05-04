@@ -21909,5 +21909,2334 @@ body#tinymce {
   clear: both;
 }
 
+/* stylelint-disable */
+
+/* line 2, resources/assets/styles/integrations/_complianz.scss */
+
+:root {
+  --breakpoint-xs: 320px;
+  --breakpoint-s: 576px;
+  --breakpoint-m: 768px;
+  --breakpoint-l: 992px;
+  --breakpoint-xl: 1248px;
+  --color-white: #ffffff;
+  --color-black: #000000;
+  --color-bus: #0000bf;
+  --color-silver-light: #f7f7f8;
+  --default-border: 0px;
+  --default-border-radius: 0px;
+  --paragraph-margin-bottom: ;
+}
+
+/* line 20, resources/assets/styles/integrations/_complianz.scss */
+
+body #cc-window.cc-window {
+  background-color: var(--color-bus);
+  color: var(--color-white);
+  opacity: 1;
+  -webkit-transition: opacity 1s ease;
+  -o-transition: opacity 1s ease;
+  transition: opacity 1s ease;
+  padding: spacing(32px) spacing(24px) spacing(24px);
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  overflow: hidden;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+  z-index: 9999;
+  max-width: 100%;
+  width: 100%;
+}
+
+@media only screen and (min-device-width: var(--breakpoint-l)) {
+  /* line 20, resources/assets/styles/integrations/_complianz.scss */
+
+  body #cc-window.cc-window {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+  }
+}
+
+/* line 42, resources/assets/styles/integrations/_complianz.scss */
+
+body #cc-window.cc-window .cc-message {
+  display: block;
+  margin: 0;
+  margin-bottom: spacing(32px);
+  width: 100%;
+}
+
+/* line 49, resources/assets/styles/integrations/_complianz.scss */
+
+body #cc-window.cc-window .cc-message .cookie-notice {
+  margin-bottom: spacing(24px);
+}
+
+/* line 52, resources/assets/styles/integrations/_complianz.scss */
+
+body #cc-window.cc-window .cc-message .cookie-notice :last-child {
+  margin-bottom: 0;
+}
+
+/* line 56, resources/assets/styles/integrations/_complianz.scss */
+
+body #cc-window.cc-window .cc-message .cookie-notice__title {
+  color: var(--color-white);
+  font-size: fontsize-heading(m);
+  margin-bottom: spacing(24px);
+}
+
+@media only screen and (min-device-width: var(--breakpoint-l)) {
+  /* line 49, resources/assets/styles/integrations/_complianz.scss */
+
+  body #cc-window.cc-window .cc-message .cookie-notice {
+    font-size: fontsize-body(l);
+  }
+
+  /* line 65, resources/assets/styles/integrations/_complianz.scss */
+
+  body #cc-window.cc-window .cc-message .cookie-notice__title {
+    font-size: fontsize-heading(l);
+  }
+}
+
+@media only screen and (min-device-width: var(--breakpoint-l)) {
+  /* line 73, resources/assets/styles/integrations/_complianz.scss */
+
+  body #cc-window.cc-window .cookie-categories-wrap {
+    -webkit-box-pack: right;
+        -ms-flex-pack: right;
+            justify-content: right;
+    -webkit-box-flex: 2;
+        -ms-flex-positive: 2;
+            flex-grow: 2;
+    padding-right: spacing(32px);
+    width: auto;
+  }
+}
+
+/* line 82, resources/assets/styles/integrations/_complianz.scss */
+
+body #cc-window.cc-window .cookie-categories-wrap .cmplz-categories-wrap {
+  margin-bottom: spacing(24px);
+}
+
+/* line 85, resources/assets/styles/integrations/_complianz.scss */
+
+body #cc-window.cc-window .cookie-categories-wrap .cmplz-categories-wrap .cc-category {
+  color: var(--color-white) !important;
+}
+
+@media only screen and (min-device-width: var(--breakpoint-l)) {
+  /* line 82, resources/assets/styles/integrations/_complianz.scss */
+
+  body #cc-window.cc-window .cookie-categories-wrap .cmplz-categories-wrap {
+    margin-bottom: 0;
+  }
+
+  /* line 92, resources/assets/styles/integrations/_complianz.scss */
+
+  body #cc-window.cc-window .cookie-categories-wrap .cmplz-categories-wrap .cc-category {
+    font-size: fontsize-body(l);
+  }
+}
+
+/* line 99, resources/assets/styles/integrations/_complianz.scss */
+
+body #cc-window.cc-window .cc-compliance {
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 100%;
+}
+
+/* line 103, resources/assets/styles/integrations/_complianz.scss */
+
+body #cc-window.cc-window .cc-compliance .cc-btn {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  width: 100%;
+}
+
+@media only screen and (min-device-width: var(--breakpoint-s)) {
+  /* line 99, resources/assets/styles/integrations/_complianz.scss */
+
+  body #cc-window.cc-window .cc-compliance {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+  }
+
+  /* line 111, resources/assets/styles/integrations/_complianz.scss */
+
+  body #cc-window.cc-window .cc-compliance .cc-btn {
+    margin-bottom: 0;
+    width: auto;
+  }
+
+  /* line 115, resources/assets/styles/integrations/_complianz.scss */
+
+  body #cc-window.cc-window .cc-compliance .cc-btn + .cc-btn {
+    margin-left: spacing(layout-2-xs);
+  }
+}
+
+@media only screen and (min-device-width: var(--breakpoint-l)) {
+  /* line 99, resources/assets/styles/integrations/_complianz.scss */
+
+  body #cc-window.cc-window .cc-compliance {
+    -webkit-box-pack: right;
+        -ms-flex-pack: right;
+            justify-content: right;
+    width: auto;
+  }
+}
+
+/* line 127, resources/assets/styles/integrations/_complianz.scss */
+
+body #cc-window.cc-window.cc-invisible {
+  opacity: 0;
+}
+
+/* line 151, resources/assets/styles/integrations/_complianz.scss */
+
+body #cc-window.cc-window .cc-btn {
+  background-color: var(--color-bus) !important;
+  border: 2px solid var(--color-white) !important;
+  color: var(--color-white) !important;
+  cursor: pointer;
+  display: block;
+  font-weight: 400;
+  margin-bottom: spacing(s);
+  padding: spacing(xs) spacing(32px);
+  text-align: center;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+/* line 164, resources/assets/styles/integrations/_complianz.scss */
+
+body #cc-window.cc-window .cc-btn:focus,
+body #cc-window.cc-window .cc-btn:hover {
+  background-color: var(--color-bus-dark) !important;
+  border-color: var(--color-bus-dark) !important;
+  color: var(--color-white) !important;
+}
+
+/* line 173, resources/assets/styles/integrations/_complianz.scss */
+
+body #cc-window.cc-window .cc-btn.cc-accept-all {
+  background-color: var(--color-white) !important;
+  border-color: var(--color-white) !important;
+  color: var(--color-bus-dark) !important;
+}
+
+/* line 178, resources/assets/styles/integrations/_complianz.scss */
+
+body #cc-window.cc-window .cc-btn.cc-accept-all:focus,
+body #cc-window.cc-window .cc-btn.cc-accept-all:hover {
+  background-color: var(--color-bus-dark) !important;
+  border-color: var(--color-bus-dark) !important;
+  color: var(--color-white) !important;
+}
+
+/* line 193, resources/assets/styles/integrations/_complianz.scss */
+
+body .cc-revoke {
+  display: none !important;
+  background-color: var(--color-bus) !important;
+  border-color: var(--color-bus);
+  color: var(--color-white) !important;
+  cursor: pointer;
+  position: fixed;
+  overflow: hidden;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+  z-index: 9999;
+  padding: spacing(2-xs) spacing(s);
+}
+
+/* line 207, resources/assets/styles/integrations/_complianz.scss */
+
+body .cc-revoke:focus,
+body .cc-revoke:hover {
+  background-color: var(--color-bus-dark);
+}
+
+@media screen and (max-width: 768px) {
+  /* line 193, resources/assets/styles/integrations/_complianz.scss */
+
+  body .cc-revoke {
+    display: none !important;
+  }
+}
+
+/* line 216, resources/assets/styles/integrations/_complianz.scss */
+
+body .cc-revoke.cc-top {
+  top: 0;
+  left: spacing(s);
+}
+
+/* line 221, resources/assets/styles/integrations/_complianz.scss */
+
+body .cc-revoke.cc-bottom {
+  bottom: 0;
+  left: spacing(s);
+}
+
+/* line 225, resources/assets/styles/integrations/_complianz.scss */
+
+body .cc-revoke.cc-left {
+  left: spacing(s);
+  right: unset;
+}
+
+/* line 229, resources/assets/styles/integrations/_complianz.scss */
+
+body .cc-revoke.cc-right {
+  right: spacing(s);
+  left: unset;
+}
+
+/* line 237, resources/assets/styles/integrations/_complianz.scss */
+
+.cc-animate.cc-revoke {
+  -webkit-transition: -webkit-transform 1s ease;
+  transition: -webkit-transform 1s ease;
+  -o-transition: -o-transform 1s ease;
+  transition: transform 1s ease;
+  transition: transform 1s ease, -webkit-transform 1s ease, -o-transform 1s ease;
+}
+
+/* line 252, resources/assets/styles/integrations/_complianz.scss */
+
+.cc-grower {
+  max-height: 0;
+  overflow: hidden;
+  -webkit-transition: max-height 1s;
+  -o-transition: max-height 1s;
+  transition: max-height 1s;
+}
+
+/* line 258, resources/assets/styles/integrations/_complianz.scss */
+
+.cc-link {
+  cursor: pointer;
+  text-decoration: underline;
+  display: inline-block;
+}
+
+/* line 263, resources/assets/styles/integrations/_complianz.scss */
+
+.cc-link:focus,
+.cc-link:hover {
+  color: var(--color-bus-dark);
+}
+
+/* line 268, resources/assets/styles/integrations/_complianz.scss */
+
+.cc-link:active,
+.cc-link:visited {
+  color: initial;
+}
+
+/* line 274, resources/assets/styles/integrations/_complianz.scss */
+
+.cc-header {
+  font-size: 18px;
+  font-weight: 700;
+}
+
+/* line 279, resources/assets/styles/integrations/_complianz.scss */
+
+.cc-close {
+  cursor: pointer;
+  display: block;
+  position: absolute;
+  top: spacing(2-xs);
+  right: spacing(2-xs);
+  opacity: 0.9;
+}
+
+/* line 287, resources/assets/styles/integrations/_complianz.scss */
+
+.cc-close:focus,
+.cc-close:hover {
+  opacity: 1;
+}
+
+/* line 299, resources/assets/styles/integrations/_complianz.scss */
+
+.cc-top {
+  top: 0;
+}
+
+/* line 303, resources/assets/styles/integrations/_complianz.scss */
+
+.cc-left {
+  left: 0;
+}
+
+/* line 307, resources/assets/styles/integrations/_complianz.scss */
+
+.cc-right {
+  right: 0;
+}
+
+/* line 311, resources/assets/styles/integrations/_complianz.scss */
+
+.cc-bottom {
+  bottom: 0;
+}
+
+/* line 316, resources/assets/styles/integrations/_complianz.scss */
+
+.cc-center.cc-revoke {
+  bottom: 0;
+  left: spacing(s);
+  border-top-left-radius: var(--default-border-radius);
+  border-top-right-radius: var(--default-border-radius);
+}
+
+/* line 333, resources/assets/styles/integrations/_complianz.scss */
+
+.cookie-categories-wrap {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+}
+
+/* line 341, resources/assets/styles/integrations/_complianz.scss */
+
+.cc-banner.cc-top {
+  left: 0;
+  right: 0;
+  top: 0;
+}
+
+/* line 347, resources/assets/styles/integrations/_complianz.scss */
+
+.cc-banner.cc-bottom {
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+/* line 353, resources/assets/styles/integrations/_complianz.scss */
+
+.cc-banner .cc-message {
+  display: block;
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 auto;
+          flex: 1 1 auto;
+  max-width: 100%;
+  margin-right: spacing(s);
+}
+
+/* line 362, resources/assets/styles/integrations/_complianz.scss */
+
+.cc-compliance {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-line-pack: justify;
+      align-content: space-between;
+}
+
+@media print {
+  /* line 369, resources/assets/styles/integrations/_complianz.scss */
+
+  .cc-revoke,
+  .cc-window {
+    display: none;
+  }
+}
+
+/* line 375, resources/assets/styles/integrations/_complianz.scss */
+
+#cc-window input[type="checkbox"],
+#cmplz-manage-consent-container input[type="checkbox"] {
+  width: initial;
+  -webkit-appearance: checkbox;
+}
+
+/* line 380, resources/assets/styles/integrations/_complianz.scss */
+
+#cc-window input[type="checkbox"]:checked::before,
+#cmplz-manage-consent-container input[type="checkbox"]:checked::before {
+  content: '';
+}
+
+/*
+* Hide revoke button
+* prevent overriding by script by using !important
+*/
+
+/* line 389, resources/assets/styles/integrations/_complianz.scss */
+
+.cc-hidden {
+  display: none !important;
+}
+
+/* line 401, resources/assets/styles/integrations/_complianz.scss */
+
+#cc-window.cc-window .cmplz-square-checkbox:checked + .cc-check svg path,
+#cmplz-manage-consent-container.cmplz-manage-consent-container .cmplz-square-checkbox:checked + .cc-check svg path {
+  stroke-dashoffset: 60;
+  -webkit-transition: all 0.3s linear;
+  -o-transition: all 0.3s linear;
+  transition: all 0.3s linear;
+}
+
+/* line 406, resources/assets/styles/integrations/_complianz.scss */
+
+#cc-window.cc-window .cmplz-square-checkbox:checked + .cc-check svg polyline,
+#cmplz-manage-consent-container.cmplz-manage-consent-container .cmplz-square-checkbox:checked + .cc-check svg polyline {
+  stroke-dashoffset: 42;
+  -webkit-transition: all 0.2s linear;
+  -o-transition: all 0.2s linear;
+  transition: all 0.2s linear;
+  -webkit-transition-delay: 0.15s;
+       -o-transition-delay: 0.15s;
+          transition-delay: 0.15s;
+}
+
+/* line 417, resources/assets/styles/integrations/_complianz.scss */
+
+#cc-window.cc-window .cmplz-square-checkbox:focus + .cc-check svg,
+#cmplz-manage-consent-container.cmplz-manage-consent-container .cmplz-square-checkbox:focus + .cc-check svg {
+  outline: -webkit-focus-ring-color auto 1px;
+}
+
+/* line 424, resources/assets/styles/integrations/_complianz.scss */
+
+#cc-window.cc-window input.cmplz-svg-checkbox,
+#cc-window.cc-window .cmplz-slider-checkbox input,
+#cmplz-manage-consent-container.cmplz-manage-consent-container input.cmplz-svg-checkbox,
+#cmplz-manage-consent-container.cmplz-manage-consent-container .cmplz-slider-checkbox input {
+  display: block !important;
+  opacity: 0 !important;
+  height: 0 !important;
+}
+
+/* line 431, resources/assets/styles/integrations/_complianz.scss */
+
+#cc-window.cc-window .cmplz-slider-checkbox,
+#cmplz-manage-consent-container.cmplz-manage-consent-container .cmplz-slider-checkbox {
+  position: relative;
+  display: inline-block;
+  width: 40px;
+  height: 21px;
+}
+
+/* line 439, resources/assets/styles/integrations/_complianz.scss */
+
+#cc-window.cc-window .cmplz-slider-checkbox .cmplz-slider,
+#cmplz-manage-consent-container.cmplz-manage-consent-container .cmplz-slider-checkbox .cmplz-slider {
+  background-color: var(--color-white) !important;
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  -webkit-transition: 0.4s;
+  -o-transition: 0.4s;
+  transition: 0.4s;
+  outline: var(--color-black) solid 1px;
+}
+
+/* line 450, resources/assets/styles/integrations/_complianz.scss */
+
+#cc-window.cc-window .cmplz-slider-checkbox .cmplz-slider:before,
+#cmplz-manage-consent-container.cmplz-manage-consent-container .cmplz-slider-checkbox .cmplz-slider:before {
+  background-color: var(--color-black) !important;
+  -webkit-mask-image: url(data:image/svg+xml;base64,PHN2ZyBjbGFzcz0iSWNvbi1tb2R1bGVfaWNvbl9fMUp0emogaWNvbl9oZHMtaWNvbl9fMVlxTkMgSWNvbi1tb2R1bGVfbV9fM2VkVVkgaWNvbl9oZHMtaWNvbi0tc2l6ZS1tX18xbWNIdiIgdmlld0JveD0iMCAwIDI0IDI0IiBhcmlhLWhpZGRlbj0idHJ1ZSIgcm9sZT0iaW1nIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHN0eWxlPSIKIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxyZWN0IHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCI+PC9yZWN0PjxwYXRoIGZpbGw9ImN1cnJlbnRDb2xvciIgZD0iTTEyLDMgQzcuMDI5NDM3MjUsMyAzLDcuMDI5NDM3MjUgMywxMiBDMywxNi45NzA1NjI3IDcuMDI5NDM3MjUsMjEgMTIsMjEgQzE2Ljk3MDU2MjcsMjEgMjEsMTYuOTcwNTYyNyAyMSwxMiBDMjEsNy4wMjk0MzcyNSAxNi45NzA1NjI3LDMgMTIsMyBaIE0xNSw3LjUgTDE2LjUsOSBMMTMuNSwxMiBMMTYuNSwxNSBMMTUsMTYuNSBMMTIsMTMuNSBMOSwxNi41IEw3LjUsMTUgTDEwLjUsMTIgTDcuNSw5IEw5LDcuNSBMMTIsMTAuNSBMMTUsNy41IFoiPjwvcGF0aD48L2c+PC9zdmc+);
+  -webkit-mask-size: 21px;
+  -webkit-mask-position: center;
+  position: absolute;
+  content: "";
+  height: 15px;
+  width: 15px;
+  left: 4px;
+  bottom: 3px;
+  -webkit-transition: 0.4s;
+  -o-transition: 0.4s;
+  transition: 0.4s;
+}
+
+/* line 464, resources/assets/styles/integrations/_complianz.scss */
+
+#cc-window.cc-window .cmplz-slider-checkbox .cmplz-slider:after,
+#cmplz-manage-consent-container.cmplz-manage-consent-container .cmplz-slider-checkbox .cmplz-slider:after {
+  border-radius: 25px;
+  display: block;
+  content: "";
+  position: absolute;
+  top: -5px;
+  left: -5px;
+  right: -5px;
+  bottom: -5px;
+}
+
+/* line 476, resources/assets/styles/integrations/_complianz.scss */
+
+#cc-window.cc-window .cmplz-slider-checkbox .cmplz-slider.cmplz-round,
+#cmplz-manage-consent-container.cmplz-manage-consent-container .cmplz-slider-checkbox .cmplz-slider.cmplz-round {
+  border-radius: 20px;
+}
+
+/* line 479, resources/assets/styles/integrations/_complianz.scss */
+
+#cc-window.cc-window .cmplz-slider-checkbox .cmplz-slider.cmplz-round:before,
+#cmplz-manage-consent-container.cmplz-manage-consent-container .cmplz-slider-checkbox .cmplz-slider.cmplz-round:before {
+  border-radius: 50%;
+}
+
+/* line 485, resources/assets/styles/integrations/_complianz.scss */
+
+#cc-window.cc-window .cmplz-slider-checkbox .cmplz-slider-na,
+#cmplz-manage-consent-container.cmplz-manage-consent-container .cmplz-slider-checkbox .cmplz-slider-na {
+  padding: 2px 8px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  -webkit-transition: 0.4s;
+  -o-transition: 0.4s;
+  transition: 0.4s;
+}
+
+/* line 494, resources/assets/styles/integrations/_complianz.scss */
+
+#cc-window.cc-window .cmplz-slider-checkbox .cmplz-slider-na:before,
+#cmplz-manage-consent-container.cmplz-manage-consent-container .cmplz-slider-checkbox .cmplz-slider-na:before {
+  position: absolute;
+  content: "N/A";
+  color: var(--color-white);
+}
+
+/* line 500, resources/assets/styles/integrations/_complianz.scss */
+
+#cc-window.cc-window .cmplz-slider-checkbox .cmplz-slider-na.cmplz-round,
+#cmplz-manage-consent-container.cmplz-manage-consent-container .cmplz-slider-checkbox .cmplz-slider-na.cmplz-round {
+  border-radius: 20px;
+}
+
+/* line 507, resources/assets/styles/integrations/_complianz.scss */
+
+#cc-window.cc-window .cmplz-slider-checkbox input:checked + .cmplz-slider,
+#cmplz-manage-consent-container.cmplz-manage-consent-container .cmplz-slider-checkbox input:checked + .cmplz-slider {
+  background-color: var(--primary-color) !important;
+  outline: none;
+}
+
+/* line 511, resources/assets/styles/integrations/_complianz.scss */
+
+#cc-window.cc-window .cmplz-slider-checkbox input:checked + .cmplz-slider:before,
+#cmplz-manage-consent-container.cmplz-manage-consent-container .cmplz-slider-checkbox input:checked + .cmplz-slider:before {
+  background-color: var(--primary-content-color) !important;
+  -webkit-transform: translateX(17px);
+       -o-transform: translateX(17px);
+          transform: translateX(17px);
+  -webkit-mask-image: url(data:image/svg+xml;base64,PHN2ZyBjbGFzcz0iSWNvbi1tb2R1bGVfaWNvbl9fMUp0emogaWNvbl9oZHMtaWNvbl9fMVlxTkMgSWNvbi1tb2R1bGVfbV9fM2VkVVkgaWNvbl9oZHMtaWNvbi0tc2l6ZS1tX18xbWNIdiIgdmlld0JveD0iMCAwIDI0IDI0IiBhcmlhLWhpZGRlbj0idHJ1ZSIgcm9sZT0iaW1nIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxnIGZpbGw9Im5vbmUiIGZpbGwtcnVsZT0iZXZlbm9kZCI+PHJlY3Qgd2lkdGg9IjI0IiBoZWlnaHQ9IjI0Ij48L3JlY3Q+PHBhdGggZmlsbD0iY3VycmVudENvbG9yIiBkPSJNMTIsMyBDNy4wMjk0MzcyNSwzIDMsNy4wMjk0MzcyNSAzLDEyIEMzLDE2Ljk3MDU2MjcgNy4wMjk0MzcyNSwyMSAxMiwyMSBDMTYuOTcwNTYyNywyMSAyMSwxNi45NzA1NjI3IDIxLDEyIEMyMSw3LjAyOTQzNzI1IDE2Ljk3MDU2MjcsMyAxMiwzIFogTTE2LjUsOCBMMTgsOS41IEwxMC41LDE3IEw2LDEyLjUgTDcuNSwxMSBMMTAuNSwxNCBMMTYuNSw4IFoiPjwvcGF0aD48L2c+PC9zdmc+);
+}
+
+/* line 521, resources/assets/styles/integrations/_complianz.scss */
+
+#cc-window.cc-window .cmplz-slider-checkbox input[type="checkbox"]:focus + .cmplz-slider:after,
+#cmplz-manage-consent-container.cmplz-manage-consent-container .cmplz-slider-checkbox input[type="checkbox"]:focus + .cmplz-slider:after {
+  -webkit-box-sizing: content-box;
+          box-sizing: content-box;
+  border: 3px solid var(--color-coat-of-arms);
+}
+
+/* line 531, resources/assets/styles/integrations/_complianz.scss */
+
+#cc-window.cc-window label,
+#cmplz-manage-consent-container.cmplz-manage-consent-container label {
+  color: inherit;
+  font-weight: normal;
+  margin-bottom: 0;
+  line-height: inherit;
+  -webkit-box-sizing: initial;
+          box-sizing: initial;
+}
+
+/* line 538, resources/assets/styles/integrations/_complianz.scss */
+
+#cc-window.cc-window label:not(.cc-check),
+#cmplz-manage-consent-container.cmplz-manage-consent-container label:not(.cc-check) {
+  white-space: nowrap;
+  margin-right: 15px;
+  margin-left: 0;
+  padding-left: 0;
+}
+
+/* line 547, resources/assets/styles/integrations/_complianz.scss */
+
+#cc-window.cc-window div.cc-check,
+#cmplz-manage-consent-container.cmplz-manage-consent-container div.cc-check {
+  display: inline-block;
+  padding-bottom: 10px;
+}
+
+/* line 553, resources/assets/styles/integrations/_complianz.scss */
+
+#cc-window.cc-window .cc-check,
+#cmplz-manage-consent-container.cmplz-manage-consent-container .cc-check {
+  display: inherit;
+  -webkit-transform: translate3d(0, 0, 0);
+          transform: translate3d(0, 0, 0);
+  cursor: pointer;
+  position: relative;
+  margin: auto 7px auto auto;
+  width: 18px;
+  height: 18px;
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* line 563, resources/assets/styles/integrations/_complianz.scss */
+
+#cc-window.cc-window .cc-check svg,
+#cmplz-manage-consent-container.cmplz-manage-consent-container .cc-check svg {
+  display: inherit;
+  -webkit-transform: translate3d(0, 0, 0);
+          transform: translate3d(0, 0, 0);
+  position: relative;
+  z-index: 1;
+  fill: none;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 3.5;
+  -webkit-transition: all 0.2s ease;
+  -o-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+  stroke: #000;
+}
+
+/* line 575, resources/assets/styles/integrations/_complianz.scss */
+
+#cc-window.cc-window .cc-check svg path,
+#cmplz-manage-consent-container.cmplz-manage-consent-container .cc-check svg path {
+  stroke-dasharray: 60;
+  stroke-dashoffset: 0;
+}
+
+/* line 580, resources/assets/styles/integrations/_complianz.scss */
+
+#cc-window.cc-window .cc-check svg polyline,
+#cmplz-manage-consent-container.cmplz-manage-consent-container .cc-check svg polyline {
+  stroke-dasharray: 22;
+  stroke-dashoffset: 66;
+}
+
+/* line 586, resources/assets/styles/integrations/_complianz.scss */
+
+#cc-window.cc-window .cc-check:before,
+#cmplz-manage-consent-container.cmplz-manage-consent-container .cc-check:before {
+  content: "";
+  position: absolute;
+  opacity: 0;
+}
+
+/* line 593, resources/assets/styles/integrations/_complianz.scss */
+
+#cc-window.cc-window .cc-check:hover:before,
+#cmplz-manage-consent-container.cmplz-manage-consent-container .cc-check:hover:before {
+  opacity: 1;
+}
+
+/* line 601, resources/assets/styles/integrations/_complianz.scss */
+
+#cc-window.cc-window.cc-theme-edgeless .cmplz-categories-wrap .cmplz-classic-checkbox,
+#cmplz-manage-consent-container.cmplz-manage-consent-container.cc-theme-edgeless .cmplz-categories-wrap .cmplz-classic-checkbox {
+  margin-left: 15px;
+}
+
+/* line 609, resources/assets/styles/integrations/_complianz.scss */
+
+#cc-window.cc-window .cmplz-categories-wrap label,
+#cmplz-manage-consent-container.cmplz-manage-consent-container .cmplz-categories-wrap label {
+  -webkit-box-sizing: initial;
+          box-sizing: initial;
+}
+
+/* line 613, resources/assets/styles/integrations/_complianz.scss */
+
+#cc-window.cc-window .cmplz-categories-wrap .cc-check,
+#cmplz-manage-consent-container.cmplz-manage-consent-container .cmplz-categories-wrap .cc-check {
+  cursor: pointer;
+  position: relative;
+  margin: auto 7px auto auto;
+  width: 18px;
+  height: 18px;
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* line 621, resources/assets/styles/integrations/_complianz.scss */
+
+#cc-window.cc-window .cmplz-categories-wrap .cc-check:before,
+#cmplz-manage-consent-container.cmplz-manage-consent-container .cmplz-categories-wrap .cc-check:before {
+  content: "";
+  position: absolute;
+  opacity: 0;
+}
+
+/* line 628, resources/assets/styles/integrations/_complianz.scss */
+
+#cc-window.cc-window .cmplz-categories-wrap .cc-check:hover:before,
+#cmplz-manage-consent-container.cmplz-manage-consent-container .cmplz-categories-wrap .cc-check:hover:before {
+  opacity: 1;
+}
+
+/* line 633, resources/assets/styles/integrations/_complianz.scss */
+
+#cc-window.cc-window .cmplz-categories-wrap .cc-check svg,
+#cmplz-manage-consent-container.cmplz-manage-consent-container .cmplz-categories-wrap .cc-check svg {
+  position: relative;
+  z-index: 1;
+  fill: none;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 3.5;
+  -webkit-transition: all 0.2s ease;
+  -o-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+  stroke: #000;
+}
+
+/* line 643, resources/assets/styles/integrations/_complianz.scss */
+
+#cc-window.cc-window .cmplz-categories-wrap .cc-check svg path,
+#cmplz-manage-consent-container.cmplz-manage-consent-container .cmplz-categories-wrap .cc-check svg path {
+  stroke-dasharray: 60;
+  stroke-dashoffset: 0;
+}
+
+/* line 648, resources/assets/styles/integrations/_complianz.scss */
+
+#cc-window.cc-window .cmplz-categories-wrap .cc-check svg polyline,
+#cmplz-manage-consent-container.cmplz-manage-consent-container .cmplz-categories-wrap .cc-check svg polyline {
+  stroke-dasharray: 22;
+  stroke-dashoffset: 66;
+}
+
+/* line 657, resources/assets/styles/integrations/_complianz.scss */
+
+#cc-window.cc-window .cmplz-slider-checkbox,
+#cmplz-manage-consent-container.cmplz-manage-consent-container .cmplz-slider-checkbox {
+  vertical-align: top;
+  margin-right: spacing(s);
+}
+
+/* line 662, resources/assets/styles/integrations/_complianz.scss */
+
+#cc-window.cc-window .cmplz-consent-checkbox,
+#cmplz-manage-consent-container.cmplz-manage-consent-container .cmplz-consent-checkbox {
+  margin-right: 15px;
+}
+
+/* line 669, resources/assets/styles/integrations/_complianz.scss */
+
+.cmplz-manage-consent-container > div {
+  margin-bottom: spacing(s);
+}
+
+/* Soft Cookie wall */
+
+/* line 676, resources/assets/styles/integrations/_complianz.scss */
+
+.cmplz-soft-cookiewall {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(var(--color-black), 0.7);
+  z-index: 9999;
+}
+
+/* line 690, resources/assets/styles/integrations/_complianz.scss */
+
+.cmplz-document .cmplz-soft-cookiewall {
+  background-color: transparent;
+}
+
+/* line 701, resources/assets/styles/integrations/_complianz.scss */
+
+.cmplz-video.cmplz-hidden {
+  visibility: hidden;
+}
+
+/* line 705, resources/assets/styles/integrations/_complianz.scss */
+
+.cmplz-video.cmplz-iframe-styles {
+  background-color: transparent;
+}
+
+/* line 710, resources/assets/styles/integrations/_complianz.scss */
+
+.cmplz-blocked-content-container {
+  background: var(--color-white);
+  border: 0;
+  border-radius: 3px;
+  -webkit-box-shadow: 0 0 1px 0 rgba(var(--color-black), 0.5), 0 1px 10px 0 rgba(var(--color-black), 0.15);
+          box-shadow: 0 0 1px 0 rgba(var(--color-black), 0.5), 0 1px 10px 0 rgba(var(--color-black), 0.15);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-repeat: no-repeat !important;
+  background-size: cover !important;
+  height: inherit;
+  position: relative;
+}
+
+/* line 723, resources/assets/styles/integrations/_complianz.scss */
+
+.cmplz-blocked-content-container iframe {
+  max-height: 100%;
+  border: 0 !important;
+}
+
+/* line 729, resources/assets/styles/integrations/_complianz.scss */
+
+.cmplz-blocked-content-container div div {
+  display: none;
+}
+
+/* line 734, resources/assets/styles/integrations/_complianz.scss */
+
+.cmplz-blocked-content-container.gmw-map-cover {
+  max-height: 100%;
+  position: absolute;
+}
+
+/* line 739, resources/assets/styles/integrations/_complianz.scss */
+
+.cmplz-blocked-content-container .cmplz-blocked-content-notice {
+  cursor: pointer;
+  position: absolute !important;
+  width: 50%;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+       -o-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  max-width: 200px;
+  font-size: 14px;
+  padding: 10px;
+  background-color: rgba(var(--color-black), 0.5);
+  /* Black background with opacity */
+  color: var(--color-white);
+  text-align: center;
+  /*make sure the container is on top of the iframe, but below our cookie notice */
+  z-index: 98;
+  /*We need some lineheight, for example Elementor will force a lineheight of 0*/
+  line-height: 23px;
+}
+
+/* line 760, resources/assets/styles/integrations/_complianz.scss */
+
+#cmplz-cookies-overview {
+  margin-bottom: 0;
+}
+
+/* line 766, resources/assets/styles/integrations/_complianz.scss */
+
+#cmplz-cookies-overview .cmplz-dropdown + .cmplz-dropdown {
+  border-top: var(--default-border);
+}
+
+/* line 771, resources/assets/styles/integrations/_complianz.scss */
+
+#cmplz-cookies-overview .cmplz-dropdown[open] .cmplz-service-header {
+  background-color: var(--color-white);
+  margin-bottom: 1rem;
+}
+
+/* line 776, resources/assets/styles/integrations/_complianz.scss */
+
+#cmplz-cookies-overview .cmplz-dropdown[open] .cmplz-service-header .marker svg {
+  -webkit-transform: rotate(0);
+       -o-transform: rotate(0);
+          transform: rotate(0);
+}
+
+/* line 783, resources/assets/styles/integrations/_complianz.scss */
+
+#cmplz-cookies-overview .cmplz-dropdown:hover:not([open]) {
+  background-color: var(--color-silver-light);
+}
+
+/* line 789, resources/assets/styles/integrations/_complianz.scss */
+
+#cmplz-cookies-overview .cmplz-dropdown > div {
+  padding: spacing(s);
+}
+
+/* line 792, resources/assets/styles/integrations/_complianz.scss */
+
+#cmplz-cookies-overview .cmplz-dropdown > div > :last-child {
+  margin-bottom: 0;
+}
+
+/* line 798, resources/assets/styles/integrations/_complianz.scss */
+
+#cmplz-cookies-overview .cmplz-dropdown .cmplz-title-wrap > * {
+  margin-top: 0;
+}
+
+/* line 804, resources/assets/styles/integrations/_complianz.scss */
+
+#cmplz-cookies-overview .cmplz-service-header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: spacing(s);
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+/* line 810, resources/assets/styles/integrations/_complianz.scss */
+
+#cmplz-cookies-overview .cmplz-service-header .marker {
+  height: 32px;
+  width: 32px;
+}
+
+/* line 814, resources/assets/styles/integrations/_complianz.scss */
+
+#cmplz-cookies-overview .cmplz-service-header .marker svg {
+  height: 24px;
+  width: 24px;
+  -webkit-transform: rotate(-90deg);
+       -o-transform: rotate(-90deg);
+          transform: rotate(-90deg);
+  -webkit-transition: all .3s;
+  -o-transition: all .3s;
+  transition: all .3s;
+}
+
+/* line 822, resources/assets/styles/integrations/_complianz.scss */
+
+#cmplz-cookies-overview .cmplz-service-header .purpose {
+  margin-left: auto;
+  margin-bottom: 0;
+  line-height: 1;
+}
+
+/* line 829, resources/assets/styles/integrations/_complianz.scss */
+
+#cmplz-cookies-overview .cmplz-service-header .cmplz-title-wrap > * {
+  font-size: fontsize-heading("s");
+  -webkit-box-flex: 2;
+      -ms-flex-positive: 2;
+          flex-grow: 2;
+  margin-bottom: 0;
+  line-height: 1;
+}
+
+/* line 844, resources/assets/styles/integrations/_complianz.scss */
+
+#cmplz-cookies-overview .cookies-per-purpose__row {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+/* line 848, resources/assets/styles/integrations/_complianz.scss */
+
+#cmplz-cookies-overview .cookies-per-purpose__row .name-header,
+#cmplz-cookies-overview .cookies-per-purpose__row .retention-header,
+#cmplz-cookies-overview .cookies-per-purpose__row .function-header {
+  border-top: var(--default-border);
+  padding-top: spacing(s);
+  width: 100%;
+}
+
+/* line 855, resources/assets/styles/integrations/_complianz.scss */
+
+#cmplz-cookies-overview .cookies-per-purpose__row .name-header h5,
+#cmplz-cookies-overview .cookies-per-purpose__row .retention-header h5,
+#cmplz-cookies-overview .cookies-per-purpose__row .function-header h5 {
+  margin-bottom: 0;
+}
+
+/* line 860, resources/assets/styles/integrations/_complianz.scss */
+
+#cmplz-cookies-overview .cookies-per-purpose__row .name,
+#cmplz-cookies-overview .cookies-per-purpose__row .retention,
+#cmplz-cookies-overview .cookies-per-purpose__row .function {
+  width: 100%;
+  margin-bottom: spacing(s);
+}
+
+@media only screen and (min-device-width: var(--breakpoint-m)) {
+  /* line 868, resources/assets/styles/integrations/_complianz.scss */
+
+  #cmplz-cookies-overview .cookies-per-purpose__row .name-header,
+  #cmplz-cookies-overview .cookies-per-purpose__row .retention-header,
+  #cmplz-cookies-overview .cookies-per-purpose__row .function-header {
+    width: 3333%;
+    -webkit-box-ordinal-group: 2;
+        -ms-flex-order: 1;
+            order: 1;
+  }
+
+  /* line 875, resources/assets/styles/integrations/_complianz.scss */
+
+  #cmplz-cookies-overview .cookies-per-purpose__row .name,
+  #cmplz-cookies-overview .cookies-per-purpose__row .retention,
+  #cmplz-cookies-overview .cookies-per-purpose__row .function {
+    width: 3333%;
+    -webkit-box-ordinal-group: 3;
+        -ms-flex-order: 2;
+            order: 2;
+  }
+}
+
+/* line 890, resources/assets/styles/integrations/_complianz.scss */
+
+.privacy-statement .dropdown-privacy-statement summary {
+  border-top: var(--default-border);
+  display: block;
+  margin-top: spacing(s);
+  padding-top: spacing(s);
+  padding-bottom: spacing(s);
+}
+
+/* line 897, resources/assets/styles/integrations/_complianz.scss */
+
+.privacy-statement .dropdown-privacy-statement summary h3 {
+  font-size: fontsize-heading("s");
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+/* 6.0 Migration */
+
+/* line 908, resources/assets/styles/integrations/_complianz.scss */
+
+body #cmplz-cookiebanner-container .cmplz-cookiebanner {
+  background-color: var(--color-bus);
+  color: var(--color-white);
+  opacity: 1;
+  -webkit-transition: opacity 1s ease;
+  -o-transition: opacity 1s ease;
+  transition: opacity 1s ease;
+  padding: spacing(32px) spacing(24px) spacing(24px);
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  overflow: hidden;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+  z-index: 9999;
+  max-width: 100%;
+  width: 100%;
+  border-style: none;
+}
+
+@media only screen and (min-device-width: var(--breakpoint-l)) {
+  /* line 908, resources/assets/styles/integrations/_complianz.scss */
+
+  body #cmplz-cookiebanner-container .cmplz-cookiebanner {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+  }
+}
+
+/* line 931, resources/assets/styles/integrations/_complianz.scss */
+
+body #cmplz-cookiebanner-container .cmplz-cookiebanner .cc-message {
+  display: block;
+  margin: 0;
+  margin-bottom: spacing(32px);
+  width: 100%;
+}
+
+/* line 937, resources/assets/styles/integrations/_complianz.scss */
+
+body #cmplz-cookiebanner-container .cmplz-cookiebanner .cc-message .cookie-notice {
+  margin-bottom: spacing(24px);
+}
+
+/* line 940, resources/assets/styles/integrations/_complianz.scss */
+
+body #cmplz-cookiebanner-container .cmplz-cookiebanner .cc-message .cookie-notice :last-child {
+  margin-bottom: 0;
+}
+
+/* line 944, resources/assets/styles/integrations/_complianz.scss */
+
+body #cmplz-cookiebanner-container .cmplz-cookiebanner .cc-message .cookie-notice__title {
+  color: var(--color-white);
+  font-size: fontsize-heading(m);
+  margin-bottom: spacing(24px);
+}
+
+@media only screen and (min-device-width: var(--breakpoint-l)) {
+  /* line 937, resources/assets/styles/integrations/_complianz.scss */
+
+  body #cmplz-cookiebanner-container .cmplz-cookiebanner .cc-message .cookie-notice {
+    font-size: fontsize-body(l);
+  }
+
+  /* line 953, resources/assets/styles/integrations/_complianz.scss */
+
+  body #cmplz-cookiebanner-container .cmplz-cookiebanner .cc-message .cookie-notice__title {
+    font-size: fontsize-heading(l);
+  }
+}
+
+@media only screen and (min-device-width: var(--breakpoint-l)) {
+  /* line 960, resources/assets/styles/integrations/_complianz.scss */
+
+  body #cmplz-cookiebanner-container .cmplz-cookiebanner .cookie-categories-wrap {
+    -webkit-box-pack: right;
+        -ms-flex-pack: right;
+            justify-content: right;
+    -webkit-box-flex: 2;
+        -ms-flex-positive: 2;
+            flex-grow: 2;
+    padding-right: spacing(32px);
+    width: auto;
+  }
+}
+
+/* line 969, resources/assets/styles/integrations/_complianz.scss */
+
+body #cmplz-cookiebanner-container .cmplz-cookiebanner .cookie-categories-wrap .cmplz-categories-wrap {
+  margin-bottom: spacing(24px);
+}
+
+/* line 972, resources/assets/styles/integrations/_complianz.scss */
+
+body #cmplz-cookiebanner-container .cmplz-cookiebanner .cookie-categories-wrap .cmplz-categories-wrap .cc-category {
+  color: var(--color-white) !important;
+}
+
+@media only screen and (min-device-width: var(--breakpoint-l)) {
+  /* line 969, resources/assets/styles/integrations/_complianz.scss */
+
+  body #cmplz-cookiebanner-container .cmplz-cookiebanner .cookie-categories-wrap .cmplz-categories-wrap {
+    margin-bottom: 0;
+  }
+
+  /* line 979, resources/assets/styles/integrations/_complianz.scss */
+
+  body #cmplz-cookiebanner-container .cmplz-cookiebanner .cookie-categories-wrap .cmplz-categories-wrap .cc-category {
+    font-size: fontsize-body(l);
+  }
+}
+
+/* line 988, resources/assets/styles/integrations/_complianz.scss */
+
+body #cmplz-cookiebanner-container .cmplz-cookiebanner .cmplz-categories .cmplz-categories-inner {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+/* line 991, resources/assets/styles/integrations/_complianz.scss */
+
+body #cmplz-cookiebanner-container .cmplz-cookiebanner .cmplz-categories .cmplz-categories-inner .cmplz-category {
+  background: none;
+}
+
+/* line 999, resources/assets/styles/integrations/_complianz.scss */
+
+body #cmplz-cookiebanner-container .cmplz-cookiebanner .cmplz-divider {
+  margin: 0;
+}
+
+/* line 1004, resources/assets/styles/integrations/_complianz.scss */
+
+body #cmplz-cookiebanner-container .cmplz-cookiebanner .cmplz-buttons button {
+  -webkit-transition: all .3s;
+  -o-transition: all .3s;
+  transition: all .3s;
+}
+
+/* line 1009, resources/assets/styles/integrations/_complianz.scss */
+
+body #cmplz-cookiebanner-container .cmplz-cookiebanner .cc-compliance {
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 100%;
+}
+
+/* line 1013, resources/assets/styles/integrations/_complianz.scss */
+
+body #cmplz-cookiebanner-container .cmplz-cookiebanner .cc-compliance .cmplz-btn {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  width: 100%;
+}
+
+@media only screen and (min-device-width: var(--breakpoint-s)) {
+  /* line 1009, resources/assets/styles/integrations/_complianz.scss */
+
+  body #cmplz-cookiebanner-container .cmplz-cookiebanner .cc-compliance {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+  }
+
+  /* line 1021, resources/assets/styles/integrations/_complianz.scss */
+
+  body #cmplz-cookiebanner-container .cmplz-cookiebanner .cc-compliance .cmplz-btn {
+    margin-bottom: 0;
+    width: auto;
+  }
+
+  /* line 1025, resources/assets/styles/integrations/_complianz.scss */
+
+  body #cmplz-cookiebanner-container .cmplz-cookiebanner .cc-compliance .cmplz-btn + .cmplz-btn {
+    margin-left: spacing(layout-2-xs);
+  }
+}
+
+@media only screen and (min-device-width: var(--breakpoint-l)) {
+  /* line 1009, resources/assets/styles/integrations/_complianz.scss */
+
+  body #cmplz-cookiebanner-container .cmplz-cookiebanner .cc-compliance {
+    -webkit-box-pack: right;
+        -ms-flex-pack: right;
+            justify-content: right;
+    width: auto;
+  }
+}
+
+/* line 1037, resources/assets/styles/integrations/_complianz.scss */
+
+body #cmplz-cookiebanner-container .cmplz-cookiebanner.cc-invisible {
+  opacity: 0;
+}
+
+/* line 1041, resources/assets/styles/integrations/_complianz.scss */
+
+body #cmplz-cookiebanner-container .cmplz-cookiebanner.cmplz-dismissed {
+  display: none;
+}
+
+/* line 1069, resources/assets/styles/integrations/_complianz.scss */
+
+body #cmplz-cookiebanner-container .cmplz-cookiebanner .cmplz-links {
+  width: 100%;
+  -webkit-box-pack: left;
+      -ms-flex-pack: left;
+          justify-content: left;
+  margin-bottom: 32px;
+}
+
+/* line 1075, resources/assets/styles/integrations/_complianz.scss */
+
+body #cmplz-cookiebanner-container .cmplz-cookiebanner .cmplz-links a:hover {
+  text-decoration: none;
+}
+
+/* line 1081, resources/assets/styles/integrations/_complianz.scss */
+
+body #cmplz-cookiebanner-container .cmplz-cookiebanner .cmplz-btn {
+  background-color: var(--color-bus) !important;
+  border: 2px solid var(--color-white) !important;
+  color: var(--color-white) !important;
+  cursor: pointer;
+  font-weight: 400;
+  margin-bottom: spacing(s);
+  padding: spacing(xs) spacing(32px);
+  text-align: center;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+/* line 1093, resources/assets/styles/integrations/_complianz.scss */
+
+body #cmplz-cookiebanner-container .cmplz-cookiebanner .cmplz-btn:focus,
+body #cmplz-cookiebanner-container .cmplz-cookiebanner .cmplz-btn:hover {
+  background-color: var(--color-bus-dark) !important;
+  border-color: var(--color-bus-dark) !important;
+  color: var(--color-white) !important;
+}
+
+/* line 1103, resources/assets/styles/integrations/_complianz.scss */
+
+body #cmplz-cookiebanner-container .cmplz-cookiebanner .cmplz-btn.cmplz-accept {
+  background-color: var(--color-white) !important;
+  border-color: var(--color-white) !important;
+  color: var(--color-bus-dark) !important;
+}
+
+/* line 1108, resources/assets/styles/integrations/_complianz.scss */
+
+body #cmplz-cookiebanner-container .cmplz-cookiebanner .cmplz-btn.cmplz-accept:focus,
+body #cmplz-cookiebanner-container .cmplz-cookiebanner .cmplz-btn.cmplz-accept:hover {
+  background-color: var(--color-bus-dark) !important;
+  border-color: var(--color-bus-dark) !important;
+  color: var(--color-white) !important;
+}
+
+/* line 1124, resources/assets/styles/integrations/_complianz.scss */
+
+body .cc-revoke {
+  display: none !important;
+  background-color: var(--color-bus) !important;
+  border-color: var(--color-bus);
+  color: var(--color-white) !important;
+  cursor: pointer;
+  position: fixed;
+  overflow: hidden;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+  z-index: 9999;
+  padding: spacing(2-xs) spacing(s);
+}
+
+/* line 1138, resources/assets/styles/integrations/_complianz.scss */
+
+body .cc-revoke:focus,
+body .cc-revoke:hover {
+  background-color: var(--color-bus-dark);
+}
+
+@media screen and (max-width: 768px) {
+  /* line 1124, resources/assets/styles/integrations/_complianz.scss */
+
+  body .cc-revoke {
+    display: none !important;
+  }
+}
+
+/* line 1147, resources/assets/styles/integrations/_complianz.scss */
+
+body .cc-revoke.cc-top {
+  top: 0;
+  left: spacing(s);
+}
+
+/* line 1152, resources/assets/styles/integrations/_complianz.scss */
+
+body .cc-revoke.cc-bottom {
+  bottom: 0;
+  left: spacing(s);
+}
+
+/* line 1157, resources/assets/styles/integrations/_complianz.scss */
+
+body .cc-revoke.cc-left {
+  left: spacing(s);
+  right: unset;
+}
+
+/* line 1162, resources/assets/styles/integrations/_complianz.scss */
+
+body .cc-revoke.cc-right {
+  right: spacing(s);
+  left: unset;
+}
+
+/* line 1171, resources/assets/styles/integrations/_complianz.scss */
+
+.cc-animate.cc-revoke {
+  -webkit-transition: -webkit-transform 1s ease;
+  transition: -webkit-transform 1s ease;
+  -o-transition: -o-transform 1s ease;
+  transition: transform 1s ease;
+  transition: transform 1s ease, -webkit-transform 1s ease, -o-transform 1s ease;
+}
+
+/* line 1189, resources/assets/styles/integrations/_complianz.scss */
+
+.cc-grower {
+  max-height: 0;
+  overflow: hidden;
+  -webkit-transition: max-height 1s;
+  -o-transition: max-height 1s;
+  transition: max-height 1s;
+}
+
+/* line 1196, resources/assets/styles/integrations/_complianz.scss */
+
+.cmplz-link {
+  cursor: pointer;
+  text-decoration: underline;
+  display: inline-block;
+}
+
+/* line 1201, resources/assets/styles/integrations/_complianz.scss */
+
+.cmplz-link:focus,
+.cmplz-link:hover {
+  color: var(--color-bus-dark);
+}
+
+/* line 1206, resources/assets/styles/integrations/_complianz.scss */
+
+.cmplz-link:active,
+.cmplz-link:visited {
+  color: initial;
+}
+
+/* line 1213, resources/assets/styles/integrations/_complianz.scss */
+
+.cc-header {
+  font-size: 18px;
+  font-weight: 700;
+}
+
+/* line 1219, resources/assets/styles/integrations/_complianz.scss */
+
+.cc-close {
+  cursor: pointer;
+  display: block;
+  position: absolute;
+  top: spacing(2-xs);
+  right: spacing(2-xs);
+  opacity: 0.9;
+}
+
+/* line 1227, resources/assets/styles/integrations/_complianz.scss */
+
+.cc-close:focus,
+.cc-close:hover {
+  opacity: 1;
+}
+
+/* line 1241, resources/assets/styles/integrations/_complianz.scss */
+
+.cc-top {
+  top: 0;
+}
+
+/* line 1246, resources/assets/styles/integrations/_complianz.scss */
+
+.cc-left {
+  left: 0;
+}
+
+/* line 1251, resources/assets/styles/integrations/_complianz.scss */
+
+.cc-right {
+  right: 0;
+}
+
+/* line 1256, resources/assets/styles/integrations/_complianz.scss */
+
+.cc-bottom {
+  bottom: 0;
+}
+
+/* line 1262, resources/assets/styles/integrations/_complianz.scss */
+
+.cc-center.cc-revoke {
+  bottom: 0;
+  left: spacing(s);
+  border-top-left-radius: var(--default-border-radius);
+  border-top-right-radius: var(--default-border-radius);
+}
+
+/* line 1282, resources/assets/styles/integrations/_complianz.scss */
+
+.cookie-categories-wrap {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+}
+
+/* line 1290, resources/assets/styles/integrations/_complianz.scss */
+
+.cc-banner.cc-top {
+  left: 0;
+  right: 0;
+  top: 0;
+}
+
+/* line 1296, resources/assets/styles/integrations/_complianz.scss */
+
+.cc-banner.cc-bottom {
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+/* line 1302, resources/assets/styles/integrations/_complianz.scss */
+
+.cc-banner .cc-message {
+  display: block;
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 auto;
+          flex: 1 1 auto;
+  max-width: 100%;
+  margin-right: spacing(s);
+}
+
+/* line 1311, resources/assets/styles/integrations/_complianz.scss */
+
+.cc-compliance {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-line-pack: justify;
+      align-content: space-between;
+}
+
+@media print {
+  /* line 1319, resources/assets/styles/integrations/_complianz.scss */
+
+  .cc-revoke,
+  .cc-window {
+    display: none;
+  }
+}
+
+/* line 1325, resources/assets/styles/integrations/_complianz.scss */
+
+#cc-window input[type="checkbox"],
+#cmplz-manage-consent-container input[type="checkbox"] {
+  width: initial;
+  -webkit-appearance: checkbox;
+}
+
+/* line 1331, resources/assets/styles/integrations/_complianz.scss */
+
+#cc-window input[type="checkbox"]:checked::before,
+#cmplz-manage-consent-container input[type="checkbox"]:checked::before {
+  content: '';
+}
+
+/*
+* Hide revoke button
+* prevent overriding by script by using !important
+*/
+
+/* line 1340, resources/assets/styles/integrations/_complianz.scss */
+
+.cc-hidden {
+  display: none !important;
+}
+
+/* line 1352, resources/assets/styles/integrations/_complianz.scss */
+
+#cmplz-cookiebanner-container .cmplz-cookiebanner .cmplz-square-checkbox:checked + .cc-check svg path,
+#cmplz-manage-consent-container.cmplz-manage-consent-container .cmplz-square-checkbox:checked + .cc-check svg path {
+  stroke-dashoffset: 60;
+  -webkit-transition: all 0.3s linear;
+  -o-transition: all 0.3s linear;
+  transition: all 0.3s linear;
+}
+
+/* line 1357, resources/assets/styles/integrations/_complianz.scss */
+
+#cmplz-cookiebanner-container .cmplz-cookiebanner .cmplz-square-checkbox:checked + .cc-check svg polyline,
+#cmplz-manage-consent-container.cmplz-manage-consent-container .cmplz-square-checkbox:checked + .cc-check svg polyline {
+  stroke-dashoffset: 42;
+  -webkit-transition: all 0.2s linear;
+  -o-transition: all 0.2s linear;
+  transition: all 0.2s linear;
+  -webkit-transition-delay: 0.15s;
+       -o-transition-delay: 0.15s;
+          transition-delay: 0.15s;
+}
+
+/* line 1368, resources/assets/styles/integrations/_complianz.scss */
+
+#cmplz-cookiebanner-container .cmplz-cookiebanner .cmplz-square-checkbox:focus + .cc-check svg,
+#cmplz-manage-consent-container.cmplz-manage-consent-container .cmplz-square-checkbox:focus + .cc-check svg {
+  outline: -webkit-focus-ring-color auto 1px;
+}
+
+/* line 1375, resources/assets/styles/integrations/_complianz.scss */
+
+#cmplz-cookiebanner-container .cmplz-cookiebanner input.cmplz-svg-checkbox,
+#cmplz-cookiebanner-container .cmplz-cookiebanner .cmplz-slider-checkbox input,
+#cmplz-manage-consent-container.cmplz-manage-consent-container input.cmplz-svg-checkbox,
+#cmplz-manage-consent-container.cmplz-manage-consent-container .cmplz-slider-checkbox input {
+  display: block !important;
+  opacity: 0 !important;
+  height: 0 !important;
+}
+
+/* line 1382, resources/assets/styles/integrations/_complianz.scss */
+
+#cmplz-cookiebanner-container .cmplz-cookiebanner .cmplz-slider-checkbox,
+#cmplz-manage-consent-container.cmplz-manage-consent-container .cmplz-slider-checkbox {
+  position: relative;
+  display: inline-block;
+  width: 40px;
+  height: 21px;
+}
+
+/* line 1390, resources/assets/styles/integrations/_complianz.scss */
+
+#cmplz-cookiebanner-container .cmplz-cookiebanner .cmplz-slider-checkbox .cmplz-slider,
+#cmplz-manage-consent-container.cmplz-manage-consent-container .cmplz-slider-checkbox .cmplz-slider {
+  background-color: var(--color-white) !important;
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  -webkit-transition: 0.4s;
+  -o-transition: 0.4s;
+  transition: 0.4s;
+  outline: var(--color-black) solid 1px;
+}
+
+/* line 1401, resources/assets/styles/integrations/_complianz.scss */
+
+#cmplz-cookiebanner-container .cmplz-cookiebanner .cmplz-slider-checkbox .cmplz-slider:before,
+#cmplz-manage-consent-container.cmplz-manage-consent-container .cmplz-slider-checkbox .cmplz-slider:before {
+  background-color: var(--color-black) !important;
+  -webkit-mask-image: url(data:image/svg+xml;base64,PHN2ZyBjbGFzcz0iSWNvbi1tb2R1bGVfaWNvbl9fMUp0emogaWNvbl9oZHMtaWNvbl9fMVlxTkMgSWNvbi1tb2R1bGVfbV9fM2VkVVkgaWNvbl9oZHMtaWNvbi0tc2l6ZS1tX18xbWNIdiIgdmlld0JveD0iMCAwIDI0IDI0IiBhcmlhLWhpZGRlbj0idHJ1ZSIgcm9sZT0iaW1nIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHN0eWxlPSIKIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxyZWN0IHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCI+PC9yZWN0PjxwYXRoIGZpbGw9ImN1cnJlbnRDb2xvciIgZD0iTTEyLDMgQzcuMDI5NDM3MjUsMyAzLDcuMDI5NDM3MjUgMywxMiBDMywxNi45NzA1NjI3IDcuMDI5NDM3MjUsMjEgMTIsMjEgQzE2Ljk3MDU2MjcsMjEgMjEsMTYuOTcwNTYyNyAyMSwxMiBDMjEsNy4wMjk0MzcyNSAxNi45NzA1NjI3LDMgMTIsMyBaIE0xNSw3LjUgTDE2LjUsOSBMMTMuNSwxMiBMMTYuNSwxNSBMMTUsMTYuNSBMMTIsMTMuNSBMOSwxNi41IEw3LjUsMTUgTDEwLjUsMTIgTDcuNSw5IEw5LDcuNSBMMTIsMTAuNSBMMTUsNy41IFoiPjwvcGF0aD48L2c+PC9zdmc+);
+  -webkit-mask-size: 21px;
+  -webkit-mask-position: center;
+  position: absolute;
+  content: "";
+  height: 15px;
+  width: 15px;
+  left: 4px;
+  bottom: 3px;
+  -webkit-transition: 0.4s;
+  -o-transition: 0.4s;
+  transition: 0.4s;
+}
+
+/* line 1415, resources/assets/styles/integrations/_complianz.scss */
+
+#cmplz-cookiebanner-container .cmplz-cookiebanner .cmplz-slider-checkbox .cmplz-slider:after,
+#cmplz-manage-consent-container.cmplz-manage-consent-container .cmplz-slider-checkbox .cmplz-slider:after {
+  border-radius: 25px;
+  display: block;
+  content: "";
+  position: absolute;
+  top: -5px;
+  left: -5px;
+  right: -5px;
+  bottom: -5px;
+}
+
+/* line 1427, resources/assets/styles/integrations/_complianz.scss */
+
+#cmplz-cookiebanner-container .cmplz-cookiebanner .cmplz-slider-checkbox .cmplz-slider.cmplz-round,
+#cmplz-manage-consent-container.cmplz-manage-consent-container .cmplz-slider-checkbox .cmplz-slider.cmplz-round {
+  border-radius: 20px;
+}
+
+/* line 1430, resources/assets/styles/integrations/_complianz.scss */
+
+#cmplz-cookiebanner-container .cmplz-cookiebanner .cmplz-slider-checkbox .cmplz-slider.cmplz-round:before,
+#cmplz-manage-consent-container.cmplz-manage-consent-container .cmplz-slider-checkbox .cmplz-slider.cmplz-round:before {
+  border-radius: 50%;
+}
+
+/* line 1436, resources/assets/styles/integrations/_complianz.scss */
+
+#cmplz-cookiebanner-container .cmplz-cookiebanner .cmplz-slider-checkbox .cmplz-slider-na,
+#cmplz-manage-consent-container.cmplz-manage-consent-container .cmplz-slider-checkbox .cmplz-slider-na {
+  padding: 2px 8px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  -webkit-transition: 0.4s;
+  -o-transition: 0.4s;
+  transition: 0.4s;
+}
+
+/* line 1445, resources/assets/styles/integrations/_complianz.scss */
+
+#cmplz-cookiebanner-container .cmplz-cookiebanner .cmplz-slider-checkbox .cmplz-slider-na:before,
+#cmplz-manage-consent-container.cmplz-manage-consent-container .cmplz-slider-checkbox .cmplz-slider-na:before {
+  position: absolute;
+  content: "N/A";
+  color: var(--color-white);
+}
+
+/* line 1451, resources/assets/styles/integrations/_complianz.scss */
+
+#cmplz-cookiebanner-container .cmplz-cookiebanner .cmplz-slider-checkbox .cmplz-slider-na.cmplz-round,
+#cmplz-manage-consent-container.cmplz-manage-consent-container .cmplz-slider-checkbox .cmplz-slider-na.cmplz-round {
+  border-radius: 20px;
+}
+
+/* line 1458, resources/assets/styles/integrations/_complianz.scss */
+
+#cmplz-cookiebanner-container .cmplz-cookiebanner .cmplz-slider-checkbox input:checked + .cmplz-slider,
+#cmplz-manage-consent-container.cmplz-manage-consent-container .cmplz-slider-checkbox input:checked + .cmplz-slider {
+  background-color: var(--primary-color) !important;
+  outline: none;
+}
+
+/* line 1462, resources/assets/styles/integrations/_complianz.scss */
+
+#cmplz-cookiebanner-container .cmplz-cookiebanner .cmplz-slider-checkbox input:checked + .cmplz-slider:before,
+#cmplz-manage-consent-container.cmplz-manage-consent-container .cmplz-slider-checkbox input:checked + .cmplz-slider:before {
+  background-color: var(--primary-content-color) !important;
+  -webkit-transform: translateX(17px);
+       -o-transform: translateX(17px);
+          transform: translateX(17px);
+  -webkit-mask-image: url(data:image/svg+xml;base64,PHN2ZyBjbGFzcz0iSWNvbi1tb2R1bGVfaWNvbl9fMUp0emogaWNvbl9oZHMtaWNvbl9fMVlxTkMgSWNvbi1tb2R1bGVfbV9fM2VkVVkgaWNvbl9oZHMtaWNvbi0tc2l6ZS1tX18xbWNIdiIgdmlld0JveD0iMCAwIDI0IDI0IiBhcmlhLWhpZGRlbj0idHJ1ZSIgcm9sZT0iaW1nIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxnIGZpbGw9Im5vbmUiIGZpbGwtcnVsZT0iZXZlbm9kZCI+PHJlY3Qgd2lkdGg9IjI0IiBoZWlnaHQ9IjI0Ij48L3JlY3Q+PHBhdGggZmlsbD0iY3VycmVudENvbG9yIiBkPSJNMTIsMyBDNy4wMjk0MzcyNSwzIDMsNy4wMjk0MzcyNSAzLDEyIEMzLDE2Ljk3MDU2MjcgNy4wMjk0MzcyNSwyMSAxMiwyMSBDMTYuOTcwNTYyNywyMSAyMSwxNi45NzA1NjI3IDIxLDEyIEMyMSw3LjAyOTQzNzI1IDE2Ljk3MDU2MjcsMyAxMiwzIFogTTE2LjUsOCBMMTgsOS41IEwxMC41LDE3IEw2LDEyLjUgTDcuNSwxMSBMMTAuNSwxNCBMMTYuNSw4IFoiPjwvcGF0aD48L2c+PC9zdmc+);
+}
+
+/* line 1472, resources/assets/styles/integrations/_complianz.scss */
+
+#cmplz-cookiebanner-container .cmplz-cookiebanner .cmplz-slider-checkbox input[type="checkbox"]:focus + .cmplz-slider:after,
+#cmplz-manage-consent-container.cmplz-manage-consent-container .cmplz-slider-checkbox input[type="checkbox"]:focus + .cmplz-slider:after {
+  -webkit-box-sizing: content-box;
+          box-sizing: content-box;
+  border: 3px solid var(--color-coat-of-arms);
+}
+
+/* line 1482, resources/assets/styles/integrations/_complianz.scss */
+
+#cmplz-cookiebanner-container .cmplz-cookiebanner label,
+#cmplz-manage-consent-container.cmplz-manage-consent-container label {
+  color: inherit;
+  font-weight: normal;
+  margin-bottom: 0;
+  line-height: inherit;
+  -webkit-box-sizing: initial;
+          box-sizing: initial;
+}
+
+/* line 1489, resources/assets/styles/integrations/_complianz.scss */
+
+#cmplz-cookiebanner-container .cmplz-cookiebanner label:not(.cc-check),
+#cmplz-manage-consent-container.cmplz-manage-consent-container label:not(.cc-check) {
+  white-space: nowrap;
+  margin-right: 15px;
+  margin-left: 0;
+  padding-left: 0;
+}
+
+/* line 1498, resources/assets/styles/integrations/_complianz.scss */
+
+#cmplz-cookiebanner-container .cmplz-cookiebanner div.cc-check,
+#cmplz-manage-consent-container.cmplz-manage-consent-container div.cc-check {
+  display: inline-block;
+  padding-bottom: 10px;
+}
+
+/* line 1504, resources/assets/styles/integrations/_complianz.scss */
+
+#cmplz-cookiebanner-container .cmplz-cookiebanner .cc-check,
+#cmplz-manage-consent-container.cmplz-manage-consent-container .cc-check {
+  display: inherit;
+  -webkit-transform: translate3d(0, 0, 0);
+          transform: translate3d(0, 0, 0);
+  cursor: pointer;
+  position: relative;
+  margin: auto 7px auto auto;
+  width: 18px;
+  height: 18px;
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* line 1514, resources/assets/styles/integrations/_complianz.scss */
+
+#cmplz-cookiebanner-container .cmplz-cookiebanner .cc-check svg,
+#cmplz-manage-consent-container.cmplz-manage-consent-container .cc-check svg {
+  display: inherit;
+  -webkit-transform: translate3d(0, 0, 0);
+          transform: translate3d(0, 0, 0);
+  position: relative;
+  z-index: 1;
+  fill: none;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 3.5;
+  -webkit-transition: all 0.2s ease;
+  -o-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+  stroke: #000;
+}
+
+/* line 1526, resources/assets/styles/integrations/_complianz.scss */
+
+#cmplz-cookiebanner-container .cmplz-cookiebanner .cc-check svg path,
+#cmplz-manage-consent-container.cmplz-manage-consent-container .cc-check svg path {
+  stroke-dasharray: 60;
+  stroke-dashoffset: 0;
+}
+
+/* line 1531, resources/assets/styles/integrations/_complianz.scss */
+
+#cmplz-cookiebanner-container .cmplz-cookiebanner .cc-check svg polyline,
+#cmplz-manage-consent-container.cmplz-manage-consent-container .cc-check svg polyline {
+  stroke-dasharray: 22;
+  stroke-dashoffset: 66;
+}
+
+/* line 1537, resources/assets/styles/integrations/_complianz.scss */
+
+#cmplz-cookiebanner-container .cmplz-cookiebanner .cc-check:before,
+#cmplz-manage-consent-container.cmplz-manage-consent-container .cc-check:before {
+  content: "";
+  position: absolute;
+  opacity: 0;
+}
+
+/* line 1544, resources/assets/styles/integrations/_complianz.scss */
+
+#cmplz-cookiebanner-container .cmplz-cookiebanner .cc-check:hover:before,
+#cmplz-manage-consent-container.cmplz-manage-consent-container .cc-check:hover:before {
+  opacity: 1;
+}
+
+/* line 1552, resources/assets/styles/integrations/_complianz.scss */
+
+#cmplz-cookiebanner-container .cmplz-cookiebanner.cc-theme-edgeless .cmplz-categories-wrap .cmplz-classic-checkbox,
+#cmplz-manage-consent-container.cmplz-manage-consent-container.cc-theme-edgeless .cmplz-categories-wrap .cmplz-classic-checkbox {
+  margin-left: 15px;
+}
+
+/* line 1560, resources/assets/styles/integrations/_complianz.scss */
+
+#cmplz-cookiebanner-container .cmplz-cookiebanner .cmplz-categories-wrap label,
+#cmplz-manage-consent-container.cmplz-manage-consent-container .cmplz-categories-wrap label {
+  -webkit-box-sizing: initial;
+          box-sizing: initial;
+}
+
+/* line 1564, resources/assets/styles/integrations/_complianz.scss */
+
+#cmplz-cookiebanner-container .cmplz-cookiebanner .cmplz-categories-wrap .cc-check,
+#cmplz-manage-consent-container.cmplz-manage-consent-container .cmplz-categories-wrap .cc-check {
+  cursor: pointer;
+  position: relative;
+  margin: auto 7px auto auto;
+  width: 18px;
+  height: 18px;
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* line 1572, resources/assets/styles/integrations/_complianz.scss */
+
+#cmplz-cookiebanner-container .cmplz-cookiebanner .cmplz-categories-wrap .cc-check:before,
+#cmplz-manage-consent-container.cmplz-manage-consent-container .cmplz-categories-wrap .cc-check:before {
+  content: "";
+  position: absolute;
+  opacity: 0;
+}
+
+/* line 1579, resources/assets/styles/integrations/_complianz.scss */
+
+#cmplz-cookiebanner-container .cmplz-cookiebanner .cmplz-categories-wrap .cc-check:hover:before,
+#cmplz-manage-consent-container.cmplz-manage-consent-container .cmplz-categories-wrap .cc-check:hover:before {
+  opacity: 1;
+}
+
+/* line 1584, resources/assets/styles/integrations/_complianz.scss */
+
+#cmplz-cookiebanner-container .cmplz-cookiebanner .cmplz-categories-wrap .cc-check svg,
+#cmplz-manage-consent-container.cmplz-manage-consent-container .cmplz-categories-wrap .cc-check svg {
+  position: relative;
+  z-index: 1;
+  fill: none;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 3.5;
+  -webkit-transition: all 0.2s ease;
+  -o-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+  stroke: #000;
+}
+
+/* line 1594, resources/assets/styles/integrations/_complianz.scss */
+
+#cmplz-cookiebanner-container .cmplz-cookiebanner .cmplz-categories-wrap .cc-check svg path,
+#cmplz-manage-consent-container.cmplz-manage-consent-container .cmplz-categories-wrap .cc-check svg path {
+  stroke-dasharray: 60;
+  stroke-dashoffset: 0;
+}
+
+/* line 1599, resources/assets/styles/integrations/_complianz.scss */
+
+#cmplz-cookiebanner-container .cmplz-cookiebanner .cmplz-categories-wrap .cc-check svg polyline,
+#cmplz-manage-consent-container.cmplz-manage-consent-container .cmplz-categories-wrap .cc-check svg polyline {
+  stroke-dasharray: 22;
+  stroke-dashoffset: 66;
+}
+
+/* line 1608, resources/assets/styles/integrations/_complianz.scss */
+
+#cmplz-cookiebanner-container .cmplz-cookiebanner .cmplz-slider-checkbox,
+#cmplz-manage-consent-container.cmplz-manage-consent-container .cmplz-slider-checkbox {
+  vertical-align: top;
+  margin-right: spacing(s);
+}
+
+/* line 1613, resources/assets/styles/integrations/_complianz.scss */
+
+#cmplz-cookiebanner-container .cmplz-cookiebanner .cmplz-consent-checkbox,
+#cmplz-manage-consent-container.cmplz-manage-consent-container .cmplz-consent-checkbox {
+  margin-right: 15px;
+}
+
+/* line 1620, resources/assets/styles/integrations/_complianz.scss */
+
+.cmplz-manage-consent-container .cmplz-categories-wrap {
+  margin-bottom: spacing(s);
+}
+
+/* Soft Cookie wall */
+
+/* line 1626, resources/assets/styles/integrations/_complianz.scss */
+
+.cmplz-soft-cookiewall {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(var(--color-black), 0.7);
+  z-index: 9999;
+}
+
+/* line 1641, resources/assets/styles/integrations/_complianz.scss */
+
+.cmplz-document .cmplz-soft-cookiewall {
+  background-color: transparent;
+}
+
+/* line 1651, resources/assets/styles/integrations/_complianz.scss */
+
+.cmplz-video.cmplz-hidden {
+  visibility: hidden;
+}
+
+/* line 1655, resources/assets/styles/integrations/_complianz.scss */
+
+.cmplz-video.cmplz-iframe-styles {
+  background-color: transparent;
+}
+
+/* line 1661, resources/assets/styles/integrations/_complianz.scss */
+
+.cmplz-blocked-content-container {
+  background: var(--color-white);
+  border: 0;
+  border-radius: 3px;
+  -webkit-box-shadow: 0 0 1px 0 rgba(var(--color-black), 0.5), 0 1px 10px 0 rgba(var(--color-black), 0.15);
+          box-shadow: 0 0 1px 0 rgba(var(--color-black), 0.5), 0 1px 10px 0 rgba(var(--color-black), 0.15);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-repeat: no-repeat !important;
+  background-size: cover !important;
+  height: inherit;
+  position: relative;
+}
+
+/* line 1674, resources/assets/styles/integrations/_complianz.scss */
+
+.cmplz-blocked-content-container iframe {
+  max-height: 100%;
+  border: 0 !important;
+}
+
+/* line 1680, resources/assets/styles/integrations/_complianz.scss */
+
+.cmplz-blocked-content-container div div {
+  display: none;
+}
+
+/* line 1685, resources/assets/styles/integrations/_complianz.scss */
+
+.cmplz-blocked-content-container.gmw-map-cover {
+  max-height: 100%;
+  position: absolute;
+}
+
+/* line 1690, resources/assets/styles/integrations/_complianz.scss */
+
+.cmplz-blocked-content-container .cmplz-blocked-content-notice {
+  cursor: pointer;
+  position: absolute !important;
+  width: 50%;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+       -o-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  max-width: 200px;
+  font-size: 14px;
+  padding: 10px;
+  background-color: rgba(var(--color-black), 0.5);
+  /* Black background with opacity */
+  color: var(--color-white);
+  text-align: center;
+  /*make sure the container is on top of the iframe, but below our cookie notice */
+  z-index: 98;
+  /*We need some lineheight, for example Elementor will force a lineheight of 0*/
+  line-height: 23px;
+}
+
+/* line 1712, resources/assets/styles/integrations/_complianz.scss */
+
+#cmplz-cookies-overview {
+  margin-bottom: 1rem;
+}
+
+/* line 1717, resources/assets/styles/integrations/_complianz.scss */
+
+#cmplz-cookies-overview .cmplz-dropdown + .cmplz-dropdown {
+  border-top: var(--default-border);
+}
+
+/* line 1722, resources/assets/styles/integrations/_complianz.scss */
+
+#cmplz-cookies-overview .cmplz-dropdown[open] .cmplz-service-header {
+  background-color: var(--color-silver-light);
+  margin-bottom: 1rem;
+}
+
+/* line 1727, resources/assets/styles/integrations/_complianz.scss */
+
+#cmplz-cookies-overview .cmplz-dropdown[open] .cmplz-service-header .marker svg {
+  -webkit-transform: rotate(0);
+       -o-transform: rotate(0);
+          transform: rotate(0);
+}
+
+/* line 1734, resources/assets/styles/integrations/_complianz.scss */
+
+#cmplz-cookies-overview .cmplz-dropdown:hover:not([open]) {
+  background-color: var(--color-silver-light);
+}
+
+/* line 1741, resources/assets/styles/integrations/_complianz.scss */
+
+#cmplz-cookies-overview .cmplz-dropdown > div {
+  padding: spacing(s);
+}
+
+/* line 1744, resources/assets/styles/integrations/_complianz.scss */
+
+#cmplz-cookies-overview .cmplz-dropdown > div > :last-child {
+  margin-bottom: 0;
+}
+
+/* line 1750, resources/assets/styles/integrations/_complianz.scss */
+
+#cmplz-cookies-overview .cmplz-dropdown .cmplz-title-wrap > * {
+  margin-top: 0;
+}
+
+/* line 1756, resources/assets/styles/integrations/_complianz.scss */
+
+#cmplz-cookies-overview .cmplz-service-header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: spacing(s);
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+/* line 1762, resources/assets/styles/integrations/_complianz.scss */
+
+#cmplz-cookies-overview .cmplz-service-header .marker {
+  height: 32px;
+  width: 32px;
+}
+
+/* line 1766, resources/assets/styles/integrations/_complianz.scss */
+
+#cmplz-cookies-overview .cmplz-service-header .marker svg {
+  height: 24px;
+  width: 24px;
+  -webkit-transform: rotate(-90deg);
+       -o-transform: rotate(-90deg);
+          transform: rotate(-90deg);
+  -webkit-transition: all .3s;
+  -o-transition: all .3s;
+  transition: all .3s;
+}
+
+/* line 1774, resources/assets/styles/integrations/_complianz.scss */
+
+#cmplz-cookies-overview .cmplz-service-header .purpose {
+  margin-left: auto;
+  margin-bottom: 0;
+  line-height: 1;
+}
+
+/* line 1781, resources/assets/styles/integrations/_complianz.scss */
+
+#cmplz-cookies-overview .cmplz-service-header .cmplz-title-wrap > * {
+  font-size: fontsize-heading("s");
+  -webkit-box-flex: 2;
+      -ms-flex-positive: 2;
+          flex-grow: 2;
+  margin-bottom: 0;
+  line-height: 1;
+}
+
+/* line 1798, resources/assets/styles/integrations/_complianz.scss */
+
+#cmplz-cookies-overview .cookies-per-purpose__row {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+/* line 1802, resources/assets/styles/integrations/_complianz.scss */
+
+#cmplz-cookies-overview .cookies-per-purpose__row .name-header,
+#cmplz-cookies-overview .cookies-per-purpose__row .retention-header,
+#cmplz-cookies-overview .cookies-per-purpose__row .function-header {
+  border-top: var(--default-border);
+  padding-top: spacing(s);
+  width: 100%;
+}
+
+/* line 1809, resources/assets/styles/integrations/_complianz.scss */
+
+#cmplz-cookies-overview .cookies-per-purpose__row .name-header h5,
+#cmplz-cookies-overview .cookies-per-purpose__row .retention-header h5,
+#cmplz-cookies-overview .cookies-per-purpose__row .function-header h5 {
+  margin-bottom: 0;
+}
+
+/* line 1814, resources/assets/styles/integrations/_complianz.scss */
+
+#cmplz-cookies-overview .cookies-per-purpose__row .name,
+#cmplz-cookies-overview .cookies-per-purpose__row .retention,
+#cmplz-cookies-overview .cookies-per-purpose__row .function {
+  width: 100%;
+  margin-bottom: spacing(s);
+}
+
+@media only screen and (min-device-width: var(--breakpoint-m)) {
+  /* line 1822, resources/assets/styles/integrations/_complianz.scss */
+
+  #cmplz-cookies-overview .cookies-per-purpose__row .name-header,
+  #cmplz-cookies-overview .cookies-per-purpose__row .retention-header,
+  #cmplz-cookies-overview .cookies-per-purpose__row .function-header {
+    width: 3333%;
+    -webkit-box-ordinal-group: 2;
+        -ms-flex-order: 1;
+            order: 1;
+  }
+
+  /* line 1829, resources/assets/styles/integrations/_complianz.scss */
+
+  #cmplz-cookies-overview .cookies-per-purpose__row .name,
+  #cmplz-cookies-overview .cookies-per-purpose__row .retention,
+  #cmplz-cookies-overview .cookies-per-purpose__row .function {
+    width: 3333%;
+    -webkit-box-ordinal-group: 3;
+        -ms-flex-order: 2;
+            order: 2;
+  }
+}
+
+/* line 1845, resources/assets/styles/integrations/_complianz.scss */
+
+.privacy-statement .dropdown-privacy-statement summary {
+  border-top: var(--default-border);
+  display: block;
+  margin-top: spacing(s);
+  padding-top: spacing(s);
+  padding-bottom: spacing(s);
+}
+
+/* line 1852, resources/assets/styles/integrations/_complianz.scss */
+
+.privacy-statement .dropdown-privacy-statement summary h3 {
+  font-size: fontsize-heading("s");
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+/* End 6.0 Migration */
+
 
 /*# sourceMappingURL=main.css.map*/
