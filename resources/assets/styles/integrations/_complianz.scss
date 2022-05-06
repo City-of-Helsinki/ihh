@@ -928,6 +928,10 @@ body #cmplz-cookiebanner-container .cmplz-cookiebanner {
 		flex-wrap: wrap;
 	}
 
+	.cmplz-close {
+		display: none;
+	}
+
 	.cc-message {
 		display: block;
 		margin: 0;
@@ -1011,6 +1015,7 @@ body #cmplz-cookiebanner-container .cmplz-cookiebanner {
 		width: 100%;
 
 		.cmplz-btn {
+			border-radius: 0;
 			flex: 1;
 			width: 100%;
 		}
@@ -1098,12 +1103,13 @@ body #cmplz-cookiebanner-container .cmplz-cookiebanner {
 		}
 
 		&.cmplz-accept {
+			color: var(--color-black);
 		}
 
 		&.cmplz-accept {
 			background-color: var(--color-white) !important;
 			border-color: var(--color-white) !important;
-			color: var(--color-bus-dark) !important;
+			color: var(--color-black) !important;
 
 			&:focus,
 			&:hover {
@@ -1343,6 +1349,10 @@ body .cc-revoke {
 
 #cmplz-cookiebanner-container .cmplz-cookiebanner,
 #cmplz-manage-consent-container.cmplz-manage-consent-container {
+	.cmplz-message {
+		color: var(--color-white);
+		font-size: large;
+	}
 
 	.cmplz-square-checkbox {
 
