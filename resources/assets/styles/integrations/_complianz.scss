@@ -10,6 +10,7 @@
   --color-black: #000000;
   --color-bus: #0000bf;
   --color-silver-light: #f7f7f8;
+	--color-copper: #00d7a7;
 
   --default-border: 0px;
   --default-border-radius: 0px;
@@ -240,6 +241,7 @@ body .cc-revoke {
 
 .cmplz-cookiebanner {
 	border-radius: 0 !important;
+	padding-bottom: 2em;
 }
 
 .cmplz-link {
@@ -525,11 +527,11 @@ body .cc-revoke {
 		input {
 			&:checked {
 				+ .cmplz-slider {
-					background-color: var(--primary-color) !important;
+					background-color: var(--color-copper) !important;
 					outline: none;
 
 					&:before {
-						background-color: var(--primary-content-color) !important;
+						background-color: var(--color-copper) !important;
 						transform: translateX(17px);
 						-webkit-mask-image: url(data:image/svg+xml;base64,PHN2ZyBjbGFzcz0iSWNvbi1tb2R1bGVfaWNvbl9fMUp0emogaWNvbl9oZHMtaWNvbl9fMVlxTkMgSWNvbi1tb2R1bGVfbV9fM2VkVVkgaWNvbl9oZHMtaWNvbi0tc2l6ZS1tX18xbWNIdiIgdmlld0JveD0iMCAwIDI0IDI0IiBhcmlhLWhpZGRlbj0idHJ1ZSIgcm9sZT0iaW1nIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxnIGZpbGw9Im5vbmUiIGZpbGwtcnVsZT0iZXZlbm9kZCI+PHJlY3Qgd2lkdGg9IjI0IiBoZWlnaHQ9IjI0Ij48L3JlY3Q+PHBhdGggZmlsbD0iY3VycmVudENvbG9yIiBkPSJNMTIsMyBDNy4wMjk0MzcyNSwzIDMsNy4wMjk0MzcyNSAzLDEyIEMzLDE2Ljk3MDU2MjcgNy4wMjk0MzcyNSwyMSAxMiwyMSBDMTYuOTcwNTYyNywyMSAyMSwxNi45NzA1NjI3IDIxLDEyIEMyMSw3LjAyOTQzNzI1IDE2Ljk3MDU2MjcsMyAxMiwzIFogTTE2LjUsOCBMMTgsOS41IEwxMC41LDE3IEw2LDEyLjUgTDcuNSwxMSBMMTAuNSwxNCBMMTYuNSw4IFoiPjwvcGF0aD48L2c+PC9zdmc+);
 					}
@@ -1489,7 +1491,7 @@ body .cc-revoke {
 					outline: none;
 
 					&:before {
-						background-color: var(--primary-content-color) !important;
+						background-color: var(--color-copper) !important;
 						transform: translateX(17px);
 						-webkit-mask-image: url(data:image/svg+xml;base64,PHN2ZyBjbGFzcz0iSWNvbi1tb2R1bGVfaWNvbl9fMUp0emogaWNvbl9oZHMtaWNvbl9fMVlxTkMgSWNvbi1tb2R1bGVfbV9fM2VkVVkgaWNvbl9oZHMtaWNvbi0tc2l6ZS1tX18xbWNIdiIgdmlld0JveD0iMCAwIDI0IDI0IiBhcmlhLWhpZGRlbj0idHJ1ZSIgcm9sZT0iaW1nIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxnIGZpbGw9Im5vbmUiIGZpbGwtcnVsZT0iZXZlbm9kZCI+PHJlY3Qgd2lkdGg9IjI0IiBoZWlnaHQ9IjI0Ij48L3JlY3Q+PHBhdGggZmlsbD0iY3VycmVudENvbG9yIiBkPSJNMTIsMyBDNy4wMjk0MzcyNSwzIDMsNy4wMjk0MzcyNSAzLDEyIEMzLDE2Ljk3MDU2MjcgNy4wMjk0MzcyNSwyMSAxMiwyMSBDMTYuOTcwNTYyNywyMSAyMSwxNi45NzA1NjI3IDIxLDEyIEMyMSw3LjAyOTQzNzI1IDE2Ljk3MDU2MjcsMyAxMiwzIFogTTE2LjUsOCBMMTgsOS41IEwxMC41LDE3IEw2LDEyLjUgTDcuNSwxMSBMMTAuNSwxNCBMMTYuNSw4IFoiPjwvcGF0aD48L2c+PC9zdmc+);
 					}
@@ -1667,6 +1669,11 @@ body .cc-revoke {
 	background-color: rgba(var(--color-black), 0.7);
 	z-index: 9999;
 }
+
+.cmplz-slider-checkbox.input:checked+.cmplz-slider {
+	background-color: #00d7a7;
+}
+
 // .cmplz-soft-cookiewall
 
 .cmplz-document {
