@@ -193,7 +193,7 @@ body #cc-window.cc-window {
 
 .cookie-notice {
 	p {
-		width: max-content;
+		width: fit-content;
 	}
 }
 
@@ -1031,9 +1031,13 @@ body #cmplz-cookiebanner-container .cmplz-cookiebanner {
 	}
 
 	.cmplz-buttons {
+		justify-content: end;
 		gap: 10px;
 		button {
 			transition: all .3s;
+		}
+		.cmplz-btn {
+			max-width: 250px;
 		}
 	}
 

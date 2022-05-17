@@ -22159,9 +22159,9 @@ body #cc-window.cc-window .cc-btn.cc-accept-all:hover {
 /* line 195, resources/assets/styles/integrations/_complianz.scss */
 
 .cookie-notice p {
-  width: -webkit-max-content;
-  width: -moz-max-content;
-  width: max-content;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
 }
 
 /* line 200, resources/assets/styles/integrations/_complianz.scss */
@@ -23247,10 +23247,13 @@ body #cmplz-cookiebanner-container .cmplz-cookiebanner .cmplz-divider {
 /* line 1033, resources/assets/styles/integrations/_complianz.scss */
 
 body #cmplz-cookiebanner-container .cmplz-cookiebanner .cmplz-buttons {
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: end;
   gap: 10px;
 }
 
-/* line 1035, resources/assets/styles/integrations/_complianz.scss */
+/* line 1036, resources/assets/styles/integrations/_complianz.scss */
 
 body #cmplz-cookiebanner-container .cmplz-cookiebanner .cmplz-buttons button {
   -webkit-transition: all .3s;
@@ -23258,7 +23261,13 @@ body #cmplz-cookiebanner-container .cmplz-cookiebanner .cmplz-buttons button {
   transition: all .3s;
 }
 
-/* line 1040, resources/assets/styles/integrations/_complianz.scss */
+/* line 1039, resources/assets/styles/integrations/_complianz.scss */
+
+body #cmplz-cookiebanner-container .cmplz-cookiebanner .cmplz-buttons .cmplz-btn {
+  max-width: 250px;
+}
+
+/* line 1044, resources/assets/styles/integrations/_complianz.scss */
 
 body #cmplz-cookiebanner-container .cmplz-cookiebanner .cc-compliance {
   -webkit-box-orient: vertical;
@@ -23268,7 +23277,7 @@ body #cmplz-cookiebanner-container .cmplz-cookiebanner .cc-compliance {
   width: 100%;
 }
 
-/* line 1044, resources/assets/styles/integrations/_complianz.scss */
+/* line 1048, resources/assets/styles/integrations/_complianz.scss */
 
 body #cmplz-cookiebanner-container .cmplz-cookiebanner .cc-compliance .cmplz-btn {
   border-radius: 0;
@@ -23279,7 +23288,7 @@ body #cmplz-cookiebanner-container .cmplz-cookiebanner .cc-compliance .cmplz-btn
 }
 
 @media only screen and (min-device-width: var(--breakpoint-s)) {
-  /* line 1040, resources/assets/styles/integrations/_complianz.scss */
+  /* line 1044, resources/assets/styles/integrations/_complianz.scss */
 
   body #cmplz-cookiebanner-container .cmplz-cookiebanner .cc-compliance {
     -webkit-box-orient: horizontal;
@@ -23288,14 +23297,14 @@ body #cmplz-cookiebanner-container .cmplz-cookiebanner .cc-compliance .cmplz-btn
             flex-direction: row;
   }
 
-  /* line 1053, resources/assets/styles/integrations/_complianz.scss */
+  /* line 1057, resources/assets/styles/integrations/_complianz.scss */
 
   body #cmplz-cookiebanner-container .cmplz-cookiebanner .cc-compliance .cmplz-btn {
     margin-bottom: 0;
     width: auto;
   }
 
-  /* line 1057, resources/assets/styles/integrations/_complianz.scss */
+  /* line 1061, resources/assets/styles/integrations/_complianz.scss */
 
   body #cmplz-cookiebanner-container .cmplz-cookiebanner .cc-compliance .cmplz-btn + .cmplz-btn {
     margin-left: spacing(layout-2-xs);
@@ -23303,7 +23312,7 @@ body #cmplz-cookiebanner-container .cmplz-cookiebanner .cc-compliance .cmplz-btn
 }
 
 @media only screen and (min-device-width: var(--breakpoint-l)) {
-  /* line 1040, resources/assets/styles/integrations/_complianz.scss */
+  /* line 1044, resources/assets/styles/integrations/_complianz.scss */
 
   body #cmplz-cookiebanner-container .cmplz-cookiebanner .cc-compliance {
     -webkit-box-pack: right;
@@ -23313,19 +23322,19 @@ body #cmplz-cookiebanner-container .cmplz-cookiebanner .cc-compliance .cmplz-btn
   }
 }
 
-/* line 1069, resources/assets/styles/integrations/_complianz.scss */
+/* line 1073, resources/assets/styles/integrations/_complianz.scss */
 
 body #cmplz-cookiebanner-container .cmplz-cookiebanner.cc-invisible {
   opacity: 0;
 }
 
-/* line 1073, resources/assets/styles/integrations/_complianz.scss */
+/* line 1077, resources/assets/styles/integrations/_complianz.scss */
 
 body #cmplz-cookiebanner-container .cmplz-cookiebanner.cmplz-dismissed {
   display: none;
 }
 
-/* line 1101, resources/assets/styles/integrations/_complianz.scss */
+/* line 1105, resources/assets/styles/integrations/_complianz.scss */
 
 body #cmplz-cookiebanner-container .cmplz-cookiebanner .cmplz-links {
   width: 100%;
@@ -23335,13 +23344,13 @@ body #cmplz-cookiebanner-container .cmplz-cookiebanner .cmplz-links {
   margin-bottom: 32px;
 }
 
-/* line 1107, resources/assets/styles/integrations/_complianz.scss */
+/* line 1111, resources/assets/styles/integrations/_complianz.scss */
 
 body #cmplz-cookiebanner-container .cmplz-cookiebanner .cmplz-links a:hover {
   text-decoration: none;
 }
 
-/* line 1113, resources/assets/styles/integrations/_complianz.scss */
+/* line 1117, resources/assets/styles/integrations/_complianz.scss */
 
 body #cmplz-cookiebanner-container .cmplz-cookiebanner .cmplz-btn {
   background-color: var(--color-bus) !important;
@@ -23356,7 +23365,7 @@ body #cmplz-cookiebanner-container .cmplz-cookiebanner .cmplz-btn {
   white-space: nowrap;
 }
 
-/* line 1125, resources/assets/styles/integrations/_complianz.scss */
+/* line 1129, resources/assets/styles/integrations/_complianz.scss */
 
 body #cmplz-cookiebanner-container .cmplz-cookiebanner .cmplz-btn:focus,
 body #cmplz-cookiebanner-container .cmplz-cookiebanner .cmplz-btn:hover {
@@ -23365,13 +23374,13 @@ body #cmplz-cookiebanner-container .cmplz-cookiebanner .cmplz-btn:hover {
   color: var(--color-white) !important;
 }
 
-/* line 1132, resources/assets/styles/integrations/_complianz.scss */
+/* line 1136, resources/assets/styles/integrations/_complianz.scss */
 
 body #cmplz-cookiebanner-container .cmplz-cookiebanner .cmplz-btn.cmplz-accept {
   color: var(--color-black);
 }
 
-/* line 1136, resources/assets/styles/integrations/_complianz.scss */
+/* line 1140, resources/assets/styles/integrations/_complianz.scss */
 
 body #cmplz-cookiebanner-container .cmplz-cookiebanner .cmplz-btn.cmplz-accept {
   background-color: var(--color-white) !important;
@@ -23379,7 +23388,7 @@ body #cmplz-cookiebanner-container .cmplz-cookiebanner .cmplz-btn.cmplz-accept {
   color: var(--color-black) !important;
 }
 
-/* line 1141, resources/assets/styles/integrations/_complianz.scss */
+/* line 1145, resources/assets/styles/integrations/_complianz.scss */
 
 body #cmplz-cookiebanner-container .cmplz-cookiebanner .cmplz-btn.cmplz-accept:focus,
 body #cmplz-cookiebanner-container .cmplz-cookiebanner .cmplz-btn.cmplz-accept:hover {
@@ -23388,7 +23397,7 @@ body #cmplz-cookiebanner-container .cmplz-cookiebanner .cmplz-btn.cmplz-accept:h
   color: var(--color-white) !important;
 }
 
-/* line 1157, resources/assets/styles/integrations/_complianz.scss */
+/* line 1161, resources/assets/styles/integrations/_complianz.scss */
 
 body .cc-revoke {
   display: none !important;
@@ -23409,7 +23418,7 @@ body .cc-revoke {
   padding: spacing(2-xs) spacing(s);
 }
 
-/* line 1171, resources/assets/styles/integrations/_complianz.scss */
+/* line 1175, resources/assets/styles/integrations/_complianz.scss */
 
 body .cc-revoke:focus,
 body .cc-revoke:hover {
@@ -23417,42 +23426,42 @@ body .cc-revoke:hover {
 }
 
 @media screen and (max-width: 768px) {
-  /* line 1157, resources/assets/styles/integrations/_complianz.scss */
+  /* line 1161, resources/assets/styles/integrations/_complianz.scss */
 
   body .cc-revoke {
     display: none !important;
   }
 }
 
-/* line 1180, resources/assets/styles/integrations/_complianz.scss */
+/* line 1184, resources/assets/styles/integrations/_complianz.scss */
 
 body .cc-revoke.cc-top {
   top: 0;
   left: spacing(s);
 }
 
-/* line 1185, resources/assets/styles/integrations/_complianz.scss */
+/* line 1189, resources/assets/styles/integrations/_complianz.scss */
 
 body .cc-revoke.cc-bottom {
   bottom: 0;
   left: spacing(s);
 }
 
-/* line 1190, resources/assets/styles/integrations/_complianz.scss */
+/* line 1194, resources/assets/styles/integrations/_complianz.scss */
 
 body .cc-revoke.cc-left {
   left: spacing(s);
   right: unset;
 }
 
-/* line 1195, resources/assets/styles/integrations/_complianz.scss */
+/* line 1199, resources/assets/styles/integrations/_complianz.scss */
 
 body .cc-revoke.cc-right {
   right: spacing(s);
   left: unset;
 }
 
-/* line 1204, resources/assets/styles/integrations/_complianz.scss */
+/* line 1208, resources/assets/styles/integrations/_complianz.scss */
 
 .cc-animate.cc-revoke {
   -webkit-transition: -webkit-transform 1s ease;
@@ -23462,7 +23471,7 @@ body .cc-revoke.cc-right {
   transition: transform 1s ease, -webkit-transform 1s ease, -o-transform 1s ease;
 }
 
-/* line 1222, resources/assets/styles/integrations/_complianz.scss */
+/* line 1226, resources/assets/styles/integrations/_complianz.scss */
 
 .cc-grower {
   max-height: 0;
@@ -23472,7 +23481,7 @@ body .cc-revoke.cc-right {
   transition: max-height 1s;
 }
 
-/* line 1229, resources/assets/styles/integrations/_complianz.scss */
+/* line 1233, resources/assets/styles/integrations/_complianz.scss */
 
 .cmplz-link {
   cursor: pointer;
@@ -23480,28 +23489,28 @@ body .cc-revoke.cc-right {
   display: inline-block;
 }
 
-/* line 1234, resources/assets/styles/integrations/_complianz.scss */
+/* line 1238, resources/assets/styles/integrations/_complianz.scss */
 
 .cmplz-link:focus,
 .cmplz-link:hover {
   color: var(--color-bus-dark);
 }
 
-/* line 1239, resources/assets/styles/integrations/_complianz.scss */
+/* line 1243, resources/assets/styles/integrations/_complianz.scss */
 
 .cmplz-link:active,
 .cmplz-link:visited {
   color: initial;
 }
 
-/* line 1246, resources/assets/styles/integrations/_complianz.scss */
+/* line 1250, resources/assets/styles/integrations/_complianz.scss */
 
 .cc-header {
   font-size: 18px;
   font-weight: 700;
 }
 
-/* line 1252, resources/assets/styles/integrations/_complianz.scss */
+/* line 1256, resources/assets/styles/integrations/_complianz.scss */
 
 .cc-close {
   cursor: pointer;
@@ -23512,38 +23521,38 @@ body .cc-revoke.cc-right {
   opacity: 0.9;
 }
 
-/* line 1260, resources/assets/styles/integrations/_complianz.scss */
+/* line 1264, resources/assets/styles/integrations/_complianz.scss */
 
 .cc-close:focus,
 .cc-close:hover {
   opacity: 1;
 }
 
-/* line 1274, resources/assets/styles/integrations/_complianz.scss */
+/* line 1278, resources/assets/styles/integrations/_complianz.scss */
 
 .cc-top {
   top: 0;
 }
 
-/* line 1279, resources/assets/styles/integrations/_complianz.scss */
+/* line 1283, resources/assets/styles/integrations/_complianz.scss */
 
 .cc-left {
   left: 0;
 }
 
-/* line 1284, resources/assets/styles/integrations/_complianz.scss */
+/* line 1288, resources/assets/styles/integrations/_complianz.scss */
 
 .cc-right {
   right: 0;
 }
 
-/* line 1289, resources/assets/styles/integrations/_complianz.scss */
+/* line 1293, resources/assets/styles/integrations/_complianz.scss */
 
 .cc-bottom {
   bottom: 0;
 }
 
-/* line 1295, resources/assets/styles/integrations/_complianz.scss */
+/* line 1299, resources/assets/styles/integrations/_complianz.scss */
 
 .cc-center.cc-revoke {
   bottom: 0;
@@ -23552,7 +23561,7 @@ body .cc-revoke.cc-right {
   border-top-right-radius: var(--default-border-radius);
 }
 
-/* line 1315, resources/assets/styles/integrations/_complianz.scss */
+/* line 1319, resources/assets/styles/integrations/_complianz.scss */
 
 .cookie-categories-wrap {
   display: -webkit-box;
@@ -23564,7 +23573,7 @@ body .cc-revoke.cc-right {
   width: 100%;
 }
 
-/* line 1323, resources/assets/styles/integrations/_complianz.scss */
+/* line 1327, resources/assets/styles/integrations/_complianz.scss */
 
 .cc-banner.cc-top {
   left: 0;
@@ -23572,7 +23581,7 @@ body .cc-revoke.cc-right {
   top: 0;
 }
 
-/* line 1329, resources/assets/styles/integrations/_complianz.scss */
+/* line 1333, resources/assets/styles/integrations/_complianz.scss */
 
 .cc-banner.cc-bottom {
   left: 0;
@@ -23580,7 +23589,7 @@ body .cc-revoke.cc-right {
   bottom: 0;
 }
 
-/* line 1335, resources/assets/styles/integrations/_complianz.scss */
+/* line 1339, resources/assets/styles/integrations/_complianz.scss */
 
 .cc-banner .cc-message {
   display: block;
@@ -23591,7 +23600,7 @@ body .cc-revoke.cc-right {
   margin-right: spacing(s);
 }
 
-/* line 1344, resources/assets/styles/integrations/_complianz.scss */
+/* line 1348, resources/assets/styles/integrations/_complianz.scss */
 
 .cc-compliance {
   display: -webkit-box;
@@ -23605,7 +23614,7 @@ body .cc-revoke.cc-right {
 }
 
 @media print {
-  /* line 1352, resources/assets/styles/integrations/_complianz.scss */
+  /* line 1356, resources/assets/styles/integrations/_complianz.scss */
 
   .cc-revoke,
   .cc-window {
@@ -23613,7 +23622,7 @@ body .cc-revoke.cc-right {
   }
 }
 
-/* line 1358, resources/assets/styles/integrations/_complianz.scss */
+/* line 1362, resources/assets/styles/integrations/_complianz.scss */
 
 #cc-window input[type="checkbox"],
 #cmplz-manage-consent-container input[type="checkbox"] {
@@ -23621,7 +23630,7 @@ body .cc-revoke.cc-right {
   -webkit-appearance: checkbox;
 }
 
-/* line 1364, resources/assets/styles/integrations/_complianz.scss */
+/* line 1368, resources/assets/styles/integrations/_complianz.scss */
 
 #cc-window input[type="checkbox"]:checked::before,
 #cmplz-manage-consent-container input[type="checkbox"]:checked::before {
@@ -23633,13 +23642,13 @@ body .cc-revoke.cc-right {
 * prevent overriding by script by using !important
 */
 
-/* line 1373, resources/assets/styles/integrations/_complianz.scss */
+/* line 1377, resources/assets/styles/integrations/_complianz.scss */
 
 .cc-hidden {
   display: none !important;
 }
 
-/* line 1379, resources/assets/styles/integrations/_complianz.scss */
+/* line 1383, resources/assets/styles/integrations/_complianz.scss */
 
 #cmplz-cookiebanner-container .cmplz-cookiebanner .cmplz-message,
 #cmplz-manage-consent-container.cmplz-manage-consent-container .cmplz-message {
@@ -23647,7 +23656,7 @@ body .cc-revoke.cc-right {
   font-size: 20px;
 }
 
-/* line 1389, resources/assets/styles/integrations/_complianz.scss */
+/* line 1393, resources/assets/styles/integrations/_complianz.scss */
 
 #cmplz-cookiebanner-container .cmplz-cookiebanner .cmplz-square-checkbox:checked + .cc-check svg path,
 #cmplz-manage-consent-container.cmplz-manage-consent-container .cmplz-square-checkbox:checked + .cc-check svg path {
@@ -23657,7 +23666,7 @@ body .cc-revoke.cc-right {
   transition: all 0.3s linear;
 }
 
-/* line 1394, resources/assets/styles/integrations/_complianz.scss */
+/* line 1398, resources/assets/styles/integrations/_complianz.scss */
 
 #cmplz-cookiebanner-container .cmplz-cookiebanner .cmplz-square-checkbox:checked + .cc-check svg polyline,
 #cmplz-manage-consent-container.cmplz-manage-consent-container .cmplz-square-checkbox:checked + .cc-check svg polyline {
@@ -23670,14 +23679,14 @@ body .cc-revoke.cc-right {
           transition-delay: 0.15s;
 }
 
-/* line 1405, resources/assets/styles/integrations/_complianz.scss */
+/* line 1409, resources/assets/styles/integrations/_complianz.scss */
 
 #cmplz-cookiebanner-container .cmplz-cookiebanner .cmplz-square-checkbox:focus + .cc-check svg,
 #cmplz-manage-consent-container.cmplz-manage-consent-container .cmplz-square-checkbox:focus + .cc-check svg {
   outline: -webkit-focus-ring-color auto 1px;
 }
 
-/* line 1412, resources/assets/styles/integrations/_complianz.scss */
+/* line 1416, resources/assets/styles/integrations/_complianz.scss */
 
 #cmplz-cookiebanner-container .cmplz-cookiebanner input.cmplz-svg-checkbox,
 #cmplz-cookiebanner-container .cmplz-cookiebanner .cmplz-slider-checkbox input,
@@ -23688,7 +23697,7 @@ body .cc-revoke.cc-right {
   height: 0 !important;
 }
 
-/* line 1419, resources/assets/styles/integrations/_complianz.scss */
+/* line 1423, resources/assets/styles/integrations/_complianz.scss */
 
 #cmplz-cookiebanner-container .cmplz-cookiebanner .cmplz-slider-checkbox,
 #cmplz-manage-consent-container.cmplz-manage-consent-container .cmplz-slider-checkbox {
@@ -23698,7 +23707,7 @@ body .cc-revoke.cc-right {
   height: 21px;
 }
 
-/* line 1425, resources/assets/styles/integrations/_complianz.scss */
+/* line 1429, resources/assets/styles/integrations/_complianz.scss */
 
 #cmplz-cookiebanner-container .cmplz-cookiebanner .cmplz-slider-checkbox .cmplz-slider,
 #cmplz-manage-consent-container.cmplz-manage-consent-container .cmplz-slider-checkbox .cmplz-slider {
@@ -23715,7 +23724,7 @@ body .cc-revoke.cc-right {
   outline: var(--color-black) solid 1px;
 }
 
-/* line 1436, resources/assets/styles/integrations/_complianz.scss */
+/* line 1440, resources/assets/styles/integrations/_complianz.scss */
 
 #cmplz-cookiebanner-container .cmplz-cookiebanner .cmplz-slider-checkbox .cmplz-slider:before,
 #cmplz-manage-consent-container.cmplz-manage-consent-container .cmplz-slider-checkbox .cmplz-slider:before {
@@ -23734,7 +23743,7 @@ body .cc-revoke.cc-right {
   transition: 0.4s;
 }
 
-/* line 1450, resources/assets/styles/integrations/_complianz.scss */
+/* line 1454, resources/assets/styles/integrations/_complianz.scss */
 
 #cmplz-cookiebanner-container .cmplz-cookiebanner .cmplz-slider-checkbox .cmplz-slider:after,
 #cmplz-manage-consent-container.cmplz-manage-consent-container .cmplz-slider-checkbox .cmplz-slider:after {
@@ -23748,21 +23757,21 @@ body .cc-revoke.cc-right {
   bottom: -5px;
 }
 
-/* line 1462, resources/assets/styles/integrations/_complianz.scss */
+/* line 1466, resources/assets/styles/integrations/_complianz.scss */
 
 #cmplz-cookiebanner-container .cmplz-cookiebanner .cmplz-slider-checkbox .cmplz-slider.cmplz-round,
 #cmplz-manage-consent-container.cmplz-manage-consent-container .cmplz-slider-checkbox .cmplz-slider.cmplz-round {
   border-radius: 20px;
 }
 
-/* line 1465, resources/assets/styles/integrations/_complianz.scss */
+/* line 1469, resources/assets/styles/integrations/_complianz.scss */
 
 #cmplz-cookiebanner-container .cmplz-cookiebanner .cmplz-slider-checkbox .cmplz-slider.cmplz-round:before,
 #cmplz-manage-consent-container.cmplz-manage-consent-container .cmplz-slider-checkbox .cmplz-slider.cmplz-round:before {
   border-radius: 20px;
 }
 
-/* line 1471, resources/assets/styles/integrations/_complianz.scss */
+/* line 1475, resources/assets/styles/integrations/_complianz.scss */
 
 #cmplz-cookiebanner-container .cmplz-cookiebanner .cmplz-slider-checkbox .cmplz-slider-na,
 #cmplz-manage-consent-container.cmplz-manage-consent-container .cmplz-slider-checkbox .cmplz-slider-na {
@@ -23777,7 +23786,7 @@ body .cc-revoke.cc-right {
   transition: 0.4s;
 }
 
-/* line 1480, resources/assets/styles/integrations/_complianz.scss */
+/* line 1484, resources/assets/styles/integrations/_complianz.scss */
 
 #cmplz-cookiebanner-container .cmplz-cookiebanner .cmplz-slider-checkbox .cmplz-slider-na:before,
 #cmplz-manage-consent-container.cmplz-manage-consent-container .cmplz-slider-checkbox .cmplz-slider-na:before {
@@ -23786,7 +23795,7 @@ body .cc-revoke.cc-right {
   color: var(--color-white);
 }
 
-/* line 1489, resources/assets/styles/integrations/_complianz.scss */
+/* line 1493, resources/assets/styles/integrations/_complianz.scss */
 
 #cmplz-cookiebanner-container .cmplz-cookiebanner .cmplz-slider-checkbox input:checked + .cmplz-slider,
 #cmplz-manage-consent-container.cmplz-manage-consent-container .cmplz-slider-checkbox input:checked + .cmplz-slider {
@@ -23794,7 +23803,7 @@ body .cc-revoke.cc-right {
   outline: none;
 }
 
-/* line 1493, resources/assets/styles/integrations/_complianz.scss */
+/* line 1497, resources/assets/styles/integrations/_complianz.scss */
 
 #cmplz-cookiebanner-container .cmplz-cookiebanner .cmplz-slider-checkbox input:checked + .cmplz-slider:before,
 #cmplz-manage-consent-container.cmplz-manage-consent-container .cmplz-slider-checkbox input:checked + .cmplz-slider:before {
@@ -23805,7 +23814,7 @@ body .cc-revoke.cc-right {
   -webkit-mask-image: url(data:image/svg+xml;base64,PHN2ZyBjbGFzcz0iSWNvbi1tb2R1bGVfaWNvbl9fMUp0emogaWNvbl9oZHMtaWNvbl9fMVlxTkMgSWNvbi1tb2R1bGVfbV9fM2VkVVkgaWNvbl9oZHMtaWNvbi0tc2l6ZS1tX18xbWNIdiIgdmlld0JveD0iMCAwIDI0IDI0IiBhcmlhLWhpZGRlbj0idHJ1ZSIgcm9sZT0iaW1nIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxnIGZpbGw9Im5vbmUiIGZpbGwtcnVsZT0iZXZlbm9kZCI+PHJlY3Qgd2lkdGg9IjI0IiBoZWlnaHQ9IjI0Ij48L3JlY3Q+PHBhdGggZmlsbD0iY3VycmVudENvbG9yIiBkPSJNMTIsMyBDNy4wMjk0MzcyNSwzIDMsNy4wMjk0MzcyNSAzLDEyIEMzLDE2Ljk3MDU2MjcgNy4wMjk0MzcyNSwyMSAxMiwyMSBDMTYuOTcwNTYyNywyMSAyMSwxNi45NzA1NjI3IDIxLDEyIEMyMSw3LjAyOTQzNzI1IDE2Ljk3MDU2MjcsMyAxMiwzIFogTTE2LjUsOCBMMTgsOS41IEwxMC41LDE3IEw2LDEyLjUgTDcuNSwxMSBMMTAuNSwxNCBMMTYuNSw4IFoiPjwvcGF0aD48L2c+PC9zdmc+);
 }
 
-/* line 1503, resources/assets/styles/integrations/_complianz.scss */
+/* line 1507, resources/assets/styles/integrations/_complianz.scss */
 
 #cmplz-cookiebanner-container .cmplz-cookiebanner .cmplz-slider-checkbox input[type="checkbox"]:focus + .cmplz-slider:after,
 #cmplz-manage-consent-container.cmplz-manage-consent-container .cmplz-slider-checkbox input[type="checkbox"]:focus + .cmplz-slider:after {
@@ -23814,7 +23823,7 @@ body .cc-revoke.cc-right {
   border: 3px solid var(--color-coat-of-arms);
 }
 
-/* line 1513, resources/assets/styles/integrations/_complianz.scss */
+/* line 1517, resources/assets/styles/integrations/_complianz.scss */
 
 #cmplz-cookiebanner-container .cmplz-cookiebanner label,
 #cmplz-manage-consent-container.cmplz-manage-consent-container label {
@@ -23826,7 +23835,7 @@ body .cc-revoke.cc-right {
           box-sizing: initial;
 }
 
-/* line 1520, resources/assets/styles/integrations/_complianz.scss */
+/* line 1524, resources/assets/styles/integrations/_complianz.scss */
 
 #cmplz-cookiebanner-container .cmplz-cookiebanner label:not(.cc-check),
 #cmplz-manage-consent-container.cmplz-manage-consent-container label:not(.cc-check) {
@@ -23836,7 +23845,7 @@ body .cc-revoke.cc-right {
   padding-left: 0;
 }
 
-/* line 1529, resources/assets/styles/integrations/_complianz.scss */
+/* line 1533, resources/assets/styles/integrations/_complianz.scss */
 
 #cmplz-cookiebanner-container .cmplz-cookiebanner div.cc-check,
 #cmplz-manage-consent-container.cmplz-manage-consent-container div.cc-check {
@@ -23844,7 +23853,7 @@ body .cc-revoke.cc-right {
   padding-bottom: 10px;
 }
 
-/* line 1535, resources/assets/styles/integrations/_complianz.scss */
+/* line 1539, resources/assets/styles/integrations/_complianz.scss */
 
 #cmplz-cookiebanner-container .cmplz-cookiebanner .cc-check,
 #cmplz-manage-consent-container.cmplz-manage-consent-container .cc-check {
@@ -23859,7 +23868,7 @@ body .cc-revoke.cc-right {
   -webkit-tap-highlight-color: transparent;
 }
 
-/* line 1545, resources/assets/styles/integrations/_complianz.scss */
+/* line 1549, resources/assets/styles/integrations/_complianz.scss */
 
 #cmplz-cookiebanner-container .cmplz-cookiebanner .cc-check svg,
 #cmplz-manage-consent-container.cmplz-manage-consent-container .cc-check svg {
@@ -23878,7 +23887,7 @@ body .cc-revoke.cc-right {
   stroke: #000;
 }
 
-/* line 1557, resources/assets/styles/integrations/_complianz.scss */
+/* line 1561, resources/assets/styles/integrations/_complianz.scss */
 
 #cmplz-cookiebanner-container .cmplz-cookiebanner .cc-check svg path,
 #cmplz-manage-consent-container.cmplz-manage-consent-container .cc-check svg path {
@@ -23886,7 +23895,7 @@ body .cc-revoke.cc-right {
   stroke-dashoffset: 0;
 }
 
-/* line 1562, resources/assets/styles/integrations/_complianz.scss */
+/* line 1566, resources/assets/styles/integrations/_complianz.scss */
 
 #cmplz-cookiebanner-container .cmplz-cookiebanner .cc-check svg polyline,
 #cmplz-manage-consent-container.cmplz-manage-consent-container .cc-check svg polyline {
@@ -23894,7 +23903,7 @@ body .cc-revoke.cc-right {
   stroke-dashoffset: 66;
 }
 
-/* line 1568, resources/assets/styles/integrations/_complianz.scss */
+/* line 1572, resources/assets/styles/integrations/_complianz.scss */
 
 #cmplz-cookiebanner-container .cmplz-cookiebanner .cc-check:before,
 #cmplz-manage-consent-container.cmplz-manage-consent-container .cc-check:before {
@@ -23903,21 +23912,21 @@ body .cc-revoke.cc-right {
   opacity: 0;
 }
 
-/* line 1575, resources/assets/styles/integrations/_complianz.scss */
+/* line 1579, resources/assets/styles/integrations/_complianz.scss */
 
 #cmplz-cookiebanner-container .cmplz-cookiebanner .cc-check:hover:before,
 #cmplz-manage-consent-container.cmplz-manage-consent-container .cc-check:hover:before {
   opacity: 1;
 }
 
-/* line 1583, resources/assets/styles/integrations/_complianz.scss */
+/* line 1587, resources/assets/styles/integrations/_complianz.scss */
 
 #cmplz-cookiebanner-container .cmplz-cookiebanner.cc-theme-edgeless .cmplz-categories-wrap .cmplz-classic-checkbox,
 #cmplz-manage-consent-container.cmplz-manage-consent-container.cc-theme-edgeless .cmplz-categories-wrap .cmplz-classic-checkbox {
   margin-left: 15px;
 }
 
-/* line 1591, resources/assets/styles/integrations/_complianz.scss */
+/* line 1595, resources/assets/styles/integrations/_complianz.scss */
 
 #cmplz-cookiebanner-container .cmplz-cookiebanner .cmplz-categories-wrap label,
 #cmplz-manage-consent-container.cmplz-manage-consent-container .cmplz-categories-wrap label {
@@ -23925,7 +23934,7 @@ body .cc-revoke.cc-right {
           box-sizing: initial;
 }
 
-/* line 1595, resources/assets/styles/integrations/_complianz.scss */
+/* line 1599, resources/assets/styles/integrations/_complianz.scss */
 
 #cmplz-cookiebanner-container .cmplz-cookiebanner .cmplz-categories-wrap .cc-check,
 #cmplz-manage-consent-container.cmplz-manage-consent-container .cmplz-categories-wrap .cc-check {
@@ -23937,7 +23946,7 @@ body .cc-revoke.cc-right {
   -webkit-tap-highlight-color: transparent;
 }
 
-/* line 1603, resources/assets/styles/integrations/_complianz.scss */
+/* line 1607, resources/assets/styles/integrations/_complianz.scss */
 
 #cmplz-cookiebanner-container .cmplz-cookiebanner .cmplz-categories-wrap .cc-check:before,
 #cmplz-manage-consent-container.cmplz-manage-consent-container .cmplz-categories-wrap .cc-check:before {
@@ -23946,14 +23955,14 @@ body .cc-revoke.cc-right {
   opacity: 0;
 }
 
-/* line 1610, resources/assets/styles/integrations/_complianz.scss */
+/* line 1614, resources/assets/styles/integrations/_complianz.scss */
 
 #cmplz-cookiebanner-container .cmplz-cookiebanner .cmplz-categories-wrap .cc-check:hover:before,
 #cmplz-manage-consent-container.cmplz-manage-consent-container .cmplz-categories-wrap .cc-check:hover:before {
   opacity: 1;
 }
 
-/* line 1615, resources/assets/styles/integrations/_complianz.scss */
+/* line 1619, resources/assets/styles/integrations/_complianz.scss */
 
 #cmplz-cookiebanner-container .cmplz-cookiebanner .cmplz-categories-wrap .cc-check svg,
 #cmplz-manage-consent-container.cmplz-manage-consent-container .cmplz-categories-wrap .cc-check svg {
@@ -23969,7 +23978,7 @@ body .cc-revoke.cc-right {
   stroke: #000;
 }
 
-/* line 1625, resources/assets/styles/integrations/_complianz.scss */
+/* line 1629, resources/assets/styles/integrations/_complianz.scss */
 
 #cmplz-cookiebanner-container .cmplz-cookiebanner .cmplz-categories-wrap .cc-check svg path,
 #cmplz-manage-consent-container.cmplz-manage-consent-container .cmplz-categories-wrap .cc-check svg path {
@@ -23977,7 +23986,7 @@ body .cc-revoke.cc-right {
   stroke-dashoffset: 0;
 }
 
-/* line 1630, resources/assets/styles/integrations/_complianz.scss */
+/* line 1634, resources/assets/styles/integrations/_complianz.scss */
 
 #cmplz-cookiebanner-container .cmplz-cookiebanner .cmplz-categories-wrap .cc-check svg polyline,
 #cmplz-manage-consent-container.cmplz-manage-consent-container .cmplz-categories-wrap .cc-check svg polyline {
@@ -23985,7 +23994,7 @@ body .cc-revoke.cc-right {
   stroke-dashoffset: 66;
 }
 
-/* line 1639, resources/assets/styles/integrations/_complianz.scss */
+/* line 1643, resources/assets/styles/integrations/_complianz.scss */
 
 #cmplz-cookiebanner-container .cmplz-cookiebanner .cmplz-slider-checkbox,
 #cmplz-manage-consent-container.cmplz-manage-consent-container .cmplz-slider-checkbox {
@@ -23993,20 +24002,20 @@ body .cc-revoke.cc-right {
   margin-right: spacing(s);
 }
 
-/* line 1644, resources/assets/styles/integrations/_complianz.scss */
+/* line 1648, resources/assets/styles/integrations/_complianz.scss */
 
 #cmplz-cookiebanner-container .cmplz-cookiebanner .cmplz-consent-checkbox,
 #cmplz-manage-consent-container.cmplz-manage-consent-container .cmplz-consent-checkbox {
   margin-right: 15px;
 }
 
-/* line 1651, resources/assets/styles/integrations/_complianz.scss */
+/* line 1655, resources/assets/styles/integrations/_complianz.scss */
 
 .cmplz-manage-consent-container .cmplz-categories-wrap {
   margin-bottom: spacing(s);
 }
 
-/* line 1656, resources/assets/styles/integrations/_complianz.scss */
+/* line 1660, resources/assets/styles/integrations/_complianz.scss */
 
 .cmplz-slider.cmplz-round {
   border-radius: 20px;
@@ -24014,7 +24023,7 @@ body .cc-revoke.cc-right {
 
 /* Soft Cookie wall */
 
-/* line 1661, resources/assets/styles/integrations/_complianz.scss */
+/* line 1665, resources/assets/styles/integrations/_complianz.scss */
 
 .cmplz-soft-cookiewall {
   position: fixed;
@@ -24028,31 +24037,31 @@ body .cc-revoke.cc-right {
   z-index: 9999;
 }
 
-/* line 1673, resources/assets/styles/integrations/_complianz.scss */
+/* line 1677, resources/assets/styles/integrations/_complianz.scss */
 
 .cmplz-slider-checkbox.input:checked + .cmplz-slider {
   background-color: #00d7a7;
 }
 
-/* line 1681, resources/assets/styles/integrations/_complianz.scss */
+/* line 1685, resources/assets/styles/integrations/_complianz.scss */
 
 .cmplz-document .cmplz-soft-cookiewall {
   background-color: transparent;
 }
 
-/* line 1691, resources/assets/styles/integrations/_complianz.scss */
+/* line 1695, resources/assets/styles/integrations/_complianz.scss */
 
 .cmplz-video.cmplz-hidden {
   visibility: hidden;
 }
 
-/* line 1695, resources/assets/styles/integrations/_complianz.scss */
+/* line 1699, resources/assets/styles/integrations/_complianz.scss */
 
 .cmplz-video.cmplz-iframe-styles {
   background-color: transparent;
 }
 
-/* line 1701, resources/assets/styles/integrations/_complianz.scss */
+/* line 1705, resources/assets/styles/integrations/_complianz.scss */
 
 .cmplz-blocked-content-container {
   background: var(--color-white);
@@ -24075,27 +24084,27 @@ body .cc-revoke.cc-right {
   position: relative;
 }
 
-/* line 1714, resources/assets/styles/integrations/_complianz.scss */
+/* line 1718, resources/assets/styles/integrations/_complianz.scss */
 
 .cmplz-blocked-content-container iframe {
   max-height: 100%;
   border: 0 !important;
 }
 
-/* line 1720, resources/assets/styles/integrations/_complianz.scss */
+/* line 1724, resources/assets/styles/integrations/_complianz.scss */
 
 .cmplz-blocked-content-container div div {
   display: none;
 }
 
-/* line 1725, resources/assets/styles/integrations/_complianz.scss */
+/* line 1729, resources/assets/styles/integrations/_complianz.scss */
 
 .cmplz-blocked-content-container.gmw-map-cover {
   max-height: 100%;
   position: absolute;
 }
 
-/* line 1730, resources/assets/styles/integrations/_complianz.scss */
+/* line 1734, resources/assets/styles/integrations/_complianz.scss */
 
 .cmplz-blocked-content-container .cmplz-blocked-content-notice {
   cursor: pointer;
@@ -24119,26 +24128,26 @@ body .cc-revoke.cc-right {
   line-height: 23px;
 }
 
-/* line 1752, resources/assets/styles/integrations/_complianz.scss */
+/* line 1756, resources/assets/styles/integrations/_complianz.scss */
 
 #cmplz-cookies-overview {
   margin-bottom: 1rem;
 }
 
-/* line 1757, resources/assets/styles/integrations/_complianz.scss */
+/* line 1761, resources/assets/styles/integrations/_complianz.scss */
 
 #cmplz-cookies-overview .cmplz-dropdown + .cmplz-dropdown {
   border-top: var(--default-border);
 }
 
-/* line 1762, resources/assets/styles/integrations/_complianz.scss */
+/* line 1766, resources/assets/styles/integrations/_complianz.scss */
 
 #cmplz-cookies-overview .cmplz-dropdown[open] .cmplz-service-header {
   background-color: var(--color-silver-light);
   margin-bottom: 1rem;
 }
 
-/* line 1767, resources/assets/styles/integrations/_complianz.scss */
+/* line 1771, resources/assets/styles/integrations/_complianz.scss */
 
 #cmplz-cookies-overview .cmplz-dropdown[open] .cmplz-service-header .marker svg {
   -webkit-transform: rotate(0);
@@ -24146,31 +24155,31 @@ body .cc-revoke.cc-right {
           transform: rotate(0);
 }
 
-/* line 1774, resources/assets/styles/integrations/_complianz.scss */
+/* line 1778, resources/assets/styles/integrations/_complianz.scss */
 
 #cmplz-cookies-overview .cmplz-dropdown:hover:not([open]) {
   background-color: var(--color-silver-light);
 }
 
-/* line 1781, resources/assets/styles/integrations/_complianz.scss */
+/* line 1785, resources/assets/styles/integrations/_complianz.scss */
 
 #cmplz-cookies-overview .cmplz-dropdown > div {
   padding: spacing(s);
 }
 
-/* line 1784, resources/assets/styles/integrations/_complianz.scss */
+/* line 1788, resources/assets/styles/integrations/_complianz.scss */
 
 #cmplz-cookies-overview .cmplz-dropdown > div > :last-child {
   margin-bottom: 0;
 }
 
-/* line 1790, resources/assets/styles/integrations/_complianz.scss */
+/* line 1794, resources/assets/styles/integrations/_complianz.scss */
 
 #cmplz-cookies-overview .cmplz-dropdown .cmplz-title-wrap > * {
   margin-top: 0;
 }
 
-/* line 1796, resources/assets/styles/integrations/_complianz.scss */
+/* line 1800, resources/assets/styles/integrations/_complianz.scss */
 
 #cmplz-cookies-overview .cmplz-service-header {
   display: -webkit-box;
@@ -24184,14 +24193,14 @@ body .cc-revoke.cc-right {
       flex-wrap: wrap;
 }
 
-/* line 1802, resources/assets/styles/integrations/_complianz.scss */
+/* line 1806, resources/assets/styles/integrations/_complianz.scss */
 
 #cmplz-cookies-overview .cmplz-service-header .marker {
   height: 32px;
   width: 32px;
 }
 
-/* line 1806, resources/assets/styles/integrations/_complianz.scss */
+/* line 1810, resources/assets/styles/integrations/_complianz.scss */
 
 #cmplz-cookies-overview .cmplz-service-header .marker svg {
   height: 24px;
@@ -24204,7 +24213,7 @@ body .cc-revoke.cc-right {
   transition: all .3s;
 }
 
-/* line 1814, resources/assets/styles/integrations/_complianz.scss */
+/* line 1818, resources/assets/styles/integrations/_complianz.scss */
 
 #cmplz-cookies-overview .cmplz-service-header .purpose {
   margin-left: auto;
@@ -24212,7 +24221,7 @@ body .cc-revoke.cc-right {
   line-height: 1;
 }
 
-/* line 1821, resources/assets/styles/integrations/_complianz.scss */
+/* line 1825, resources/assets/styles/integrations/_complianz.scss */
 
 #cmplz-cookies-overview .cmplz-service-header .cmplz-title-wrap > * {
   font-size: fontsize-heading("s");
@@ -24223,7 +24232,7 @@ body .cc-revoke.cc-right {
   line-height: 1;
 }
 
-/* line 1838, resources/assets/styles/integrations/_complianz.scss */
+/* line 1842, resources/assets/styles/integrations/_complianz.scss */
 
 #cmplz-cookies-overview .cookies-per-purpose__row {
   display: -webkit-box;
@@ -24233,7 +24242,7 @@ body .cc-revoke.cc-right {
       flex-wrap: wrap;
 }
 
-/* line 1842, resources/assets/styles/integrations/_complianz.scss */
+/* line 1846, resources/assets/styles/integrations/_complianz.scss */
 
 #cmplz-cookies-overview .cookies-per-purpose__row .name-header,
 #cmplz-cookies-overview .cookies-per-purpose__row .retention-header,
@@ -24243,7 +24252,7 @@ body .cc-revoke.cc-right {
   width: 100%;
 }
 
-/* line 1849, resources/assets/styles/integrations/_complianz.scss */
+/* line 1853, resources/assets/styles/integrations/_complianz.scss */
 
 #cmplz-cookies-overview .cookies-per-purpose__row .name-header h5,
 #cmplz-cookies-overview .cookies-per-purpose__row .retention-header h5,
@@ -24251,7 +24260,7 @@ body .cc-revoke.cc-right {
   margin-bottom: 0;
 }
 
-/* line 1854, resources/assets/styles/integrations/_complianz.scss */
+/* line 1858, resources/assets/styles/integrations/_complianz.scss */
 
 #cmplz-cookies-overview .cookies-per-purpose__row .name,
 #cmplz-cookies-overview .cookies-per-purpose__row .retention,
@@ -24261,7 +24270,7 @@ body .cc-revoke.cc-right {
 }
 
 @media only screen and (min-device-width: var(--breakpoint-m)) {
-  /* line 1862, resources/assets/styles/integrations/_complianz.scss */
+  /* line 1866, resources/assets/styles/integrations/_complianz.scss */
 
   #cmplz-cookies-overview .cookies-per-purpose__row .name-header,
   #cmplz-cookies-overview .cookies-per-purpose__row .retention-header,
@@ -24272,7 +24281,7 @@ body .cc-revoke.cc-right {
             order: 1;
   }
 
-  /* line 1869, resources/assets/styles/integrations/_complianz.scss */
+  /* line 1873, resources/assets/styles/integrations/_complianz.scss */
 
   #cmplz-cookies-overview .cookies-per-purpose__row .name,
   #cmplz-cookies-overview .cookies-per-purpose__row .retention,
@@ -24284,7 +24293,7 @@ body .cc-revoke.cc-right {
   }
 }
 
-/* line 1885, resources/assets/styles/integrations/_complianz.scss */
+/* line 1889, resources/assets/styles/integrations/_complianz.scss */
 
 .privacy-statement .dropdown-privacy-statement summary {
   border-top: var(--default-border);
@@ -24294,7 +24303,7 @@ body .cc-revoke.cc-right {
   padding-bottom: spacing(s);
 }
 
-/* line 1892, resources/assets/styles/integrations/_complianz.scss */
+/* line 1896, resources/assets/styles/integrations/_complianz.scss */
 
 .privacy-statement .dropdown-privacy-statement summary h3 {
   font-size: fontsize-heading("s");
