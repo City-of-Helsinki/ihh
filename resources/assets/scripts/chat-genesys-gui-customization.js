@@ -77,7 +77,7 @@
 
 
         /* ------------------ NEW CHAT: TEST CHAT FI --------------------- */
-        var helFiChat_service = 'TESTISIVU_TESTI';
+        var helFiChat_service = "VIRKAINFO"
         var helFiChat_language = 'fi';
         helfiChat_lang = 'fi';
         var helfiChatCookiePath = '/relativeroot/urlpath1/urlpath2';
@@ -219,7 +219,7 @@
             },
             mobileMode: "auto",
             lang: helfiChat_lang,
-            i18n: "https://www.hel.fi/gms/sote/testpages/chat-fi.json",
+            i18n: "https://asiointi.hel.fi/gms/kanslia/localization/chat-virkainfo-en.json",
             mobileModeBreakpoint: 600,
             preload: ["webchat"]
         },
