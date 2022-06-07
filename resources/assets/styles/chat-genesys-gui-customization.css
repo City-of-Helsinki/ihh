@@ -260,7 +260,11 @@
 
 
 .cx-theme-helsinki-blue .cx-webchat-chat-button-open {
-    background-image: url(https://www.hel.fi/static/helsinki/chat/chat-open.png) !important;
+    background-image: url('../images/chat/Chat_logo_en.png') !important;
+}
+
+[lang="fi"] .cx-theme-helsinki-blue .cx-webchat-chat-button-open {
+    background-image: url('../images/chat/Chat_logo_fi.png') !important;
 }
 
 .cx-theme-helsinki-blue .cx-webchat-chat-button-busy {
