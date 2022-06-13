@@ -69,3 +69,16 @@ add_action( 'wp_head', function () {
         echo get_theme_mod( 'ihh_chat_script' );
     }
 }, 999 );
+
+/**
+ * Add flexible content renderer to the landing pages
+ */
+ add_action( 'ihh_render_flexible_content', function($field, $post_id = null){
+    if (have_rows($field, $post_id) ){
+        while(have_rows($field, $post_id)){
+            the_row();
+            $template = locate_template('resources/views/flexible/'. get_row_layout());
+            include $template;
+        } 
+    }
+ }, 10, 2);
