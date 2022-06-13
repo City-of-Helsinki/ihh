@@ -14,9 +14,16 @@
   @include('components.notifications')
 @endif
 
+<div class="container">
+@php
+  if ( function_exists('yoast_breadcrumb') and !is_front_page() ) {
+    {{yoast_breadcrumb( '<nav id="breadcrumbs">','</nav>' );}}
+  }
+@endphp
+</div>
+
 @if(!is_singular(['post', 'event']))
   <header class="header-area container-wide">
     <img src="{{ $header_img }}" alt="">
-    @include('components.wave')
   </header>
 @endif
