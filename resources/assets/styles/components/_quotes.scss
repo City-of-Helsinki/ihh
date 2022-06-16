@@ -1,0 +1,54 @@
+.quotes{
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 24px;
+    margin-bottom: 4rem;
+
+    @include media-breakpoint-up('md'){
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    @include media-breakpoint-up('lg'){
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    blockquote{
+        position: relative;
+        background: #F3F3F3;
+        padding: 74px 36px 28px 58px;
+        margin-bottom: 0;
+
+        &:before {
+            content: '\201C';
+            font-family: $font-roboto;
+            font-size: 120px;
+            line-height: 1;
+            color: #92C8C2;
+            position: absolute;
+            top: 16px;
+            left: 10px;
+        }
+
+        p{
+            font-size: 1.25rem;
+            color: $black;
+        }
+
+        .quote-footer{
+            margin-top: 40px;
+
+            img{
+                display: inline-block;
+                width: 60px;
+                height: 60px;
+                border-radius: 50%;
+                margin-right: 10px;
+            }
+
+            .author-name{
+                font-size: 1.25rem;
+                font-weight: 600;
+            }
+        }
+    }
+}

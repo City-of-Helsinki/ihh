@@ -12,10 +12,11 @@
     </article>
 
     @include('components.home.testimonials')
+    @include('components.employers-flexible-content')
     @include('components.employers.employers-contact')
     @include('components.employers.employers-faq')
     @include('components.employers.employers-events')
     @include('partials.media-category')
-    
+
   @endwhile
 @endsection
