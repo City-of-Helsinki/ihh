@@ -144,3 +144,45 @@ h6 {
 #wpadminbar a {
   color: #fff !important;
 }
+
+.inline-svg{
+  position: relative;
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  margin-right: 10px;
+
+  svg{
+    top: 3px;
+    left: 0;
+    width: 16px;
+    height: 16px;
+    display: block;
+    margin-right: 4px;
+    position: absolute;
+  }
+}
+
+.rotate-90{
+  transform: rotate(90deg);
+
+  svg{
+    top: 0px;
+    left: 2px;
+  }
+}
+
+.rotate-45{
+  transform: rotate(-45deg);
+}
+
+.external-link{
+  svg{
+    fill: $kuvittaja-green;
+  }
+}
+
+.section-heading{
+  position: relative;
+  margin-bottom: 2.5rem;
+}
