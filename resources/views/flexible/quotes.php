@@ -11,7 +11,9 @@
                         <?php the_sub_field('text'); ?>
                     </p>
                     <div class="quote-footer">
-                        <img src="<?php the_sub_field('author_image'); ?>" alt="" />
+                        <?php if ( get_sub_field('author_image') ): ?> 
+                            <img src="<?php the_sub_field('author_image'); ?>" alt="" />
+                        <?php endif; ?>
                         <span class="author-name"><?php the_sub_field('author'); ?></span>
                     </div>
                 </blockquote>
