@@ -1,0 +1,71 @@
+{
+    "key": "group_62a99f190f8c8",
+    "title": "Employer and Services content",
+    "fields": [
+        {
+            "key": "field_62a99f2c04da3",
+            "label": "Components",
+            "name": "components",
+            "type": "flexible_content",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "layouts": {
+                "layout_62aaf5c8e738a": {
+                    "key": "layout_62aaf5c8e738a",
+                    "name": "anchorlink_navigation",
+                    "label": "Anchorlink navigation",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_62aaf5e1e738b",
+                            "label": "Show anchorlinks",
+                            "name": "show_anchorlinks",
+                            "type": "true_false",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "message": "",
+                            "default_value": 1,
+                            "ui": 1,
+                            "ui_on_text": "Yes",
+                            "ui_off_text": "No"
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
+                }
+            },
+            "button_label": "Add new component",
+            "min": "",
+            "max": ""
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "page_template",
+                "operator": "==",
+                "value": "views\/template-employers.blade.php"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": ""
+}
