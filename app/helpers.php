@@ -173,3 +173,19 @@ function format_event_date() {
 function get_default_image( $size = 'full' ) {
     return wp_get_attachment_image_url( get_theme_mod( 'ihh_default_lift_image' ), $size );
 }
+
+/*
+* SVG file to inline
+*/
+function ihh_inline_svg($file) {
+    $filePath = get_theme_file_path() . '/dist/images/' . $file . '.svg';
+
+    if(!file_exists($filePath))
+        return;
+
+    $svg = '<span class="inline-svg">';
+    $svg .= file_get_contents($filePath);
+    $svg .= '</span>';
+
+    return $svg;
+}
