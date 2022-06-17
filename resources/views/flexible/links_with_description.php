@@ -1,5 +1,7 @@
 <div class="container">
+    <?php if( get_sub_field('section_heading')) : ?>
     <h2 id="section-heading-<?php echo get_the_ID(); ?>" class="section-heading"><?php the_sub_field('section_heading'); ?></h2>
+    <?php endif ?>
 
     <?php if( have_rows('link_item') ) : ?>
         <ul class="list-unstyled link-list" aria-labelledby="section-heading-<?php echo get_the_ID(); ?>">
