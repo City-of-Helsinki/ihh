@@ -9,3 +9,42 @@ ul {
 li {
   font-weight: 700;
 }
+
+.lift-100-wide {
+  position: relative;
+}
+
+.lift-100-wide__card {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.lift-100-wide--left {
+  .lift-100-wide__card {
+    right: 0;
+    margin-right: inherit;
+  }
+}
+
+.lift-100-wide--right {
+  .lift-100-wide__bg-img {
+    margin-left: 25%;
+  }
+}
+
+.hds-arrow-right {
+  color: $black;
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
+// .lift-100-wide__card {
+//   position: absolute;
+//   top: 50%;
+//   transform: translateY(-50%);
+// }
+
+// .lift-100-wide__bg-img {
+//   margin-left: 25%;
+// }
