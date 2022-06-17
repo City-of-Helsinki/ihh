@@ -145,14 +145,14 @@ h6 {
   color: #fff !important;
 }
 
-.inline-svg{
+.inline-svg {
   position: relative;
   display: inline-block;
   width: 16px;
   height: 16px;
   margin-right: 10px;
 
-  svg{
+  svg {
     top: 3px;
     left: 0;
     width: 16px;
@@ -163,26 +163,26 @@ h6 {
   }
 }
 
-.rotate-90{
+.rotate-90 {
   transform: rotate(90deg);
 
-  svg{
-    top: 0px;
+  svg {
+    top: 0;
     left: 2px;
   }
 }
 
-.rotate-45{
+.rotate-45 {
   transform: rotate(-45deg);
 }
 
-.external-link{
-  svg{
+.external-link {
+  svg {
     fill: $kuvittaja-green;
   }
 }
 
-.section-heading{
+.section-heading {
   position: relative;
   margin-bottom: 2.5rem;
 }
