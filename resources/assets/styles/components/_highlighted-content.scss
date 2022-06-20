@@ -1,0 +1,41 @@
+.highlighted-content{
+    font-weight: 500;
+    padding: 2.5rem 2.875rem;
+    margin: 2rem auto;
+
+    h2, h3{
+        font-size: 1.25rem;
+        font-weight: 600;
+        margin-bottom: 1.25rem;
+    }
+
+    p{
+        margin-bottom: 1.625rem;
+    }
+
+    &.background-{
+        &red{
+            background: #F7A091;
+        }
+        &green{
+            background: #92C8C2;
+        }
+    }
+
+    &.columns-two{
+        @include media-breakpoint-up('lg'){
+            columns: 2 auto;
+            column-gap: 32px;
+        }
+    }
+
+    a{
+        text-decoration: none;
+        color: $black !important;
+
+        &:hover,
+        &:focus{
+            text-decoration: underline;
+        }
+    }
+}
