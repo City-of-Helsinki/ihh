@@ -11,5 +11,8 @@
     @include('components.services-accordion')
     @include('partials.media-category')
   </article>
+
+  @include('components.flexible-content')
+
   @endwhile
 @endsection
