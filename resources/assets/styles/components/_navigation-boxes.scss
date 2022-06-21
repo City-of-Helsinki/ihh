@@ -21,12 +21,21 @@
             margin-bottom: .85rem;
         }
     }
+
+    .next a{
+        text-align: right;
+    }
+}
+
+div:not(.sidebar) .navigation-boxes .next {
+    margin-left: auto;
 }
 
 .sidebar{
     .navigation-boxes{
         ul{
             flex-wrap: wrap;
+            flex-flow: column-reverse;
 
             li{
                 max-width: unset;

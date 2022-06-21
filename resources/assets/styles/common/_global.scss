@@ -176,6 +176,10 @@ h6 {
   transform: rotate(-45deg);
 }
 
+.previous .inline-svg{
+  transform: scaleX(-1);
+}
+
 .external-link {
   svg {
     fill: $kuvittaja-green;

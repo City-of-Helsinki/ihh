@@ -32,7 +32,7 @@ export default {
 
 
     function createAnchorlinks(navigationEl, anchorTargetEl) {
-        const UNDESIRABLE_PARENTS = '.question';
+        const UNDESIRABLE_PARENTS = '.question, .sidebar';
         const anchorNavigation = document.querySelector(navigationEl);
         const headings = document.querySelectorAll(anchorTargetEl);
         const svgArrowRight =
