@@ -20,3 +20,11 @@
     @include('components.wave')
   </header>
 @endif
+
+<div class="container breadcrumbs-container">
+@php
+  if ( function_exists('yoast_breadcrumb') and !is_front_page() ) {
+    yoast_breadcrumb( '<nav id="breadcrumbs">','</nav>' );
+  }
+@endphp
+</div>

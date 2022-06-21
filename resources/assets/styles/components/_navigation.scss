@@ -106,3 +106,15 @@
     }
   }
 }
+
+.breadcrumbs-container {
+  padding-left: 0;
+
+  #breadcrumbs {
+    margin-bottom: 25px;
+
+    a {
+      color: $black !important;
+    }
+  }
+}

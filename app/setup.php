@@ -13,7 +13,12 @@ use Roots\Sage\Template\BladeProvider;
 add_action( 'wp_enqueue_scripts', function () {
     wp_enqueue_style( 'ihh/fontawesome', 'https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css' );
     wp_enqueue_style( 'ihh/main.css', asset_path( 'styles/main.css' ), [ 'ihh/fontawesome' ], null );
+    wp_enqueue_style( 'ihh/genesys.css', get_template_directory_uri(). '/assets/styles/chat-genesys-gui-customization.css', [ ], null );
+    
     wp_enqueue_script( 'ihh/main.js', asset_path( 'scripts/main.js' ), [ 'jquery' ], null, true );
+    wp_enqueue_script( 'CXBus', 'https://apps.mypurecloud.ie/widgets/9.0/cxbus.min.js', [ 'jquery' ] );
+    wp_enqueue_script( 'Genesys', get_template_directory_uri(). '/assets/scripts/chat-genesys-gui-customization.js', [ 'CXBus' ], null, true );
+    
 
     if ( is_single() && comments_open() && get_option( 'thread_comments' ) ) {
         wp_enqueue_script( 'comment-reply' );

@@ -94,6 +94,13 @@ export default {
         });
 
         detectExternalLinks('.main a');
+
+
+        window.CXBus.configure({pluginsPath:'https://apps.mypurecloud.ie/widgets/9.0/plugins/'});
+        window.CXBus.loadPlugin('widgets-core');
+        $('a[target=_blank]').each(function(){
+            $(this).append(' <span class="ihh-visually-hidden">opens in new tab</span>')
+        });
     })
 
 

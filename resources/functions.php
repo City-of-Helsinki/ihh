@@ -85,6 +85,8 @@ function amb_custom_post_type() {
 }
 add_action('init', 'amb_custom_post_type');
 
+require_once('integrations/complianz.php');
+
 /**
  * Here's what's happening with these hooks:
  * 1. WordPress initially detects theme in themes/ihh/resources
