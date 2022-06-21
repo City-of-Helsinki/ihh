@@ -81,4 +81,5 @@ add_action( 'wp_head', function () {
             include $template;
         } 
     }
+
  }, 10, 2);
