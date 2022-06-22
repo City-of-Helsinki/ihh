@@ -1,0 +1,21 @@
+.contact_liftoff {
+  &__info-box {
+    background-color: #f3e565;
+  }
+
+  @media screen and (min-width: 992px) {
+    position: relative;
+
+    &__info-box {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      right: 0;
+      margin-right: initial;
+    }
+  }
+}
+
+.more-info {
+  right: 0;
+}
