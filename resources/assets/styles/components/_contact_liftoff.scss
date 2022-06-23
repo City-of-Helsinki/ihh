@@ -1,4 +1,4 @@
-.contact_liftoff {
+.contact-liftoff {
   &__info-box {
     background-color: #f3e565;
   }
@@ -18,4 +18,15 @@
 
 .more-info {
   right: 0;
+}
+
+.info-box {
+  &__description {
+    font-weight: 700;
+  }
+}
+
+.hds-icon-info {
+  width: 1.5rem;
+  height: 1.5rem;
 }
