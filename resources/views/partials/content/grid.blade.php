@@ -8,21 +8,23 @@
         @endif
     </header>
     <div class="post-content">
+      @if('event' === get_post_type())
+          <div class="post-content-event-meta">
+            @if($location = get_field('location'))
+                <p class="location"> {{$location}}</p>
+            @endif
+          </div>
+      @endif
+
       <h2>{!! get_the_title() !!}</h2>
-      @php
-        $readmore = get_post_type() == 'event' ? 'View event' : 'Read news content';
-      @endphp
+
       @if('event' === get_post_type())
         <div class="post-content-event-meta">
           @if($date = get_field('start_time'))
-            <p class="date"> {{\App\format_event_date()}}</p>
-          @endif
-          @if($location = get_field('location'))
-            <p class="location"> {{$location}}</p>
+            <p class="date"> {!! \App\ihh_inline_svg('icons/clock_outlines') !!} {{\App\format_event_date()}}</p>
           @endif
         </div>
       @endif
-      <span class="read-more">{{pll__($readmore)}}</span>
     </div>
   </a>
 </div>
