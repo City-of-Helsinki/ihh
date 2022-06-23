@@ -186,3 +186,13 @@ h6 {
   position: relative;
   margin-bottom: 2.5rem;
 }
+
+.image-fit{
+    object-fit: cover;
+    height: 100%;
+    width: 100%;
+}
+
+.aspect-ratio-1-96{
+  aspect-ratio: 1.96;
+}
