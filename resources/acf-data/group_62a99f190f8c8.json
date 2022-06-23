@@ -457,14 +457,14 @@
                     "min": "",
                     "max": ""
                 },
-                "layout_62a9d5ac2a65d": {
-                    "key": "layout_62a9d5ac2a65d",
-                    "name": "links_with_description",
-                    "label": "Links with description",
+                "layout_62b42ec994e91": {
+                    "key": "layout_62b42ec994e91",
+                    "name": "media_bank_items",
+                    "label": "Media Bank items",
                     "display": "block",
                     "sub_fields": [
                         {
-                            "key": "field_62a9d5ef2a65e",
+                            "key": "field_62b42f5a94e94",
                             "label": "Section heading",
                             "name": "section_heading",
                             "type": "text",
@@ -483,9 +483,9 @@
                             "maxlength": ""
                         },
                         {
-                            "key": "field_62a9d61b2a65f",
-                            "label": "Link item",
-                            "name": "link_item",
+                            "key": "field_62b42ed094e92",
+                            "label": "Items",
+                            "name": "items",
                             "type": "repeater",
                             "instructions": "",
                             "required": 0,
@@ -502,10 +502,10 @@
                             "button_label": "",
                             "sub_fields": [
                                 {
-                                    "key": "field_62a9d64a2a660",
-                                    "label": "Heading",
-                                    "name": "heading",
-                                    "type": "text",
+                                    "key": "field_62b42efd94e93",
+                                    "label": "Media item",
+                                    "name": "media_item",
+                                    "type": "post_object",
                                     "instructions": "",
                                     "required": 0,
                                     "conditional_logic": 0,
@@ -514,68 +514,14 @@
                                         "class": "",
                                         "id": ""
                                     },
-                                    "default_value": "",
-                                    "placeholder": "",
-                                    "prepend": "",
-                                    "append": "",
-                                    "maxlength": ""
-                                },
-                                {
-                                    "key": "field_62a9d6562a661",
-                                    "label": "Description",
-                                    "name": "description",
-                                    "type": "textarea",
-                                    "instructions": "",
-                                    "required": 0,
-                                    "conditional_logic": 0,
-                                    "wrapper": {
-                                        "width": "",
-                                        "class": "",
-                                        "id": ""
-                                    },
-                                    "default_value": "",
-                                    "placeholder": "",
-                                    "maxlength": "",
-                                    "rows": 4,
-                                    "new_lines": ""
-                                },
-                                {
-                                    "key": "field_62a9d6682a662",
-                                    "label": "CTA text",
-                                    "name": "cta_text",
-                                    "type": "text",
-                                    "instructions": "",
-                                    "required": 0,
-                                    "conditional_logic": 0,
-                                    "wrapper": {
-                                        "width": "",
-                                        "class": "",
-                                        "id": ""
-                                    },
-                                    "default_value": "",
-                                    "placeholder": "",
-                                    "prepend": "",
-                                    "append": "",
-                                    "maxlength": ""
-                                },
-                                {
-                                    "key": "field_62a9d6722a663",
-                                    "label": "CTA URL",
-                                    "name": "cta_url",
-                                    "type": "text",
-                                    "instructions": "",
-                                    "required": 0,
-                                    "conditional_logic": 0,
-                                    "wrapper": {
-                                        "width": "",
-                                        "class": "",
-                                        "id": ""
-                                    },
-                                    "default_value": "",
-                                    "placeholder": "",
-                                    "prepend": "",
-                                    "append": "",
-                                    "maxlength": ""
+                                    "post_type": [
+                                        "amb_media_catalogue"
+                                    ],
+                                    "taxonomy": "",
+                                    "allow_null": 0,
+                                    "multiple": 0,
+                                    "return_format": "object",
+                                    "ui": 1
                                 }
                             ]
                         }
