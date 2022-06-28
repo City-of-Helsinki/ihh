@@ -1,7 +1,7 @@
 <div class="newsletter">
-  <div class="container-fluid">
+  <div class="container-fluid pt-3">
 
-    <div class="offset-lg-4 col-12 col-lg-4 p-lg-5 p-4 mb-5">
+    <div class="offset-lg-4 offset-md-3 col-12 col-lg-4 col-md-6 py-lg-4 p-md-3 mb-5">
       <h3><?php the_sub_field("newsletter_section_title"); ?></h3>
       <div class="liana-form">
         <?php the_sub_field("newsletter_mailer_form"); ?>
