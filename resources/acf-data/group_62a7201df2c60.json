@@ -562,6 +562,25 @@
                             },
                             "default_value": "",
                             "placeholder": ""
+                        },
+                        {
+                            "key": "field_62baa6559385b",
+                            "label": "Mailer form",
+                            "name": "newsletter_mailer_form",
+                            "type": "textarea",
+                            "instructions": "HTML form here",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "placeholder": "",
+                            "maxlength": "",
+                            "rows": "",
+                            "new_lines": ""
                         }
                     ],
                     "min": "",
@@ -590,5 +609,5 @@
     "hide_on_screen": "",
     "active": true,
     "description": "",
-    "modified": 1655984851
+    "modified": 1656399491
 }
