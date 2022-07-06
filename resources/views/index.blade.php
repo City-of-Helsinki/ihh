@@ -7,6 +7,18 @@
 @section('content')
   <section class="content-block container">
     @include('partials.content.header')
+    <div class="filters row d-flex">
+      <div class="content-type col-6">
+        <h3>Content type</h3>
+        <div class="btn-group" role="group">
+          <button type="button" class="btn btn-outline-primary rounded-pill px-4 mr-3">All content</button>
+          <button type="button" class="btn btn-outline-primary rounded-pill px-4 mr-3">News</button>
+          <button type="button" class="btn btn-outline-primary rounded-pill px-4 mr-3">Events</button>
+      </div>
+      <div class="target-group">
+        <h3>Target group</h3>
+      </div>
+    </div>
     <div class="content-block-content">
       {!! apply_filters('the_content', $content) !!}
     </div>
