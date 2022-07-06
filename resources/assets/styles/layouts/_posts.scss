@@ -9,7 +9,6 @@
 
   @include make-row(0);
 
-  //justify-content: space-evenly;
   display: flex;
   flex-wrap: wrap;
   justify-content: flex-start;
@@ -32,10 +31,7 @@
     transition: box-shadow, 0.3s;
     display: flex;
     flex-flow: column;
-    //font-family: $font-open-sans;
     font-family: $font-source-sans;
-    //margin-bottom: 20px;
-    //margin-right: auto;
     margin: 0 1% 20px 1%;
 
     header img {
@@ -57,11 +53,9 @@
     }
 
     h2 {
-      font-size: 16px;
+      font-size: 1.25rem;
       line-height: 19px;
       font-family: $font-open-sans;
-      //font-family: $font-source-sans;
-      //font-family: $font-roboto;
       font-weight: 600;
       color: #231f00;
       margin: 0 0 10px 0;
@@ -88,7 +82,7 @@
       display: flex;
       flex-flow: column;
       flex-wrap: wrap;
-      padding: 20px;
+      padding: 28px;
       background: #91c8c2;
     }
 
@@ -109,12 +103,27 @@
         display: flex;
         align-items: center;
         color: #231f00;
-        font-size: 14px;
+        font-size: 1rem;
         margin: 0 0 10px 0;
 
         &:last-child {
           margin: 0;
         }
+      }
+
+      .date{
+        display: inline-block;
+        vertical-align: top;
+      }
+
+      svg{
+        width: 20px;
+        height: 20px;
+        top: 0;
+      }
+
+      p.location{
+        margin-bottom: 0.5rem;
       }
     }
 
@@ -122,7 +131,6 @@
       @extend .btn;
 
       background: #fff;
-      //font-family: $font-open-sans;
       font-family: $font-source-sans;
       font-weight: 500;
       color: black;
