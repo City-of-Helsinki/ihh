@@ -1,0 +1,19 @@
+.accordion{
+    &:focus-within{
+        outline: 1px solid $kuvittaja-green;
+        background: transparent !important;
+    }
+
+    button{
+        cursor: pointer;
+    }
+
+    .question-header{
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+    }
+
+    .accordion-body{
+        padding: 1.25rem 0;
+    }
+}
