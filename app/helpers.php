@@ -166,6 +166,20 @@ function format_event_date() {
 }
 
 /**
+ * @return string
+ */
+function format_event_date_short() {
+    $start = strtotime( get_field( 'start_time' ) );
+    $end   = strtotime( get_field( 'end_time' ) );
+
+    if ( $end > $start ) {
+        return date( 'G:i', $start ) . ' - ' . date( 'G:i', $end) . ' ' . date( 'j.n.o', $start ) . ' - ' . date( 'j.n.o', $end );
+    }
+
+    return date( 'G:i', $start ) . ' - ' . date( 'G:i', $end) . ' ' . date( 'j.n.o', $start );
+}
+
+/**
  * @param string $size
  *
  * @return array|false
