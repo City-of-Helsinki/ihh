@@ -86,4 +86,12 @@ class App extends Controller {
         return IHH\fetch_service_status();
     }
 
+    public function get_target_groups(){
+        $terms = get_terms( 'targetgroup', array(
+            'hide_empty' => false,
+        ) );
+        
+        return $terms;
+    }
+
 }

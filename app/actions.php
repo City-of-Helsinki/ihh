@@ -44,12 +44,24 @@ add_action( 'init', function () {
     unregister_taxonomy_for_object_type( 'post_tag', 'post' );
 } );
 
+add_filter( 'query_vars', function( $qvars){
+    $qvars[] = 'type';
+    return $qvars;
+} );
+
 /**
  * Add events to main query
  */
 add_action( 'pre_get_posts', function ( \WP_Query $query ) {
     if ( $query->is_posts_page && ! $query->is_admin && $query->is_main_query() ) {
-        $query->set( 'post_type', [ 'post', 'event' ] );
+        $post_type = get_query_var('type');
+
+        $post_types =  [ 'post', 'event' ];
+        if ( in_array($post_type, $post_types, true)){
+            $post_types = $post_type;
+        }
+
+        $query->set( 'post_type', $post_types );
 
         $query->set( 'meta_query', create_meta_query( $query ) );
     }
