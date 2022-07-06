@@ -16,6 +16,13 @@
     margin-bottom: 1rem;
   }
 
+  .image-container{
+    position: relative;
+    margin-bottom: 1.25rem;
+    overflow: hidden;
+    background-color: $gray-light;
+  }
+
   .item-heading {
     font-size: 1.25rem;
     font-weight: 600;
