@@ -1,21 +1,21 @@
-.lift-element{
-    background: #F3F3F3;
-    padding: 16px 16px 32px;
+.lift-element {
+  background: #f3f3f3;
+  padding: 16px 16px 32px;
+  margin-bottom: 1.25rem;
+
+  .item-heading {
+    font-size: 1.25rem;
+    font-weight: 600;
     margin-bottom: 1.25rem;
+  }
 
-    .item-heading{
-        font-size: 1.25rem;
-        font-weight: 600;
-        margin-bottom: 1.25rem;
+  a {
+    color: $black !important;
+    text-decoration: none;
+
+    &:hover,
+    &:focus-within {
+      text-decoration: underline;
     }
-
-    a{
-        color: $black !important;
-        text-decoration: none;
-
-        &:hover,
-        &:focus-within{
-            text-decoration: underline;
-        }
-    }
+  }
 }

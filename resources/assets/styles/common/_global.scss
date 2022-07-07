@@ -175,7 +175,7 @@ h6 {
   transform: rotate(-45deg);
 }
 
-.previous .inline-svg{
+.previous .inline-svg {
   transform: scaleX(-1);
 }
 
@@ -190,12 +190,13 @@ h6 {
   margin-bottom: 2.5rem;
 }
 
-.image-fit{
-    object-fit: cover;
-    height: 100%;
-    width: 100%;
+.image-fit {
+  object-fit: cover;
+  height: 100%;
+  width: 100%;
 }
 
-.aspect-ratio-1-96{
-  aspect-ratio: 1.96;
+/* stylelint-disable */
+.aspect-ratio-1-96 {
+  aspect-ratio: 1.96; 
 }

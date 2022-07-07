@@ -1,0 +1,3 @@
+resources/assets/scripts/jquery-*.min.js
+resources/assets/scripts/chat-genesys-gui-customization.js
+resources/assets/build/webpack.config.optimize.js
