@@ -1,29 +1,10 @@
 {
     "key": "group_62a7201df2c60",
-    "title": "Lift-100-wide",
+    "title": "Front Page",
     "fields": [
         {
-            "key": "field_62ac7c7240820",
-            "label": "Title",
-            "name": "lift_100_wide_title",
-            "type": "text",
-            "instructions": "Section title",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "default_value": "",
-            "placeholder": "",
-            "prepend": "",
-            "append": "",
-            "maxlength": ""
-        },
-        {
             "key": "field_62a723820c08a",
-            "label": "Lift 100 wide",
+            "label": "Block Elements",
             "name": "lift_100_wide",
             "type": "flexible_content",
             "instructions": "Featured items for the frontpage",
@@ -160,7 +141,7 @@
                             "name": "links",
                             "type": "repeater",
                             "instructions": "Links for additional information. You can add multiple links.",
-                            "required": 1,
+                            "required": 0,
                             "conditional_logic": 0,
                             "wrapper": {
                                 "width": "",
@@ -177,7 +158,7 @@
                                     "key": "field_62a842a3efa39",
                                     "label": "Link",
                                     "name": "link",
-                                    "type": "url",
+                                    "type": "text",
                                     "instructions": "Link for additional information",
                                     "required": 1,
                                     "conditional_logic": 0,
@@ -187,7 +168,10 @@
                                         "id": ""
                                     },
                                     "default_value": "",
-                                    "placeholder": ""
+                                    "placeholder": "",
+                                    "prepend": "",
+                                    "append": "",
+                                    "maxlength": ""
                                 },
                                 {
                                     "key": "field_62a88139ce508",
@@ -217,7 +201,7 @@
                 "layout_62b1bdc5b6183": {
                     "key": "layout_62b1bdc5b6183",
                     "name": "contact-liftoff",
-                    "label": "100% wide element with background image and contact information",
+                    "label": "Contact box",
                     "display": "block",
                     "sub_fields": [
                         {
@@ -493,9 +477,38 @@
                     ],
                     "min": "",
                     "max": ""
+                },
+                "layout_62c815c0e999b": {
+                    "key": "layout_62c815c0e999b",
+                    "name": "editor_container",
+                    "label": "Editor container",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_62c815c4e999c",
+                            "label": "Content",
+                            "name": "content",
+                            "type": "wysiwyg",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "tabs": "all",
+                            "toolbar": "full",
+                            "media_upload": 1,
+                            "delay": 0
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
                 }
             },
-            "button_label": "Add Row",
+            "button_label": "Add Block",
             "min": "",
             "max": ""
         }
@@ -517,5 +530,6 @@
     "hide_on_screen": "",
     "active": true,
     "description": "",
-    "modified": 1655890291
+    "show_in_rest": 0,
+    "modified": 1657281384
 }

@@ -6,7 +6,8 @@
         'yellow' => '#f3e565',
         'red' => '#f7a091'
     ];
-    $bg_color = $colors[0];
+
+    $bg_color = $colors['green']; //default color
     if (array_key_exists($color_selection, $colors)) {
         $bg_color = $colors[$color_selection];
     }

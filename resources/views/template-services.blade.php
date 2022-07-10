@@ -8,11 +8,8 @@
   <article class="content-block container">
     @include('partials.content.header')
     @include('partials.content.page')
-    @include('components.services-accordion')
-    @include('partials.media-category')
   </article>
 
-    @include('components.flexible-content')
     @include('components.employers-flexible-content');
   @endwhile
 @endsection

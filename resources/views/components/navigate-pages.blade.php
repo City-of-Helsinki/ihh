@@ -3,7 +3,7 @@
     $pages_args = array(
         'parent' => $post->post_parent,
         'orderby' => 'menu_order',
-        'order' => 'ASC'
+        'sort_order' => 'DESC'
     );
 
     // Get pages
@@ -11,7 +11,7 @@
     $pages = array();
 
     foreach ($pagesList as $page) {
-        $pages[] += $page->ID;
+        $pages[] = $page->ID;
     }
 
     $current = array_search(get_the_ID(), $pages);
