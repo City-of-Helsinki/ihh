@@ -11,11 +11,11 @@
     </header>
     <div class="post-content d-flex">
       <h2 class="order-2">{!! get_the_title() !!}</h2>
-      <p class="order-1">Placeholder category</p>
+      <span class="order-1 mb-3"><?php echo get_the_category()[0]->name; ?></span>
       @if('event' === get_post_type())
         <div class="post-content-event-meta d-inline-flex flex-column order-3">
           @if($date = get_field('start_time'))
-            <p class="date order-2"> {{\App\format_event_date_short()}}</p>
+            <p class="date order-2">{{\App\format_event_date_short()}}</p>
           @endif
           @if($location = get_field('location'))
             <p class="location order-1"> {{$location}}</p>
