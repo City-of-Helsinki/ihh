@@ -95,8 +95,6 @@ class App extends Controller {
     }
 
     public function format_term($term) {
-        // echo "<pre>" . var_dump($term) . "</pre>";
-        // echo get_term_link($term);
         return sprintf('<a class="btn btn-outline-primary rounded-pill px-4 mr-3 text-decoration-none text-dark" href="%s">%s</a>', get_term_link($term), $term->name);
     }
 

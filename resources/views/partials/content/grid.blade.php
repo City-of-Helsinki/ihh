@@ -11,7 +11,15 @@
     </header>
     <div class="post-content d-flex">
       <h2 class="order-2">{!! get_the_title() !!}</h2>
-      <span class="order-1 mb-3"><?php echo get_the_category()[0]->name; ?></span>
+      <span class="order-1 mb-3"><?php 
+        $category = get_the_category()[0]->name;
+        if (!empty($category)) {
+          echo $category;
+        } else {
+          echo get_terms(array('taxonomy' => 'events_category'))[0]->name;
+        }
+        ?>
+      </span>
       @if('event' === get_post_type())
         <div class="post-content-event-meta d-inline-flex flex-column order-3">
           @if($date = get_field('start_time'))

@@ -19,12 +19,12 @@
   a {
     text-decoration: none;
 
-    &::before {
+    &::after {
       display: inline-flex;
       content: "";
       height: 1em;
       width: 1em;
-      margin-right: 0.5em;
+      margin-left: 0.5em;
       background: url("../../images/icons/arrow-right.svg") no-repeat;
       background-size: contain;
     }

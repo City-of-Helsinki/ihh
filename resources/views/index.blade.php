@@ -11,13 +11,13 @@
     <div class="filters row d-flex">
       <div class="content-type col-lg-6 flex-sm-column">
         <h3>Content type</h3>
-          <a href="" class="btn btn-outline-primary rounded-pill px-4 mr-3 text-decoration-none text-dark" >All content</a>
-          <a href="" class="btn btn-outline-primary rounded-pill px-4 mr-3 text-decoration-none text-dark" >News</a>
-          <a href="" class="btn btn-outline-primary rounded-pill px-4 mr-3 text-decoration-none text-dark" >Events</a>
+          <a href="<?php echo get_permalink(get_page_by_path( 'news-and-events', OBJECT, 'page')->ID); ?>" class="btn btn-outline-primary rounded-pill px-4 mr-3 text-decoration-none text-dark" >All content</a>
+          <a href="<?php echo get_category_link(get_cat_id('news')); ?>" class="btn btn-outline-primary rounded-pill px-4 mr-3 text-decoration-none text-dark" >News</a>
+          <a href="<?php echo get_category_link(get_cat_id('events')) ; ?>" class="btn btn-outline-primary rounded-pill px-4 mr-3 text-decoration-none text-dark" >Events</a>
       </div>
       <div class="target-group col-lg-6 flex-sm-column">
         <h3>Target group</h3>
-        <a href="" class="btn btn-outline-primary rounded-pill px-4 mr-3 text-decoration-none text-dark">All groups</a>
+        <a href="<?php echo get_permalink(get_page_by_path( 'news-and-events', OBJECT, 'page')->ID); ?>" class="btn btn-outline-primary rounded-pill px-4 mr-3 text-decoration-none text-dark">All groups</a>
         @foreach (App::get_target_groups() as $term )
           {!! App::format_term($term) !!}
         @endforeach
