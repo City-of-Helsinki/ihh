@@ -549,8 +549,8 @@
                         },
                         {
                             "key": "field_62b44d76b4672",
-                            "label": "Mailer domain",
-                            "name": "newsletter_mailer_domain",
+                            "label": "Liana subscription page",
+                            "name": "liana_subscription_page",
                             "type": "url",
                             "instructions": "",
                             "required": 0,
@@ -564,11 +564,11 @@
                             "placeholder": ""
                         },
                         {
-                            "key": "field_62baa6559385b",
-                            "label": "Mailer form",
-                            "name": "newsletter_mailer_form",
-                            "type": "textarea",
-                            "instructions": "HTML form here",
+                            "key": "field_62d671286a6a2",
+                            "label": "Mailing list IDs",
+                            "name": "mailing_list_ids",
+                            "type": "repeater",
+                            "instructions": "",
                             "required": 0,
                             "conditional_logic": 0,
                             "wrapper": {
@@ -576,11 +576,51 @@
                                 "class": "",
                                 "id": ""
                             },
-                            "default_value": "",
-                            "placeholder": "",
-                            "maxlength": "",
-                            "rows": "",
-                            "new_lines": ""
+                            "collapsed": "",
+                            "min": 0,
+                            "max": 0,
+                            "layout": "table",
+                            "button_label": "",
+                            "sub_fields": [
+                                {
+                                    "key": "field_62d6713e6a6a3",
+                                    "label": "Target group",
+                                    "name": "target_group",
+                                    "type": "text",
+                                    "instructions": "Example: Newsletter for Employers\/Newcomers",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "default_value": "",
+                                    "placeholder": "",
+                                    "prepend": "",
+                                    "append": "",
+                                    "maxlength": ""
+                                },
+                                {
+                                    "key": "field_62d6833f57a2d",
+                                    "label": "Liana ID",
+                                    "name": "liana_id",
+                                    "type": "text",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "default_value": "",
+                                    "placeholder": "",
+                                    "prepend": "",
+                                    "append": "",
+                                    "maxlength": ""
+                                }
+                            ]
                         }
                     ],
                     "min": "",
@@ -609,5 +649,5 @@
     "hide_on_screen": "",
     "active": true,
     "description": "",
-    "modified": 1656399491
+    "modified": 1658227104
 }

@@ -7,27 +7,32 @@
         <?php the_sub_field("newsletter_mailer_form"); ?>
       </div>
       <p><?php the_sub_field("newsletter_body_text");?></p>
-      <form method="post" action=<?php the_sub_field("newsletter_mailer_domain") ?> class="lianamailer" id="lianamailer">
+      <form method="post" action="<?php the_sub_field("liana_subscription_page"); ?>" class="lianamailer" id="lianamailer">
+        <input type="hidden" name="success_url" value="<?php echo get_home_url(); ?>">
+        <input type="hidden" name="failure_url" value="<?php echo get_home_url(); ?>">
         <div class="mb-3 email">
           <label for="newsletterEmail" class="form-label">Email*</label>
           <input name="email" type="email" class="form-control border border-dark" required></input>
         </div>
-        <div class="mb-3 radio-buttons row mx-0">
-          <div class="form-check target-group-employers col-6">
-            <input class="form-check-input" type="radio" name="flexRadio" id="flexRadioEmployers">
-            <label class="form-check-label" for="flexRadioEmployers">
-              Newsletter for employers
-            </label>
-          </div>
-          <div class="form-check target-group-newcomers col-6">
-            <input class="form-check-input" type="radio" name="flexRadio" id="flexRadioNewcomers">
-            <label class="form-check-label" for="flexRadioNewcomers">
-              Newsletter for newcomers
-            </label>
-          </div>
+        <div class="mb-3 radio-buttons row mx-0"> 
+          <?php if (have_rows("mailing_list_ids")):
+            while ( have_rows("mailing_list_ids") ) : the_row();
+              $target_group = get_sub_field("target_group");
+              $liana_id = get_sub_field("liana_id");
+              $target = sprintf(
+                '<div class="form-check target-group-%s col-6">
+                  <input required class="form-check-input" type="radio" name="join" value=%s>
+                  <label class="form-check-label" for="id-%s">
+                    %s
+                  </label>
+                </div>', $liana_id, $liana_id, $liana_id, $target_group);
+              echo $target;
+            endwhile;
+          endif;
+          ?>
         </div>
         <div class="mb-3 privacy-policy form-check">
-          <input type="checkbox" class="form-check-input" id="privacyPolicyCheck">
+          <input required type="checkbox" class="form-check-input" id="privacyPolicyCheck">
           <label class="form-check-label" for="privacyPolicyCheck">I agree that my details can be processed according to the <a href="#">Privacy Policy</a></label>
         </div>
         <div class="mb-3 d-flex justify-content-center">
