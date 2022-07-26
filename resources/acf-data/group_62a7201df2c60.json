@@ -621,6 +621,38 @@
                                     "maxlength": ""
                                 }
                             ]
+                        },
+                        {
+                            "key": "field_62dfbd06354f4",
+                            "label": "Liana success page url",
+                            "name": "liana_success_page_url",
+                            "type": "url",
+                            "instructions": "Link to the page after successful subscription",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "placeholder": ""
+                        },
+                        {
+                            "key": "field_62dfc933454c6",
+                            "label": "Liana failure page url",
+                            "name": "liana_failure_page_url",
+                            "type": "url",
+                            "instructions": "Link to the error page when subscribing to the newsletter",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "placeholder": ""
                         }
                     ],
                     "min": "",
@@ -649,5 +681,5 @@
     "hide_on_screen": "",
     "active": true,
     "description": "",
-    "modified": 1658227104
+    "modified": 1658833310
 }
