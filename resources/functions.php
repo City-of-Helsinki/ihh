@@ -87,6 +87,8 @@ add_action('init', 'amb_custom_post_type');
 
 require_once('integrations/complianz.php');
 
+require_once(get_template_directory().'/tinymce-editor-styles.php');
+
 /**
  * Here's what's happening with these hooks:
  * 1. WordPress initially detects theme in themes/ihh/resources
