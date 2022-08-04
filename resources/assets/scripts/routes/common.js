@@ -23,12 +23,14 @@ export default {
             $(this).append(' <span class="ihh-visually-hidden">opens in new tab</span>');
         });
 
+        detectExternalLinks('.main a');
+        createAnchorlinks('.anchorlink-navigation', 'h2');
+
+        window.CXBus.configure({pluginsPath:'https://apps.mypurecloud.ie/widgets/9.0/plugins/'});
+        window.CXBus.loadPlugin('widgets-core');
         $('a[target=_blank]').each(function(){
             $(this).append(' <span class="ihh-visually-hidden">opens in new tab</span>')
         });
-
-        detectExternalLinks('.main a');
-        createAnchorlinks('.anchorlink-navigation', 'h2');
     });
 
 
@@ -87,31 +89,16 @@ export default {
             });
         });
     }
-    $(document).ready(function(){
-        $('a[target=_blank]').each(function(){
-            $(this).append(' <span class="ihh-visually-hidden">opens in new tab</span>')
-        });
-
-        detectExternalLinks('.main a');
-
-
-        window.CXBus.configure({pluginsPath:'https://apps.mypurecloud.ie/widgets/9.0/plugins/'});
-        window.CXBus.loadPlugin('widgets-core');
-        $('a[target=_blank]').each(function(){
-            $(this).append(' <span class="ihh-visually-hidden">opens in new tab</span>')
-        });
-    })
-
 
     function detectExternalLinks(item) {
-        const hostName = window.location.hostname;
+        const locationHostname = window.location.hostname;
         const links = document.querySelectorAll(item);
 
         for (let i = 0; i < links.length; i++) {
             let domain = (new URL(links[i]));
-            domain = domain.hostname.replace('www.', '');
+            let linkHostname = domain.hostname.replace('www.', '');
 
-            if (hostName !== domain) {
+            if (linkHostname && locationHostname !== linkHostname && !links[i].classList.contains('venobox')) {
                 addExternalLinkStyling(links[i]);
             } else {
                 if (links[i].classList.contains('arrow')) {
