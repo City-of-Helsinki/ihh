@@ -1,10 +1,29 @@
 {
     "key": "group_62a7201df2c60",
-    "title": "Front Page",
+    "title": "Lift-100-wide",
     "fields": [
         {
+            "key": "field_62ac7c7240820",
+            "label": "Title",
+            "name": "lift_100_wide_title",
+            "type": "text",
+            "instructions": "Section title",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
             "key": "field_62a723820c08a",
-            "label": "Block Elements",
+            "label": "Lift 100 wide",
             "name": "lift_100_wide",
             "type": "flexible_content",
             "instructions": "Featured items for the frontpage",
@@ -141,7 +160,7 @@
                             "name": "links",
                             "type": "repeater",
                             "instructions": "Links for additional information. You can add multiple links.",
-                            "required": 0,
+                            "required": 1,
                             "conditional_logic": 0,
                             "wrapper": {
                                 "width": "",
@@ -158,7 +177,7 @@
                                     "key": "field_62a842a3efa39",
                                     "label": "Link",
                                     "name": "link",
-                                    "type": "text",
+                                    "type": "url",
                                     "instructions": "Link for additional information",
                                     "required": 1,
                                     "conditional_logic": 0,
@@ -168,10 +187,7 @@
                                         "id": ""
                                     },
                                     "default_value": "",
-                                    "placeholder": "",
-                                    "prepend": "",
-                                    "append": "",
-                                    "maxlength": ""
+                                    "placeholder": ""
                                 },
                                 {
                                     "key": "field_62a88139ce508",
@@ -198,10 +214,19 @@
                     "min": "",
                     "max": ""
                 },
+                "layout_62b4435fed73b": {
+                    "key": "layout_62b4435fed73b",
+                    "name": "",
+                    "label": "",
+                    "display": "block",
+                    "sub_fields": [],
+                    "min": "",
+                    "max": ""
+                },
                 "layout_62b1bdc5b6183": {
                     "key": "layout_62b1bdc5b6183",
                     "name": "contact-liftoff",
-                    "label": "Contact box",
+                    "label": "100% wide element with background image and contact information",
                     "display": "block",
                     "sub_fields": [
                         {
@@ -478,17 +503,17 @@
                     "min": "",
                     "max": ""
                 },
-                "layout_62c815c0e999b": {
-                    "key": "layout_62c815c0e999b",
-                    "name": "editor_container",
-                    "label": "Editor container",
+                "layout_62b4436ced73c": {
+                    "key": "layout_62b4436ced73c",
+                    "name": "newsletter",
+                    "label": "100% wide element for newsletter",
                     "display": "block",
                     "sub_fields": [
                         {
-                            "key": "field_62c815c4e999c",
-                            "label": "Content",
-                            "name": "content",
-                            "type": "wysiwyg",
+                            "key": "field_62b4436ced73d",
+                            "label": "Section title",
+                            "name": "newsletter_section_title",
+                            "type": "text",
                             "instructions": "",
                             "required": 0,
                             "conditional_logic": 0,
@@ -498,17 +523,382 @@
                                 "id": ""
                             },
                             "default_value": "",
-                            "tabs": "all",
-                            "toolbar": "full",
-                            "media_upload": 1,
-                            "delay": 0
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": "",
+                            "maxlength": ""
+                        },
+                        {
+                            "key": "field_62b44be2b4671",
+                            "label": "Newsletter body text",
+                            "name": "newsletter_body_text",
+                            "type": "text",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": "",
+                            "maxlength": ""
+                        },
+                        {
+                            "key": "field_62b44d76b4672",
+                            "label": "Liana subscription page",
+                            "name": "liana_subscription_page",
+                            "type": "url",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "placeholder": ""
+                        },
+                        {
+                            "key": "field_62d671286a6a2",
+                            "label": "Mailing list IDs",
+                            "name": "mailing_list_ids",
+                            "type": "repeater",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "collapsed": "",
+                            "min": 0,
+                            "max": 0,
+                            "layout": "table",
+                            "button_label": "",
+                            "sub_fields": [
+                                {
+                                    "key": "field_62d6713e6a6a3",
+                                    "label": "Target group",
+                                    "name": "target_group",
+                                    "type": "text",
+                                    "instructions": "Example: Newsletter for Employers\/Newcomers",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "default_value": "",
+                                    "placeholder": "",
+                                    "prepend": "",
+                                    "append": "",
+                                    "maxlength": ""
+                                },
+                                {
+                                    "key": "field_62d6833f57a2d",
+                                    "label": "Liana ID",
+                                    "name": "liana_id",
+                                    "type": "text",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "default_value": "",
+                                    "placeholder": "",
+                                    "prepend": "",
+                                    "append": "",
+                                    "maxlength": ""
+                                }
+                            ]
+                        },
+                        {
+                            "key": "field_62dfbd06354f4",
+                            "label": "Liana success page url",
+                            "name": "liana_success_page_url",
+                            "type": "url",
+                            "instructions": "Link to the page after successful subscription",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "placeholder": ""
+                        },
+                        {
+                            "key": "field_62dfc933454c6",
+                            "label": "Liana failure page url",
+                            "name": "liana_failure_page_url",
+                            "type": "url",
+                            "instructions": "Link to the error page when subscribing to the newsletter",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "placeholder": ""
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
+                },
+                "layout_62e13a74ed939": {
+                    "key": "layout_62e13a74ed939",
+                    "name": "contact_50-50",
+                    "label": "Contact 50-50",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_62e13a85ed93a",
+                            "label": "Contact 50-50 title",
+                            "name": "contact_5050_title",
+                            "type": "text",
+                            "instructions": "Title of the section.",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": "",
+                            "maxlength": ""
+                        },
+                        {
+                            "key": "field_62e13d6bd8961",
+                            "label": "Info box 50-50",
+                            "name": "info_box_5050",
+                            "type": "repeater",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "collapsed": "",
+                            "min": 0,
+                            "max": 0,
+                            "layout": "table",
+                            "button_label": "",
+                            "sub_fields": [
+                                {
+                                    "key": "field_62e13c8f6b5eb",
+                                    "label": "Info box title 50-50",
+                                    "name": "info_box_title_5050",
+                                    "type": "text",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "default_value": "",
+                                    "placeholder": "",
+                                    "prepend": "",
+                                    "append": "",
+                                    "maxlength": ""
+                                },
+                                {
+                                    "key": "field_62e13cac6b5ec",
+                                    "label": "Info box description 50-50",
+                                    "name": "info_box_description_5050",
+                                    "type": "text",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "default_value": "",
+                                    "placeholder": "",
+                                    "prepend": "",
+                                    "append": "",
+                                    "maxlength": ""
+                                },
+                                {
+                                    "key": "field_62e13cc56b5ed",
+                                    "label": "Info box phone number 50-50",
+                                    "name": "info_box_phone_number_5050",
+                                    "type": "text",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "default_value": "",
+                                    "placeholder": "",
+                                    "prepend": "",
+                                    "append": "",
+                                    "maxlength": ""
+                                },
+                                {
+                                    "key": "field_62e13cde6b5ee",
+                                    "label": "Info box email 50-50",
+                                    "name": "info_box_email_5050",
+                                    "type": "text",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "default_value": "",
+                                    "placeholder": "",
+                                    "prepend": "",
+                                    "append": "",
+                                    "maxlength": ""
+                                },
+                                {
+                                    "key": "field_62e13d096b5f0",
+                                    "label": "Info box external link 50-50",
+                                    "name": "info_box_external_link_5050",
+                                    "type": "url",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "default_value": "",
+                                    "placeholder": ""
+                                },
+                                {
+                                    "key": "field_62e13cf96b5ef",
+                                    "label": "Info box external link description 50-50",
+                                    "name": "info_box_external_link_description_5050",
+                                    "type": "text",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "default_value": "",
+                                    "placeholder": "",
+                                    "prepend": "",
+                                    "append": "",
+                                    "maxlength": ""
+                                },
+                                {
+                                    "key": "field_62e13c246b5e7",
+                                    "label": "Contact hours 50-50",
+                                    "name": "contact_hours_5050",
+                                    "type": "repeater",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "collapsed": "",
+                                    "min": 0,
+                                    "max": 0,
+                                    "layout": "table",
+                                    "button_label": "",
+                                    "sub_fields": [
+                                        {
+                                            "key": "field_62e13c246b5e8",
+                                            "label": "Days",
+                                            "name": "contact_hours_days_5050",
+                                            "type": "text",
+                                            "instructions": "Mon, Tue, Wed or Monday - Friday",
+                                            "required": 0,
+                                            "conditional_logic": 0,
+                                            "wrapper": {
+                                                "width": "",
+                                                "class": "",
+                                                "id": ""
+                                            },
+                                            "default_value": "",
+                                            "placeholder": "",
+                                            "prepend": "",
+                                            "append": "",
+                                            "maxlength": ""
+                                        },
+                                        {
+                                            "key": "field_62e13c246b5e9",
+                                            "label": "Opening time",
+                                            "name": "contact_hours_opening_time_5050",
+                                            "type": "text",
+                                            "instructions": "09:00",
+                                            "required": 0,
+                                            "conditional_logic": 0,
+                                            "wrapper": {
+                                                "width": "",
+                                                "class": "",
+                                                "id": ""
+                                            },
+                                            "default_value": "",
+                                            "placeholder": "",
+                                            "prepend": "",
+                                            "append": "",
+                                            "maxlength": ""
+                                        },
+                                        {
+                                            "key": "field_62e13c246b5ea",
+                                            "label": "Closing time",
+                                            "name": "contact_hours_closing_time_5050",
+                                            "type": "text",
+                                            "instructions": "16:00",
+                                            "required": 0,
+                                            "conditional_logic": 0,
+                                            "wrapper": {
+                                                "width": "",
+                                                "class": "",
+                                                "id": ""
+                                            },
+                                            "default_value": "",
+                                            "placeholder": "",
+                                            "prepend": "",
+                                            "append": "",
+                                            "maxlength": ""
+                                        }
+                                    ]
+                                }
+                            ]
                         }
                     ],
                     "min": "",
                     "max": ""
                 }
             },
-            "button_label": "Add Block",
+            "button_label": "Add Row",
             "min": "",
             "max": ""
         }
@@ -530,6 +920,5 @@
     "hide_on_screen": "",
     "active": true,
     "description": "",
-    "show_in_rest": 0,
-    "modified": 1657281384
+    "modified": 1659614027
 }
