@@ -27,6 +27,13 @@
         text-decoration: underline;
       }
     }
+
+    .inline-svg{
+      svg{
+        top: 2px;
+        transform: rotate(90deg);
+      }
+    }
   }
 }
 
