@@ -1,0 +1,32 @@
+.filters,
+.js-filter{
+    position: relative;
+
+    input{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: -2;
+    }
+
+    // button, a{
+    label{
+        font-weight: bold;
+        background: #fff;
+        border: 2px solid $kuvittaja-green-light;
+        border-radius: 30px;
+        padding: 6px 30px;
+        margin-right: 10px;
+        margin-bottom: 10px;
+        cursor: pointer;
+    }
+
+    input:checked + label{
+        background-color: $kuvittaja-green-light;
+    }
+
+    input:focus-within + label{
+        outline: 2px solid #000;
+    }
+}
