@@ -26,6 +26,8 @@
       @endwhile
     </div>
 
+    {!! get_the_posts_navigation() !!}
+
     <hr>
 
     {!! App\filter_posts() !!}
@@ -44,6 +46,6 @@
 
     <div class="sr-only status" aria-live="polite"></div>
 
-    {!! get_the_posts_navigation() !!}
+
   </section>
 @endsection

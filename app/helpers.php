@@ -202,7 +202,7 @@ if (!function_exists(__NAMESPACE__ . '\\filter_posts')) :
                 <fieldset>
                     <legend>Content type</legend>
                     <ul class="list-unstyled list-group list-group-horizontal" aria-labelledby="content_type">
-                        <li class="js-filter"><input type="radio" name="typefilter" value="all" checked id="type_all" /><label for="type_all">All content</label></li>
+                        <li class="js-filter"><input type="radio" name="type" value="all" checked id="type_all" /><label for="type_all">All content</label></li>
                         <?php
                             $categories = get_categories(
                                 array(
@@ -211,10 +211,10 @@ if (!function_exists(__NAMESPACE__ . '\\filter_posts')) :
                             );
 
                             foreach ( $categories as $category ) {
-                                echo '<li class="js-filter"><input type="radio" data-type="post" data-category="'. $category->name .'" name="typefilter" value="post" id="type_post_'. $category->term_id .'" /><label for="type_post_'. $category->term_id .'">'. $category->name .'</label></li>';
+                                echo '<li class="js-filter"><input type="radio" data-category="'. $category->name .'" name="type" value="post" id="type_post_'. $category->term_id .'" /><label for="type_post_'. $category->term_id .'">'. $category->name .'</label></li>';
                             }
                         ?>
-                        <li class="js-filter"><input type="radio" data-type="post" name="typefilter" value="event" id="type_event" /><label for="type_event">Event</label></li>
+                        <li class="js-filter"><input type="radio" name="type" value="event" id="type_event" /><label for="type_event">Event</label></li>
                     </ul>
                 </fieldset>
 
@@ -222,7 +222,7 @@ if (!function_exists(__NAMESPACE__ . '\\filter_posts')) :
                 <fieldset>
                     <legend>Target group</legend>
                     <ul class="list-unstyled list-group list-group-horizontal" aria-labelledby="content_type">
-                        <li class="js-filter"><input type="radio" name="targetfilter" value="all" checked id="target_group_all" /><label for="target_group_all">All groups</label></li>
+                        <li class="js-filter"><input type="radio" name="target" value="all" checked id="target_group_all" /><label for="target_group_all">All groups</label></li>
                         <?php
                             $terms = get_terms([
                                 'taxonomy' => 'target_group',
@@ -230,7 +230,7 @@ if (!function_exists(__NAMESPACE__ . '\\filter_posts')) :
                             ]);
 
                             foreach ($terms as $term){
-                                echo '<li class="filter-item js-filter"><input type="radio" name="targetfilter" value="'. $term->term_id .'"  id="target_group_' . $term->term_id  . '"/>' . '<label for="target_group_' . $term->term_id  . '">' . $term->name . '</label></li>';
+                                echo '<li class="filter-item js-filter"><input type="radio" name="target" value="'. $term->term_id .'"  id="target_group_' . $term->term_id  . '"/>' . '<label for="target_group_' . $term->term_id  . '">' . $term->name . '</label></li>';
                             }
                         ?>
                     </ul>
@@ -251,16 +251,15 @@ endif;
 */
 function post_filter_function(){
 
-    $type = $_POST['typefilter'] !== 'all' ? $_POST['typefilter'] : ['event', 'post'];
-    $categoryNews = $_POST['typefilter'] == 'post' ? 'news' : '';
-    $targetGroup = $_POST['targetfilter'];
-
     $posts_per_page = 2;
-    // $showLoadMore = false;
     $paged = $_POST['page'] ? ($_POST['page'] + 1) : 1;
 
-    $orderBy = $_POST['typefilter'] == 'event' ? 'start_time' : 'publish_date';
-    $order = $_POST['typefilter'] == 'event' ? 'ASC' : 'DESC';
+    $type = $_POST['type'] !== 'all' ? $_POST['type'] : ['event', 'post'];
+    $categoryNews = $_POST['type'] == 'post' ? 'news' : '';
+    $targetGroup = $_POST['target'];
+
+    $orderBy = $_POST['type'] == 'event' ? 'start_time' : 'publish_date';
+    $order = $_POST['type'] == 'event' ? 'ASC' : 'DESC';
 
     $args = array(
         'post_type' => $type,
@@ -309,13 +308,6 @@ function post_filter_function(){
 
     $query = new \WP_Query($args);
 
-    // echo 'post found ' .$query->found_posts;
-    // echo 'post per ' .$posts_per_page;
-
-    // if( $query->found_posts > $posts_per_page){
-    //     $showLoadMore = true;
-    // }
-
     if ($query->have_posts()){
 
         while ($query->have_posts()): $query->the_post();
@@ -354,7 +346,6 @@ function post_filter_function(){
         echo '</div>';
         endwhile;
 
-        wp_reset_postdata();
     }else{
         echo 'No posts found';
     }
