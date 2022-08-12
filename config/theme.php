@@ -57,6 +57,8 @@ return [
         'Show address on a map',
         'Sorry, no news were found.',
         'Sorry, no results were found.',
-        'The default lift image if item does not have one.',
+        'Subscribed to the newsletter successfully.',
+        'Subscription to the newsletter failed.',
+        'The default lift image if item does not have one.'
     ],
 ];
