@@ -10,20 +10,31 @@
         z-index: -2;
     }
 
-    // button, a{
     label{
         font-weight: bold;
         background: #fff;
-        border: 2px solid $kuvittaja-green-light;
+        border: 2px solid #91c8c2;
         border-radius: 30px;
         padding: 6px 30px;
         margin-right: 10px;
         margin-bottom: 10px;
         cursor: pointer;
+
+        &:hover,
+        &:focus{
+            -webkit-transition: 0.3s, -webkit-box-shadow;
+            transition: 0.3s, -webkit-box-shadow;
+            -o-transition: box-shadow, 0.3s;
+            transition: box-shadow, 0.3s;
+            transition: box-shadow, 0.3s, -webkit-box-shadow;
+
+            -webkit-box-shadow: 0 4px 10px rgba(0, 0, 0, .2);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, .2);
+        }
     }
 
     input:checked + label{
-        background-color: $kuvittaja-green-light;
+        background-color: #91c8c2;
     }
 
     input:focus-within + label{

@@ -1,7 +1,6 @@
 
 (function($){
     $(document).ready(function(){
-        console.log('ajax');
 
         /**
         * AJAX filter functionality
@@ -9,26 +8,23 @@
         $('.js-filter input[type="radio"]').on('change', function () {
             const filter = $('#filter');
             const statusSrOnly = $('.sr-only.status');
-
-            console.log(filter.serialize());
+            const inputValue = $(this).val();
 
             $.ajax({
                 url: filter.attr('action'),
-                data: filter.serialize(), // form data
+                data: filter.serialize(),
                 type: filter.attr('method'), // POST
                 beforeSend: function() {
-                    statusSrOnly.text('Loading ');
-                    console.log('loading');
+                    statusSrOnly.text('Loading ' + inputValue);
                 },
                 success: function (data) {
-                    $('#blog-posts-container').html(data); // insert data
+                    $('#blog-posts-container').html(data);
                 },
                 error: function(result){
                     console.warn(result);
                 },
                 complete: function() {
-                    statusSrOnly.text('Loading completed');
-                    console.log('completed');
+                    statusSrOnly.text('Loading ' + inputValue + ' completed');
                 },
             });
             return false;
@@ -53,8 +49,7 @@
                 data: filter.serialize() + '&paged=' + url.searchParams.get('paged'),
                 type: 'get',
                 beforeSend: function() {
-                    statusSrOnly.text('Loading');
-                    console.log('loading');
+                    statusSrOnly.text('Loading page' + url.searchParams.get('paged'));
                 },
                 success: function(result){
                     btn.data('page', nextPage)
@@ -65,7 +60,6 @@
                 },
                 complete: function() {
                     statusSrOnly.text('Loading completed');
-                    console.log('completed');
                 },
             });
 

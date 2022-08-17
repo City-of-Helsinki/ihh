@@ -11,13 +11,13 @@
     @endwhile
 </div>
 
-<div class="pagination">
+<nav class="pagination" aria-label="Pagination">
     @php
     echo paginate_links( array(
                 'format' => '?paged=%#%',
                 'prev_text'          => __( 'Newer posts', 'ihh' ),
                 'next_text'          => __( 'Older posts', 'ihh' ),
+                'type' => 'list'
             ) );
     @endphp
-</div>
-<div class="sr-only status" aria-live="polite"></div>
+</nav>

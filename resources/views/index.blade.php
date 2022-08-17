@@ -14,8 +14,9 @@
     {!! App\filter_posts() !!}
 
     <div id="blog-posts-container">
-          @include ('partials.content.blog-post-list')
+        @include ('partials.content.blog-post-list')
     </div>
+    <div class="sr-only status" aria-live="polite"></div>
 
   </section>
 @endsection

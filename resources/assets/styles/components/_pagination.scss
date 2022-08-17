@@ -1,0 +1,48 @@
+%pagination-arrow{
+    content: "";
+    display: inline-block;
+    width: 15px;
+    height: 15px;
+    background: url("../images/icons/arrow-right-green.svg") center center no-repeat;
+    margin-bottom: -2px;
+}
+
+.pagination{
+    ul {
+        padding: 0 1%;
+
+        > li {
+            display: inline-block;
+        }
+
+        .page-numbers {
+            list-style: none;
+            padding: 0.25rem 0.35rem;
+            text-decoration: unset;
+            font-weight: 400;
+
+
+            &.current{
+                background: #91c8c2;
+                border-radius: 4px;
+            }
+
+            &.prev:before{
+               @extend %pagination-arrow;
+               transform: rotate(180deg);
+               margin-right: 6px;
+            }
+
+            &.next:after{
+                @extend %pagination-arrow;
+                margin-left: 6px;
+            }
+        }
+
+        a:hover,
+        a:focus{
+            text-decoration: underline;
+        }
+    }
+
+}

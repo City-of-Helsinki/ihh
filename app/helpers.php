@@ -222,7 +222,7 @@ function get_post_categories($list_pluck = false){
 
 function get_target_groups(){
     $terms = get_terms([
-        'taxonomy' => 'targetgroup',
+        'taxonomy' => 'target_group',
         'hide_empty' => false,
     ]);
     return $terms;
@@ -240,7 +240,7 @@ function post_filter_function(){
     $paged = (!empty( (int) $_GET['paged'] ) ) ? esc_attr($_GET['paged']) : 1;
     $args = array(
         'is_posts_page' => true,
-        'targetgroup' => ( 'all' !== $_GET['targetgroup']) ? esc_attr( $_GET['targetgroup']) : 0,
+        'target_group' => ( 'all' !== $_GET['targetgroup']) ? esc_attr( $_GET['targetgroup']) : 0,
         'paged' => $paged
     );
     $query = apply_filters(__NAMESPACE__ . '\pre_get_posts', (new \WP_Query($args)));
