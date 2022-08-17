@@ -195,55 +195,38 @@ function ihh_inline_svg($file) {
 */
 if (!function_exists(__NAMESPACE__ . '\\filter_posts')) :
     function filter_posts(){
-        ?>
-        <div class="post-filter">
-            <form action="<?php echo site_url() ?>/wp-admin/admin-ajax.php" method="POST" id="filter" class="filters d-flex flex-wrap" data-group="type" aria-label="Filter News and Events">
 
-                <fieldset>
-                    <legend>Content type</legend>
-                    <ul class="list-unstyled list-group list-group-horizontal" aria-labelledby="content_type">
-                        <li class="js-filter"><input type="radio" name="type" value="all" checked id="type_all" /><label for="type_all">All content</label></li>
-                        <?php
-                            $categories = get_categories(
-                                array(
-                                    'orderby' => 'name'
-                                )
-                            );
-
-                            foreach ( $categories as $category ) {
-                                echo '<li class="js-filter"><input type="radio" data-category="'. $category->name .'" name="type" value="post" id="type_post_'. $category->term_id .'" /><label for="type_post_'. $category->term_id .'">'. $category->name .'</label></li>';
-                            }
-                        ?>
-                        <li class="js-filter"><input type="radio" name="type" value="event" id="type_event" /><label for="type_event">Event</label></li>
-                    </ul>
-                </fieldset>
-
-
-                <fieldset>
-                    <legend>Target group</legend>
-                    <ul class="list-unstyled list-group list-group-horizontal" aria-labelledby="content_type">
-                        <li class="js-filter"><input type="radio" name="target" value="all" checked id="target_group_all" /><label for="target_group_all">All groups</label></li>
-                        <?php
-                            $terms = get_terms([
-                                'taxonomy' => 'target_group',
-                                'hide_empty' => false,
-                            ]);
-
-                            foreach ($terms as $term){
-                                echo '<li class="filter-item js-filter"><input type="radio" name="target" value="'. $term->term_id .'"  id="target_group_' . $term->term_id  . '"/>' . '<label for="target_group_' . $term->term_id  . '">' . $term->name . '</label></li>';
-                            }
-                        ?>
-                    </ul>
-                </fieldset>
-
-                <input type="hidden" name="action" value="myfilter">
-            </form>
-
-        </div>
-        <?php
+        $data = array(
+            "ajax_url" => \admin_url( 'admin-ajax.php' ),
+            "categories" => get_post_categories(),
+            "target_groups" => get_target_groups(),
+            "base" => \home_url( $_SERVER['REQUEST_URI'] ),
+        );
+        echo template('partials/content/filter-posts', $data);
     }
 endif;
 
+function get_post_categories($list_pluck = false){
+    $cats = get_categories(
+        array(
+            'orderby' => 'name'
+        )
+    );
+    if (!empty($list_pluck)){
+        $cats = wp_list_pluck( $cats, $list_pluck );
+    }
+
+    return $cats;
+
+}
+
+function get_target_groups(){
+    $terms = get_terms([
+        'taxonomy' => 'targetgroup',
+        'hide_empty' => false,
+    ]);
+    return $terms;
+}
 
 
 /*
@@ -251,105 +234,18 @@ endif;
 */
 function post_filter_function(){
 
-    $posts_per_page = 2;
-    $paged = $_POST['page'] ? ($_POST['page'] + 1) : 1;
+    set_query_var('type', $_GET['type']);
+    set_query_var('paged', $_GET['paged']);
 
-    $type = $_POST['type'] !== 'all' ? $_POST['type'] : ['event', 'post'];
-    $categoryNews = $_POST['type'] == 'post' ? 'news' : '';
-    $targetGroup = $_POST['target'];
-
-    $orderBy = $_POST['type'] == 'event' ? 'start_time' : 'publish_date';
-    $order = $_POST['type'] == 'event' ? 'ASC' : 'DESC';
-
+    $paged = (!empty( (int) $_GET['paged'] ) ) ? esc_attr($_GET['paged']) : 1;
     $args = array(
-        'post_type' => $type,
-        'posts_per_page' => $posts_per_page,
-        'paged' => $paged,
-        'post_status' => 'publish',
-        'orderby' => $orderBy,
-        'order' => $order,
-
-        'meta_query' => array(
-            'relation' => 'OR',
-            [
-                'relation' => 'OR',
-                [
-                    'key'     => 'end_time',
-                    'value'   => date( 'Y-m-d H:i:s' ),
-                    'compare' => '>=',
-                    'type'    => 'DATETIME',
-                ],
-                [
-                    'key'     => 'end_time',
-                    'value'   => '',
-                    'compare' => '==',
-                ],
-            ],
-            [
-                [
-                    'key'     => 'end_time',
-                    'compare' => 'NOT EXISTS',
-                    'value'   => '',
-                ],
-            ],
-        ),
+        'is_posts_page' => true,
+        'targetgroup' => ( 'all' !== $_GET['targetgroup']) ? esc_attr( $_GET['targetgroup']) : 0,
+        'paged' => $paged
     );
-
-    if($targetGroup !== NULL && $targetGroup !== 'all'){
-        $args['tax_query'] = array(
-            'relation' => 'OR',
-            array(
-                'taxonomy' => 'target_group',
-                'field'    => 'term_id',
-                'terms'    =>  $targetGroup,
-            ),
-        );
-    }
-
-    $query = new \WP_Query($args);
-
-    if ($query->have_posts()){
-
-        while ($query->have_posts()): $query->the_post();
-            echo '<div class="post-grid-item">';
-        ?>
-
-            <a href="<?= get_permalink(); ?>">
-                <header>
-                    <?php if(has_post_thumbnail()){ ?>
-                        <img src="<?php echo get_the_post_thumbnail_url(get_the_ID(), 'lift'); ?>" alt="<?php the_title(); ?>">
-                    <?php }else{ ?>
-                        <img role="presentation" src="<?php echo get_default_image('lift'); ?>" alt="">
-                    <?php } ?>
-                </header>
-                <div class="post-content">
-                <?php if('event' === get_post_type()) : ?>
-                    <div class="post-content-event-meta">
-                        <?php if($location = get_field('location')) : ?>
-                            <p class="location"> <?php echo $location ?></p>
-                        <?php endif; ?>
-                    </div>
-                <?php endif; ?>
-
-                <h2><?php echo get_the_title(); ?></h2>
-
-                <?php if('event' === get_post_type()) : ?>
-                    <div class="post-content-event-meta">
-                    <?php if($date = get_field('start_time')) : ?>
-                        <p class="date"> <?php echo ihh_inline_svg('icons/clock_outlines'); ?> <?php echo format_event_date(); ?></p>
-                    <?php endif; ?>
-                    </div>
-                <?php endif; ?>
-                </div>
-            </a>
-        <?php
-        echo '</div>';
-        endwhile;
-
-    }else{
-        echo 'No posts found';
-    }
-
+    $query = apply_filters(__NAMESPACE__ . '\pre_get_posts', (new \WP_Query($args)));
+    $GLOBALS['wp_query'] = $query;
+    echo template('partials/content/blog-post-list');
     die();
 }
 

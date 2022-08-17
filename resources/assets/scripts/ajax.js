@@ -21,7 +21,7 @@
                     console.log('loading');
                 },
                 success: function (data) {
-                    $('#blog-posts').html(data); // insert data
+                    $('#blog-posts-container').html(data); // insert data
                 },
                 error: function(result){
                     console.warn(result);
@@ -37,7 +37,8 @@
         /*
         * Load more
         */
-        $(document).on('click', '.load-more', function(){
+        $(document).on('click', '.pagination a', function(evt){
+            evt.preventDefault();
             const btn = $(this);
             const page = btn.data('page');
             const nextPage = page + 1 ;
@@ -45,17 +46,19 @@
             const filter = $('#filter');
             const statusSrOnly = $('.sr-only.status');
 
+            const url = new URL(btn.attr('href'));
+
             $.ajax({
                 url: filter.attr('action'),
-                data: filter.serialize() + '&page=' + page,
-                type: 'post',
+                data: filter.serialize() + '&paged=' + url.searchParams.get('paged'),
+                type: 'get',
                 beforeSend: function() {
                     statusSrOnly.text('Loading');
                     console.log('loading');
                 },
                 success: function(result){
                     btn.data('page', nextPage)
-                    $('#blog-posts').append(result);
+                    $('#blog-posts-container').html(result);
                 },
                 error: function(result){
                     console.warn(result);

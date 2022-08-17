@@ -47,9 +47,34 @@ add_action( 'init', function () {
 /**
  * Add events to main query
  */
-add_action( 'pre_get_posts', function ( \WP_Query $query ) {
-    if ( $query->is_posts_page && ! $query->is_admin && $query->is_main_query() ) {
-        $query->set( 'post_type', [ 'post', 'event' ] );
+add_action( 'pre_get_posts', __NAMESPACE__ . '\pre_get_posts');
+
+function pre_get_posts ( \WP_Query $query ) {
+ 
+    if ( ($query->is_posts_page && ! $query->is_admin && $query->is_main_query()) 
+        || (wp_doing_ajax() && $_REQUEST["action"] === 'myfilter') ) {          
+        
+        $default_type = 'post';
+        
+        $all_types = array( $default_type, 'event');
+        $user_type = get_query_var('type');
+        
+        $names = get_post_categories('slug');
+
+        if (!empty($user_type) && in_array($user_type, $all_types)){
+            $type = $user_type;
+        } else if ( !empty($user_type) && in_array($user_type, $names) ){
+            $type = $default_type;
+        } else{
+            $type = $all_types;
+        }
+
+        $orderBy = 'event' === $type ? 'start_time' : 'publish_date';
+        $order   = 'event' === $type ? 'ASC' : 'DESC';
+
+        $query->set( 'post_type', $type );
+        $query->set('orderby', $orderBy);
+        $query->set('order', $order);
 
         $query->set( 'meta_query', create_meta_query( $query ) );
     }
@@ -59,7 +84,7 @@ add_action( 'pre_get_posts', function ( \WP_Query $query ) {
     }
 
     return $query;
-} );
+} 
 
 /**
  * Add chat-script to head

@@ -190,3 +190,9 @@ add_filter('wp_nav_menu_items', function($items, $args){
 
 add_filter('acf_the_content', 'eae_encode_emails');
 add_filter('acf/load_value', 'eae_encode_emails');
+
+
+add_filter('query_vars', function($qvars){
+    $qvars[] = 'type';
+    return $qvars;
+});
