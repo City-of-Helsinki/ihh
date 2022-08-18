@@ -50,15 +50,15 @@ add_action( 'init', function () {
 add_action( 'pre_get_posts', __NAMESPACE__ . '\pre_get_posts');
 
 function pre_get_posts ( \WP_Query $query ) {
- 
-    if ( ($query->is_posts_page && ! $query->is_admin && $query->is_main_query()) 
-        || (wp_doing_ajax() && $_REQUEST["action"] === 'myfilter') ) {          
-        
+
+    if ( ($query->is_posts_page && ! $query->is_admin)
+        || (wp_doing_ajax() && $_REQUEST["action"] === 'myfilter') ) {
+
         $default_type = 'post';
-        
+
         $all_types = array( $default_type, 'event');
         $user_type = get_query_var('type');
-        
+
         $names = get_post_categories('slug');
 
         if (!empty($user_type) && in_array($user_type, $all_types)){
@@ -84,7 +84,7 @@ function pre_get_posts ( \WP_Query $query ) {
     }
 
     return $query;
-} 
+}
 
 /**
  * Add chat-script to head
@@ -104,7 +104,7 @@ add_action( 'wp_head', function () {
             the_row();
             $template = locate_template('resources/views/flexible/'. get_row_layout());
             include $template;
-        } 
+        }
     }
 
  }, 10, 2);

@@ -506,6 +506,54 @@
                     ],
                     "min": "",
                     "max": ""
+                },
+                "layout_62fdfb5744db0": {
+                    "key": "layout_62fdfb5744db0",
+                    "name": "news_and_events_list",
+                    "label": "News and Events list",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_62fe017f50a2f",
+                            "label": "Section heading",
+                            "name": "section_heading",
+                            "type": "text",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": "",
+                            "maxlength": ""
+                        },
+                        {
+                            "key": "field_62fdfb6644db1",
+                            "label": "List latests News and Events",
+                            "name": "list_latests_news_and_events",
+                            "type": "true_false",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "message": "",
+                            "default_value": 0,
+                            "ui": 1,
+                            "ui_on_text": "On",
+                            "ui_off_text": "Off"
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
                 }
             },
             "button_label": "Add Block",

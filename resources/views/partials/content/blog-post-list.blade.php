@@ -11,7 +11,7 @@
     @endwhile
 </div>
 
-<nav class="pagination" aria-label="Pagination">
+<nav class="pagination" aria-label="@php pll_e('Pagination'); @endphp">
     @php
     echo paginate_links( array(
                 'format' => '?paged=%#%',
