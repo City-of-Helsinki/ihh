@@ -4,10 +4,10 @@
   $failure_url = add_query_arg( array('newsletter' => 'fail'), $current_url );
 ?>
 
-<div class="newsletter" id="newsletter">
-  <div class="container-fluid pt-3">
+<div class="newsletter alignfull container-fluid" id="newsletter">
+  <div class="row justify-content-center">
 
-    <div class="offset-lg-4 offset-md-3 col-12 col-lg-4 col-md-6 py-lg-4 p-md-3 mb-5">
+    <div class="col-12 col-lg-4 col-md-6 py-lg-5 py-md-4 py-3">
       <?php
       $newsletter_status = $_GET["newsletter"];
         if ( !empty($newsletter_status) && $newsletter_status === "success"){
@@ -24,7 +24,7 @@
                 <input type="hidden" name="success_url" value="<?php echo $success_url; ?>#newsletter">
                 <input type="hidden" name="failure_url" value="<?php echo $failure_url; ?>#newsletter">
                 <div class="mb-3 email">
-                  <label for="newsletterEmail" class="form-label">Email*</label>
+                  <label for="newsletterEmail" class="form-label"><?php pll_e('Email') ?>*</label>
                   <input name="email" type="email" class="form-control border border-dark" required></input>
                 </div>
                 <div class="mb-3 radio-buttons row mx-0"> 
