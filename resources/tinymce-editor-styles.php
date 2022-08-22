@@ -15,6 +15,18 @@ function ihh_custom_styles( $init_array ) {
             'block' => 'p',
             'classes' => 'ingress',
             'wrapper' => false,
+        ),
+        array(
+            'title' => 'Highlighted box green',
+            'block' => 'div',
+            'classes' => 'highlighted-content background-green',
+            'wrapper' => true,
+        ),
+        array(
+            'title' => 'Highlighted box red',
+            'block' => 'div',
+            'classes' => 'highlighted-content background-red',
+            'wrapper' => true,
         )
     );
 
@@ -24,4 +36,3 @@ function ihh_custom_styles( $init_array ) {
 }
 
 add_filter( 'tiny_mce_before_init', 'ihh_custom_styles' );
-?>
