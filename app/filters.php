@@ -194,5 +194,6 @@ add_filter('acf/load_value', 'eae_encode_emails');
 
 add_filter('query_vars', function($qvars){
     $qvars[] = 'type';
+    $qvars[] = 'is_news_and_events_query';
     return $qvars;
 });

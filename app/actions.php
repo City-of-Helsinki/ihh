@@ -50,15 +50,18 @@ add_action( 'init', function () {
 add_action( 'pre_get_posts', __NAMESPACE__ . '\pre_get_posts');
 
 function pre_get_posts ( \WP_Query $query ) {
-
-    if ( ($query->is_posts_page && ! $query->is_admin)
+    if ( ( ($query->is_posts_page || ($query->get('is_news_and_events_query') === true)) && ! $query->is_admin)
         || (wp_doing_ajax() && $_REQUEST["action"] === 'myfilter') ) {
-
+        
         $default_type = 'post';
-
         $all_types = array( $default_type, 'event');
-        $user_type = get_query_var('type');
 
+        if ( wp_doing_ajax() ){
+            $user_type = get_query_var('type');
+        } else{
+            $user_type = $query->get('type', '');
+        }
+     
         $names = get_post_categories('slug');
 
         if (!empty($user_type) && in_array($user_type, $all_types)){

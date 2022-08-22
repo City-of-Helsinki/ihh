@@ -41,12 +41,13 @@
             <div class="posts-container mt-4">
             <?php
                 $args = array(
-                    'is_posts_page' => true,
                     'posts_per_page' => 3,
-
+                    'post_type',
+                    'is_news_and_events_query' => true,
+                    'type' => 'event'
                 );
-                $query = apply_filters(__NAMESPACE__ . '\pre_get_posts', (new \WP_Query($args)));
 
+                $query = apply_filters(__NAMESPACE__ . '\pre_get_posts', new \WP_Query( $args ) );
                 if($query->have_posts() ) {
                     while($query->have_posts() ) {
                         $query->the_post();
