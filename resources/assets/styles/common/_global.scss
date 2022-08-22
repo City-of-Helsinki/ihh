@@ -135,7 +135,7 @@ h6 {
   font-size: 1.05rem;
 }
 
-.ingress{
+.ingress {
   font-weight: bold;
 }
 
@@ -193,7 +193,7 @@ h6 {
   position: relative;
   margin-bottom: 2.5rem;
 
-  > a{
+  > a {
     font-size: 1rem;
     text-decoration: unset;
     color: $black !important;
@@ -201,21 +201,21 @@ h6 {
     margin: auto 0 auto auto;
 
     &:hover,
-    &:focus-within{
+    &:focus-within {
       text-decoration: underline;
     }
 
-    .inline-svg{
+    .inline-svg {
       fill: $kuvittaja-green;
     }
   }
 }
 
-.direction-column-md{
+.direction-column-md {
   @include media-breakpoint-down("md") {
     flex-direction: column;
 
-    > a{
+    > a {
       margin: 1rem auto 0 0;
     }
   }
