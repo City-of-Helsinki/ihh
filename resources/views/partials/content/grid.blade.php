@@ -17,6 +17,9 @@
       @endif
 
       <h2>{!! get_the_title() !!}</h2>
+      <span class="order-1 mb-3">
+        {{ \App\Controllers\App::get_category() }}
+      </span>
 
       @if('event' === get_post_type())
         <div class="post-content-event-meta">
