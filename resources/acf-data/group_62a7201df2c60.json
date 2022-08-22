@@ -478,6 +478,129 @@
                     "min": "",
                     "max": ""
                 },
+                "layout_62b4436ced73c": {
+                    "key": "layout_62b4436ced73c",
+                    "name": "newsletter",
+                    "label": "100% wide element for newsletter",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_62b4436ced73d",
+                            "label": "Section title",
+                            "name": "newsletter_section_title",
+                            "type": "text",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": "",
+                            "maxlength": ""
+                        },
+                        {
+                            "key": "field_62b44be2b4671",
+                            "label": "Newsletter body text",
+                            "name": "newsletter_body_text",
+                            "type": "text",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": "",
+                            "maxlength": ""
+                        },
+                        {
+                            "key": "field_62b44d76b4672",
+                            "label": "Liana subscription page",
+                            "name": "liana_subscription_page",
+                            "type": "url",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "placeholder": ""
+                        },
+                        {
+                            "key": "field_62d671286a6a2",
+                            "label": "Mailing list IDs",
+                            "name": "mailing_list_ids",
+                            "type": "repeater",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "collapsed": "",
+                            "min": 0,
+                            "max": 0,
+                            "layout": "table",
+                            "button_label": "",
+                            "sub_fields": [
+                                {
+                                    "key": "field_62d6713e6a6a3",
+                                    "label": "Target group",
+                                    "name": "target_group",
+                                    "type": "text",
+                                    "instructions": "Example: Newsletter for Employers\/Newcomers",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "default_value": "",
+                                    "placeholder": "",
+                                    "prepend": "",
+                                    "append": "",
+                                    "maxlength": ""
+                                },
+                                {
+                                    "key": "field_62d6833f57a2d",
+                                    "label": "Liana ID",
+                                    "name": "liana_id",
+                                    "type": "text",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "default_value": "",
+                                    "placeholder": "",
+                                    "prepend": "",
+                                    "append": "",
+                                    "maxlength": ""
+                                }
+                            ]
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
+                },
                 "layout_62c815c0e999b": {
                     "key": "layout_62c815c0e999b",
                     "name": "editor_container",
