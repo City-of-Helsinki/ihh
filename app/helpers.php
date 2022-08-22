@@ -189,3 +189,65 @@ function ihh_inline_svg($file) {
 
     return $svg;
 }
+
+/*
+* Post Filters
+*/
+if (!function_exists(__NAMESPACE__ . '\\filter_posts')) :
+    function filter_posts(){
+
+        $data = array(
+            "ajax_url" => \admin_url( 'admin-ajax.php' ),
+            "categories" => get_post_categories(),
+            "target_groups" => get_target_groups(),
+            "base" => \home_url( $_SERVER['REQUEST_URI'] ),
+        );
+        echo template('partials/content/filter-posts', $data);
+    }
+endif;
+
+function get_post_categories($list_pluck = false){
+    $cats = get_categories(
+        array(
+            'orderby' => 'name'
+        )
+    );
+    if (!empty($list_pluck)){
+        $cats = wp_list_pluck( $cats, $list_pluck );
+    }
+
+    return $cats;
+
+}
+
+function get_target_groups(){
+    $terms = get_terms([
+        'taxonomy' => 'target_group',
+        'hide_empty' => false,
+    ]);
+    return $terms;
+}
+
+
+/*
+* Post filter function
+*/
+function post_filter_function(){
+
+    set_query_var('type', $_GET['type']);
+    set_query_var('paged', $_GET['paged']);
+
+    $paged = (!empty( (int) $_GET['paged'] ) ) ? esc_attr($_GET['paged']) : 1;
+    $args = array(
+        'is_posts_page' => true,
+        'target_group' => ( 'all' !== $_GET['targetgroup']) ? esc_attr( $_GET['targetgroup']) : 0,
+        'paged' => $paged
+    );
+    $query = apply_filters(__NAMESPACE__ . '\pre_get_posts', (new \WP_Query($args)));
+    $GLOBALS['wp_query'] = $query;
+    echo template('partials/content/blog-post-list');
+    die();
+}
+
+add_action('wp_ajax_myfilter', __NAMESPACE__ . '\\post_filter_function');
+add_action('wp_ajax_nopriv_myfilter', __NAMESPACE__ . '\\post_filter_function');

@@ -89,6 +89,43 @@ require_once('integrations/complianz.php');
 
 require_once(get_template_directory().'/tinymce-editor-styles.php');
 
+
+/**
+ * Add custom taxonomies
+ *
+ * Additional custom taxonomies can be defined here
+ * https://codex.wordpress.org/Function_Reference/register_taxonomy
+ */
+
+ // Target groups for news and events
+ function add_custom_taxonomies() {
+    register_taxonomy('target_group', 'post', array(
+      'hierarchical' => true,
+
+      'labels' => array(
+        'name' => _x( 'Target group', 'taxonomy general name' ),
+        'singular_name' => _x( 'Target group', 'taxonomy singular name' ),
+        'search_items' =>  __( 'Search Target groups' ),
+        'all_items' => __( 'All Target groups' ),
+        'parent_item' => __( 'Parent Target group' ),
+        'parent_item_colon' => __( 'Parent Target group:' ),
+        'edit_item' => __( 'Edit Target group' ),
+        'update_item' => __( 'Update Target group' ),
+        'add_new_item' => __( 'Add New Target group' ),
+        'new_item_name' => __( 'New Target group Name' ),
+        'menu_name' => __( 'Target groups' ),
+      ),
+
+      'rewrite' => array(
+        'slug' => 'target_group',
+        'with_front' => false,
+        'hierarchical' => true
+      ),
+    ));
+}
+add_action( 'init', 'add_custom_taxonomies', 0 );
+
+
 /**
  * Here's what's happening with these hooks:
  * 1. WordPress initially detects theme in themes/ihh/resources
