@@ -681,12 +681,12 @@
                 "layout_62e13a74ed939": {
                     "key": "layout_62e13a74ed939",
                     "name": "contact_50-50",
-                    "label": "Contact 50-50",
+                    "label": "Contact Box",
                     "display": "block",
                     "sub_fields": [
                         {
                             "key": "field_62e13a85ed93a",
-                            "label": "Contact 50-50 title",
+                            "label": "Contact Section Title",
                             "name": "contact_5050_title",
                             "type": "text",
                             "instructions": "Title of the section.",
@@ -701,11 +701,12 @@
                             "placeholder": "",
                             "prepend": "",
                             "append": "",
-                            "maxlength": ""
+                            "maxlength": "",
+                            "translations": "translate"
                         },
                         {
                             "key": "field_62e13d6bd8961",
-                            "label": "Info box 50-50",
+                            "label": "Contact Box",
                             "name": "info_box_5050",
                             "type": "repeater",
                             "instructions": "",
@@ -716,22 +717,22 @@
                                 "class": "",
                                 "id": ""
                             },
-                            "collapsed": "",
-                            "min": 0,
-                            "max": 0,
-                            "layout": "table",
-                            "button_label": "",
+                            "collapsed": "field_62e13c8f6b5eb",
+                            "min": 1,
+                            "max": 2,
+                            "layout": "row",
+                            "button_label": "Add Contact",
                             "sub_fields": [
                                 {
                                     "key": "field_62e13c8f6b5eb",
-                                    "label": "Info box title 50-50",
+                                    "label": "Title",
                                     "name": "info_box_title_5050",
                                     "type": "text",
                                     "instructions": "",
                                     "required": 0,
                                     "conditional_logic": 0,
                                     "wrapper": {
-                                        "width": "",
+                                        "width": "100",
                                         "class": "",
                                         "id": ""
                                     },
@@ -739,37 +740,39 @@
                                     "placeholder": "",
                                     "prepend": "",
                                     "append": "",
-                                    "maxlength": ""
+                                    "maxlength": "",
+                                    "translations": "translate"
                                 },
                                 {
                                     "key": "field_62e13cac6b5ec",
-                                    "label": "Info box description 50-50",
+                                    "label": "Description",
                                     "name": "info_box_description_5050",
-                                    "type": "text",
+                                    "type": "textarea",
                                     "instructions": "",
                                     "required": 0,
                                     "conditional_logic": 0,
                                     "wrapper": {
-                                        "width": "",
+                                        "width": "100",
                                         "class": "",
                                         "id": ""
                                     },
                                     "default_value": "",
                                     "placeholder": "",
-                                    "prepend": "",
-                                    "append": "",
-                                    "maxlength": ""
+                                    "maxlength": "",
+                                    "rows": 3,
+                                    "new_lines": "br",
+                                    "translations": "copy_once"
                                 },
                                 {
                                     "key": "field_62e13cc56b5ed",
-                                    "label": "Info box phone number 50-50",
+                                    "label": "Phone Number",
                                     "name": "info_box_phone_number_5050",
                                     "type": "text",
                                     "instructions": "",
                                     "required": 0,
                                     "conditional_logic": 0,
                                     "wrapper": {
-                                        "width": "",
+                                        "width": "50",
                                         "class": "",
                                         "id": ""
                                     },
@@ -777,18 +780,19 @@
                                     "placeholder": "",
                                     "prepend": "",
                                     "append": "",
-                                    "maxlength": ""
+                                    "maxlength": "",
+                                    "translations": "translate"
                                 },
                                 {
                                     "key": "field_62e13cde6b5ee",
-                                    "label": "Info box email 50-50",
+                                    "label": "Email",
                                     "name": "info_box_email_5050",
                                     "type": "text",
                                     "instructions": "",
                                     "required": 0,
                                     "conditional_logic": 0,
                                     "wrapper": {
-                                        "width": "",
+                                        "width": "50",
                                         "class": "",
                                         "id": ""
                                     },
@@ -796,34 +800,36 @@
                                     "placeholder": "",
                                     "prepend": "",
                                     "append": "",
-                                    "maxlength": ""
+                                    "maxlength": "",
+                                    "translations": "translate"
                                 },
                                 {
                                     "key": "field_62e13d096b5f0",
-                                    "label": "Info box external link 50-50",
+                                    "label": "Link",
                                     "name": "info_box_external_link_5050",
                                     "type": "url",
                                     "instructions": "",
                                     "required": 0,
                                     "conditional_logic": 0,
                                     "wrapper": {
-                                        "width": "",
+                                        "width": "50",
                                         "class": "",
                                         "id": ""
                                     },
                                     "default_value": "",
-                                    "placeholder": ""
+                                    "placeholder": "",
+                                    "translations": "copy_once"
                                 },
                                 {
                                     "key": "field_62e13cf96b5ef",
-                                    "label": "Info box external link description 50-50",
+                                    "label": "Link Title",
                                     "name": "info_box_external_link_description_5050",
                                     "type": "text",
                                     "instructions": "",
                                     "required": 0,
                                     "conditional_logic": 0,
                                     "wrapper": {
-                                        "width": "",
+                                        "width": "50",
                                         "class": "",
                                         "id": ""
                                     },
@@ -831,7 +837,8 @@
                                     "placeholder": "",
                                     "prepend": "",
                                     "append": "",
-                                    "maxlength": ""
+                                    "maxlength": "",
+                                    "translations": "translate"
                                 },
                                 {
                                     "key": "field_62e13c246b5e7",
@@ -850,7 +857,7 @@
                                     "min": 0,
                                     "max": 0,
                                     "layout": "table",
-                                    "button_label": "",
+                                    "button_label": "Add opening time",
                                     "sub_fields": [
                                         {
                                             "key": "field_62e13c246b5e8",
@@ -940,6 +947,5 @@
     "hide_on_screen": "",
     "active": true,
     "description": "",
-    "show_in_rest": 0,
-    "modified": 1657281384
+    "modified": 1661176094
 }
