@@ -25,11 +25,11 @@
                 <p class="lift-100-wide__text"><?php the_sub_field("text_body"); ?></p>
                 <div class="lift-100-wide__links">
                     <ul class="m-0 p-0">
-                    <?php foreach (get_sub_field("links") as $row) {
-                        $link = $row["link"];
-                        $text = $row["link_text"];
+                    <?php while( have_rows('links') ): the_row();
+                        $link = get_sub_field("link");
+                        $text = get_sub_field("link_text");
                         printf('<li class="my-2"><a class="arrow" href="%s">%s</a></li>', $link, $text);
-                    } ?>
+                    endwhile; ?>
                     </ul>
                 </div>
             </div>

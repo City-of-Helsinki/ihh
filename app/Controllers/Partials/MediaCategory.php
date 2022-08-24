@@ -3,7 +3,7 @@
 namespace App\Controllers\Partials;
 
 trait MediaCategory{
-    public function get_media_categories($post_id = null) {
+    public static function get_media_categories($post_id = null) {
         if (!empty($post_id)){
             $post_id = (int)$post_id;
         }
@@ -11,7 +11,7 @@ trait MediaCategory{
         return get_field('select_media', $post_id);
     }
 
-    public function get_media_category_title($post_id){
+    public static function get_media_category_title($post_id){
         if (!empty($post_id)){
             $post_id = (int)$post_id;
         }
@@ -19,7 +19,7 @@ trait MediaCategory{
         return get_field('media_title', $post_id);
     }
 
-    public function get_media_category_thumbnail($media){
+    public static function get_media_category_thumbnail($media){
         if (empty($media))
             return false;
 
@@ -32,7 +32,7 @@ trait MediaCategory{
         return sprintf(' style="background-image: url(%s)"', $logoArray['url'], $logoArray['alt']);
     }
 
-    public function get_media_category_icon($media){
+    public static function get_media_category_icon($media){
         if (empty($media))
             return false;
 
@@ -43,7 +43,7 @@ trait MediaCategory{
         return sprintf('<i class="icon-%s"></i>', $media_icon);
     }
 
-    public function get_media_category_bg($media){
+    public static function get_media_category_bg($media){
         if (empty($media))
             return false;
 
@@ -54,7 +54,7 @@ trait MediaCategory{
         return sprintf('background-%s', $bg_color);
     }
 
-    public function get_media_category_link($media){
+    public static function get_media_category_link($media){
         if (empty($media))
             return false;
 

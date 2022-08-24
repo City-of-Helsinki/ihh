@@ -9,7 +9,7 @@
 
     <div class="col-12 col-lg-4 col-md-6 py-lg-5 py-md-4 py-3">
       <?php
-      $newsletter_status = $_GET["newsletter"];
+      $newsletter_status = isset( $_GET["newsletter"] ) ? esc_attr( GET["newsletter"] ) : '';
         if ( !empty($newsletter_status) && $newsletter_status === "success"){
           echo "<h3 class='py-5 d-flex justify-content-center'>" . pll__('Subscribed to the newsletter successfully.') . "</h3>";
         } else {
@@ -34,11 +34,11 @@
                       $liana_id = get_sub_field("liana_id");
                       $target = sprintf(
                         '<div class="form-check target-group-%s col-6">
-                          <input required class="form-check-input" type="radio" name="join" value=%s>
-                          <label class="form-check-label" for="id-%s">
-                            %s
+                          <input required class="form-check-input" type="radio" name="join" id="liana-id-%1$s" value="%1$s">
+                          <label class="form-check-label" for="liana-id-%1$s">
+                          %2$s
                           </label>
-                        </div>', $liana_id, $liana_id, $liana_id, $target_group);
+                        </div>', $liana_id, $target_group);
                       echo $target;
                     endwhile;
                   endif;

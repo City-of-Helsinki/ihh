@@ -18,7 +18,9 @@
                 @include('components.flexible-content-sidebar')
             </div>
         </div>
-
+        <section class="full_flexible_content">
+            @php do_action('ihh_render_flexible_content', 'lift_100_wide' ); @endphp
+        </section>
         <div class="row content-footer">
             <div class="col-lg-12">
                 @include('components.navigate-pages')

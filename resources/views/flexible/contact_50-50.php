@@ -11,31 +11,29 @@
       </div>
     </div>
   </div>
-  <div class="container my-4 mb-lg-5">
-      <div class="row position-relative d-lg-flex flex-lg-nowrap">
+      <div class="row position-relative d-lg-flex flex-lg-nowrap my-4">
         <?php if( have_rows('info_box_5050')) : ?>
                 <?php while( have_rows("info_box_5050")) : the_row();
                   $phone = get_sub_field("info_box_phone_number_5050");
                   $phone_trim = preg_replace('/\s+/', '', $phone);
                 ?>
-                  <div class="contact-liftoff__info-box px-4 pt-3 pb-5 m-2 col-lg-6 d-flex flex-column justify-content-center" >
+                  <div class="contact-liftoff__info-box pt-3 pb-5 m-2 col-lg-6 d-flex flex-column" >
                     <h3 class="info-box__title"><?php the_sub_field("info_box_title_5050"); ?></h3>
                     <p class="info-box__description"><?php echo $info_svg;?><?php the_sub_field("info_box_description_5050"); ?></p>
                     <a class="info-box__phone_number" href="tel:<?php echo $phone_trim; ?>"><?php the_sub_field("info_box_phone_number_5050"); ?></a>
                     <a class="info-box__email" href="mailto:<?php the_sub_field("info_box_email_5050"); ?>"><?php the_sub_field("info_box_email_5050"); ?></a>
                     <a href=<?php the_sub_field("info_box_external_link_5050"); ?>><?php the_sub_field("info_box_external_link_description_5050"); ?></a>
+
                     <div class="info-box__contact-hours mt-3 p-0">
-                      <?php foreach (get_sub_field("contact_hours_5050") as $row) {
-                          $days = $row["contact_hours_days_5050"];
-                          $open = $row["contact_hours_opening_time_5050"];
-                          $close = $row["contact_hours_closing_time_5050"];
+                    <?php while( have_rows('contact_hours_5050') ): the_row();
+                          $days = get_sub_field("contact_hours_days_5050");
+                          $open = get_sub_field("contact_hours_opening_time_5050");
+                          $close = get_sub_field("contact_hours_closing_time_5050");
                           printf('<p class="contact-hours m-0 p-0">%s %s - %s</p>', $days, $open, $close);
-                      } ?>
+                    endwhile; ?>
                     </div>
                   </div>
                 <?php endwhile; ?>
-                <?php endif; ?>
-          </div>
-      </div>
-  </div>
+          <?php endif; ?>
+        </div>
 </div>

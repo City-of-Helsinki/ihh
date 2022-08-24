@@ -1,6 +1,6 @@
 {
     "key": "group_62a99f190f8c8",
-    "title": "Employer and Services",
+    "title": "Employer and Services (flexible components)",
     "fields": [
         {
             "key": "field_62a99f2c04da3",
@@ -1156,6 +1156,305 @@
                     ],
                     "min": "",
                     "max": ""
+                },
+                "layout_62e13a74ed939": {
+                    "key": "layout_62e13a74ed939",
+                    "name": "contact_50-50",
+                    "label": "Contact Box",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_62e13a85ed93a",
+                            "label": "Contact Section Title",
+                            "name": "contact_5050_title",
+                            "type": "text",
+                            "instructions": "Title of the section.",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": "",
+                            "maxlength": "",
+                            "translations": "translate"
+                        },
+                        {
+                            "key": "field_62e13d6bd8961",
+                            "label": "Contact Box",
+                            "name": "info_box_5050",
+                            "type": "repeater",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "collapsed": "field_62e13c8f6b5eb",
+                            "min": 1,
+                            "max": 2,
+                            "layout": "row",
+                            "button_label": "Add Contact",
+                            "sub_fields": [
+                                {
+                                    "key": "field_62e13c8f6b5eb",
+                                    "label": "Title",
+                                    "name": "info_box_title_5050",
+                                    "type": "text",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "100",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "default_value": "",
+                                    "placeholder": "",
+                                    "prepend": "",
+                                    "append": "",
+                                    "maxlength": "",
+                                    "translations": "translate"
+                                },
+                                {
+                                    "key": "field_62e13cac6b5ec",
+                                    "label": "Description",
+                                    "name": "info_box_description_5050",
+                                    "type": "textarea",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "100",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "default_value": "",
+                                    "placeholder": "",
+                                    "maxlength": "",
+                                    "rows": 3,
+                                    "new_lines": "br",
+                                    "translations": "copy_once"
+                                },
+                                {
+                                    "key": "field_62e13cc56b5ed",
+                                    "label": "Phone Number",
+                                    "name": "info_box_phone_number_5050",
+                                    "type": "text",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "50",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "default_value": "",
+                                    "placeholder": "",
+                                    "prepend": "",
+                                    "append": "",
+                                    "maxlength": "",
+                                    "translations": "translate"
+                                },
+                                {
+                                    "key": "field_62e13cde6b5ee",
+                                    "label": "Email",
+                                    "name": "info_box_email_5050",
+                                    "type": "text",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "50",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "default_value": "",
+                                    "placeholder": "",
+                                    "prepend": "",
+                                    "append": "",
+                                    "maxlength": "",
+                                    "translations": "translate"
+                                },
+                                {
+                                    "key": "field_62e13d096b5f0",
+                                    "label": "Link",
+                                    "name": "info_box_external_link_5050",
+                                    "type": "url",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "50",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "default_value": "",
+                                    "placeholder": "",
+                                    "translations": "copy_once"
+                                },
+                                {
+                                    "key": "field_62e13cf96b5ef",
+                                    "label": "Link Title",
+                                    "name": "info_box_external_link_description_5050",
+                                    "type": "text",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "50",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "default_value": "",
+                                    "placeholder": "",
+                                    "prepend": "",
+                                    "append": "",
+                                    "maxlength": "",
+                                    "translations": "translate"
+                                },
+                                {
+                                    "key": "field_62e13c246b5e7",
+                                    "label": "Contact hours 50-50",
+                                    "name": "contact_hours_5050",
+                                    "type": "repeater",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "collapsed": "",
+                                    "min": 0,
+                                    "max": 0,
+                                    "layout": "table",
+                                    "button_label": "Add opening time",
+                                    "sub_fields": [
+                                        {
+                                            "key": "field_62e13c246b5e8",
+                                            "label": "Days",
+                                            "name": "contact_hours_days_5050",
+                                            "type": "text",
+                                            "instructions": "Mon, Tue, Wed or Monday - Friday",
+                                            "required": 0,
+                                            "conditional_logic": 0,
+                                            "wrapper": {
+                                                "width": "",
+                                                "class": "",
+                                                "id": ""
+                                            },
+                                            "default_value": "",
+                                            "placeholder": "",
+                                            "prepend": "",
+                                            "append": "",
+                                            "maxlength": ""
+                                        },
+                                        {
+                                            "key": "field_62e13c246b5e9",
+                                            "label": "Opening time",
+                                            "name": "contact_hours_opening_time_5050",
+                                            "type": "text",
+                                            "instructions": "09:00",
+                                            "required": 0,
+                                            "conditional_logic": 0,
+                                            "wrapper": {
+                                                "width": "",
+                                                "class": "",
+                                                "id": ""
+                                            },
+                                            "default_value": "",
+                                            "placeholder": "",
+                                            "prepend": "",
+                                            "append": "",
+                                            "maxlength": ""
+                                        },
+                                        {
+                                            "key": "field_62e13c246b5ea",
+                                            "label": "Closing time",
+                                            "name": "contact_hours_closing_time_5050",
+                                            "type": "text",
+                                            "instructions": "16:00",
+                                            "required": 0,
+                                            "conditional_logic": 0,
+                                            "wrapper": {
+                                                "width": "",
+                                                "class": "",
+                                                "id": ""
+                                            },
+                                            "default_value": "",
+                                            "placeholder": "",
+                                            "prepend": "",
+                                            "append": "",
+                                            "maxlength": ""
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
+                },
+                "layout_630609304c5ee": {
+                    "key": "layout_630609304c5ee",
+                    "name": "media_bank_items",
+                    "label": "Media Bank ",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_630609424c5ef",
+                            "label": "Section Heading",
+                            "name": "section_heading",
+                            "type": "text",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": "",
+                            "maxlength": "",
+                            "translations": "translate"
+                        },
+                        {
+                            "key": "field_6306094e4c5f0",
+                            "label": "Media Bank Item",
+                            "name": "items",
+                            "type": "post_object",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "post_type": [
+                                "amb_media_catalogue"
+                            ],
+                            "taxonomy": "",
+                            "allow_null": 0,
+                            "multiple": 1,
+                            "return_format": "object",
+                            "translations": "copy_once",
+                            "ui": 1
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
                 }
             },
             "button_label": "Add Block",
@@ -1194,6 +1493,5 @@
     "hide_on_screen": "",
     "active": true,
     "description": "",
-    "show_in_rest": 0,
-    "modified": 1657288218
+    "modified": 1661340323
 }

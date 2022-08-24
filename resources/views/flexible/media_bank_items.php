@@ -1,32 +1,40 @@
+<?php
+    $media_items = get_sub_field('items');
+    class MediaCat {
+        use \App\Controllers\Partials\MediaCategory;
+    }
+    $cat = new MediaCat;
+?>
+
 <div class="container">
     <?php if( get_sub_field('section_heading')) : ?>
     <h2 id="section-heading-<?php echo get_the_ID(); ?>" class="section-heading"><?php the_sub_field('section_heading'); ?></h2>
     <?php endif ?>
 
-    <?php if( have_rows('items') ) : ?>
+    <?php if( $media_items ): ?>
         <ul class="list-unstyled media-bank-items media-posts-container" aria-labelledby="section-heading-<?php echo get_the_ID(); ?>">
 
-            <?php while( have_rows('items') ) : the_row(); $id = get_row_index(); ?>
-                <?php $media = get_sub_field('media_item'); ?>
-
+            <?php foreach( $media_items as $post): setup_postdata($post); ?>   
                 <li class="media-bank-item media-grid-container">
-                    <?php if($media_file_link = \App\Controllers\App::get_media_category_link($media) ) :
+                    <?php if($media_file_link = $cat->get_media_category_link($post) ) :
                         echo $media_file_link;
                     endif ?>
 
                     <div class="media-container">
-                        <div class="image-wrap" <?php echo \App\Controllers\App::get_media_category_thumbnail($media); ?>></div>
-                        <div class="title <?php echo \App\Controllers\App::get_media_category_bg($media); ?>">
-                            <?php echo \App\Controllers\App::get_media_category_icon($media); ?>
-                            <p><?php echo get_the_title($media); ?></p>
+                        <div class="image-wrap" <?php echo \App\Controllers\App::get_media_category_thumbnail($post); ?>></div>
+                        <div class="title <?php echo \App\Controllers\App::get_media_category_bg($post); ?>">
+                            <?php echo \App\Controllers\App::get_media_category_icon($post); ?>
+                            <p><?php echo get_the_title($post); ?></p>
                         </div>
                     </div>
-                    <?php if($media_file_link = \App\Controllers\App::get_media_category_link($media) ) : ?>
+                    <?php if($media_file_link = \App\Controllers\App::get_media_category_link($post) ) : ?>
                         </a>
                     <?php endif ?>
                 </li>
 
-            <?php endwhile ?>
+            <?php 
+            wp_reset_postdata(); 
+            endforeach; ?>
 
         </ul>
     <?php endif ?>

@@ -2,18 +2,13 @@
     // Argument array
     $pages_args = array(
         'parent' => $post->post_parent,
-        'orderby' => 'menu_order',
-        'sort_order' => 'DESC'
+        'sort_column' => 'menu_order',
+        'sort_order' => 'ASC'
     );
 
     // Get pages
     $pagesList = get_pages($pages_args);
-    $pages = array();
-
-    foreach ($pagesList as $page) {
-        $pages[] = $page->ID;
-    }
-
+    $pages = wp_list_pluck( $pagesList, 'ID' );
     $current = array_search(get_the_ID(), $pages);
 
     $showNext = true;
@@ -24,14 +19,14 @@
     $prevID = ($current - 1) < 0 ? $showPrevious = false : $pages[$current - 1];
     $nextID = ($current + 1)  > (count($pages) - 1) ? $showNext = false : $pages[$current + 1];
 
-    $showPrevious = $prevID == $nextID  ? false : $showPrevious;
-
+    $showPrevious = ($prevID == $nextID || $prevID < 0)  ? false : $showPrevious;
+    
     $navigationAriaLabel = has_post_parent($post) ? 'aria-label="Subpages of ' . get_the_title($post->post_parent) . ' page"' : '';
 @endphp
 
 
 @php if( has_post_parent($post) && count($pages) > 1 ): @endphp
-<nav class="navigation-boxes" @php echo $navigationAriaLabel; @endphp>
+<nav class="navigation-boxes container" @php echo $navigationAriaLabel; @endphp>
     <ul class="list-unstyled">
         @php if( $showPrevious ) : @endphp
         <li class="previous-article previous">
