@@ -105,8 +105,14 @@ class App extends Controller {
             } else {
                 $category = get_the_category();
             }
+            if (is_wp_error($category)){
+                return;
+            }
+
+            if (count($category) > 0 ){
+                return $category[0]->name;
+            }
             
-            return $category[0]->name;
         }
     }
 
