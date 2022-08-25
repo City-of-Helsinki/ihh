@@ -99,7 +99,7 @@ require_once(get_template_directory().'/tinymce-editor-styles.php');
 
  // Target groups for news and events
  function add_custom_taxonomies() {
-    register_taxonomy('target_group', 'post', array(
+    register_taxonomy('target_group', array('post', 'event'), array(
       'hierarchical' => true,
 
       'labels' => array(
