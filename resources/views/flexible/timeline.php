@@ -12,26 +12,17 @@
                     </div>
                 <?php endif ?>
 
-                <div class="text-container">
-                    <?php if( get_sub_field('cta_url')) : ?>
-                    <a href="<?php the_sub_field('cta_url'); ?>">
-                    <?php endif ?>
+                <div class="text-container background-<?php the_sub_field('background_color') ?>">
+                    <h3 class="heading"><?php the_sub_field('heading'); ?></h3>
+                    <p class="description"><?php the_sub_field('description'); ?></p>
 
-                        <h3 class="heading"><?php the_sub_field('heading'); ?></h3>
-                        <p class="description"><?php the_sub_field('description'); ?></p>
-
-                        <?php if( get_sub_field('cta_url') ) : ?>
-                        <div class="cta">
-                            <?php echo \App\ihh_inline_svg('icons/arrow-right') ?>
-                            <?php the_sub_field('cta_text'); ?>
-                        </div>
-                        <?php endif ?>
-
-                    <?php if( get_sub_field('cta_url')) : ?>
+                    <?php if( get_sub_field('cta_url') ) : ?>
+                    <a class="cta" href="<?php the_sub_field('cta_url'); ?>">
+                        <?php echo \App\ihh_inline_svg('icons/arrow-right') ?>
+                        <?php the_sub_field('cta_text'); ?>
                     </a>
                     <?php endif ?>
                 </div>
-
             </li>
         <?php endwhile; ?>
     </ol>
