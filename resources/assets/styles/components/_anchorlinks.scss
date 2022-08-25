@@ -1,3 +1,4 @@
+/* Anchorlink navigation */
 .anchorlink-container {
   background: $kuvittaja-yellow;
   margin-bottom: 3rem;
@@ -37,6 +38,7 @@
   }
 }
 
+/* Anchorlink navigation */
 /* Light variation without background */
 .single-page-layout .anchorlink-container {
   background: transparent;
@@ -50,6 +52,18 @@
   position: relative;
 
   > span {
+    position: absolute;
+    top: -80px;
+  }
+}
+
+
+/* General anchorlinks - position */
+h1, h2, h3, h4, h5,
+.h1, .h2, .h3, .h4, .h5 {
+  position: relative;
+
+  a[id] {
     position: absolute;
     top: -80px;
   }
