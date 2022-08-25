@@ -2,6 +2,10 @@
   @extend .container;
 }
 
+.posts-container .event{
+  padding: 0;
+}
+
 .event-container {
   @include make-row(0);
 
