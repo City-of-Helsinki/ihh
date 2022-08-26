@@ -8,17 +8,15 @@
   }
 }
 
-#faqs:not(.container) {
+#faqs{
   @include media-breakpoint-down("sm") {
     margin-bottom: 80px;
-    padding: 20px;
   }
 
   margin-bottom: 60px;
-  padding: 0;
+  padding: 20px 15px;
 
   .question {
-    //font-family: $font-open-sans;
     font-family: $font-source-sans;
     border-bottom: 1px solid #d8d8d8;
 

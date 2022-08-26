@@ -2,7 +2,6 @@
     <?php if( get_sub_field('section_heading')): ?>
         <h2 class="section-heading" id="section-heading-<?php echo get_the_ID(); ?>"><?php the_sub_field('section_heading'); ?></h2>
     <?php endif; ?>
-    </div>
 
     <?php if( have_rows('faq_accordion') ) : ?>
         <?php while( have_rows('faq_accordion') ) : the_row(); $id = get_row_index(); ?>
