@@ -8,7 +8,7 @@
   }
 }
 
-#faqs {
+#faqs:not(.container) {
   @include media-breakpoint-down("sm") {
     margin-bottom: 80px;
     padding: 20px;

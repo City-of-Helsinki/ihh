@@ -108,10 +108,18 @@
 }
 
 .breadcrumbs-container {
-  padding-left: 0;
+  @include media-breakpoint-up("md") {
+    padding-left: 0;
+    padding-right: 0;
+  }
 
   #breadcrumbs {
     margin-bottom: 25px;
+
+    @include media-breakpoint-down("sm") {
+      padding-left: 15px;
+      padding-right: 15px;
+    }
 
     a {
       color: $black !important;
