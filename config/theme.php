@@ -72,6 +72,8 @@ return [
         'Target group',
         'Subscribed to the newsletter successfully.',
         'Subscription to the newsletter failed.',
-        'The default lift image if item does not have one.'
+        'The default lift image if item does not have one.',
+        'Continue next page',
+        'Continue previous page'
     ],
 ];
