@@ -53,6 +53,11 @@ div:not(.sidebar) > .navigation-boxes{
         max-width: unset;
       }
     }
+
+    > ul {
+      margin-left: 0;
+      margin-right: 0;
+    }
   }
   /* stylelint-enable */
 }
