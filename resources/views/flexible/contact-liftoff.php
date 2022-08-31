@@ -24,7 +24,7 @@
                 <img class="contact-liftoff__bg-img h-100 col-lg-8 p-0" src="<?php the_sub_field("contact_liftoff_background_image");?>">
               <?php endif ?>
               <div class="contact-liftoff__info-box <?php echo $has_image_class; ?> p-lg-4 p-sm-3 col-lg-6 d-flex flex-column justify-content-center" >
-                  <h3 class="info-box__title"><?php the_sub_field("info_box_title"); ?></h3>
+                  <h3 class="info-box__title font-weight-bold"><?php the_sub_field("info_box_title"); ?></h3>
                   <p class="info-box__description"><?php echo $info_svg;?><?php the_sub_field("info_box_description"); ?></p>
                   <a class="info-box__phone_number" href="tel:+358<?php echo $phone_trim; ?>"><?php the_sub_field("info_box_phone_number"); ?></a>
                   <a class="info-box__email" href="mailto:<?php the_sub_field("info_box_email"); ?>"><?php the_sub_field("info_box_email"); ?></a>

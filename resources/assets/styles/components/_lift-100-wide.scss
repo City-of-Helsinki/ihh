@@ -28,18 +28,19 @@
       position: absolute;
       top: 50%;
       transform: translateY(-50%);
+      min-height: 250px;
     }
 
     &--left {
       .lift-100-wide__card {
         right: 0;
-        margin-right: inherit;
+        margin-right: 0;
       }
     }
 
     &--right {
       .lift-100-wide__bg-img {
-        margin-left: 25%;
+        margin-left: calc(100% / 3);
       }
     }
   }

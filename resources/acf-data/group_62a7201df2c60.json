@@ -858,7 +858,7 @@
                 "layout_62e13a74ed939": {
                     "key": "layout_62e13a74ed939",
                     "name": "contact_50-50",
-                    "label": "Contact Box",
+                    "label": "Contact Box 50-50",
                     "display": "block",
                     "sub_fields": [
                         {
@@ -883,7 +883,7 @@
                         },
                         {
                             "key": "field_62e13d6bd8961",
-                            "label": "Contact Box",
+                            "label": "Contact Box 50-50",
                             "name": "info_box_5050",
                             "type": "repeater",
                             "instructions": "",
@@ -1132,5 +1132,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1661339106
+    "modified": 1661349106
 }
