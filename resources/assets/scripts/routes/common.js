@@ -132,8 +132,12 @@ export default {
     }
 
     function addExternalLinkStyling(link) {
-        link.classList.add('external-link');
-        addExternalLinkIcon(link);
+        const UNDESIRABLE_PARENTS = '.share';
+
+        if (jQuery(link).parents(UNDESIRABLE_PARENTS).length === 0) {
+            link.classList.add('external-link');
+            addExternalLinkIcon(link);
+        }
     }
 
     function addExternalLinkIcon(link) {
