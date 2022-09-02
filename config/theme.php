@@ -74,6 +74,8 @@ return [
         'Subscription to the newsletter failed.',
         'The default lift image if item does not have one.',
         'Continue next page',
-        'Continue previous page'
+        'Continue previous page',
+        'Ajankohta',
+        'Paikka'
     ],
 ];

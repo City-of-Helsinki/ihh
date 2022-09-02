@@ -13,8 +13,8 @@
                 <?php endif ?>
 
                 <div class="text-container background-<?php the_sub_field('background_color') ?>">
-                    <h3 class="heading"><?php the_sub_field('heading'); ?></h3>
-                    <p class="description"><?php the_sub_field('description'); ?></p>
+                    <?php if( get_sub_field('heading') ) : ?><h3 class="heading"><?php the_sub_field('heading'); ?></h3><?php endif ?>
+                    <div class="timeline-content"><?php the_sub_field('description'); ?></div>
 
                     <?php if( get_sub_field('cta_url') ) : ?>
                     <a class="cta" href="<?php the_sub_field('cta_url'); ?>">

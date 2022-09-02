@@ -98,7 +98,10 @@ $step-indicator-size: 2.5rem;
       background: $bg-red;
     }
 
-    .heading {
+    .heading,
+    .timeline-content h2,
+    .timeline-content h3,
+    .timeline-content h4 {
       font-size: 1.25rem;
       font-weight: 700;
       margin-bottom: 1.25rem;
