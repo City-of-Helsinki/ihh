@@ -473,6 +473,25 @@
                                     "maxlength": ""
                                 }
                             ]
+                        },
+                        {
+                            "key": "field_6312098cc336b",
+                            "label": "Icon visibility",
+                            "name": "icon_visibility",
+                            "type": "true_false",
+                            "instructions": "Toggle Info icon visibility",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "message": "",
+                            "default_value": 0,
+                            "ui": 0,
+                            "ui_on_text": "",
+                            "ui_off_text": ""
                         }
                     ],
                     "min": "",
@@ -858,7 +877,7 @@
                 "layout_62e13a74ed939": {
                     "key": "layout_62e13a74ed939",
                     "name": "contact_50-50",
-                    "label": "Contact Box 50-50",
+                    "label": "Contact Box",
                     "display": "block",
                     "sub_fields": [
                         {
@@ -883,7 +902,7 @@
                         },
                         {
                             "key": "field_62e13d6bd8961",
-                            "label": "Contact Box 50-50",
+                            "label": "Contact Box",
                             "name": "info_box_5050",
                             "type": "repeater",
                             "instructions": "",
@@ -1094,6 +1113,25 @@
                                             "maxlength": ""
                                         }
                                     ]
+                                },
+                                {
+                                    "key": "field_63120e06c336c",
+                                    "label": "Icon visibility",
+                                    "name": "icon_visibility",
+                                    "type": "true_false",
+                                    "instructions": "Toggle Info icon visibility",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "message": "",
+                                    "default_value": 0,
+                                    "ui": 0,
+                                    "ui_on_text": "",
+                                    "ui_off_text": ""
                                 }
                             ]
                         }
@@ -1131,6 +1169,5 @@
     "hide_on_screen": "",
     "active": true,
     "description": "",
-    "show_in_rest": 0,
-    "modified": 1661349106
+    "modified": 1662127715
 }
