@@ -16,7 +16,7 @@
                 </button>
 
                 <div id="accordion_content_<?php echo $id; ?>"
-                    class="collapse accordion-content"
+                    class="collapse accordion-content question-answer"
                     data-parent="#faqs">
 
                     <div class="accordion-body">
