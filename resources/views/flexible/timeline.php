@@ -1,4 +1,4 @@
-<section class="timeline container">
+<div class="timeline container">
     <?php if( get_sub_field('section_heading') ) : ?>
     <h2 class="section-heading"><?php the_sub_field('section_heading'); ?></h2>
     <?php endif ?>
@@ -26,4 +26,4 @@
             </li>
         <?php endwhile; ?>
     </ol>
-</section>
+</div>
