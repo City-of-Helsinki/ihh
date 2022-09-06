@@ -1,3 +1,4 @@
+/* Anchorlink navigation */
 .anchorlink-container {
   background: $kuvittaja-yellow;
   margin-bottom: 3rem;
@@ -11,7 +12,7 @@
       justify-content: center;
       list-style-type: none;
       margin: 0;
-      padding-left: 0;
+      padding: 10px 0;
     }
 
     a {
@@ -20,7 +21,7 @@
       color: $black !important;
       text-decoration: none;
       font-weight: 500;
-      padding: 1rem;
+      padding: .35rem 1rem;
 
       &:hover,
       &:focus {
@@ -37,6 +38,7 @@
   }
 }
 
+/* Anchorlink navigation */
 /* Light variation without background */
 .single-page-layout .anchorlink-container {
   background: transparent;
@@ -50,6 +52,18 @@
   position: relative;
 
   > span {
+    position: absolute;
+    top: -80px;
+  }
+}
+
+
+/* General anchorlinks - position */
+h1, h2, h3, h4, h5,
+.h1, .h2, .h3, .h4, .h5 {
+  position: relative;
+
+  a[id] {
     position: absolute;
     top: -80px;
   }

@@ -27,12 +27,12 @@
             <thead></thead>
             <tbody>
               <tr>
-                <td>Ajankohta</td>
+                <td>{{ pll_e('Ajankohta') }}</td>
                 <td>{!! \App\format_event_date() !!}</td>
               </tr>
 
               <tr>
-                <td>Paikka</td>
+                <td>{{ pll_e('Paikka') }}</td>
                 <td>{!! get_field('location') !!}</td>
               </tr>
 
@@ -52,7 +52,7 @@
       <div class="event-body-content">
         @if($is_event && get_field('description'))
         <a name="description"></a>
-        <div class="event-description">  
+        <div class="event-description">
           <h2>Description</h2>
           {!! get_field('description') !!}
         </div>
@@ -86,7 +86,7 @@
           <a href="#program">Program</a><br>
           @endif
         </div>
-        
+
       </div>
       <div class="clear"></div>
     </div>

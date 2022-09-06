@@ -20,44 +20,32 @@
     $nextID = ($current + 1)  > (count($pages) - 1) ? $showNext = false : $pages[$current + 1];
 
     $showPrevious = ($prevID == $nextID || $prevID < 0)  ? false : $showPrevious;
-    
+
     $navigationAriaLabel = has_post_parent($post) ? 'aria-label="Subpages of ' . get_the_title($post->post_parent) . ' page"' : '';
 @endphp
 
 
 @php if( has_post_parent($post) && count($pages) > 1 ): @endphp
 <nav class="navigation-boxes container" @php echo $navigationAriaLabel; @endphp>
-    <ul class="list-unstyled">
-        @php if( $showPrevious ) : @endphp
-        <li class="previous-article previous">
-            <a href="@php echo get_permalink($prevID); @endphp">
-                <span class="sr-only">Go to previous page: </span>
+    <ul class="list-unstyled row">
+        @php if( $showNext ) : @endphp
+        <li class="next-article next">
+            <a href="@php echo get_permalink($nextID); @endphp">
                 <div class="link-heading">
                     {!! \App\ihh_inline_svg('icons/arrow-right') !!}
-                    @php echo get_the_title($prevID); @endphp</div>
-                <div>
-                    @php
-                        $prevPostContent = get_post($prevID)->post_content;
-                        echo wp_trim_words($prevPostContent, 10);
-                    @endphp
-                </div>
+                    @php echo get_the_title($nextID); @endphp</div>
+                <div>{{ pll_e('Continue next page') }}</div>
             </a>
         </li>
         @php endif @endphp
 
-        @php if( $showNext ) : @endphp
-        <li class="next-article next">
-            <a href="@php echo get_permalink($nextID); @endphp">
-                <span class="sr-only">Go to next page: </span>
+        @php if( $showPrevious ) : @endphp
+        <li class="previous-article previous">
+            <a href="@php echo get_permalink($prevID); @endphp">
                 <div class="link-heading">
                     {!! \App\ihh_inline_svg('icons/arrow-right') !!}
-                    @php echo get_the_title($nextID); @endphp</div>
-                <div>
-                    @php
-                        $prevPostContent = get_post($nextID)->post_content;
-                        echo wp_trim_words($prevPostContent, 10);
-                    @endphp
-                </div>
+                    @php echo get_the_title($prevID); @endphp</div>
+                <div>{{ pll_e('Continue previous page') }}</div>
             </a>
         </li>
         @php endif @endphp

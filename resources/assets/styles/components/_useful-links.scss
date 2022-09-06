@@ -30,13 +30,19 @@
   }
 
   a {
-    font-weight: 500;
+    font-weight: 600;
     color: $black !important;
     text-decoration: none;
 
     &:hover,
     &:focus {
       text-decoration: underline;
+    }
+  }
+
+  a.arrow{
+    svg{
+      fill: #01a090;
     }
   }
 }
