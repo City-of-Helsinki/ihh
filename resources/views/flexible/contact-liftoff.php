@@ -30,12 +30,12 @@
                   <a class="info-box__email" href="mailto:<?php the_sub_field("info_box_email"); ?>"><?php the_sub_field("info_box_email"); ?></a>
                   <a href=<?php the_sub_field("info_box_external_link"); ?>><?php the_sub_field("info_box_external_link_description"); ?></a>
                   <div class="info-box__contact-hours mt-3 p-0">
-                      <?php foreach (get_sub_field("contact_hours") as $row) {
-                          $days = $row["contact_hours_days"];
-                          $open = $row["contact_hours_opening_time"];
-                          $close = $row["contact_hours_closing_time"];
+                      <?php while( have_rows('contact_hours') ): the_row();
+                          $days = get_sub_field("contact_hours_days");
+                          $open = get_sub_field("contact_hours_opening_time");
+                          $close = get_sub_field("contact_hours_closing_time");
                           printf('<p class="contact-hours m-0 p-0">%s %s - %s</p>', $days, $open, $close);
-                      } ?>
+                        endwhile; ?>
                   </div>
               </div>
           </div>
