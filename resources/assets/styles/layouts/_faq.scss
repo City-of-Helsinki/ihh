@@ -8,12 +8,12 @@
   }
 }
 
-.content-block #faqs{
+.content-block #faqs {
   padding-left: 0;
   padding-right: 0;
 }
 
-#faqs{
+#faqs {
   @include media-breakpoint-down("sm") {
     margin-bottom: 80px;
   }

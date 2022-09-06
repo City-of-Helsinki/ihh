@@ -3,7 +3,7 @@
   padding: 2.5rem 2.875rem;
   margin: 2rem auto;
 
-  @include media-breakpoint-down("sm"){
+  @include media-breakpoint-down("sm") {
     padding: 2rem 1.5rem;
   }
 

@@ -18,9 +18,9 @@
     padding: 74px 36px 28px 58px;
     margin-bottom: 0;
 
-     @include media-breakpoint-down("sm"){
+    @include media-breakpoint-down("sm") {
       padding: 74px 36px 28px 38px;
-     }
+    }
 
     &::before {
       content: "\201C";

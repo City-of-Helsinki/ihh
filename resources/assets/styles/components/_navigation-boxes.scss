@@ -23,8 +23,8 @@
     }
 
     &:hover,
-    &:focus-within{
-      .link-heading{
+    &:focus-within {
+      .link-heading {
         text-decoration: underline;
       }
     }
@@ -33,22 +33,19 @@
   .next a {
     text-align: right;
   }
-
-
 }
 
-div:not(.sidebar) > .navigation-boxes{
-  ul{
+div:not(.sidebar) > .navigation-boxes {
+  ul {
     flex-direction: row-reverse;
   }
 
   .next-article,
-  .prev-article{
+  .prev-article {
     padding-left: 15px;
     padding-right: 15px;
   }
 }
-
 
 .sidebar {
   .navigation-boxes {
