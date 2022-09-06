@@ -4,6 +4,7 @@
     justify-content: space-between;
 
     li {
+      width: 100%;
       max-width: 21.875rem;
       margin-bottom: 1rem;
     }
@@ -17,30 +18,52 @@
     text-decoration: none;
 
     .link-heading {
-      font-weight: 500;
+      font-weight: 600;
       margin-bottom: 0.85rem;
+    }
+
+    &:hover,
+    &:focus-within{
+      .link-heading{
+        text-decoration: underline;
+      }
     }
   }
 
   .next a {
     text-align: right;
   }
+
+
 }
 
-div:not(.sidebar) .navigation-boxes .next {
-  margin-left: auto;
+div:not(.sidebar) > .navigation-boxes{
+  ul{
+    flex-direction: row-reverse;
+  }
+
+  .next-article,
+  .prev-article{
+    padding-left: 15px;
+    padding-right: 15px;
+  }
 }
+
 
 .sidebar {
   .navigation-boxes {
     /* stylelint-disable */
     ul {
       flex-wrap: wrap;
-      flex-flow: column-reverse;
 
       li {
         max-width: unset;
       }
+    }
+
+    > ul {
+      margin-left: 0;
+      margin-right: 0;
     }
   }
   /* stylelint-enable */

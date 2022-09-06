@@ -39,6 +39,7 @@
             const page = btn.data('page');
             const nextPage = page + 1 ;
 
+            const postsContainer = $('#blog-posts-container');
             const filter = $('#filter');
             const statusSrOnly = $('.sr-only.status');
 
@@ -50,9 +51,14 @@
                 type: 'get',
                 beforeSend: function() {
                     statusSrOnly.text('Loading page' + url.searchParams.get('paged'));
+
+                    jQuery('html, body').animate({
+                        scrollTop: postsContainer.offset().top - 80,
+                    });
+                    postsContainer.focus();
                 },
                 success: function(result){
-                    btn.data('page', nextPage)
+                    btn.data('page', nextPage);
                     $('#blog-posts-container').html(result);
                 },
                 error: function(result){

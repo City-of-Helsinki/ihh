@@ -13,7 +13,7 @@
   flex-wrap: wrap;
   justify-content: flex-start;
   align-items: stretch;
-  margin: 60px 0;
+  margin: 30px 0;
 
   .post-grid-item {
     @include media-breakpoint-down("md") {
@@ -44,7 +44,7 @@
       flex: 1;
       display: flex;
       flex-flow: column;
-      flex-wrap: wrap;
+      // flex-wrap: wrap;
       background: #91c8c2;
 
       &:hover {

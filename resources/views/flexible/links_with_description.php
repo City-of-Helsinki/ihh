@@ -19,7 +19,7 @@
                     <h3 class="item-heading"><?php the_sub_field('heading'); ?></h3>
                     <p class="item-description"><?php the_sub_field('description'); ?></p>
                     <?php if(get_sub_field('cta_url')) : ?>
-                    <a href="<?php the_sub_field('cta_url'); ?>" class="external-link"><?php the_sub_field('cta_text'); ?></a>
+                    <a href="<?php the_sub_field('cta_url'); ?>" class="arrow"><?php the_sub_field('cta_text'); ?></a>
                     <?php endif ?>
                 </li>
             <?php endwhile ?>

@@ -76,7 +76,7 @@ $step-indicator-size: 2.5rem;
     }
 
     .text-container {
-      background: $kuvittaja-yellow;
+      background: $bg-yellow;
       padding: 34px 40px;
       flex-grow: 1;
 
@@ -86,28 +86,46 @@ $step-indicator-size: 2.5rem;
       }
     }
 
-    .heading {
+    .background-yellow{
+      background: $bg-yellow;
+    }
+
+    .background-green{
+      background: $bg-green;
+    }
+
+    .background-red{
+      background: $bg-red;
+    }
+
+    .heading,
+    .timeline-content h2,
+    .timeline-content h3,
+    .timeline-content h4 {
       font-size: 1.25rem;
-      font-weight: 600;
+      font-weight: 700;
       margin-bottom: 1.25rem;
     }
 
     .cta {
       display: block;
       min-height: 16px;
-      font-weight: 500;
-    }
-
-    a {
-      color: $black !important;
+      font-weight: 600;
       text-decoration: none;
 
       &:hover,
       &:focus {
-        .heading,
-        .cta {
-          text-decoration: underline;
-        }
+        color: $kuvittaja-darker-green;
+        text-decoration: underline;
+      }
+    }
+
+    a {
+      color: $black !important;
+
+      &:hover,
+      &:focus {
+        color: $kuvittaja-darker-green !important;
       }
     }
   }

@@ -138,6 +138,32 @@
                                     "save_other_choice": 0
                                 },
                                 {
+                                    "key": "field_630760d188ee2",
+                                    "label": "Select background color",
+                                    "name": "background_color",
+                                    "type": "select",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "choices": {
+                                        "yellow": "Yellow",
+                                        "green": "Green",
+                                        "red": "Red"
+                                    },
+                                    "default_value": "yellow",
+                                    "allow_null": 0,
+                                    "multiple": 0,
+                                    "ui": 1,
+                                    "ajax": 0,
+                                    "return_format": "value",
+                                    "placeholder": ""
+                                },
+                                {
                                     "key": "field_62a9ceaa1a279",
                                     "label": "Heading",
                                     "name": "heading",

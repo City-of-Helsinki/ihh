@@ -31,6 +31,17 @@ export default {
         $('a[target=_blank]').each(function(){
             $(this).append(' <span class="ihh-visually-hidden">opens in new tab</span>')
         });
+
+        /* Animate view to anchorlink on page load */
+        if (window.location.hash) {
+            setTimeout(function(){
+                const jQueryTarget = jQuery('body').find(window.location.hash);
+
+                jQuery('html, body').animate({
+                    scrollTop: jQueryTarget.offset().top,
+                });
+            }, 1000);
+        }
     });
 
 
@@ -90,27 +101,43 @@ export default {
         });
     }
 
+    function isValidUrl(url){
+        try {
+            new URL(url);
+        } catch (e) {
+            return false;
+        }
+
+        return true;
+    }
+
     function detectExternalLinks(item) {
         const locationHostname = window.location.hostname;
         const links = document.querySelectorAll(item);
 
         for (let i = 0; i < links.length; i++) {
-            let domain = (new URL(links[i]));
-            let linkHostname = domain.hostname.replace('www.', '');
+            if( isValidUrl(links[i]) ){
+                let domain = new URL(links[i]);
+                let linkHostname = domain.hostname.replace('www.', '');
 
-            if (linkHostname && locationHostname !== linkHostname && !links[i].classList.contains('venobox')) {
-                addExternalLinkStyling(links[i]);
-            } else {
-                if (links[i].classList.contains('arrow')) {
-                    addInternalLinkIcon(links[i]);
+                if (linkHostname && locationHostname !== linkHostname && !links[i].classList.contains('venobox')) {
+                    addExternalLinkStyling(links[i]);
+                } else {
+                    if (links[i].classList.contains('arrow')) {
+                        addInternalLinkIcon(links[i]);
+                    }
                 }
             }
         }
     }
 
     function addExternalLinkStyling(link) {
-        link.classList.add('external-link');
-        addExternalLinkIcon(link);
+        const UNDESIRABLE_PARENTS = '.share';
+
+        if (jQuery(link).parents(UNDESIRABLE_PARENTS).length === 0) {
+            link.classList.add('external-link');
+            addExternalLinkIcon(link);
+        }
     }
 
     function addExternalLinkIcon(link) {

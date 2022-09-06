@@ -13,7 +13,7 @@
                 </article>
             </div>
 
-            <div class="col-lg-4 sidebar">
+            <div class="col-md-4 sidebar">
                 @include('components.navigate-pages')
                 @include('components.flexible-content-sidebar')
             </div>
