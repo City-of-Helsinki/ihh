@@ -473,6 +473,25 @@
                                     "maxlength": ""
                                 }
                             ]
+                        },
+                        {
+                            "key": "field_6312098cc336b",
+                            "label": "Icon visibility",
+                            "name": "icon_visibility",
+                            "type": "true_false",
+                            "instructions": "Toggle Info icon visibility",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "message": "",
+                            "default_value": 0,
+                            "ui": 0,
+                            "ui_on_text": "",
+                            "ui_off_text": ""
                         }
                     ],
                     "min": "",
@@ -1094,6 +1113,25 @@
                                             "maxlength": ""
                                         }
                                     ]
+                                },
+                                {
+                                    "key": "field_63120e06c336c",
+                                    "label": "Icon visibility",
+                                    "name": "icon_visibility",
+                                    "type": "true_false",
+                                    "instructions": "Toggle Info icon visibility",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "message": "",
+                                    "default_value": 0,
+                                    "ui": 0,
+                                    "ui_on_text": "",
+                                    "ui_off_text": ""
                                 }
                             ]
                         }
@@ -1131,6 +1169,5 @@
     "hide_on_screen": "",
     "active": true,
     "description": "",
-    "show_in_rest": 0,
-    "modified": 1661339106
+    "modified": 1662127715
 }

@@ -16,7 +16,7 @@
           if ($newsletter_status === "fail"){
             echo "<h3 class='pb-3 d-flex justify-content-center'>" . pll__('Subscription to the newsletter failed.') . "</h3>";
           } ?>
-          <h3><?php the_sub_field("newsletter_section_title"); ?></h3>
+          <h3 class="font-weight-bold"><?php the_sub_field("newsletter_section_title"); ?></h3>
             <div class="liana-form" id="newsletter">
               <?php the_sub_field("newsletter_mailer_form"); ?>
               <p><?php the_sub_field("newsletter_body_text");?></p>

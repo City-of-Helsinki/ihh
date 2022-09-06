@@ -1,6 +1,5 @@
 <?php
     $color_selection = get_sub_field("background_color");
-    // TODO use bootstrap css vars
     $colors = [
         'green' => '#92c8c2',
         'yellow' => '#f3e565',
@@ -18,19 +17,21 @@
 
 <div class="container">
     <div class="lift-100-wide lift-100-wide--<?php the_sub_field("side"); ?> w-100 h-100 my-5">
-        <div class="row position-relative">
-            <img class="lift-100-wide__bg-img h-100 col-lg-8 p-0" src="<?php the_sub_field("background_image");?>">
-            <div class="lift-100-wide__card p-lg-4 p-sm-3 col-lg-6 d-flex flex-column justify-content-center" <?php echo $bg_color_style; ?> >
-                <h3 class="lift-100-wide__title"><?php the_sub_field("title"); ?></h3>
-                <p class="lift-100-wide__text"><?php the_sub_field("text_body"); ?></p>
-                <div class="lift-100-wide__links">
-                    <ul class="m-0 p-0">
-                    <?php while( have_rows('links') ): the_row();
-                        $link = get_sub_field("link");
-                        $text = get_sub_field("link_text");
-                        printf('<li class="my-2"><a class="arrow" href="%s">%s</a></li>', $link, $text);
-                    endwhile; ?>
-                    </ul>
+        <div class="container">
+            <div class="row position-relative">
+                <img class="lift-100-wide__bg-img h-100 col-lg-8 p-0" src="<?php the_sub_field("background_image");?>">
+                <div class="lift-100-wide__card p-lg-4 p-sm-3 col-lg-6 d-flex flex-column justify-content-center" <?php echo $bg_color_style; ?> >
+                    <h3 class="lift-100-wide__title"><?php the_sub_field("title"); ?></h3>
+                    <p class="lift-100-wide__text"><?php the_sub_field("text_body"); ?></p>
+                    <div class="lift-100-wide__links">
+                        <ul class="m-0 p-0">
+                        <?php while( have_rows('links') ): the_row();
+                            $link = get_sub_field("link");
+                            $text = get_sub_field("link_text");
+                            printf('<li class="my-2"><a class="arrow" href="%s">%s</a></li>', $link, $text);
+                        endwhile; ?>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </div>

@@ -7,6 +7,8 @@
     position: relative;
 
     &__info-box {
+      min-height: 250px;
+
       &--has-image {
         position: absolute;
         top: 50%;
@@ -24,7 +26,7 @@
 
 .info-box {
   &__description {
-    font-weight: 700;
+    font-weight: 400;
   }
 }
 
