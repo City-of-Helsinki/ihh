@@ -31,10 +31,10 @@
         @php if( $showNext ) : @endphp
         <li class="next-article next">
             <a href="@php echo get_permalink($nextID); @endphp">
+                <div>{{ pll_e('Continue next page') }}</div>
                 <div class="link-heading">
                     {!! \App\ihh_inline_svg('icons/arrow-right') !!}
                     @php echo get_the_title($nextID); @endphp</div>
-                <div>{{ pll_e('Continue next page') }}</div>
             </a>
         </li>
         @php endif @endphp
@@ -42,10 +42,10 @@
         @php if( $showPrevious ) : @endphp
         <li class="previous-article previous">
             <a href="@php echo get_permalink($prevID); @endphp">
+                <div>{{ pll_e('Continue previous page') }}</div>
                 <div class="link-heading">
                     {!! \App\ihh_inline_svg('icons/arrow-right') !!}
                     @php echo get_the_title($prevID); @endphp</div>
-                <div>{{ pll_e('Continue previous page') }}</div>
             </a>
         </li>
         @php endif @endphp
