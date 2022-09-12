@@ -24,7 +24,7 @@ export default {
         });
 
         detectExternalLinks('.main a');
-        createAnchorlinks('.anchorlink-navigation', 'h2');
+        createAnchorlinks('.anchorlink-navigation', '#main h2');
 
         window.CXBus.configure({pluginsPath:'https://apps.mypurecloud.ie/widgets/9.0/plugins/'});
         window.CXBus.loadPlugin('widgets-core');
@@ -46,7 +46,7 @@ export default {
 
 
     function createAnchorlinks(navigationEl, anchorTargetEl) {
-        const UNDESIRABLE_PARENTS = '.question, .sidebar';
+        const UNDESIRABLE_PARENTS = '.question, .sidebar, .cmplz-cookiebanner';
         const anchorNavigation = document.querySelector(navigationEl);
         const headings = document.querySelectorAll(anchorTargetEl);
         const svgArrowRight =
