@@ -44,6 +44,11 @@
           <i class="fa fa-facebook"></i>
         </a>
       </li>
+      <li class="share">
+        <a href="https://www.linkedin.com/sharing/share-offsite/?url={!! $url !!}">
+          <i class="fa fa-linkedin"></i>
+        </a>
+      </li>
       @if($is_event && get_field('attachment'))
         <li class="attachment">
           <a href="{!! get_field('attachment') !!}" target="_blank">
