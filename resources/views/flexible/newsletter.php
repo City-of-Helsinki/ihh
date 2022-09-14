@@ -1,4 +1,4 @@
-<?php     
+<?php
   $current_url = home_url( $_SERVER['REQUEST_URI'] );
   $success_url = add_query_arg( array('newsletter' => 'success'), $current_url );
   $failure_url = add_query_arg( array('newsletter' => 'fail'), $current_url );
@@ -27,7 +27,7 @@
                   <label for="newsletterEmail" class="form-label"><?php pll_e('Email') ?>*</label>
                   <input name="email" type="email" class="form-control border border-dark" required></input>
                 </div>
-                <div class="mb-3 radio-buttons row mx-0"> 
+                <div class="mb-3 radio-buttons row mx-0">
                   <?php if (have_rows("mailing_list_ids")):
                     while ( have_rows("mailing_list_ids") ) : the_row();
                       $target_group = get_sub_field("target_group");
@@ -47,16 +47,16 @@
             </div>
               <div class="mb-3 privacy-policy form-check">
                 <input required type="checkbox" class="form-check-input" id="privacyPolicyCheck">
-                <label class="form-check-label" for="privacyPolicyCheck">I agree that my details can be processed according to the <a href="<?php echo get_privacy_policy_url(); ?>">Privacy Policy</a></label>
+                <label class="form-check-label" for="privacyPolicyCheck"><?php pll_e('I agree that my details can be processed according to the'); ?> <a href="<?php echo get_privacy_policy_url(); ?>"><?php pll_e('Privacy Policy'); ?></a></label>
               </div>
               <div class="mb-3 d-flex justify-content-center">
-                <button type="submit" class="btn rounded-pill subscribe px-5">Subscribe</button>
+                <button type="submit" class="btn rounded-pill subscribe px-5"><?php pll_e('Subscribe'); ?></button>
               </div>
             </form>
           </div>
         <?php
         }
       ?>
-      
+
   </div>
 </div>
