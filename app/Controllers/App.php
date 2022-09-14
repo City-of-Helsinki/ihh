@@ -116,4 +116,26 @@ class App extends Controller {
         }
     }
 
+    public static function get_footer_text(){
+        $footer_text  = 'ihh_footer_text';
+        if (function_exists('pll_current_language')){
+            $footer_text  .= '_' . pll_current_language();
+        } else{
+            $footer_text .= '_en';
+        }
+
+        return get_theme_mod( $footer_text );
+    }
+
+    public static function get_footer_contact(){
+        $footer_text  = 'ihh_footer_contact';
+        if (function_exists('pll_current_language')){
+            $footer_text  .= '_' . pll_current_language();
+        } else{
+            $footer_text .= '_en';
+        }
+
+        return get_theme_mod( $footer_text );
+    }
+
 }
