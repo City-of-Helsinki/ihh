@@ -20,7 +20,7 @@
                     "key": "layout_62aaf5c8e738a",
                     "name": "anchorlink_navigation",
                     "label": "Anchorlink navigation",
-                    "display": "block",
+                    "display": "table",
                     "sub_fields": [
                         {
                             "key": "field_62aaf5e1e738b",
@@ -40,6 +40,21 @@
                             "ui": 1,
                             "ui_on_text": "Yes",
                             "ui_off_text": "No"
+                        },
+                        {
+                            "key": "field_631f20a8a4514",
+                            "label": "Background color",
+                            "name": "background_color",
+                            "type": "color_picker",
+                            "instructions": "Theme green: #92c8c2;\r\nTheme red: #f7a091;\r\nTheme yellow: #f3e565;",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "#f0e856"
                         }
                     ],
                     "min": "",
