@@ -1,11 +1,11 @@
 <?php  if (get_field('events_group') && get_field('featured')): ?>
 <section class="event container">
-  <h2>Upcoming events</h2>
+  <h2><?php pll_e('Upcoming events'); ?></h2>
 
   <div class="events">
     <?php  if ($events_group = get_field('events_group')): ?>
     <div class="event-list">
-        <?php 
+        <?php
           foreach($events_group as $event):
         ?>
         <a href="<?=get_permalink($event->ID)?>">
@@ -21,7 +21,7 @@
         <?php endforeach;?>
     </div>
     <?php endif;?>
-    
+
     <?php  if ($featured = get_field('featured')): ?>
     <a href="<?=get_permalink($featured->ID)?>">
       <div class="event-featured">

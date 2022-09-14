@@ -76,6 +76,10 @@ return [
         'Continue next page',
         'Continue previous page',
         'Ajankohta',
-        'Paikka'
+        'Paikka',
+        'See all news and events',
+        'Subscribe',
+        'I agree that my details can be processed according to the',
+        'Privacy Policy'
     ],
 ];
