@@ -133,7 +133,6 @@ add_action( 'customize_register', function ( \WP_Customize_Manager $wp_customize
     }
     for( $i=0; $i<count($translations); $i++){
         $slug = $translations[$i];
-        var_dump($slug);
         $wp_customize->add_setting( 'ihh_footer_text_' . $slug );
         
         $wp_customize->add_control( 'ihh_footer_text_' . $slug, [
