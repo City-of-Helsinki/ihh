@@ -22,11 +22,11 @@
       </div>
 
       <div class="footer-content-info">
-        {!! apply_filters('the_content', get_theme_mod('ihh_footer_text'))!!}
+        {!! apply_filters('the_content', App::get_footer_text() )!!}
       </div>
 
       <div class="footer-content-contact">
-        {!! apply_filters('the_content', get_theme_mod('ihh_footer_contact'))!!}
+        {!! apply_filters('the_content', App::get_footer_contact() )!!}
       </div>
 
       <div class="footer-content-some hide-on-desktop">

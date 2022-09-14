@@ -126,21 +126,33 @@ add_action( 'customize_register', function ( \WP_Customize_Manager $wp_customize
         'description' => pll__( 'Footer image' ),
     ] ) );
 
-    $wp_customize->add_setting( 'ihh_footer_text' );
-    $wp_customize->add_control( 'ihh_footer_text', [
-        'type'        => 'textarea',
-        'section'     => 'ihh_footer_settings',
-        'label'       => 'Footer text',
-        'input_attrs' => [],
-    ] );
+    if (function_exists('pll_languages_list')){
+        $translations = pll_languages_list();
+    } else{
+        $translations = array('en');
+    }
+    for( $i=0; $i<count($translations); $i++){
+        $slug = $translations[$i];
+        var_dump($slug);
+        $wp_customize->add_setting( 'ihh_footer_text_' . $slug );
+        
+        $wp_customize->add_control( 'ihh_footer_text_' . $slug, [
+            'type'        => 'textarea',
+            'section'     => 'ihh_footer_settings',
+            'label'       => 'Footer text (' . $slug  . ')',
+            'input_attrs' => [],
+        ] );
 
-    $wp_customize->add_setting( 'ihh_footer_contact' );
-    $wp_customize->add_control( 'ihh_footer_contact', [
-        'type'        => 'textarea',
-        'section'     => 'ihh_footer_settings',
-        'label'       => 'Contact text',
-        'input_attrs' => [],
-    ] );
+        $wp_customize->add_setting( 'ihh_footer_contact_' . $slug );
+        $wp_customize->add_control( 'ihh_footer_contact_' . $slug, [
+            'type'        => 'textarea',
+            'section'     => 'ihh_footer_settings',
+            'label'       => 'Contact text (' . $slug  . ')',
+            'input_attrs' => [],
+        ] );
+    }
+    
+
 
     $wp_customize->add_setting( 'ihh_chat_script' );
     $wp_customize->add_control( 'ihh_chat_script', [
