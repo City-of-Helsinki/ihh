@@ -1,5 +1,9 @@
 @php
-  $footer_img = wp_get_attachment_image_url( get_theme_mod( 'ihh_footer_image' ), 'full' )
+  $footer_img = wp_get_attachment_image_url( get_theme_mod( 'ihh_footer_image' ), 'full' );
+  $youtube = App::get_some_link('youtube');
+  $twitter = App::get_some_link('twitter');
+  $linkedin = App::get_some_link('linkedin');
+  $facebook = App::get_some_link('facebook');
 @endphp
 
 <footer class="footer container-wide">
@@ -15,9 +19,18 @@
         <img src="@asset('images/ihh_logo_black.png')" alt="International House Helsinki" class="footer-logo">
 
         <ul class="some-icons">
-          <li><a class="no-blank-icon" href="https://twitter.com/ihhelsinki/" target="_blank"><i aria-hidden="true" class="fa fa-twitter"></i><span class="ihh-visually-hidden">External content: Twitter page for Internal House Helsinki</span></a></li>
-          <li><a class="no-blank-icon" href="https://www.youtube.com/channel/UCnJcLjsyMaXh1RA0vZi4V0A" target="_blank"><i aria-hidden="true" class="fa fa-youtube"></i><span class="ihh-visually-hidden">External content: Youtube page for Internal House Helsinki</span></a></li>
-          <li><a class="no-blank-icon" href="https://www.facebook.com/ihhelsinki/" target="_blank"><i aria-hidden="true" class="fa fa-facebook-official"></i><span class="ihh-visually-hidden">External content: Facebook page for Internal House Helsinki</span></a></li>
+          @if($twitter)
+          <li><a class="no-blank-icon" href="{{$twitter}}" target="_blank"><i aria-hidden="true" class="fa fa-twitter"></i><span class="ihh-visually-hidden">External content: Twitter page for Internal House Helsinki</span></a></li>
+          @endif
+          @if($youtube)
+          <li><a class="no-blank-icon" href="{{$youtube}}" target="_blank"><i aria-hidden="true" class="fa fa-youtube"></i><span class="ihh-visually-hidden">External content: Youtube page for Internal House Helsinki</span></a></li>
+          @endif
+          @if($facebook)
+          <li><a class="no-blank-icon" href="{{$facebook}}" target="_blank"><i aria-hidden="true" class="fa fa-facebook-official"></i><span class="ihh-visually-hidden">External content: Facebook page for Internal House Helsinki</span></a></li>
+          @endif
+          @if($linkedin)
+          <li><a class="no-blank-icon" href="{{$linkedin}}" target="_blank"><i aria-hidden="true" class="fa fa-linkedin"></i><span class="ihh-visually-hidden">External content: LinkedIn page for Internal House Helsinki</span></a></li>
+          @endif
         </ul>
       </div>
 
@@ -33,9 +46,18 @@
         <img src="@asset('images/ihh_logo_black.png')" alt="International House Helsinki" class="footer-logo">
 
         <ul class="some-icons">
-          <li><a class="no-blank-icon" href="https://twitter.com/ihhelsinki/" target="_blank"><i aria-hidden="true" class="fa fa-twitter"></i><span class="ihh-visually-hidden">External content: Twitter page for Internal House Helsinki</span></a></li>
-          <li><a class="no-blank-icon" href="https://www.youtube.com/channel/UCnJcLjsyMaXh1RA0vZi4V0A" target="_blank"><i aria-hidden="true" class="fa fa-youtube"></i><span class="ihh-visually-hidden">External content: Youtube page for Internal House Helsinki</span></a></li>
-          <li><a class="no-blank-icon" href="https://www.facebook.com/ihhelsinki/" target="_blank"><i aria-hidden="true" class="fa fa-facebook-official"></i><span class="ihh-visually-hidden">External content: Facebook page for Internal House Helsinki</span></a></li>
+          @if($twitter)
+          <li><a class="no-blank-icon" href="{{$twitter}}" target="_blank"><i aria-hidden="true" class="fa fa-twitter"></i><span class="ihh-visually-hidden">External content: Twitter page for Internal House Helsinki</span></a></li>
+          @endif
+          @if($youtube)
+          <li><a class="no-blank-icon" href="{{$youtube}}" target="_blank"><i aria-hidden="true" class="fa fa-youtube"></i><span class="ihh-visually-hidden">External content: Youtube page for Internal House Helsinki</span></a></li>
+          @endif
+          @if($facebook)
+          <li><a class="no-blank-icon" href="{{$facebook}}" target="_blank"><i aria-hidden="true" class="fa fa-facebook-official"></i><span class="ihh-visually-hidden">External content: Facebook page for Internal House Helsinki</span></a></li>
+          @endif
+          @if($linkedin)
+          <li><a class="no-blank-icon" href="{{$linkedin}}" target="_blank"><i aria-hidden="true" class="fa fa-linkedin"></i><span class="ihh-visually-hidden">External content: LinkedIn page for Internal House Helsinki</span></a></li>
+          @endif
         </ul>
       </div>
 
