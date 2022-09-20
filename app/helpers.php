@@ -159,7 +159,7 @@ function format_event_date() {
     $end   = strtotime( get_field( 'end_time' ) );
 
     if ( ( $end - $start ) >= 1 * DAY_IN_SECONDS ) {
-        return date( 'D, j M Y, H:i', $start ) . ' - ' . date( 'D, j M Y, H:i', $end );
+        return date_i18n( 'D, j M Y, H:i', $start ) . ' - ' . date_i18n( 'D, j M Y, H:i', $end );
     }
 
     return date( 'H:i', $start ) . ' - ' . date( 'H:i D, j M Y', $end );
