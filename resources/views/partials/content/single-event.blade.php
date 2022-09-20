@@ -53,7 +53,7 @@
         @if($is_event && get_field('description'))
         <a name="description"></a>
         <div class="event-description">
-          <h2>Description</h2>
+          <h2>{{ pll_e('Description') }}</h2>
           {!! get_field('description') !!}
         </div>
         @endif
@@ -75,15 +75,15 @@
       <div class="event-body-navigation">
         <h3>{!! $title !!}</h3>
         <div class="event-body-navigation-items">
-          <a href="#event-info">Event info</a><br>
+          <a href="#event-info">{{ pll_e('Event info') }}</a><br>
           @if($is_event && get_field('description'))
-          <a href="#description">Description</a><br>
+          <a href="#description">{{ pll_e('Description') }}</a><br>
           @endif
           @if($is_event && get_field('streaming'))
-          <a href="#streaming">Streaming</a><br>
+          <a href="#streaming">{{ pll_e('Streaming') }}</a><br>
           @endif
           @if($is_event && get_field('program'))
-          <a href="#program">Program</a><br>
+          <a href="#program">{{ pll_e('Program') }}</a><br>
           @endif
         </div>
 
