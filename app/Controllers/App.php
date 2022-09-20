@@ -138,4 +138,8 @@ class App extends Controller {
         return get_theme_mod( $footer_text );
     }
 
+    public static function get_some_link( $some ){
+        $handle = 'ihh_some_' . $some;
+        return get_theme_mod( $handle );
+    }
 }

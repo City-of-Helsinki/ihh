@@ -118,6 +118,16 @@ add_action( 'customize_register', function ( \WP_Customize_Manager $wp_customize
         ],
     ] );
 
+    $wp_customize->add_setting( 'ihh_some_linkedin' );
+    $wp_customize->add_control( 'ihh_some_linkedin', [
+        'type'        => 'url',
+        'section'     => 'ihh_footer_settings',
+        'label'       => 'LinkedIn',
+        'input_attrs' => [
+            'placeholder' => 'https://www.linkedin.com/pagename',
+        ],
+    ] );
+
     $wp_customize->add_setting( 'ihh_footer_image' );
     $wp_customize->add_control( new \WP_Customize_Media_Control( $wp_customize, 'ihh_footer_image', [
         'label'       => pll__( 'Footer image' ),
