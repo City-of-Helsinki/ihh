@@ -9,7 +9,7 @@
 
     <div class="col-12 col-lg-4 col-md-6 py-lg-5 py-md-4 py-3">
       <?php
-      $newsletter_status = isset( $_GET["newsletter"] ) ? esc_attr( GET["newsletter"] ) : '';
+      $newsletter_status = isset( $_GET["newsletter"] ) ? esc_attr( $_GET["newsletter"] ) : '';
         if ( !empty($newsletter_status) && $newsletter_status === "success"){
           echo "<h3 class='py-5 d-flex justify-content-center'>" . pll__('Subscribed to the newsletter successfully.') . "</h3>";
         } else {
