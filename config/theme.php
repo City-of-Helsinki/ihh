@@ -43,6 +43,7 @@ return [
         'Default lift image',
         'Description',
         'Download attachment',
+        'Email',
         'Event info',
         'Footer',
         'IHH &rsaquo; Error',
