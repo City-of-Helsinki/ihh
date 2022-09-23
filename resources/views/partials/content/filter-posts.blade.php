@@ -1,6 +1,10 @@
 @php
     $cur_type = get_query_var('type');
     $cur_targetgroup = get_query_var('targetgroup');
+    $lang = 'en';
+    if (function_exists('pll_current_language')){
+        $lang = pll_current_language();
+    }
 @endphp
 <div class="post-filter">
     <form action="{{$ajax_url}}" method="GET" id="filter" class="filters d-flex flex-wrap" data-group="type" aria-label="@php pll_e('Filter News and Events'); @endphp">
@@ -29,7 +33,7 @@
                     @endforeach
             </ul>
         </fieldset>
-
+        <input type="hidden" name="lang" value="{{$lang}}">
         <input type="hidden" name="action" value="myfilter">
     </form>
 </div>

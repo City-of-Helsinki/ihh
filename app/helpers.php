@@ -236,12 +236,14 @@ function post_filter_function(){
 
     set_query_var('type', $_GET['type']);
     set_query_var('paged', $_GET['paged']);
+    set_query_var('lang', $_GET['lang']);
 
     $paged = (!empty( (int) $_GET['paged'] ) ) ? esc_attr($_GET['paged']) : 1;
     $args = array(
         'is_posts_page' => true,
         'target_group' => ( 'all' !== $_GET['targetgroup']) ? esc_attr( $_GET['targetgroup']) : 0,
-        'paged' => $paged
+        'paged' => $paged,
+        'lang' => ( isset($_GET['lang'])) ? esc_attr( $_GET['lang']) : 'en',
     );
     $query = apply_filters(__NAMESPACE__ . '\pre_get_posts', (new \WP_Query($args)));
     $GLOBALS['wp_query'] = $query;
