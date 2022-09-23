@@ -132,7 +132,7 @@ export default {
     }
 
     function addExternalLinkStyling(link) {
-        const UNDESIRABLE_PARENTS = '.share';
+        const UNDESIRABLE_PARENTS = '.share, .service-link';
 
         if (jQuery(link).parents(UNDESIRABLE_PARENTS).length === 0) {
             link.classList.add('external-link');
