@@ -9,7 +9,29 @@
   <article class="content-block container">
     @include('partials.content.header')
     @include('partials.content.page')
-
+  </article>
+  @if(have_rows('links'))
+    <section class="about-services">
+      <div class="container">
+        <div class="row">
+          @while(have_rows('links')) @php the_row() @endphp
+          <div class="service-link">
+            <a href="{{the_sub_field('link')}}" target="_blank">
+              @php
+                $image = get_sub_field('logo');
+              @endphp
+              <img src="{{ $image['url'] }}" alt="{{$image['alt']}}" >
+            </a>
+          </div>
+          @endwhile
+        </div>
+      </div>
+    </section>
+  @endif
+  <article class="content-block container">
+    @if( get_field('title_contact') )
+    <h2>{{the_field('title_contact')}}</h2>
+    @endif
     <section class="contact-location">
       <div class="contact-location-body">
         <div class="contact-location-body-section">

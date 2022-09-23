@@ -71,6 +71,13 @@
                 "operator": "==",
                 "value": "views\/template-about.blade.php"
             }
+        ],
+        [
+            {
+                "param": "page_template",
+                "operator": "==",
+                "value": "views\/template-contact.blade.php"
+            }
         ]
     ],
     "menu_order": 0,
@@ -79,7 +86,8 @@
     "label_placement": "top",
     "instruction_placement": "label",
     "hide_on_screen": "",
-    "active": 1,
+    "active": true,
     "description": "",
-    "modified": 1597737066
+    "show_in_rest": 0,
+    "modified": 1663138276
 }

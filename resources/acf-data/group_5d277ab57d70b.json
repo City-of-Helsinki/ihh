@@ -1,7 +1,77 @@
 {
     "key": "group_5d277ab57d70b",
-    "title": "Contact meta",
+    "title": "Where is International House Helisnki",
     "fields": [
+        {
+            "key": "field_6329ba1f0bfd7",
+            "label": "Title",
+            "name": "title_contact",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "Where is International House Helsinki",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_5d8127cc8b07a",
+            "label": "Textbox Color",
+            "name": "multilingual_color",
+            "type": "color_picker",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "enable_opacity": false,
+            "return_format": "string"
+        },
+        {
+            "key": "field_5d8127e38b07b",
+            "label": "Textbox Color",
+            "name": "advisory_color",
+            "type": "color_picker",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "enable_opacity": false,
+            "return_format": "string"
+        },
+        {
+            "key": "field_5d8127ec8b07c",
+            "label": "Textbox Color",
+            "name": "media_color",
+            "type": "color_picker",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "enable_opacity": false,
+            "return_format": "string"
+        },
         {
             "key": "field_5d277b376d85d",
             "label": "Basic information",
@@ -36,22 +106,6 @@
             "prepend": "",
             "append": "",
             "maxlength": ""
-        },
-        {
-            "key": "field_5d2c57e47c43f",
-            "label": "Map link",
-            "name": "basic_map_link",
-            "type": "url",
-            "instructions": "",
-            "required": 1,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "default_value": "",
-            "placeholder": ""
         },
         {
             "key": "field_5d277b5a6d85f",
@@ -151,21 +205,6 @@
             "new_lines": ""
         },
         {
-            "key": "field_5d8127cc8b07a",
-            "label": "Textbox Color",
-            "name": "multilingual_color",
-            "type": "color_picker",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "default_value": ""
-        },
-        {
             "key": "field_5d27842b5a892",
             "label": "Advisory",
             "name": "",
@@ -218,21 +257,6 @@
             "maxlength": "",
             "rows": 4,
             "new_lines": ""
-        },
-        {
-            "key": "field_5d8127e38b07b",
-            "label": "Textbox Color",
-            "name": "advisory_color",
-            "type": "color_picker",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "default_value": ""
         },
         {
             "key": "field_5d27845b5a895",
@@ -289,19 +313,20 @@
             "new_lines": ""
         },
         {
-            "key": "field_5d8127ec8b07c",
-            "label": "Textbox Color",
-            "name": "media_color",
-            "type": "color_picker",
+            "key": "field_5d2c57e47c43f",
+            "label": "Map link",
+            "name": "basic_map_link",
+            "type": "url",
             "instructions": "",
-            "required": 0,
+            "required": 1,
             "conditional_logic": 0,
             "wrapper": {
                 "width": "",
                 "class": "",
                 "id": ""
             },
-            "default_value": ""
+            "default_value": "",
+            "placeholder": ""
         }
     ],
     "location": [
@@ -330,7 +355,8 @@
         "tags",
         "send-trackbacks"
     ],
-    "active": 1,
+    "active": true,
     "description": "",
-    "modified": 1568745488
+    "show_in_rest": 0,
+    "modified": 1663679208
 }
