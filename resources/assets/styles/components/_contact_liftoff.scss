@@ -20,6 +20,13 @@
       a {
         font-weight: 600;
         line-height: 1.5;
+        text-decoration: none;
+
+        &:hover,
+        &:focus {
+          color: $kuvittaja-darker-green !important;
+          text-decoration: underline;
+        }
       }
     }
   }
