@@ -64,7 +64,7 @@
 
             <div class="filters d-flex flex-wrap">
                 <ul class="list-unstyled list-group list-group-horizontal" aria-labelledby="news-heading">
-                    <li class="js-filter"><a href="<?php $page_for_posts; ?>?type=post&≈=all" class="selected"><?php pll_e('All news'); ?></a></li>
+                    <li class="js-filter"><a href="<?php $page_for_posts; ?>?type=news&≈=all" class="selected"><?php pll_e('All news'); ?></a></li>
 
                     <?php foreach( $target_groups as $term ){ ?>
                         <li class="filter-item js-filter">
