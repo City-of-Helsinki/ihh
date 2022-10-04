@@ -1,6 +1,6 @@
 @php
     $cur_type = get_query_var('type');
-    $cur_targetgroup = get_query_var('targetgroup');
+    $cur_targetgroup = get_query_var('target_group');
     $lang = 'en';
     if (function_exists('pll_current_language')){
         $lang = pll_current_language();

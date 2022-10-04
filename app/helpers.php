@@ -241,7 +241,7 @@ function post_filter_function(){
     $paged = (!empty( (int) $_GET['paged'] ) ) ? esc_attr($_GET['paged']) : 1;
     $args = array(
         'is_posts_page' => true,
-        'target_group' => ( 'all' !== $_GET['targetgroup']) ? esc_attr( $_GET['targetgroup']) : 0,
+        'target_group' => ( 'all' !== $_GET['target_group']) ? esc_attr( $_GET['target_group']) : 0,
         'paged' => $paged,
         'lang' => ( isset($_GET['lang'])) ? esc_attr( $_GET['lang']) : 'en',
     );

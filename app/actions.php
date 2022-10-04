@@ -78,6 +78,7 @@ function pre_get_posts ( \WP_Query $query ) {
         $query->set( 'post_type', $type );
         $query->set('orderby', $orderBy);
         $query->set('order', $order);
+        $query->set('post_status', 'publish');
 
         $query->set( 'meta_query', create_meta_query( $query ) );
     }
