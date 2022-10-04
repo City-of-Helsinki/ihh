@@ -15,7 +15,7 @@
 
 ?>
 
-<div class="newsletter alignfull container-fluid" id="newsletter">
+<div class="newsletter container-fluid" id="newsletter">
   <div class="row justify-content-center">
     <div class="col-12 col-lg-4 col-md-6 py-lg-5 py-md-4 py-3">
       <?php
