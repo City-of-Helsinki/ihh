@@ -162,7 +162,7 @@ function format_event_date() {
         return date_i18n( 'D, j M Y, H:i', $start ) . ' - ' . date_i18n( 'D, j M Y, H:i', $end );
     }
 
-    return date( 'H:i', $start ) . ' - ' . date( 'H:i D, j M Y', $end );
+    return date( 'H:i', $start ) . ' - ' . date_i18n( 'H:i D, j M Y', $end );
 }
 
 /**
