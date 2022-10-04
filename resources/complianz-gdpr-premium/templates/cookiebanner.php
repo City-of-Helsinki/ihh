@@ -26,7 +26,7 @@
 					<?php echo sprintf(
 						'%s %s',
 						get_bloginfo( 'name' ),
-						esc_html_x('uses cookies', 'cookie notice title prefix', 'helsinki-universal')
+						esc_html_x(pll__('uses cookies'), 'cookie notice title prefix', 'helsinki-universal')
 					); ?>
 				</h2>
 				<p>{message_{consent_type}}</p>

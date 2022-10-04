@@ -7,7 +7,7 @@
 @section('content')
   <section class="content-block container">
     <div class="content-header">
-      <h1>Search</h1>
+      <h1><?php echo pll__('Search'); ?></h1>
     </div>
     @while(have_posts()) @php the_post() @endphp
     <section class="content-block container">
