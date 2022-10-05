@@ -10,27 +10,10 @@
     @include('partials.content.header')
     @include('partials.content.page')
   </article>
-  @if(have_rows('links'))
-    <section class="about-services">
-      <div class="container">
-        <div class="row">
-          @while(have_rows('links')) @php the_row() @endphp
-          <div class="service-link">
-            <a href="{{the_sub_field('link')}}" target="_blank">
-              @php
-                $image = get_sub_field('logo');
-              @endphp
-              <img src="{{ $image['url'] }}" alt="{{$image['alt']}}" >
-            </a>
-          </div>
-          @endwhile
-        </div>
-      </div>
-    </section>
-  @endif
+
   <article class="content-block container">
     @if( get_field('title_contact') )
-    <h2>{{the_field('title_contact')}}</h2>
+    <h2 class="pb-3">{{the_field('title_contact')}}</h2>
     @endif
     <section class="contact-location">
       <div class="contact-location-body">
@@ -50,7 +33,9 @@
         <img src="{{the_field('basic_map_image')}}" alt="">
       </div>
     </section>
-
+    @if( get_field('title_contact_subheader') )
+    <h2 class="pb-3">{{the_field('title_contact_subheader')}}</h2>
+    @endif
     <div class="contact-info-box" @if(get_field('multilingual_color')) style="background-color: {!! get_field('multilingual_color') !!}" @endif>
       <img src="@asset('images/icons/customer.png')" alt="">
       <div class="contact-info-box-body">
@@ -76,5 +61,32 @@
     </div>
 
   </article>
+  @if(have_rows('links'))
+    <section class="about-services mt-2 mt-md-5">
+      <div class="container">
+        <div class="row">
+
+          @if( get_field('links_header') )
+          <div class="col-12 pb-5">
+            <h2>{{the_field('links_header')}}</h2>
+          </div>
+          @endif
+
+        </div>
+        <div class="row">
+          @while(have_rows('links')) @php the_row() @endphp
+          <div class="service-link">
+            <a href="{{the_sub_field('link')}}" target="_blank">
+              @php
+                $image = get_sub_field('logo');
+              @endphp
+              <img src="{{ $image['url'] }}" alt="{{$image['alt']}}" >
+            </a>
+          </div>
+          @endwhile
+        </div>
+      </div>
+    </section>
+  @endif
   @endwhile
 @endsection

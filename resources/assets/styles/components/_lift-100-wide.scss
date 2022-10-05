@@ -47,7 +47,14 @@
 
   .arrow {
     color: $black !important;
+    text-decoration: none;
     width: 1.5rem;
     height: 1.5rem;
+
+    &:hover,
+    &:focus {
+      color: $kuvittaja-darker-green !important;
+      text-decoration: underline;
+    }
   }
 }

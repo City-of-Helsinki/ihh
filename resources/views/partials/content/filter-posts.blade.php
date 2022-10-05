@@ -1,6 +1,6 @@
 @php
     $cur_type = get_query_var('type');
-    $cur_targetgroup = get_query_var('targetgroup');
+    $cur_targetgroup = get_query_var('target_group');
     $lang = 'en';
     if (function_exists('pll_current_language')){
         $lang = pll_current_language();
@@ -24,10 +24,10 @@
         <fieldset>
             <legend>@php pll_e('Target group'); @endphp</legend>
             <ul class="list-unstyled list-group list-group-horizontal" aria-labelledby="content_type">
-                <li class="js-filter"><input type="radio" name="targetgroup" value="all" checked id="target_group_all" /><label for="target_group_all">@php pll_e('All groups'); @endphp</label></li>
+                <li class="js-filter"><input type="radio" name="target_group" value="all" checked id="target_group_all" /><label for="target_group_all">@php pll_e('All groups'); @endphp</label></li>
                     @foreach ($target_groups as $term)
                         <li class="filter-item js-filter">
-                            <input type="radio" name="targetgroup" value="{{ $term->slug }}"  id="target_group_{{ $term->term_id  }}" @php echo ($term->slug === $cur_targetgroup ) ? 'checked' : '' @endphp/>
+                            <input type="radio" name="target_group" value="{{ $term->slug }}"  id="target_group_{{ $term->term_id  }}" @php echo ($term->slug === $cur_targetgroup ) ? 'checked' : '' @endphp/>
                             <label for="target_group_{{ $term->term_id }}">{{ $term->name }}</label>
                         </li>
                     @endforeach

@@ -37,11 +37,11 @@
 
             <div class="filters d-flex flex-wrap">
                 <ul class="list-unstyled list-group list-group-horizontal" aria-labelledby="events-heading">
-                    <li><a href="<?php echo $page_for_posts; ?>?type=event&targetgroup=all" class="selected"><?php pll_e('All events'); ?></a></li>
+                    <li><a href="<?php echo $page_for_posts; ?>?type=event" class="selected"><?php pll_e('All events'); ?></a></li>
 
                     <?php foreach( $target_groups as $term ){ ?>
                         <li class="filter-item js-filter">
-                            <a href="<?php echo $page_for_posts; ?>?type=event&targetgroup=<?php echo $term->slug; ?>"><?php echo $term->name ?></a>
+                            <a href="<?php echo $page_for_posts; ?>?type=event&target_group=<?php echo $term->slug; ?>"><?php echo $term->name ?></a>
                         </li>
                     <?php } ?>
                 </ul>
@@ -64,11 +64,11 @@
 
             <div class="filters d-flex flex-wrap">
                 <ul class="list-unstyled list-group list-group-horizontal" aria-labelledby="news-heading">
-                    <li class="js-filter"><a href="<?php $page_for_posts; ?>?type=post&targetgroup=all" class="selected"><?php pll_e('All news'); ?></a></li>
+                    <li class="js-filter"><a href="<?php echo $page_for_posts; ?>?type=news" class="selected"><?php pll_e('All news'); ?></a></li>
 
                     <?php foreach( $target_groups as $term ){ ?>
                         <li class="filter-item js-filter">
-                            <a href="<?php echo $page_for_posts; ?>?type=post&targetgroup=<?php echo $term->slug; ?>"><?php echo $term->name ?></a>
+                            <a href="<?php echo $page_for_posts; ?>?type=news&target_group=<?php echo $term->slug; ?>"><?php echo $term->name ?></a>
                         </li>
                     <?php } ?>
                 </ul>

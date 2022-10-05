@@ -16,7 +16,26 @@
                 "id": ""
             },
             "default_value": "",
-            "placeholder": "Where is International House Helsinki",
+            "placeholder": "For example \"Where is International House Helsinki\"",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_633bf8e63a086",
+            "label": "Contact Boxes Title",
+            "name": "title_contact_subheader",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "For example \"Contact Us\"",
             "prepend": "",
             "append": "",
             "maxlength": ""
@@ -357,6 +376,5 @@
     ],
     "active": true,
     "description": "",
-    "show_in_rest": 0,
-    "modified": 1663679208
+    "modified": 1664874811
 }
