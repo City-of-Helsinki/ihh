@@ -85,6 +85,7 @@ return [
         'See all news and events',
         'Subscribe',
         'I agree that my details can be processed according to the',
-        'Privacy Policy'
+        'Privacy Policy',
+        'uses cookies'
     ],
 ];
