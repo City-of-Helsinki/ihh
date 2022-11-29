@@ -1,9 +1,21 @@
+<?php
+    $hasHeading = false;
+    $listElementType = 'ol';
+    $cssClasses = ''
+?>
+
 <div class="timeline container">
     <?php if( get_sub_field('section_heading') ) : ?>
-    <h2 class="section-heading"><?php the_sub_field('section_heading'); ?></h2>
+        <h2 class="section-heading" id="timeline-heading"><?php the_sub_field('section_heading'); ?></h2>
+        <?php $hasHeading = true; ?>
     <?php endif ?>
 
-    <ol class="timeline-steps" aria-labelledby="timeline-heading">
+    <?php if(!get_sub_field('show_numbering')){
+        $listElementType = 'ul';
+        $cssClasses = 'hide-numbers';
+    } ?>
+
+    <<?php echo $listElementType; ?> class="timeline-steps hide-numbers" <?php if(hasHeading){ echo 'aria-labelledby="timeline-heading"'; }?> >
         <?php while( have_rows('steps') ) : the_row(); $id = get_row_index(); ?>
             <li class="step image__<?php the_sub_field('image_alignment'); ?>" id="step_<?php echo $id; ?>">
                 <?php if( get_sub_field('image') ) : ?>
@@ -25,5 +37,5 @@
                 </div>
             </li>
         <?php endwhile; ?>
-    </ol>
+    </<?php echo $listElementType; ?>>
 </div>

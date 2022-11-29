@@ -55,7 +55,7 @@ $step-indicator-size: 2.5rem;
     }
 
     &.image__align-right {
-      @include media-breakpoint-up("md") {
+      @include media-breakpoint-up("sm") {
         flex-direction: row-reverse;
       }
     }
@@ -63,6 +63,10 @@ $step-indicator-size: 2.5rem;
     .image-container {
       background: #f7f7f7;
       flex: 0 0 100%;
+
+      @include media-breakpoint-up("sm") {
+        flex: 0 0 33.3333%;
+      }
 
       @include media-breakpoint-up("md") {
         flex: 0 0 280px;
@@ -80,6 +84,10 @@ $step-indicator-size: 2.5rem;
       padding: 34px 40px;
       flex-grow: 1;
 
+      @include media-breakpoint-up("sm") {
+        flex: 1;
+      }
+
       @include media-breakpoint-up("md") {
         flex-grow: 1;
         padding: 54px 40px;
@@ -96,6 +104,10 @@ $step-indicator-size: 2.5rem;
 
     .background-red {
       background: $bg-red;
+    }
+
+    .background-orange {
+      background: $bg-orange;
     }
 
     .heading,
@@ -126,6 +138,35 @@ $step-indicator-size: 2.5rem;
       &:hover,
       &:focus {
         color: $kuvittaja-darker-green !important;
+      }
+    }
+  }
+}
+
+/* Without numbering */
+.timeline .hide-numbers{
+  max-width: unset;
+  padding-left: 0;
+
+  .step{
+    border-left: 0;
+    padding-left: 0;
+    margin-left: 0;
+
+    &:before{
+      display: none;
+    }
+
+    .image-container {
+      min-height: 268px;
+      position: relative;
+
+      @include media-breakpoint-up("sm") {
+        flex: 0 0 38%;
+      }
+
+      img{
+        position: absolute;
       }
     }
   }
