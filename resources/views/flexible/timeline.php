@@ -1,7 +1,7 @@
 <?php
     $hasHeading = false;
     $listElementType = 'ol';
-    $cssClasses = ''
+    $cssClasses = 'timeline-steps'
 ?>
 
 <div class="timeline container">
@@ -12,10 +12,10 @@
 
     <?php if(!get_sub_field('show_numbering')){
         $listElementType = 'ul';
-        $cssClasses = 'hide-numbers';
+        $cssClasses = 'timeline-steps without-numbers';
     } ?>
 
-    <<?php echo $listElementType; ?> class="timeline-steps hide-numbers" <?php if(hasHeading){ echo 'aria-labelledby="timeline-heading"'; }?> >
+    <<?php echo $listElementType; ?> class="<?php echo $cssClasses; ?>" <?php if(hasHeading){ echo 'aria-labelledby="timeline-heading"'; }?> >
         <?php while( have_rows('steps') ) : the_row(); $id = get_row_index(); ?>
             <li class="step image__<?php the_sub_field('image_alignment'); ?>" id="step_<?php echo $id; ?>">
                 <?php if( get_sub_field('image') ) : ?>
