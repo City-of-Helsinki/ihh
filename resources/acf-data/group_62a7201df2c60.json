@@ -853,8 +853,27 @@
                         },
                         {
                             "key": "field_62fdfb6644db1",
-                            "label": "List latests News and Events",
-                            "name": "list_latests_news_and_events",
+                            "label": "List latests News",
+                            "name": "list_latests_news",
+                            "type": "true_false",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "message": "",
+                            "default_value": 0,
+                            "ui": 1,
+                            "ui_on_text": "On",
+                            "ui_off_text": "Off"
+                        },
+                        {
+                            "key": "field_6388583ab0efd",
+                            "label": "List latests Events",
+                            "name": "list_latests_events",
                             "type": "true_false",
                             "instructions": "",
                             "required": 0,
@@ -1169,5 +1188,5 @@
     "hide_on_screen": "",
     "active": true,
     "description": "",
-    "modified": 1662127715
+    "modified": 1669879909
 }
