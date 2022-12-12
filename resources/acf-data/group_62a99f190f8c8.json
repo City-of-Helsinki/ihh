@@ -86,6 +86,25 @@
                             "maxlength": ""
                         },
                         {
+                            "key": "field_6385dc8443416",
+                            "label": "Show numbering",
+                            "name": "show_numbering",
+                            "type": "true_false",
+                            "instructions": "This selection allows you to show or hide the numbering between the steps",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "message": "",
+                            "default_value": 1,
+                            "ui": 1,
+                            "ui_on_text": "Yes",
+                            "ui_off_text": "No"
+                        },
+                        {
                             "key": "field_62a9ce321a276",
                             "label": "Steps",
                             "name": "steps",
@@ -168,7 +187,8 @@
                                     "choices": {
                                         "yellow": "Yellow",
                                         "green": "Green",
-                                        "red": "Red"
+                                        "red": "Red",
+                                        "orange": "Orange"
                                     },
                                     "default_value": "yellow",
                                     "allow_null": 0,
@@ -201,7 +221,7 @@
                                     "key": "field_62a9ceb71a27a",
                                     "label": "Description",
                                     "name": "description",
-                                    "type": "textarea",
+                                    "type": "wysiwyg",
                                     "instructions": "",
                                     "required": 0,
                                     "conditional_logic": 0,
@@ -211,10 +231,10 @@
                                         "id": ""
                                     },
                                     "default_value": "",
-                                    "placeholder": "",
-                                    "maxlength": "",
-                                    "rows": "",
-                                    "new_lines": ""
+                                    "tabs": "all",
+                                    "toolbar": "full",
+                                    "media_upload": 0,
+                                    "delay": 0
                                 },
                                 {
                                     "key": "field_62a9cec51a27b",
@@ -1201,7 +1221,7 @@
                 "layout_62e13a74ed939": {
                     "key": "layout_62e13a74ed939",
                     "name": "contact_50-50",
-                    "label": "Contact Box 50-50",
+                    "label": "Contact Box",
                     "display": "block",
                     "sub_fields": [
                         {
@@ -1582,5 +1602,5 @@
     "hide_on_screen": "",
     "active": true,
     "description": "",
-    "modified": 1661868156
+    "modified": 1669724983
 }
