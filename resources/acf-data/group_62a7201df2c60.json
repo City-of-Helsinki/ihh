@@ -871,6 +871,36 @@
                             "ui_off_text": "Off"
                         },
                         {
+                            "key": "field_639b32318e8e3",
+                            "label": "Select default target group for News",
+                            "name": "select_default_target_group_for_news",
+                            "type": "taxonomy",
+                            "instructions": "All articles are listed when non of the target group categories are unselected.",
+                            "required": 0,
+                            "conditional_logic": [
+                                [
+                                    {
+                                        "field": "field_62fdfb6644db1",
+                                        "operator": "==",
+                                        "value": "1"
+                                    }
+                                ]
+                            ],
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "taxonomy": "target_group",
+                            "field_type": "radio",
+                            "allow_null": 1,
+                            "add_term": 1,
+                            "save_terms": 0,
+                            "load_terms": 0,
+                            "return_format": "id",
+                            "multiple": 0
+                        },
+                        {
                             "key": "field_6388583ab0efd",
                             "label": "List latests Events",
                             "name": "list_latests_events",
@@ -888,6 +918,36 @@
                             "ui": 1,
                             "ui_on_text": "On",
                             "ui_off_text": "Off"
+                        },
+                        {
+                            "key": "field_639b336673155",
+                            "label": "Select default target group for Events",
+                            "name": "select_default_target_group_for_events",
+                            "type": "taxonomy",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": [
+                                [
+                                    {
+                                        "field": "field_6388583ab0efd",
+                                        "operator": "==",
+                                        "value": "1"
+                                    }
+                                ]
+                            ],
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "taxonomy": "target_group",
+                            "field_type": "radio",
+                            "allow_null": 1,
+                            "add_term": 1,
+                            "save_terms": 0,
+                            "load_terms": 0,
+                            "return_format": "id",
+                            "multiple": 0
                         }
                     ],
                     "min": "",
@@ -1188,5 +1248,5 @@
     "hide_on_screen": "",
     "active": true,
     "description": "",
-    "modified": 1669879909
+    "modified": 1671117446
 }

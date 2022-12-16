@@ -7,6 +7,8 @@
     $subheading_size = 2;
     $listNews = get_sub_field('list_latests_news');
     $listEvents = get_sub_field('list_latests_events');
+    $defaultNewsTG = get_sub_field('select_default_target_group_for_news');
+    $defaultEventsTG = get_sub_field('select_default_target_group_for_events');
 ?>
 
 <div class="section-news-and-events py-5 container">
@@ -41,18 +43,35 @@
             'type' => 'event'
         );
 
+        if($defaultEventsTG){
+            $args['tax_query'][] = array(
+                'taxonomy'     => 'target_group',
+                'field'   => 'term_id',
+                'terms' => $defaultEventsTG
+            );
+        }
+
         $query = apply_filters(__NAMESPACE__ . '\pre_get_posts', new \WP_Query( $args ) );
-        if($query->have_posts() ): ?>
+        if($query->have_posts() ):
+        ?>
         <div class="section-events">
             <h<?php echo $subheading_size; ?> id="events-heading" class="mb-2"><?php pll_e('Upcoming events'); ?></h<?php echo $subheading_size; ?>>
 
             <div class="filters d-flex flex-wrap">
                 <ul class="list-unstyled list-group list-group-horizontal" aria-label="<?php pll_e('Filter events'); ?>">
-                    <li><a href="<?php echo $page_for_posts; ?>?type=event" class="selected"><?php pll_e('All events'); ?></a></li>
+                    <li><a href="<?php echo $page_for_posts; ?>?type=event" <?php if(!$defaultEventsTG) { echo "class='selected'"; echo " aria-current='true'"; }?>><?php pll_e('All events'); ?></a></li>
 
                     <?php foreach( $target_groups as $term ){ ?>
                         <li class="filter-item js-filter">
-                            <a href="<?php echo $page_for_posts; ?>?type=event&target_group=<?php echo $term->slug; ?>"><?php echo $term->name ?></a>
+                            <a
+                                href="<?php echo $page_for_posts; ?>?type=event&target_group=<?php echo $term->slug; ?>"
+                                <?php if( $defaultEventsTG && $defaultEventsTG == $term->term_id ) {
+                                    echo "class='selected'";
+                                    echo "aria-current='true'";
+                                }?>
+                            >
+                                <?php echo $term->name ?>
+                            </a>
                         </li>
                     <?php } ?>
                 </ul>
@@ -77,11 +96,18 @@
 
             <div class="filters d-flex flex-wrap">
                 <ul class="list-unstyled list-group list-group-horizontal" aria-label="<?php pll_e('Filter news'); ?>">
-                    <li class="js-filter"><a href="<?php echo $page_for_posts; ?>?type=news" class="selected"><?php pll_e('All news'); ?></a></li>
+                    <li class="js-filter"><a href="<?php echo $page_for_posts; ?>?type=news" <?php if( empty($defaultNewsTG)) {echo "class='selected'"; echo " aria-current='true'";}?>><?php pll_e('All news'); ?></a></li>
 
                     <?php foreach( $target_groups as $term ){ ?>
                         <li class="filter-item js-filter">
-                            <a href="<?php echo $page_for_posts; ?>?type=news&target_group=<?php echo $term->slug; ?>"><?php echo $term->name ?></a>
+                            <a
+                                href="<?php echo $page_for_posts; ?>?type=news&target_group=<?php echo $term->slug; ?>"
+                                <?php if( !empty($defaultNewsTG) && $defaultNewsTG == $term->term_id) {
+                                    echo "class='selected'";
+                                    echo "aria-current='true'";
+                                }?>
+                            >
+                            <?php echo $term->name ?></a>
                         </li>
                     <?php } ?>
                 </ul>
@@ -92,8 +118,17 @@
                     $args = array(
                         'is_posts_page' => true,
                         'posts_per_page' => 3,
-
+                        'post_type' => 'post'
                     );
+
+                    if($defaultNewsTG){
+                        $args['tax_query'][] = array(
+                            'taxonomy'     => 'target_group',
+                            'field'   => 'term_id',
+                            'terms' => $defaultNewsTG
+                        );
+                    }
+
                     $query = apply_filters(__NAMESPACE__ . '\pre_get_posts', (new \WP_Query($args)));
                     if($query->have_posts() ) {
                         while($query->have_posts() ) {
