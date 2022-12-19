@@ -1496,6 +1496,133 @@
                     ],
                     "min": "",
                     "max": ""
+                },
+                "layout_62fdfb5744db0": {
+                    "key": "layout_62fdfb5744db0",
+                    "name": "news_and_events_list",
+                    "label": "News and Events list",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_62fe017f50a2f",
+                            "label": "Section heading",
+                            "name": "section_heading",
+                            "type": "text",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": "",
+                            "maxlength": ""
+                        },
+                        {
+                            "key": "field_62fdfb6644db1",
+                            "label": "List latests News",
+                            "name": "list_latests_news",
+                            "type": "true_false",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "message": "",
+                            "default_value": 1,
+                            "ui": 1,
+                            "ui_on_text": "On",
+                            "ui_off_text": "Off"
+                        },
+                        {
+                            "key": "field_639b32318e8e3",
+                            "label": "Select default target group for News",
+                            "name": "select_default_target_group_for_news",
+                            "type": "taxonomy",
+                            "instructions": "All articles are listed when non of the target group categories are unselected.",
+                            "required": 0,
+                            "conditional_logic": [
+                                [
+                                    {
+                                        "field": "field_62fdfb6644db1",
+                                        "operator": "==",
+                                        "value": "1"
+                                    }
+                                ]
+                            ],
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "taxonomy": "target_group",
+                            "field_type": "radio",
+                            "allow_null": 1,
+                            "add_term": 1,
+                            "save_terms": 0,
+                            "load_terms": 0,
+                            "return_format": "id",
+                            "multiple": 0
+                        },
+                        {
+                            "key": "field_6388583ab0efd",
+                            "label": "List latests Events",
+                            "name": "list_latests_events",
+                            "type": "true_false",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "message": "",
+                            "default_value": 1,
+                            "ui": 1,
+                            "ui_on_text": "On",
+                            "ui_off_text": "Off"
+                        },
+                        {
+                            "key": "field_639b336673155",
+                            "label": "Select default target group for Events",
+                            "name": "select_default_target_group_for_events",
+                            "type": "taxonomy",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": [
+                                [
+                                    {
+                                        "field": "field_6388583ab0efd",
+                                        "operator": "==",
+                                        "value": "1"
+                                    }
+                                ]
+                            ],
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "taxonomy": "target_group",
+                            "field_type": "radio",
+                            "allow_null": 1,
+                            "add_term": 1,
+                            "save_terms": 0,
+                            "load_terms": 0,
+                            "return_format": "id",
+                            "multiple": 0
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
                 }
             },
             "button_label": "Add Block",
