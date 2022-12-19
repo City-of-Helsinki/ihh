@@ -871,6 +871,25 @@
                             "ui_off_text": "Off"
                         },
                         {
+                            "key": "field_6388583ab0efd",
+                            "label": "List latests Events",
+                            "name": "list_latests_events",
+                            "type": "true_false",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "message": "",
+                            "default_value": 1,
+                            "ui": 1,
+                            "ui_on_text": "On",
+                            "ui_off_text": "Off"
+                        },
+                        {
                             "key": "field_639b32318e8e3",
                             "label": "Select default target group for News",
                             "name": "select_default_target_group_for_news",
