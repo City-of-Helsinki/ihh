@@ -42,6 +42,30 @@
                             "ui_off_text": "No"
                         },
                         {
+                            "key": "field_63bfe81cd57fb",
+                            "label": "Anchorlinks position",
+                            "name": "anchorlinks_position",
+                            "type": "radio",
+                            "instructions": "Show anchor links at the top of the article by activating \"At the top of the article\" option.  Use this option on pages that are using \"Default\" page template.",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "choices": {
+                                "position_default": "Default position",
+                                "position_at_top": "At the top of the article"
+                            },
+                            "allow_null": 0,
+                            "other_choice": 0,
+                            "default_value": "position_default",
+                            "layout": "horizontal",
+                            "return_format": "value",
+                            "save_other_choice": 0
+                        },
+                        {
                             "key": "field_631f20a8a4514",
                             "label": "Background color",
                             "name": "background_color",
@@ -1688,5 +1712,5 @@
     "hide_on_screen": "",
     "active": true,
     "description": "",
-    "modified": 1670840587
+    "modified": 1673522583
 }
