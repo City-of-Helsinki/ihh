@@ -20,7 +20,7 @@
                     "key": "layout_62aaf5c8e738a",
                     "name": "anchorlink_navigation",
                     "label": "Anchorlink navigation",
-                    "display": "table",
+                    "display": "row",
                     "sub_fields": [
                         {
                             "key": "field_62aaf5e1e738b",
@@ -42,6 +42,30 @@
                             "ui_off_text": "No"
                         },
                         {
+                            "key": "field_63bfe81cd57fb",
+                            "label": "Anchorlinks position",
+                            "name": "anchorlinks_position",
+                            "type": "radio",
+                            "instructions": "Show anchor links at the top of the article by activating \"At the top of the article\" option.  Use this option on pages that are using \"Default\" page template.",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "choices": {
+                                "position_default": "Default position",
+                                "position_at_top": "At the top of the article"
+                            },
+                            "allow_null": 0,
+                            "other_choice": 0,
+                            "default_value": "position_default",
+                            "layout": "horizontal",
+                            "return_format": "value",
+                            "save_other_choice": 0
+                        },
+                        {
                             "key": "field_631f20a8a4514",
                             "label": "Background color",
                             "name": "background_color",
@@ -55,6 +79,82 @@
                                 "id": ""
                             },
                             "default_value": "#f0e856"
+                        },
+                        {
+                            "key": "field_63c013b7dbdf9",
+                            "label": "Customized anchor links",
+                            "name": "",
+                            "type": "accordion",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "open": 0,
+                            "multi_expand": 0,
+                            "endpoint": 0
+                        },
+                        {
+                            "key": "field_63c01410dbdfa",
+                            "label": "Links",
+                            "name": "links",
+                            "type": "repeater",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "collapsed": "",
+                            "min": 0,
+                            "max": 0,
+                            "layout": "table",
+                            "button_label": "",
+                            "sub_fields": [
+                                {
+                                    "key": "field_63c014d326b75",
+                                    "label": "Original name",
+                                    "name": "original_name",
+                                    "type": "text",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "default_value": "",
+                                    "placeholder": "",
+                                    "prepend": "",
+                                    "append": "",
+                                    "maxlength": ""
+                                },
+                                {
+                                    "key": "field_63c014e026b76",
+                                    "label": "New name",
+                                    "name": "new_name",
+                                    "type": "text",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "default_value": "",
+                                    "placeholder": "",
+                                    "prepend": "",
+                                    "append": "",
+                                    "maxlength": ""
+                                }
+                            ]
                         }
                     ],
                     "min": "",
@@ -679,6 +779,174 @@
                                     "toolbar": "basic",
                                     "media_upload": 1,
                                     "delay": 0
+                                }
+                            ]
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
+                },
+                "layout_63c14ef72fdbf": {
+                    "key": "layout_63c14ef72fdbf",
+                    "name": "accordion_with_textarea",
+                    "label": "Accordion with textarea",
+                    "display": "row",
+                    "sub_fields": [
+                        {
+                            "key": "field_63c14f4a2fdc4",
+                            "label": "Content",
+                            "name": "content",
+                            "type": "wysiwyg",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "tabs": "all",
+                            "toolbar": "full",
+                            "media_upload": 0,
+                            "delay": 0
+                        },
+                        {
+                            "key": "field_63ca63fc0f809",
+                            "label": "Content background color",
+                            "name": "content_background_color",
+                            "type": "color_picker",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "#dedfe1"
+                        },
+                        {
+                            "key": "field_63c14f712fdc5",
+                            "label": "Accordion position",
+                            "name": "accordion_position",
+                            "type": "radio",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "choices": {
+                                "position_left": "Accordion left, text content right",
+                                "position_right": "Accordion right, text content left"
+                            },
+                            "allow_null": 1,
+                            "other_choice": 0,
+                            "default_value": "position_left",
+                            "layout": "horizontal",
+                            "return_format": "value",
+                            "save_other_choice": 0
+                        },
+                        {
+                            "key": "field_63c14ef72fdc0",
+                            "label": "Section heading",
+                            "name": "section_heading",
+                            "type": "text",
+                            "instructions": "Section heading -field supports screen reader users by describing the content of the section. \r\nRecommendation: For example use here same heading (h2) that you have written in Context area.",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": "",
+                            "maxlength": ""
+                        },
+                        {
+                            "key": "field_63c14ef72fdc1",
+                            "label": "Accordions",
+                            "name": "accordions",
+                            "type": "repeater",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "collapsed": "",
+                            "min": 0,
+                            "max": 0,
+                            "layout": "block",
+                            "button_label": "",
+                            "sub_fields": [
+                                {
+                                    "key": "field_63c14ef72fdc2",
+                                    "label": "Accordion heading",
+                                    "name": "accordion_heading",
+                                    "type": "text",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "default_value": "",
+                                    "placeholder": "",
+                                    "prepend": "",
+                                    "append": "",
+                                    "maxlength": ""
+                                },
+                                {
+                                    "key": "field_63c14ef72fdc3",
+                                    "label": "Accordion content",
+                                    "name": "accordion_content",
+                                    "type": "wysiwyg",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "default_value": "",
+                                    "tabs": "all",
+                                    "toolbar": "basic",
+                                    "media_upload": 1,
+                                    "delay": 0
+                                },
+                                {
+                                    "key": "field_63c1522a4ce26",
+                                    "label": "Tags",
+                                    "name": "tags",
+                                    "type": "taxonomy",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "wp-tags-inline",
+                                        "id": ""
+                                    },
+                                    "taxonomy": "post_tag",
+                                    "field_type": "checkbox",
+                                    "add_term": 1,
+                                    "save_terms": 0,
+                                    "load_terms": 0,
+                                    "return_format": "id",
+                                    "multiple": 0,
+                                    "allow_null": 0
                                 }
                             ]
                         }
@@ -1516,133 +1784,6 @@
                     ],
                     "min": "",
                     "max": ""
-                },
-                "layout_62fdfb5744db0": {
-                    "key": "layout_62fdfb5744db0",
-                    "name": "news_and_events_list",
-                    "label": "News and Events list",
-                    "display": "block",
-                    "sub_fields": [
-                        {
-                            "key": "field_62fe017f50a2f",
-                            "label": "Section heading",
-                            "name": "section_heading",
-                            "type": "text",
-                            "instructions": "",
-                            "required": 0,
-                            "conditional_logic": 0,
-                            "wrapper": {
-                                "width": "",
-                                "class": "",
-                                "id": ""
-                            },
-                            "default_value": "",
-                            "placeholder": "",
-                            "prepend": "",
-                            "append": "",
-                            "maxlength": ""
-                        },
-                        {
-                            "key": "field_62fdfb6644db1",
-                            "label": "List latests News",
-                            "name": "list_latests_news",
-                            "type": "true_false",
-                            "instructions": "",
-                            "required": 0,
-                            "conditional_logic": 0,
-                            "wrapper": {
-                                "width": "",
-                                "class": "",
-                                "id": ""
-                            },
-                            "message": "",
-                            "default_value": 1,
-                            "ui": 1,
-                            "ui_on_text": "On",
-                            "ui_off_text": "Off"
-                        },
-                        {
-                            "key": "field_639b32318e8e3",
-                            "label": "Select default target group for News",
-                            "name": "select_default_target_group_for_news",
-                            "type": "taxonomy",
-                            "instructions": "All articles are listed when non of the target group categories are unselected.",
-                            "required": 0,
-                            "conditional_logic": [
-                                [
-                                    {
-                                        "field": "field_62fdfb6644db1",
-                                        "operator": "==",
-                                        "value": "1"
-                                    }
-                                ]
-                            ],
-                            "wrapper": {
-                                "width": "",
-                                "class": "",
-                                "id": ""
-                            },
-                            "taxonomy": "target_group",
-                            "field_type": "radio",
-                            "allow_null": 1,
-                            "add_term": 1,
-                            "save_terms": 0,
-                            "load_terms": 0,
-                            "return_format": "id",
-                            "multiple": 0
-                        },
-                        {
-                            "key": "field_6388583ab0efd",
-                            "label": "List latests Events",
-                            "name": "list_latests_events",
-                            "type": "true_false",
-                            "instructions": "",
-                            "required": 0,
-                            "conditional_logic": 0,
-                            "wrapper": {
-                                "width": "",
-                                "class": "",
-                                "id": ""
-                            },
-                            "message": "",
-                            "default_value": 1,
-                            "ui": 1,
-                            "ui_on_text": "On",
-                            "ui_off_text": "Off"
-                        },
-                        {
-                            "key": "field_639b336673155",
-                            "label": "Select default target group for Events",
-                            "name": "select_default_target_group_for_events",
-                            "type": "taxonomy",
-                            "instructions": "",
-                            "required": 0,
-                            "conditional_logic": [
-                                [
-                                    {
-                                        "field": "field_6388583ab0efd",
-                                        "operator": "==",
-                                        "value": "1"
-                                    }
-                                ]
-                            ],
-                            "wrapper": {
-                                "width": "",
-                                "class": "",
-                                "id": ""
-                            },
-                            "taxonomy": "target_group",
-                            "field_type": "radio",
-                            "allow_null": 1,
-                            "add_term": 1,
-                            "save_terms": 0,
-                            "load_terms": 0,
-                            "return_format": "id",
-                            "multiple": 0
-                        }
-                    ],
-                    "min": "",
-                    "max": ""
                 }
             },
             "button_label": "Add Block",
@@ -1688,5 +1829,5 @@
     "hide_on_screen": "",
     "active": true,
     "description": "",
-    "modified": 1670840587
+    "modified": 1674208637
 }

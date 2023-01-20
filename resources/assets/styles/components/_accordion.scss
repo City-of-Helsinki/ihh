@@ -11,3 +11,79 @@
     padding: 1.25rem 0;
   }
 }
+
+
+/* Accordion wiht description box */
+.accordion-with-description{
+  display: flex;
+
+  > div {
+    width: 50%;
+  }
+
+  &.position_right {
+    flex-direction: row-reverse;
+
+    .accordion-with-description--accordions{
+      padding: 0 1rem 0 0;
+    }
+  }
+
+  .accordion-with-description--accordions{
+    padding: 0 0 0 1rem;
+  }
+
+  .accordion-with-description--content {
+    padding: 2rem;
+    background: #dedfe1;
+  }
+
+  .question-header{
+    span{
+      max-width: calc(100% - 1.25rem);
+      margin-right: auto;
+    }
+  }
+
+  @include media-breakpoint-down('md'){
+    flex-direction: column;
+    margin-bottom: 30px;
+
+    &.position_right {
+      flex-direction: column;
+    }
+
+    > div{
+      width: 100%;
+    }
+
+    .accordion-with-description--accordions{
+      padding: 0 !important
+    }
+  }
+}
+
+.accordion-filters{
+  ul {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  button {
+    cursor: pointer;
+    border-radius: 2rem;
+    margin: 0 1rem 1rem 0;
+
+    &:focus-visible {
+      outline: -webkit-focus-ring-color auto 1px;
+    }
+
+    &.selected{
+      &:before {
+        content: "\f00c";
+        font-family: 'FontAwesome';
+        margin-right: 0.5rem;
+      }
+    }
+  }
+}
