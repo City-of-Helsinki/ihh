@@ -855,7 +855,7 @@
                             "label": "Section heading",
                             "name": "section_heading",
                             "type": "text",
-                            "instructions": "Section heading -field supports screen reader users by describing the content of the section. \r\nRecommendation: For example use here same heading (h2) that you have written in Context area.",
+                            "instructions": "Section heading -field supports screen reader users by describing the accordion section.\r\nFor example: Use here the same heading (h2) text that one used inside the Content area earlier.",
                             "required": 0,
                             "conditional_logic": 0,
                             "wrapper": {
@@ -1829,5 +1829,5 @@
     "hide_on_screen": "",
     "active": true,
     "description": "",
-    "modified": 1674208637
+    "modified": 1674552770
 }

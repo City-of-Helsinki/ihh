@@ -13,13 +13,10 @@
 }
 
 
-/* Accordion wiht description box */
+/* Accordion with description box */
 .accordion-with-description{
   display: flex;
-
-  > div {
-    width: 50%;
-  }
+  margin-bottom: 1rem !important;
 
   &.position_right {
     flex-direction: row-reverse;
@@ -31,11 +28,21 @@
 
   .accordion-with-description--accordions{
     padding: 0 0 0 1rem;
+    width: 55%;
   }
 
   .accordion-with-description--content {
     padding: 2rem;
     background: #dedfe1;
+    width: 45%;
+  }
+
+  li .question{
+    border-top: 0 !important;
+  }
+
+  li:first-of-type .question{
+    border-top: 1px solid #d8d8d8 !important;
   }
 
   .question-header{
@@ -53,7 +60,8 @@
       flex-direction: column;
     }
 
-    > div{
+    .accordion-with-description--accordions,
+    .accordion-with-description--content{
       width: 100%;
     }
 
