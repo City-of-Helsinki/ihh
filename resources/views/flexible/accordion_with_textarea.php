@@ -1,7 +1,7 @@
 <?php
     $accordionAlignment = '';
     $ariaLabel = '';
-    $tags = [];
+    $allTags = [];
     $LIs = '';
 
     if( get_sub_field('accordion_position')):
@@ -20,12 +20,10 @@
 <?php if( have_rows('accordions') ) : ?>
     <div id="faqs_<?php echo $accordionName; ?>" class="container ihh-accordion accordion-with-description <?php echo $accordionAlignment; ?>">
         <?php while( have_rows('accordions') ) : the_row(); $id = get_row_index(); ?>
-
             <?php
-            $subFielTags = get_sub_field("tags");
             $assignedTags = '';
 
-            foreach( $subFielTags as $k => $v ):
+            foreach( get_sub_field("tags") as $k => $v ):
                 $assignedTags .= $v .',';
             endforeach;
 
@@ -50,11 +48,10 @@
                     </div>
                 </div></li>'; ?>
 
-                <?php $tags[] = get_sub_field('tags');  ?>
+                <?php $allTags[] = get_sub_field('tags'); ?>
             </li>
         <?php endwhile; ?>
-
-        <?php $uniqueTags = array_unique(flattenArray($tags)); ?>
+        <?php $uniqueTags = array_unique(flattenArray($allTags)); ?>
 
         <div class="accordion-with-description--content" style="<?php echo $accordionContentBgColor; ?>">
             <?php if( get_sub_field('content')):
