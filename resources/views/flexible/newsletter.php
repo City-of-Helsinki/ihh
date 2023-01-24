@@ -30,7 +30,7 @@
           <input type="hidden" name="failure_url" value="<?php echo $failure_url; ?>#newsletter">
           <div class="mb-3 email">
             <label for="newsletterEmail" class="form-label"><?php pll_e('Email') ?>*</label>
-            <input id="email" name="email" type="email" class="form-control border border-dark" required></input>
+            <input id="newsletterEmail" name="email" type="email" class="form-control border border-dark" required></input>
           </div>
           <div class="mb-3 radio-buttons row mx-0">
             <?php if (have_rows("mailing_list_ids")):
