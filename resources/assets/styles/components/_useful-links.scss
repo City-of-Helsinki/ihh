@@ -76,6 +76,10 @@ li.icon-list-item {
       right: 0;
       top: 50%;
       transform: translateY(-50%);
+
+      .inline-svg svg {
+        top: 0;
+      }
     }
   }
 

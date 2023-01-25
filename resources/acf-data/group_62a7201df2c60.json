@@ -497,14 +497,14 @@
                     "min": "",
                     "max": ""
                 },
-                "layout_62a9d5ac2a65d": {
-                    "key": "layout_62a9d5ac2a65d",
+                "layout_63d0e7b63a3b7": {
+                    "key": "layout_63d0e7b63a3b7",
                     "name": "links_with_description",
                     "label": "Links section",
                     "display": "block",
                     "sub_fields": [
                         {
-                            "key": "field_62a9d5ef2a65e",
+                            "key": "field_63d0e7b63a3b8",
                             "label": "Section heading",
                             "name": "section_heading",
                             "type": "text",
@@ -523,7 +523,7 @@
                             "maxlength": ""
                         },
                         {
-                            "key": "field_63ca74ebb3d05",
+                            "key": "field_63d0e7b63a3b9",
                             "label": "Link type",
                             "name": "link_type",
                             "type": "select",
@@ -544,12 +544,12 @@
                             "allow_null": 0,
                             "multiple": 0,
                             "ui": 0,
-                            "return_format": "value",
                             "ajax": 0,
+                            "return_format": "value",
                             "placeholder": ""
                         },
                         {
-                            "key": "field_62c835bb96da7",
+                            "key": "field_63d0e7b63a3ba",
                             "label": "Show images",
                             "name": "show_images_above_links",
                             "type": "true_false",
@@ -558,7 +558,7 @@
                             "conditional_logic": [
                                 [
                                     {
-                                        "field": "field_63ca74ebb3d05",
+                                        "field": "field_63d0e7b63a3b9",
                                         "operator": "==",
                                         "value": "description_box"
                                     }
@@ -576,7 +576,7 @@
                             "ui_off_text": ""
                         },
                         {
-                            "key": "field_62a9d61b2a65f",
+                            "key": "field_63d0e7b63a3bb",
                             "label": "Link item",
                             "name": "link_item",
                             "type": "repeater",
@@ -595,21 +595,13 @@
                             "button_label": "",
                             "sub_fields": [
                                 {
-                                    "key": "field_62a9d64a2a660",
+                                    "key": "field_63d0e7b63a3bc",
                                     "label": "Heading",
                                     "name": "heading",
                                     "type": "text",
                                     "instructions": "",
                                     "required": 0,
-                                    "conditional_logic": [
-                                        [
-                                            {
-                                                "field": "field_63ca74ebb3d05",
-                                                "operator": "!=",
-                                                "value": "icon"
-                                            }
-                                        ]
-                                    ],
+                                    "conditional_logic": 0,
                                     "wrapper": {
                                         "width": "",
                                         "class": "",
@@ -622,13 +614,21 @@
                                     "maxlength": ""
                                 },
                                 {
-                                    "key": "field_62a9d6562a661",
+                                    "key": "field_63d0e7b63a3bd",
                                     "label": "Description",
                                     "name": "description",
                                     "type": "textarea",
                                     "instructions": "",
                                     "required": 0,
-                                    "conditional_logic": 0,
+                                    "conditional_logic": [
+                                        [
+                                            {
+                                                "field": "field_63d0e7b63a3b9",
+                                                "operator": "!=",
+                                                "value": "icon"
+                                            }
+                                        ]
+                                    ],
                                     "wrapper": {
                                         "width": "",
                                         "class": "",
@@ -641,7 +641,7 @@
                                     "new_lines": ""
                                 },
                                 {
-                                    "key": "field_62a9d6682a662",
+                                    "key": "field_63d0e7b63a3be",
                                     "label": "CTA text",
                                     "name": "cta_text",
                                     "type": "text",
@@ -650,7 +650,7 @@
                                     "conditional_logic": [
                                         [
                                             {
-                                                "field": "field_63ca74ebb3d05",
+                                                "field": "field_63d0e7b63a3b9",
                                                 "operator": "!=",
                                                 "value": "icon"
                                             }
@@ -668,7 +668,7 @@
                                     "maxlength": ""
                                 },
                                 {
-                                    "key": "field_62a9d6722a663",
+                                    "key": "field_63d0e7b63a3bf",
                                     "label": "CTA URL",
                                     "name": "cta_url",
                                     "type": "text",
@@ -687,7 +687,7 @@
                                     "maxlength": ""
                                 },
                                 {
-                                    "key": "field_62c835e096da8",
+                                    "key": "field_63d0e7b63a3c0",
                                     "label": "Image",
                                     "name": "image",
                                     "type": "image",
@@ -711,7 +711,7 @@
                                     "mime_types": ""
                                 },
                                 {
-                                    "key": "field_63ca888de99c5",
+                                    "key": "field_63d0e7b63a3c1",
                                     "label": "Icon",
                                     "name": "icon",
                                     "type": "select",
@@ -720,7 +720,7 @@
                                     "conditional_logic": [
                                         [
                                             {
-                                                "field": "field_63ca74ebb3d05",
+                                                "field": "field_63d0e7b63a3b9",
                                                 "operator": "==",
                                                 "value": "icon"
                                             }
@@ -1251,5 +1251,5 @@
     "hide_on_screen": "",
     "active": true,
     "description": "",
-    "modified": 1674539372
+    "modified": 1674637352
 }
