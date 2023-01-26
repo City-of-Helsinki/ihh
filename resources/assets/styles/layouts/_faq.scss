@@ -31,7 +31,7 @@
       @extend .btn-link;
 
       display: flex;
-      align-items: center;
+      align-items: flex-start;
       margin: 0;
       color: #000;
       font-size: 18px;
@@ -41,7 +41,7 @@
       font-weight: bold;
       width: 100%;
       text-align: left;
-      padding: 10px 20px;
+      padding: 24px;
       position: relative;
 
       span {
@@ -72,7 +72,7 @@
           content: "\f107";
           font-family: FontAwesome, sans-serif;
           //float: right;
-          color: $primary-dark;
+          color: #000;
         }
       }
 
@@ -80,12 +80,12 @@
         content: "\f106";
         font-family: FontAwesome, sans-serif;
         float: right;
-        color: $primary-dark;
+        color: #000;
       }
     }
 
     .question-answer {
-      padding: 20px 20px 20px;
+      padding: 0 24px 44px 24px;
       font-size: 1rem;
       line-height: 1.25 !important;
       //color: #6d6d6d;
@@ -99,6 +99,28 @@
         z-index: 100;
         top: 0;
         background: $kuvittaja-yellow;
+      }
+
+      .faq-answer-close-button {
+        position: absolute;
+        right: 24px;
+        bottom: 0;
+        background: transparent;
+        border: 0;
+        padding: 15px;
+      }
+
+      .faq-answer-close-button::after {
+        content: "\F106";
+        font-family: FontAwesome, sans-serif;
+        color: #000;
+        margin-right: 6px;
+        margin-left: 8px;
+      }
+
+      .faq-answer-close-button:hover {
+        background-color: #dedede;
+        cursor: pointer;
       }
     }
 
