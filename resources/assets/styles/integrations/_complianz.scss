@@ -518,7 +518,6 @@ body .cc-revoke {
       &:checked {
         + .cmplz-slider {
           background-color: var(--color-copper) !important;
-          outline: none;
 
           &::before {
             background-color: var(--color-copper) !important;
@@ -1010,6 +1009,12 @@ body #cmplz-cookiebanner-container .cmplz-cookiebanner {
         background: none;
       }
     }
+
+    .cmplz-slider-checkbox{
+      input:checked + .cmplz-slider{
+        outline: 1px solid #fff;
+      }
+    }
   }
 
   .cmplz-divider {
@@ -1231,7 +1236,7 @@ body .cc-revoke {
     color: initial;
   }
 }
-// .cmplz-link 
+// .cmplz-link
 
 .cc-header {
   font-size: 18px;
@@ -1474,7 +1479,7 @@ body .cc-revoke {
       &:checked {
         + .cmplz-slider {
           background-color: var(--primary-color) !important;
-          outline: none;
+          outline: 1px solid $black;
 
           &::before {
             background-color: var(--color-copper) !important;
