@@ -175,6 +175,59 @@ export default {
             jQuery(link).prepend(svgArrow45);
         }
     }
+
+    function filterAccordions(elements){
+        const buttons = document.querySelectorAll(elements);
+
+        buttons.forEach(button => {
+            button.addEventListener('click', () =>{
+                const targetTagId = button.dataset.tagid;
+                const isSelected = button.classList.contains('selected');
+                const parent = button.closest('.ihh-accordion');
+                const accordions = parent.querySelectorAll('[data-tags]');
+
+                accordions.forEach(item => {
+                    const itemTags = item.dataset.tags;
+                    const itemLI = item.closest('li');
+
+                    if(isSelected){
+                        jQuery(itemLI).fadeIn('fast');
+                    }
+                    else{
+                        itemTags.includes(targetTagId) ? jQuery(itemLI).fadeIn('fast') : jQuery(itemLI).fadeOut('fast');
+                    }
+                });
+
+                if(isSelected){
+                    button.classList.remove('selected')
+                    button.setAttribute('aria-pressed', 'false');
+                }
+                else{
+                    parent.querySelectorAll('.accordion-filters button').forEach(btn => {
+                        btn.classList.remove('selected');
+                        btn.setAttribute('aria-pressed', 'false');
+                    });
+
+                    button.classList.add('selected');
+                    button.setAttribute('aria-pressed', 'true');
+                }
+
+                // After filtering accordion list, focus first item
+                setTimeout(() => {
+                    const visibleFilteredAccordion = parent.querySelectorAll('.accordion-with-description--accordions li:not([style="display: none;"])');
+                    const firstItem = visibleFilteredAccordion[0].querySelector('.question-header');
+
+                    if(firstItem){
+                        firstItem.focus();
+                    }
+                }, 400);
+            });
+        });
+    }
+    filterAccordions('.accordion-filters button');
+
+
   },
   finalize() {},
 };
+
