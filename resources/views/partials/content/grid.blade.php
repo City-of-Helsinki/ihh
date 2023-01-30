@@ -1,8 +1,8 @@
-<div @php post_class('post-grid-item') @endphp>
+<div @php post_class('post-grid-item') @endphp role="listitem">
   <a href="{{the_permalink()}}">
     <header>
         @if(has_post_thumbnail())
-          <img src="{{get_the_post_thumbnail_url(get_the_ID(), 'lift')}}" alt="{{the_title()}}">
+          <img src="{{get_the_post_thumbnail_url(get_the_ID(), 'lift')}}" alt="">
         @else
           <img role="presentation" src="{{ \App\get_default_image('lift') }}" alt="">
         @endif

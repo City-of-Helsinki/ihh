@@ -27,6 +27,12 @@ function ihh_custom_styles( $init_array ) {
             'block' => 'div',
             'classes' => 'highlighted-content background-red',
             'wrapper' => true,
+        ),
+        array(
+            'title' => 'Show cookie banner -button',
+            'inline' => 'button',
+            'classes' => 'btn-link cmplz-show-banner',
+            'wrapper' => false,
         )
     );
 

@@ -86,6 +86,7 @@ function amb_custom_post_type() {
 add_action('init', 'amb_custom_post_type');
 
 require_once('integrations/complianz.php');
+require_once('integrations/show-cookie-banner.php');
 
 require_once(get_template_directory().'/tinymce-editor-styles.php');
 

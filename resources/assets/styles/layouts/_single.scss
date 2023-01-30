@@ -15,6 +15,10 @@
 
   @include make-col(10);
 
+  .container{
+    padding: 0;
+  }
+
   .go-back {
     @include media-breakpoint-down("sm") {
       margin: 10px 0;
@@ -97,6 +101,10 @@
   padding: 8px 30px;
   border-radius: 20px;
   margin: 25px 0 0 0;
+}
+
+.article-body + .article-meta {
+  margin-bottom: 3rem;
 }
 
 .article-meta {

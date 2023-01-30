@@ -253,3 +253,71 @@ function post_filter_function(){
 
 add_action('wp_ajax_myfilter', __NAMESPACE__ . '\\post_filter_function');
 add_action('wp_ajax_nopriv_myfilter', __NAMESPACE__ . '\\post_filter_function');
+
+
+/**
+ * Render Link section li content
+ * 
+ * @param boolean $show_images
+ * @param string $link_type
+ * @return boolean
+ */ 
+function render_link_section_li( bool $show_images, string $link_type ):void {
+    if ( 'description_box' === $link_type ) {
+        ?>
+        <li class="list-item">
+            <?php if( $show_images ) : ?>
+            <div class="image-container aspect-ratio-1-96">
+                <?php if( get_sub_field('image') ) : ?>
+                    <img src="<?php the_sub_field('image'); ?>" alt="" class="image-fit" />
+                <?php endif ?>
+            </div>
+            <?php endif ?>
+            <h3 class="item-heading"><?php the_sub_field('heading'); ?></h3>
+            <p class="item-description">
+                <?php the_sub_field('description'); ?>
+            </p>
+            <?php if(get_sub_field('cta_url') ) : ?>
+            <a href="<?php the_sub_field('cta_url'); ?>" class="arrow"><?php the_sub_field('cta_text'); ?></a>
+            <?php endif ?>
+        </li>
+        <?php
+        return;
+    }
+
+    if ( 'simple' === $link_type ) {
+        ?>
+        <li class="list-item">
+            <h3 class="item-heading"><?php the_sub_field('heading'); ?></h3>
+            <?php if(get_sub_field('cta_url') ) : ?>
+            <a href="<?php the_sub_field('cta_url'); ?>" class="arrow"><?php the_sub_field('cta_text'); ?></a>
+            <?php endif ?>
+        </li>
+        <?php
+        return;
+    }
+
+    if ( 'icon' === $link_type ) {
+        $icon_class = 'icon-default';
+        if ( 'icon' === $link_type && get_sub_field('icon') ) {
+            $icon_class = 'icon-' . get_sub_field('icon');
+        }
+
+        $href = '#';
+        if ( get_sub_field('cta_url') ) {
+            $href = get_sub_field('cta_url');
+        }
+
+        ?>
+        <li class="list-item service-link icon-list-item">
+            <span class="li-icon <?php echo $icon_class; ?>"></span>
+            <a href="<?php echo $href; ?>" class="icon-link">
+                <?php the_sub_field('heading'); ?>
+                <span class="list-item-arrow"><?php echo \App\ihh_inline_svg('icons/arrow-right'); ?></span>
+            </a>
+        </li>
+        <?php
+        return;
+    }
+
+}
