@@ -28,6 +28,7 @@
              class="collapse question-answer"
              data-parent="#faqs">
           {{the_sub_field('answer')}}
+          <button class="faq-answer-close-button" data-toggle="collapse" data-target="#answer_{{$id}}">Close</button>
         </div>
       </div>
       @endwhile

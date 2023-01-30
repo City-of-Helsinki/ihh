@@ -22,6 +22,7 @@
                     <div class="accordion-body">
                         <?php echo get_sub_field('answer'); ?>
                     </div>
+                    <button class="faq-answer-close-button" data-toggle="collapse" data-target="#accordion_content_<?php echo $id; ?>">Close</button>
                 </div>
             </div>
         <?php endwhile; ?>
