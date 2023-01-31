@@ -10,6 +10,6 @@
     @include('partials.content.page')
   </article>
 
-    @include('components.employers-flexible-content');
+    @include('components.employers-flexible-content')
   @endwhile
 @endsection
