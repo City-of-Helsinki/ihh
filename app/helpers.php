@@ -54,6 +54,16 @@ function config( $key = null, $default = null ) {
  * @return string
  */
 function template( $file, $data = [] ) {
+    if (is_redirection_page()){
+        $page_obj = get_redirection_page_object();
+        $template = get_post_meta( $page_obj->ID, '_wp_page_template', true );
+       
+        if ( empty($template) || $template === 'default' ){
+            $template = 'page.blade.php';
+        }
+        $file = locate_template($template);
+    }
+
     return sage( 'blade' )->render( $file, $data );
 }
 
@@ -253,3 +263,15 @@ function post_filter_function(){
 
 add_action('wp_ajax_myfilter', __NAMESPACE__ . '\\post_filter_function');
 add_action('wp_ajax_nopriv_myfilter', __NAMESPACE__ . '\\post_filter_function');
+
+function is_redirection_page(){
+    if ( str_contains( get_page_template(), 'template-redirection.blade.php' ) ){
+        return true;
+    }
+
+    return false;
+}
+
+function get_redirection_page_object(){
+    return get_field('redirect_to', get_the_ID());
+}

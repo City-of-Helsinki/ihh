@@ -197,3 +197,11 @@ add_filter('query_vars', function($qvars){
     $qvars[] = 'is_news_and_events_query';
     return $qvars;
 });
+
+add_filter( 'the_post', function($post) {
+    if ( is_redirection_page() ){
+        $post_obj = get_redirection_page_object();
+        $post->post_content = get_the_content(null, false, $post_obj );
+    }
+    return $post;
+});
