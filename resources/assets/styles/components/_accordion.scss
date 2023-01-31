@@ -52,7 +52,7 @@
     }
   }
 
-  @include media-breakpoint-down('md'){
+  @include media-breakpoint-down("md"){
     flex-direction: column;
     margin-bottom: 30px;
 
@@ -89,7 +89,7 @@
     &.selected{
       &:before {
         content: "\f00c";
-        font-family: 'FontAwesome';
+        font-family: "FontAwesome";
         margin-right: 0.5rem;
       }
     }

@@ -21,6 +21,9 @@
           @if(have_rows('testimonial_repeater'))
             @while(have_rows('testimonial_repeater')) @php the_row() @endphp
             <div class="video">
+              @if(get_sub_field('show_play_button'))
+              <div class="youtube_play"></div>
+              @endif
               <a href="{{ the_sub_field('video_link') }}" class="image venobox" data-autoplay="true" data-vbtype="video">
                 @php
                   $image = get_sub_field('image');
