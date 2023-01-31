@@ -96,6 +96,14 @@ add_action( 'wp_head', function () {
  * Add flexible content renderer to the landing pages
  */
  add_action( 'ihh_render_flexible_content', function($field, $post_id = null){
+    if ($post_id === null ){
+        $post_id = get_the_ID();
+    }
+    if ( is_redirection_page()){
+        $post_obj = get_redirection_page_object();
+        $post_id = $post_obj->ID;
+    }
+    
     if (have_rows($field, $post_id) ){
         while(have_rows($field, $post_id)){
             the_row();
