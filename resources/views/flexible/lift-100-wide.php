@@ -28,7 +28,11 @@
                         <?php while( have_rows('links') ): the_row();
                             $link = get_sub_field("link");
                             $text = get_sub_field("link_text");
-                            printf('<li class="my-2"><a class="arrow" href="%s">%s</a></li>', $link, $text);
+                            if (strpos($link,'.pdf') !== false) {
+                                printf('<li class="my-2 file-link"><a class="file" href="%s">%s</a></li>', $link, $text);
+                            } else {
+                                printf('<li class="my-2"><a class="arrow" href="%s">%s</a></li>', $link, $text);
+                            }
                         endwhile; ?>
                         </ul>
                     </div>

@@ -45,7 +45,8 @@
     }
   }
 
-  .arrow {
+  .arrow,
+  .file {
     color: $black !important;
     text-decoration: none;
     width: 1.5rem;
@@ -56,5 +57,14 @@
       color: $kuvittaja-darker-green !important;
       text-decoration: underline;
     }
+  }
+
+  .file::before {
+    font-family: "FontAwesome", sans-serif;
+    content: "\f15c";
+    font-size: 1rem;
+    margin-right: 10px;
+    margin-left: 2px;
+    color: $kuvittaja-green;
   }
 }
