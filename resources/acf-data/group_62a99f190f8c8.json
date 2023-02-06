@@ -20,7 +20,7 @@
                     "key": "layout_62aaf5c8e738a",
                     "name": "anchorlink_navigation",
                     "label": "Anchorlink navigation",
-                    "display": "row",
+                    "display": "table",
                     "sub_fields": [
                         {
                             "key": "field_62aaf5e1e738b",
