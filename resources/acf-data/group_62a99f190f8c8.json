@@ -42,6 +42,30 @@
                             "ui_off_text": "No"
                         },
                         {
+                            "key": "field_63bfe81cd57fb",
+                            "label": "Anchorlinks position",
+                            "name": "anchorlinks_position",
+                            "type": "radio",
+                            "instructions": "Show anchor links at the top of the article by activating \"At the top of the article\" option.  Use this option on pages that are using \"Default\" page template.",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "choices": {
+                                "position_default": "Default position",
+                                "position_at_top": "At the top of the article"
+                            },
+                            "allow_null": 0,
+                            "other_choice": 0,
+                            "default_value": "position_default",
+                            "layout": "horizontal",
+                            "return_format": "value",
+                            "save_other_choice": 0
+                        },
+                        {
                             "key": "field_631f20a8a4514",
                             "label": "Background color",
                             "name": "background_color",
@@ -86,6 +110,25 @@
                             "prepend": "",
                             "append": "",
                             "maxlength": ""
+                        },
+                        {
+                            "key": "field_6385dc8443416",
+                            "label": "Show numbering",
+                            "name": "show_numbering",
+                            "type": "true_false",
+                            "instructions": "This selection allows you to show or hide the numbering between the steps",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "message": "",
+                            "default_value": 1,
+                            "ui": 1,
+                            "ui_on_text": "Yes",
+                            "ui_off_text": "No"
                         },
                         {
                             "key": "field_62a9ce321a276",
@@ -170,7 +213,8 @@
                                     "choices": {
                                         "yellow": "Yellow",
                                         "green": "Green",
-                                        "red": "Red"
+                                        "red": "Red",
+                                        "orange": "Orange"
                                     },
                                     "default_value": "yellow",
                                     "allow_null": 0,
@@ -203,7 +247,7 @@
                                     "key": "field_62a9ceb71a27a",
                                     "label": "Description",
                                     "name": "description",
-                                    "type": "textarea",
+                                    "type": "wysiwyg",
                                     "instructions": "",
                                     "required": 0,
                                     "conditional_logic": 0,
@@ -213,6 +257,10 @@
                                         "id": ""
                                     },
                                     "default_value": "",
+                                    "tabs": "all",
+                                    "toolbar": "full",
+                                    "media_upload": 0,
+                                    "delay": 0,
                                     "placeholder": "",
                                     "maxlength": "",
                                     "rows": "",
@@ -743,6 +791,174 @@
                                     "toolbar": "basic",
                                     "media_upload": 1,
                                     "delay": 0
+                                }
+                            ]
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
+                },
+                "layout_63c14ef72fdbf": {
+                    "key": "layout_63c14ef72fdbf",
+                    "name": "accordion_with_textarea",
+                    "label": "Accordion with filter option",
+                    "display": "row",
+                    "sub_fields": [
+                        {
+                            "key": "field_63c14f4a2fdc4",
+                            "label": "Content",
+                            "name": "content",
+                            "type": "wysiwyg",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "tabs": "all",
+                            "toolbar": "full",
+                            "media_upload": 0,
+                            "delay": 0
+                        },
+                        {
+                            "key": "field_63ca63fc0f809",
+                            "label": "Content background color",
+                            "name": "content_background_color",
+                            "type": "color_picker",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "#dedfe1"
+                        },
+                        {
+                            "key": "field_63c14f712fdc5",
+                            "label": "Accordion position",
+                            "name": "accordion_position",
+                            "type": "radio",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "choices": {
+                                "position_left": "Accordion left, text content right",
+                                "position_right": "Accordion right, text content left"
+                            },
+                            "allow_null": 1,
+                            "other_choice": 0,
+                            "default_value": "position_left",
+                            "layout": "horizontal",
+                            "return_format": "value",
+                            "save_other_choice": 0
+                        },
+                        {
+                            "key": "field_63c14ef72fdc0",
+                            "label": "Section heading",
+                            "name": "section_heading",
+                            "type": "text",
+                            "instructions": "Section heading -field supports screen reader users by describing the accordion section.\r\nFor example: Use here the same heading (h2) text that one used inside the Content area earlier.",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": "",
+                            "maxlength": ""
+                        },
+                        {
+                            "key": "field_63c14ef72fdc1",
+                            "label": "Accordions",
+                            "name": "accordions",
+                            "type": "repeater",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "collapsed": "",
+                            "min": 0,
+                            "max": 0,
+                            "layout": "block",
+                            "button_label": "",
+                            "sub_fields": [
+                                {
+                                    "key": "field_63c14ef72fdc2",
+                                    "label": "Accordion heading",
+                                    "name": "accordion_heading",
+                                    "type": "text",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "default_value": "",
+                                    "placeholder": "",
+                                    "prepend": "",
+                                    "append": "",
+                                    "maxlength": ""
+                                },
+                                {
+                                    "key": "field_63c14ef72fdc3",
+                                    "label": "Accordion content",
+                                    "name": "accordion_content",
+                                    "type": "wysiwyg",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "default_value": "",
+                                    "tabs": "all",
+                                    "toolbar": "basic",
+                                    "media_upload": 1,
+                                    "delay": 0
+                                },
+                                {
+                                    "key": "field_63c1522a4ce26",
+                                    "label": "Tags",
+                                    "name": "tags",
+                                    "type": "taxonomy",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "wp-tags-inline",
+                                        "id": ""
+                                    },
+                                    "taxonomy": "post_tag",
+                                    "field_type": "checkbox",
+                                    "add_term": 1,
+                                    "save_terms": 0,
+                                    "load_terms": 0,
+                                    "return_format": "id",
+                                    "multiple": 0,
+                                    "allow_null": 0
                                 }
                             ]
                         }
