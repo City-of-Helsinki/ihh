@@ -1,7 +1,13 @@
 /* eslint-disable */
 
 const cssnanoConfig = {
-  preset: ['default', { discardComments: { removeAll: true } }]
+  preset: ['default', 
+    { discardComments: { 
+        removeAll: true 
+      },
+      svgo: false,
+    }
+  ]
 };
 
 module.exports = ({ file, options }) => {
