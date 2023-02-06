@@ -188,7 +188,8 @@ function get_default_image( $size = 'full' ) {
 * SVG file to inline
 */
 function ihh_inline_svg($file) {
-    $filePath = get_theme_file_path() . '/dist/images/' . $file . '.svg';
+    $asset = sage('assets')->get('images/' . $file . '.svg');
+    $filePath = get_theme_file_path() . '/dist/' . $asset;
 
     if(!file_exists($filePath))
         return;
