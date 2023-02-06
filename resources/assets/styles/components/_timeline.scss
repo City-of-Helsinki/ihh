@@ -144,16 +144,16 @@ $step-indicator-size: 2.5rem;
 }
 
 /* Without numbering */
-.timeline .without-numbers{
+.timeline .without-numbers {
   max-width: unset;
   padding-left: 0;
 
-  .step{
+  .step {
     border-left: 0;
     padding-left: 0;
     margin-left: 0;
 
-    &:before{
+    &::before {
       display: none;
     }
 
@@ -165,7 +165,7 @@ $step-indicator-size: 2.5rem;
         flex: 0 0 38%;
       }
 
-      img{
+      img {
         position: absolute;
       }
     }

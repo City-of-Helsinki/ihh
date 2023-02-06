@@ -26,17 +26,14 @@
   .question {
     font-family: $font-source-sans;
     border-bottom: 1px solid #d8d8d8;
-
-    &:focus-within {
-      background: $kuvittaja-green-light;
-    }
+    position: relative;
 
     .question-header {
       @extend .btn;
       @extend .btn-link;
 
       display: flex;
-      align-items: center;
+      align-items: flex-start;
       margin: 0;
       color: #000;
       font-size: 18px;
@@ -48,9 +45,20 @@
       text-align: left;
       padding: 10px 20px;
       text-decoration: none;
+      position: relative;
 
       span {
         flex: 1;
+      }
+
+      &:hover::before {
+        content: "";
+        background: $kuvittaja-yellow;
+        width: 7px;
+        height: calc(100% + 2px);
+        left: -1px;
+        top: -1px;
+        position: absolute;
       }
 
       &:hover,
@@ -67,7 +75,7 @@
           content: "\f107";
           font-family: FontAwesome, sans-serif;
           //float: right;
-          color: $primary-dark;
+          color: #000;
         }
       }
 
@@ -75,16 +83,48 @@
         content: "\f106";
         font-family: FontAwesome, sans-serif;
         float: right;
-        color: $primary-dark;
+        color: #000;
       }
     }
 
     .question-answer {
-      padding: 20px 20px 20px;
+      padding: 0 24px 44px 24px;
       font-size: 1rem;
       line-height: 1.25 !important;
       //color: #6d6d6d;
-      background: $kuvittaja-pink-light;
+
+      &::before {
+        content: " ";
+        position: absolute;
+        width: 7px;
+        height: 100%;
+        left: 0;
+        z-index: 100;
+        top: 0;
+        background: $kuvittaja-yellow;
+      }
+
+      .faq-answer-close-button {
+        position: absolute;
+        right: 24px;
+        bottom: 0;
+        background: transparent;
+        border: 0;
+        padding: 15px;
+      }
+
+      .faq-answer-close-button::after {
+        content: "\F106";
+        font-family: FontAwesome, sans-serif;
+        color: #000;
+        margin-right: 6px;
+        margin-left: 8px;
+      }
+
+      .faq-answer-close-button:hover {
+        background-color: #dedede;
+        cursor: pointer;
+      }
     }
 
     &:nth-child(even) {
@@ -95,10 +135,6 @@
       .question-answer {
         //background: #fbf6f6;
       }
-    }
-
-    &:first-child {
-      border-top: 1px solid #d8d8d8;
     }
 
     img {

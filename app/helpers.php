@@ -54,6 +54,16 @@ function config( $key = null, $default = null ) {
  * @return string
  */
 function template( $file, $data = [] ) {
+    if (is_redirection_page()){
+        $page_obj = get_redirection_page_object();
+        $template = get_post_meta( $page_obj->ID, '_wp_page_template', true );
+       
+        if ( empty($template) || $template === 'default' ){
+            $template = 'page.blade.php';
+        }
+        $file = locate_template($template);
+    }
+
     return sage( 'blade' )->render( $file, $data );
 }
 
@@ -178,7 +188,8 @@ function get_default_image( $size = 'full' ) {
 * SVG file to inline
 */
 function ihh_inline_svg($file) {
-    $filePath = get_theme_file_path() . '/dist/images/' . $file . '.svg';
+    $asset = sage('assets')->get('images/' . $file . '.svg');
+    $filePath = get_theme_file_path() . '/dist/' . $asset;
 
     if(!file_exists($filePath))
         return;
@@ -253,3 +264,82 @@ function post_filter_function(){
 
 add_action('wp_ajax_myfilter', __NAMESPACE__ . '\\post_filter_function');
 add_action('wp_ajax_nopriv_myfilter', __NAMESPACE__ . '\\post_filter_function');
+
+
+function is_redirection_page(){
+    if ( str_contains( get_page_template(), 'template-redirection.blade.php' ) ){
+        return true;
+    }
+
+    return false;
+}
+
+function get_redirection_page_object(){
+    return get_field('redirect_to', get_the_ID());
+}
+
+/**
+ * Render Link section li content
+ * 
+ * @param boolean $show_images
+ * @param string $link_type
+ * @return boolean
+ */ 
+function render_link_section_li( bool $show_images, string $link_type ):void {
+    if ( 'description_box' === $link_type ) {
+        ?>
+        <li class="list-item">
+            <?php if( $show_images ) : ?>
+            <div class="image-container aspect-ratio-1-96">
+                <?php if( get_sub_field('image') ) : ?>
+                    <img src="<?php the_sub_field('image'); ?>" alt="" class="image-fit" />
+                <?php endif ?>
+            </div>
+            <?php endif ?>
+            <h3 class="item-heading"><?php the_sub_field('heading'); ?></h3>
+            <p class="item-description">
+                <?php the_sub_field('description'); ?>
+            </p>
+            <?php if(get_sub_field('cta_url') ) : ?>
+            <a href="<?php the_sub_field('cta_url'); ?>" class="arrow"><?php the_sub_field('cta_text'); ?></a>
+            <?php endif ?>
+        </li>
+        <?php
+        return;
+    }
+
+    if ( 'simple' === $link_type ) {
+        ?>
+        <li class="list-item">
+            <h3 class="item-heading"><?php the_sub_field('heading'); ?></h3>
+            <?php if(get_sub_field('cta_url') ) : ?>
+            <a href="<?php the_sub_field('cta_url'); ?>" class="arrow"><?php the_sub_field('cta_text'); ?></a>
+            <?php endif ?>
+        </li>
+        <?php
+        return;
+    }
+
+    if ( 'icon' === $link_type ) {
+        $icon_class = 'icon-default';
+        if ( 'icon' === $link_type && get_sub_field('icon') ) {
+            $icon_class = 'icon-' . get_sub_field('icon');
+        }
+
+        $href = '#';
+        if ( get_sub_field('cta_url') ) {
+            $href = get_sub_field('cta_url');
+        }
+
+        ?>
+        <li class="list-item service-link icon-list-item">
+            <span class="li-icon <?php echo $icon_class; ?>"></span>
+            <a href="<?php echo $href; ?>" class="icon-link">
+                <?php the_sub_field('heading'); ?>
+                <span class="list-item-arrow"><?php echo \App\ihh_inline_svg('icons/arrow-right'); ?></span>
+            </a>
+        </li>
+        <?php
+        return;
+    }
+}

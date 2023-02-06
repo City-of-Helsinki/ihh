@@ -171,10 +171,10 @@ add_filter('wp_nav_menu_items', function($items, $args){
     }
     if( $args->theme_location == 'primary_navigation' ){
         $from = '<a class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" role="button" href="#pll_switcher">'.pll_current_language('name').' <b class="caret"></b></a>';
-        $to = '<button class="nav-link dropdown-toggle custom-language-selector" data-toggle="dropdown" aria-haspopup="true" aria-owns="language-selection-list"><span aria-hidden="true">'.pll_current_language('name').'</span><span class="ihh-visually-hidden">'.pll_current_language("name").' '.pll__('Switch language').'</span><b class="caret"></b></button>';
+        $to = '<button class="nav-link dropdown-toggle custom-language-selector" data-toggle="dropdown" aria-haspopup="true"><span aria-hidden="true">'.pll_current_language('name').'</span><span class="ihh-visually-hidden">'.pll_current_language("name").' '.pll__('Switch language').'</span><b class="caret"></b></button>';
 
         $ulListFrom = '<ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">';
-        $ulListTo = '<ul id="language-selection-list" class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">';
+        $ulListTo = '<ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">';
 
         if(strpos($items, $from) !== false){
             $items = str_replace($from, $to, $items);
@@ -196,4 +196,12 @@ add_filter('query_vars', function($qvars){
     $qvars[] = 'type';
     $qvars[] = 'is_news_and_events_query';
     return $qvars;
+});
+
+add_filter( 'the_post', function($post) {
+    if ( is_redirection_page() ){
+        $post_obj = get_redirection_page_object();
+        $post->post_content = get_the_content(null, false, $post_obj );
+    }
+    return $post;
 });
