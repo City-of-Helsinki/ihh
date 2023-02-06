@@ -12,21 +12,20 @@
   }
 }
 
-
 /* Accordion with description box */
-.accordion-with-description{
+.accordion-with-description {
   display: flex;
   margin-bottom: 1rem !important;
 
   &.position_right {
     flex-direction: row-reverse;
 
-    .accordion-with-description--accordions{
+    .accordion-with-description--accordions {
       padding: 0 1rem 0 0;
     }
   }
 
-  .accordion-with-description--accordions{
+  .accordion-with-description--accordions {
     padding: 0 0 0 1rem;
     width: 55%;
   }
@@ -37,22 +36,22 @@
     width: 45%;
   }
 
-  li .question{
+  li .question {
     border-top: 0 !important;
   }
 
-  li:first-of-type .question{
+  li:first-of-type .question {
     border-top: 1px solid #d8d8d8 !important;
   }
 
-  .question-header{
-    span{
+  .question-header {
+    span {
       max-width: calc(100% - 1.25rem);
       margin-right: auto;
     }
   }
 
-  @include media-breakpoint-down("md"){
+  @include media-breakpoint-down("md") {
     flex-direction: column;
     margin-bottom: 30px;
 
@@ -61,17 +60,17 @@
     }
 
     .accordion-with-description--accordions,
-    .accordion-with-description--content{
+    .accordion-with-description--content {
       width: 100%;
     }
 
-    .accordion-with-description--accordions{
-      padding: 0 !important
+    .accordion-with-description--accordions {
+      padding: 0 !important;
     }
   }
 }
 
-.accordion-filters{
+.accordion-filters {
   ul {
     display: flex;
     flex-wrap: wrap;
@@ -81,17 +80,18 @@
     cursor: pointer;
     border-radius: 2rem;
     margin: 0 1rem 1rem 0;
-
+    /* stylelint-disable */
     &:focus-visible {
       outline: -webkit-focus-ring-color auto 1px;
     }
-
-    &.selected{
-      &:before {
+    
+    &.selected {
+      &::before {
         content: "\f00c";
         font-family: "FontAwesome";
         margin-right: 0.5rem;
       }
     }
+    /* stylelint-enable */
   }
 }

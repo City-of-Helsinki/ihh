@@ -4,6 +4,7 @@
 
 /* Default styles https://complianz.io/shortcode-for-cookies/ */
 
+/* stylelint-disable */
 #cmplz-manage-consent-container.cmplz-manage-consent-container .cmplz-categories summary {
   display: block;
   cursor: pointer;
@@ -573,3 +574,5 @@
     background-color: #f7f7f7;
   }
 }
+
+/* stylelint-enable */
