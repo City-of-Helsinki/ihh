@@ -8,12 +8,14 @@
   }
 }
 
-.content-block #faqs {
+.content-block #faqs,
+.content-block .ihh-accordion {
   padding-left: 0;
   padding-right: 0;
 }
 
-#faqs {
+#faqs,
+.ihh-accordion {
   @include media-breakpoint-down("sm") {
     margin-bottom: 80px;
   }
@@ -41,7 +43,8 @@
       font-weight: bold;
       width: 100%;
       text-align: left;
-      padding: 24px;
+      padding: 10px 20px;
+      text-decoration: none;
       position: relative;
 
       span {

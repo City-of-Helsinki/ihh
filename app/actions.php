@@ -38,13 +38,6 @@ function create_meta_query( \WP_Query $query ) {
 }
 
 /**
- * Unregister tag
- */
-add_action( 'init', function () {
-    unregister_taxonomy_for_object_type( 'post_tag', 'post' );
-} );
-
-/**
  * Add events to main query
  */
 add_action( 'pre_get_posts', __NAMESPACE__ . '\pre_get_posts');
@@ -52,7 +45,7 @@ add_action( 'pre_get_posts', __NAMESPACE__ . '\pre_get_posts');
 function pre_get_posts ( \WP_Query $query ) {
     if ( ( ($query->is_posts_page || ($query->get('is_news_and_events_query') === true)) && ! $query->is_admin)
         || (wp_doing_ajax() && $_REQUEST["action"] === 'myfilter') ) {
-        
+
         $default_type = 'post';
         $all_types = array( $default_type, 'event');
 
@@ -61,7 +54,7 @@ function pre_get_posts ( \WP_Query $query ) {
         } else{
             $user_type = $query->get('type', '');
         }
-     
+
         $names = get_post_categories('slug');
 
         if (!empty($user_type) && in_array($user_type, $all_types)){
@@ -103,6 +96,14 @@ add_action( 'wp_head', function () {
  * Add flexible content renderer to the landing pages
  */
  add_action( 'ihh_render_flexible_content', function($field, $post_id = null){
+    if ($post_id === null ){
+        $post_id = get_the_ID();
+    }
+    if ( is_redirection_page()){
+        $post_obj = get_redirection_page_object();
+        $post_id = $post_obj->ID;
+    }
+    
     if (have_rows($field, $post_id) ){
         while(have_rows($field, $post_id)){
             the_row();

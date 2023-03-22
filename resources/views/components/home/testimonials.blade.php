@@ -4,6 +4,9 @@
   $post = get_post($home_id);
   $title = $post->post_title;
   $content = $post->post_content;
+
+  $has_content = false;
+  ob_start(); // start output buffering
 @endphp
 
 
@@ -11,30 +14,64 @@
   @while(have_rows('testimonial')) @php the_row() @endphp
   <section class="testimonials">
     <div class="container">
+      @php $testimonialDescription = trim(get_sub_field('description')); @endphp
 
       <div class="testimonial">
-        <div class="content">
-          <p>{{ the_sub_field('description')}}</p>
-        </div>
+        @if( !empty($testimonialDescription) )
+          <div class="content">
+            <p>{{ the_sub_field('description')}}</p>
+          </div>
 
+          @php $has_content = true; @endphp
+        @endif
+
+        @if(have_rows('testimonial_repeater'))
         <div class="videos">
-          @if(have_rows('testimonial_repeater'))
             @while(have_rows('testimonial_repeater')) @php the_row() @endphp
             <div class="video">
-              <a href="{{ the_sub_field('video_link') }}" class="image venobox" data-autoplay="true" data-vbtype="video">
-                @php
-                  $image = get_sub_field('image');
-                @endphp
-                <img src="{{ $image['url'] }}" alt="{{$image['alt']}}" >
-              </a>
-              <p>{{ the_sub_field('body')}}</p>
-            </div>
+                @if(get_sub_field('show_play_button'))
+                <div class="youtube_play"></div>
+                @endif
+
+                  @if(get_sub_field('video_link'))
+                  <a href="{{ the_sub_field('video_link') }}" class="image venobox" data-autoplay="true" data-vbtype="video">
+
+                  @php $has_content = true; @endphp
+                  @endif
+
+                    @if( get_sub_field('image'))
+                      @php $image = get_sub_field('image'); @endphp
+                      <img src="{{ $image['url'] }}" alt="{{$image['alt']}}" >
+
+                      @php $has_content = true; @endphp
+                    @endif
+
+                  @if(get_sub_field('video_link'))
+                  </a>
+                  @endif
+
+                  @if(get_sub_field('body'))
+                    <p>{{ the_sub_field('body')}}</p>
+
+                    @php $has_content = true; @endphp
+                  @endif
+
+                </div>
             @endwhile
-          @endif
-        </div>
+          </div>
+        @endif
       </div>
 
     </div>
   </section>
   @endwhile
 @endif
+
+@php
+// get the content of the buffer and clear it
+$content = ob_get_clean();
+
+if ($has_content) {
+  echo $content;
+}
+@endphp

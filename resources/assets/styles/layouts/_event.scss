@@ -160,15 +160,21 @@
     z-index: 1;
 
     .event-read-more-cta {
-      position: absolute;
-      right: 20px;
-      bottom: 15px;
+      @extend .container;
+
+      display: flex;
+      justify-content: start;
 
       .event-url {
         background: #fff;
         color: #221f00 !important;
         text-decoration: none;
         font-weight: 700;
+        margin-top: 10px;
+
+        @include media-breakpoint-down("sm") {
+          width: auto;
+        }
 
         &::before {
           display: none;

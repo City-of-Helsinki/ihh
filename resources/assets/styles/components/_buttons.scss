@@ -48,3 +48,14 @@
     outline: 2px solid #000;
   }
 }
+
+.btn-link {
+  color: $font-green;
+  font-weight: 600;
+  text-decoration: underline;
+  cursor: pointer;
+  outline: none;
+  padding: 0;
+  border: 0;
+  background-color: transparent;
+}

@@ -83,9 +83,14 @@ return [
         'Ajankohta',
         'Paikka',
         'See all news and events',
+        'See all news',
+        'See all events',
+        'Filter events',
+        'Filter news',
         'Subscribe',
         'I agree that my details can be processed according to the',
         'Privacy Policy',
-        'uses cookies'
+        'uses cookies',
+        'Filter list: '
     ],
 ];

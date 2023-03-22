@@ -55,6 +55,21 @@ export default {
         if (headings && anchorNavigation) {
             let ul = document.createElement('ul');
 
+            /* Relocate anchorlink container if position_at_top */
+            const anchorlinksAtTop = document.querySelector('.anchorlink-container.position_at_top');
+
+            if (anchorlinksAtTop){
+                const articleBlock = document.querySelector('.content-block');
+                const h1 = articleBlock.querySelectorAll('h1');
+                const ingress = articleBlock.querySelector('p.ingress');
+
+                if(ingress){
+                    jQuery('.anchorlink-container').insertAfter(ingress);
+                }else if(h1){
+                    jQuery('.anchorlink-container').insertAfter(h1[0]);
+                }
+            }
+
             for (let i = 0; i < headings.length; i++) {
                 const headingInnerText = headings[i].innerText;
                 /* Compare: H2 position relative to anchorlink-navigation. */
@@ -62,7 +77,10 @@ export default {
                 const headingPosition = anchorNavigation.compareDocumentPosition(headings[i]);
 
                 if (headingInnerText !== '' && headingPosition === 4 && jQuery(headings[i]).parents(UNDESIRABLE_PARENTS).length === 0) {
-                    const elementID = headingInnerText
+                    /* Start anchor link href and target element id with 'to-' if headingInnerText starts with a number */
+                    const curHeadingText = headingInnerText.match(/^\d/) ? 'to-'+headingInnerText : headingInnerText;
+
+                    const elementID = curHeadingText
                     .toLowerCase()
                     .replace(/\s+/g, '-')
                     .replace(/[^a-z0-9-]+/gi, '');
@@ -157,6 +175,59 @@ export default {
             jQuery(link).prepend(svgArrow45);
         }
     }
+
+    function filterAccordions(elements){
+        const buttons = document.querySelectorAll(elements);
+
+        buttons.forEach(button => {
+            button.addEventListener('click', () =>{
+                const targetTagId = button.dataset.tagid;
+                const isSelected = button.classList.contains('selected');
+                const parent = button.closest('.ihh-accordion');
+                const accordions = parent.querySelectorAll('[data-tags]');
+
+                accordions.forEach(item => {
+                    const itemTags = item.dataset.tags;
+                    const itemLI = item.closest('li');
+
+                    if(isSelected){
+                        jQuery(itemLI).fadeIn('fast');
+                    }
+                    else{
+                        itemTags.includes(targetTagId) ? jQuery(itemLI).fadeIn('fast') : jQuery(itemLI).fadeOut('fast');
+                    }
+                });
+
+                if(isSelected){
+                    button.classList.remove('selected')
+                    button.setAttribute('aria-pressed', 'false');
+                }
+                else{
+                    parent.querySelectorAll('.accordion-filters button').forEach(btn => {
+                        btn.classList.remove('selected');
+                        btn.setAttribute('aria-pressed', 'false');
+                    });
+
+                    button.classList.add('selected');
+                    button.setAttribute('aria-pressed', 'true');
+                }
+
+                // After filtering accordion list, focus first item
+                setTimeout(() => {
+                    const visibleFilteredAccordion = parent.querySelectorAll('.accordion-with-description--accordions li:not([style="display: none;"])');
+                    const firstItem = visibleFilteredAccordion[0].querySelector('.question-header');
+
+                    if(firstItem){
+                        firstItem.focus();
+                    }
+                }, 400);
+            });
+        });
+    }
+    filterAccordions('.accordion-filters button');
+
+
   },
   finalize() {},
 };
+

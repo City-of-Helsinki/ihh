@@ -40,9 +40,25 @@
 
 /* Anchorlink navigation */
 
-/* Light variation without background */
+/* Light variation */
 .single-page-layout .anchorlink-container {
   background: transparent;
+  margin-bottom: 2rem;
+  margin-left: -15px;
+  margin-right: -15px;
+
+  &[style*="background"] {
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  .anchorlink-navigation ul {
+    justify-content: start;
+  }
+
+  a {
+    font-weight: 600;
+  }
 
   .inline-svg svg {
     fill: $kuvittaja-green;

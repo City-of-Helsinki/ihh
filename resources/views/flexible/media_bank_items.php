@@ -1,9 +1,5 @@
 <?php
     $media_items = get_sub_field('items');
-    class MediaCat {
-        use \App\Controllers\Partials\MediaCategory;
-    }
-    $cat = new MediaCat;
 ?>
 
 <div class="container">
@@ -16,7 +12,7 @@
 
             <?php foreach( $media_items as $post): setup_postdata($post); ?>   
                 <li class="media-bank-item media-grid-container">
-                    <?php if($media_file_link = $cat->get_media_category_link($post) ) :
+                    <?php if($media_file_link = \App\Controllers\App::get_media_category_link($post) ) :
                         echo $media_file_link;
                     endif ?>
 
