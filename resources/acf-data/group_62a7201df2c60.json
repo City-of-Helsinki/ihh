@@ -125,7 +125,15 @@
                             "choices": {
                                 "green": "green",
                                 "yellow": "yellow",
-                                "red": "red"
+                                "red": "red",
+                                "yellow": "Yellow",
+                                "midyellow": "Mid yellow",
+                                "lightyellow": "Light yellow",
+                                "green": "Light green",
+                                "red": "Red",
+                                "midred": "Mid red",
+                                "lightred": "Light red",
+                                "orange": "Orange"
                             },
                             "default_value": "green",
                             "allow_null": 0,
