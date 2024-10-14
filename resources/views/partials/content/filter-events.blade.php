@@ -1,15 +1,19 @@
 @php
     $cur_type = get_query_var('type');
-    $cur_targetgroup = get_query_var('target_group');
+    $cur_targetgroup = get_query_var('events_target_group');
     $lang = 'en';
     if (function_exists('pll_current_language')){
         $lang = pll_current_language();
     }
+    $current_targetgroup = '';
+    if(isset($_GET['events_target_group'])){
+        $current_targetgroup = $_GET['events_target_group'];
+    }
 @endphp
 <div class="post-filter">
-    <form action="{{$ajax_url}}" method="GET" id="filter" class="filters d-flex flex-wrap" data-group="type" aria-label="@php pll_e('Filter News and Events'); @endphp">
+    <form action="{{$ajax_url}}" method="GET" id="filter-events" class="filters d-flex flex-wrap" data-group="type" aria-label="@php pll_e('Filter Events'); @endphp">
         <input type="hidden" name="base" value="{{$base}}" />
-        <input type="radio" data-category="News" name="type" value="news" id="type_post_7" checked hidden>
+        <div class="js-filter-events"><input type="radio" name="type" value="event" id="type_event" checked hidden></div>
         <!--<fieldset>
             <legend>@php pll_e('Content type'); @endphp</legend>
             <ul class="list-unstyled list-group list-group-horizontal" aria-labelledby="content_type">
@@ -25,11 +29,11 @@
         <fieldset>
             <legend>@php pll_e('Target group'); @endphp</legend>
             <ul class="list-unstyled list-group list-group-horizontal" aria-labelledby="content_type">
-                <li class="js-filter"><input type="radio" name="target_group" value="all" checked id="target_group_all" /><label for="target_group_all">@php pll_e('All groups'); @endphp</label></li>
+                <li class="js-filter-events"><input type="radio" name="events_target_group" value="all" checked id="events_target_group_all" /><label for="events_target_group_all">@php pll_e('All groups'); @endphp</label></li>
                     @foreach ($target_groups as $term)
-                        <li class="filter-item js-filter">
-                            <input type="radio" name="target_group" value="{{ $term->slug }}"  id="target_group_{{ $term->term_id  }}" @php echo ($term->slug === $cur_targetgroup ) ? 'checked' : '' @endphp/>
-                            <label for="target_group_{{ $term->term_id }}">{{ $term->name }}</label>
+                        <li class="filter-item js-filter-events">
+                            <input type="radio" name="events_target_group" value="{{ $term->slug }}"  id="events_target_group_{{ $term->term_id  }}" @php echo ($term->slug === $current_targetgroup ) ? 'checked' : '' @endphp/>
+                            <label for="events_target_group_{{ $term->term_id }}">{{ $term->name }}</label>
                         </li>
                     @endforeach
             </ul>

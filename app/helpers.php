@@ -217,6 +217,19 @@ if (!function_exists(__NAMESPACE__ . '\\filter_posts')) :
     }
 endif;
 
+if (!function_exists(__NAMESPACE__ . '\\filter_events')) :
+    function filter_events(){
+
+        $data = array(
+            "ajax_url" => \admin_url( 'admin-ajax.php' ),
+            "categories" => get_post_categories(),
+            "target_groups" => get_target_groups(),
+            "base" => \home_url( $_SERVER['REQUEST_URI'] ),
+        );
+        echo template('partials/content/filter-events', $data);
+    }
+endif;
+
 function get_post_categories($list_pluck = false){
     $cats = get_categories(
         array(
@@ -258,7 +271,11 @@ function post_filter_function(){
     );
     $query = apply_filters(__NAMESPACE__ . '\pre_get_posts', (new \WP_Query($args)));
     $GLOBALS['wp_query'] = $query;
-    echo template('partials/content/blog-post-list');
+    if($_GET['type'] == 'event'){
+        echo template('partials/content/blog-events-list');
+    }else{
+        echo template('partials/content/blog-post-list');
+    }
     die();
 }
 

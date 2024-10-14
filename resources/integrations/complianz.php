@@ -1,5 +1,7 @@
 <?php
 
+define( 'cmplz_version', '' );
+
 add_action( 'wp_enqueue_scripts', 'helsinki_disable_cmplz_cookiebanner_styles', PHP_INT_MAX - 49 );
 function helsinki_disable_cmplz_cookiebanner_styles() {
   wp_dequeue_style( 'cmplz-cookie' );

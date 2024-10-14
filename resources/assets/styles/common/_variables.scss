@@ -23,12 +23,15 @@ $gray-900: $black !default;
 $gray-light: #f3f3f3;
 $primary-dark: $kuvittaja-green !default;
 $secondary-dark: $kuvittaja-darker-green !default;
-$color-light-red: #f0c3b8 !default;
+$color-mid-red: #f9bdb2 !default;
+$color-light-red: #fad0c9 !default;
+$color-mid-yellow: #f4ee84 !default;
+$color-light-yellow: #f7f3b7 !default;
 
-$bg-green: #92c8c2;
+$bg-green: #83cac6;
 $bg-red: #f7a091;
-$bg-yellow: #f3e565;
-$bg-orange: #f8ca98;
+$bg-yellow: #f0e856;
+$bg-orange: #f8ca97;
 
 $theme-colors: (
   primary: $kuvittaja-green,
@@ -36,7 +39,7 @@ $theme-colors: (
   //secondary:  $secondary,
   //success:    $success,
   //info:       $info,
-  //danger:     $danger,
+  //danger:     $danger,,,
 );
 
 $primary: map_get($theme-colors, "primary");

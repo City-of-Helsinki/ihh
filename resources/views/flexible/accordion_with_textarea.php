@@ -17,6 +17,16 @@
     $accordionContentBgColor = 'background-color: '. get_sub_field('content_background_color');
 ?>
 
+<?php if( get_sub_field('line_color')): ?>
+  <style>
+    .ihh-accordion .question .question-answer:before,
+    .ihh-accordion .question .question-header:hover:before
+    {
+      background: <?php the_sub_field('line_color'); ?> !important;
+    }
+  </style>
+<?php endif; ?>
+
 <?php if( have_rows('accordions') ) : ?>
     <div id="faqs_<?php echo $accordionName; ?>" class="container ihh-accordion accordion-with-description <?php echo $accordionAlignment; ?>">
         <?php while( have_rows('accordions') ) : the_row(); $id = get_row_index(); ?>

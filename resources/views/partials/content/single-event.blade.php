@@ -5,11 +5,21 @@
   $is_event = 'event' === get_post_type();
   $event_url_text = get_field('read_more_text') ?: pll__('Read more');
   $attachment_text = get_field('attachment_text') ?: pll__('Download attachment');
+
+  $pages = get_pages(array(
+    'meta_key' => '_wp_page_template',
+    'meta_value' => 'views/template-events.blade.php',
+    'posts_per_page' => 1
+  ));
+  foreach($pages as $page){
+      $events_page_id = $page->ID;
+  }
+
 @endphp
 
 <section class="event-container">
   <article @php post_class('content-block content-single') @endphp>
-    <a href="{!! get_the_permalink($news_page) !!}" class="go-back"><i class="fa fa-angle-left"></i></a>
+    <a href="{!! get_the_permalink($events_page_id) !!}" class="go-back" aria-label="{{ pll_e('Go back to Events') }}"><i class="fa fa-angle-left"></i></a>
 
     <div class="event-top">
       @if(has_post_thumbnail())
@@ -60,14 +70,14 @@
         @if($is_event && get_field('streaming'))
         <a name="streaming"></a>
         <div class="event-streaming">
-          <h2>Streaming</h2>
+          <h2>{{ pll_e('Streaming') }}</h2>
           {!! get_field('streaming') !!}
         </div>
         @endif
         @if($is_event && get_field('program'))
         <a name="program"></a>
         <div class="event-program">
-          <h2>Program</h2>
+          <h2>{{ pll_e('Program') }}</h2>
           {!! get_field('program') !!}
         </div>
         @endif

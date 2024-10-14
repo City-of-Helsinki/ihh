@@ -18,6 +18,9 @@
 
       <span class="mb-2">
         {{ \App\Controllers\App::get_category() }}
+        @if('post' === get_post_type())
+          {{ get_the_date('j.n.Y') }}
+        @endif
       </span>
 
       <h2>{!! get_the_title() !!}</h2>

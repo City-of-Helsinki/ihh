@@ -5,3 +5,4 @@ yarn-error.log
 /.cache-loader
 /.cache
 .DS_STORE
+!/vendor/roots*

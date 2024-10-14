@@ -4,61 +4,131 @@
   $twitter = App::get_some_link('twitter');
   $linkedin = App::get_some_link('linkedin');
   $facebook = App::get_some_link('facebook');
+
+  $footer = get_field('footer', 'option');
+  $footerimg = $footer['footer_image'];
+  if (function_exists('pll_current_language')){
+    $lang = pll_current_language();
+  }
 @endphp
 
 <footer class="footer container-wide">
   {{--  <img src="@asset('images/footer.jpg')" alt="">--}}
 
-  @if($footer_img)
-    <img src="{{ $footer_img }}" alt="">
-  @endif
+  @php 
+    if( $footer['footer_image'] ):
+      $image = $footer['footer_image'];
+      $size = 'full'; // (thumbnail, medium, large, full or custom size)
+      if( $image ) {
+        echo wp_get_attachment_image( $image, $size );
+      }
+    endif;
+  @endphp
 
   <div class="container">
     <div class="footer-content">
       <div class="footer-content-some hide-on-mobile">
         <img src="@asset('images/ihh_logo_black.png')" alt="International House Helsinki" class="footer-logo">
 
-        <ul class="some-icons">
-          @if($twitter)
-          <li><a class="no-blank-icon" href="{{$twitter}}" target="_blank"><i aria-hidden="true" class="fa fa-twitter"></i><span class="ihh-visually-hidden">External content: Twitter page for Internal House Helsinki</span></a></li>
-          @endif
-          @if($youtube)
-          <li><a class="no-blank-icon" href="{{$youtube}}" target="_blank"><i aria-hidden="true" class="fa fa-youtube"></i><span class="ihh-visually-hidden">External content: Youtube page for Internal House Helsinki</span></a></li>
-          @endif
-          @if($facebook)
-          <li><a class="no-blank-icon" href="{{$facebook}}" target="_blank"><i aria-hidden="true" class="fa fa-facebook-official"></i><span class="ihh-visually-hidden">External content: Facebook page for Internal House Helsinki</span></a></li>
-          @endif
-          @if($linkedin)
-          <li><a class="no-blank-icon" href="{{$linkedin}}" target="_blank"><i aria-hidden="true" class="fa fa-linkedin"></i><span class="ihh-visually-hidden">External content: LinkedIn page for Internal House Helsinki</span></a></li>
-          @endif
-        </ul>
+        @php if( have_rows('footer', 'option') ): while ( have_rows('footer', 'option') ) : the_row();  @endphp
+
+          <ul class="some-icons">
+
+          @php if( have_rows('social_media_links') ): while ( have_rows('social_media_links') ) : the_row(); @endphp  
+            
+                <li><a class="no-blank-icon" href="{{ the_sub_field('url')}}" target="_blank">
+                  <img src="{{ the_sub_field('icon')}}" />
+                  <span class="ihh-visually-hidden">External content: {{ the_sub_field('name')}} page for Internal House Helsinki</span>
+                </a></li>
+
+            @php endwhile; endif; @endphp
+
+          </ul>
+
+        @php endwhile; endif; @endphp
+
       </div>
 
       <div class="footer-content-info">
-        {!! apply_filters('the_content', App::get_footer_text() )!!}
+        @php 
+          if( $lang == 'fi' ):
+            if( $footer['footer_text_fi'] ):
+              echo $footer['footer_text_fi']; 
+            endif;
+          else:
+            if( $footer['footer_text_en'] ):
+              echo $footer['footer_text_en']; 
+            endif;
+          endif;
+        @endphp
+
+        @php if( have_rows('footer', 'option') ): while ( have_rows('footer', 'option') ) : the_row();  @endphp
+
+        <div class="d-flex justify-content-start footer-logos mt-4">
+
+          @php if( have_rows('list_of_logos') ): while ( have_rows('list_of_logos') ) : the_row(); @endphp  
+          
+            <div class="footer-logo align-self-center">
+                @php 
+                  if( get_sub_field('logo') ):
+                    if(get_sub_field('url_optional')):
+                      echo '<a href="' . get_sub_field('url_optional') . '" target="_blank">';
+                    endif;
+                    $image = get_sub_field('logo');
+                    $size = 'medium'; // (thumbnail, medium, large, full or custom size)
+                    if( $image ) {
+                      echo wp_get_attachment_image( $image, $size );
+                    }
+                    if(get_sub_field('url_optional')):
+                      echo '<span class="ihh-visually-hidden">External content: ' . get_post_meta($image, '_wp_attachment_image_alt', TRUE) . '</span>';
+                      echo '</a>';
+                    endif;
+                  endif;
+                @endphp
+            </div>
+
+
+          @php endwhile; endif; @endphp
+
+        </div>
+
+        @php endwhile; endif; @endphp
+
       </div>
 
       <div class="footer-content-contact">
-        {!! apply_filters('the_content', App::get_footer_contact() )!!}
+        @php 
+          if( $lang == 'fi' ):
+            if( $footer['contact_text_fi'] ):
+              echo $footer['contact_text_fi']; 
+            endif;
+          else:
+            if( $footer['contact_text_en'] ):
+              echo $footer['contact_text_en']; 
+            endif;
+          endif;
+        @endphp
       </div>
 
       <div class="footer-content-some hide-on-desktop">
         <img src="@asset('images/ihh_logo_black.png')" alt="International House Helsinki" class="footer-logo">
 
-        <ul class="some-icons">
-          @if($twitter)
-          <li><a class="no-blank-icon" href="{{$twitter}}" target="_blank"><i aria-hidden="true" class="fa fa-twitter"></i><span class="ihh-visually-hidden">External content: Twitter page for Internal House Helsinki</span></a></li>
-          @endif
-          @if($youtube)
-          <li><a class="no-blank-icon" href="{{$youtube}}" target="_blank"><i aria-hidden="true" class="fa fa-youtube"></i><span class="ihh-visually-hidden">External content: Youtube page for Internal House Helsinki</span></a></li>
-          @endif
-          @if($facebook)
-          <li><a class="no-blank-icon" href="{{$facebook}}" target="_blank"><i aria-hidden="true" class="fa fa-facebook-official"></i><span class="ihh-visually-hidden">External content: Facebook page for Internal House Helsinki</span></a></li>
-          @endif
-          @if($linkedin)
-          <li><a class="no-blank-icon" href="{{$linkedin}}" target="_blank"><i aria-hidden="true" class="fa fa-linkedin"></i><span class="ihh-visually-hidden">External content: LinkedIn page for Internal House Helsinki</span></a></li>
-          @endif
-        </ul>
+        @php if( have_rows('footer', 'option') ): while ( have_rows('footer', 'option') ) : the_row();  @endphp
+
+          <ul class="some-icons">
+
+          @php if( have_rows('social_media_links') ): while ( have_rows('social_media_links') ) : the_row(); @endphp  
+            
+                <li><a class="no-blank-icon" href="{{ the_sub_field('url')}}" target="_blank">
+                  <img src="{{ the_sub_field('icon')}}" />
+                  <span class="ihh-visually-hidden">External content: {{ the_sub_field('name')}} page for Internal House Helsinki</span>
+                </a></li>
+
+            @php endwhile; endif; @endphp
+
+          </ul>
+
+        @php endwhile; endif; @endphp
       </div>
 
     </div>
