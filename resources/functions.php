@@ -211,17 +211,25 @@ function ihh_acf_input_admin_footer() {
 
 add_action('acf/input/admin_footer', 'ihh_acf_input_admin_footer');
 
-// [ihh-cta text="some text" href="some url" color="#FFFFFF" rectangle="false" border="false"]
+// [ihh-cta text="some text" href="some url" background="#F7A091" color="#000000" rectangle="false" border="false"]
 add_shortcode('ihh-cta', function($atts) {
     $a = shortcode_atts( array(
         'text' => '',
         'href' => '',
         'rectangle' => false,
+        'background' => '',
         'color' => '',
-        'border' => false,
+        'border' => 'false',
     ), $atts );
 
-    $cta_button = '<a style="background: ' . esc_attr($a["color"]) . ';" class="btn btn-outline-dark mr-auto py-3 px-3 ihh-cta ' . ($a["rectangle"] ? "rounded-0" : "" ) . '" href="' . esc_attr($a["href"]) . '">' . esc_attr($a["text"]) . '</a>';
+    $text = esc_attr( $a['text'] );
+    $href = esc_attr( $a['href'] );
+    $rectangle = ( $a['rectangle'] !== "false" ) ? 'rounded-0' : '';
+    $background = ( ! empty( $a['background'] ) ) ? esc_attr( $a['background'] ) : '#F7A091';
+    $color = ( ! empty( $a['color'] ) ) ? esc_attr( $a['color'] ) : '#000';
+    $border = ( $a['border'] !== "false" ) ? 'btn-outline-dark' : '';
+
+    $cta_button = '<a style="background: ' . $background . '; color: ' . $color . ' !important;" class="btn ' . $border . ' mr-auto py-3 px-3 ihh-cta ' . $rectangle . '" href="' . $href . '">' . $text . '</a>';
 
     return $cta_button;
 } );
