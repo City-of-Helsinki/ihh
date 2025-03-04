@@ -148,6 +148,10 @@
             background: $kuvittaja-pink;
             text-decoration: none;
           }
+
+          img {
+            max-width: 24px;
+          }
         }
       }
     }
@@ -170,6 +174,17 @@
 
     p {
       margin: 0;
+    }
+  }
+
+  .footer-logos {
+    .footer-logo {
+      max-width: 25%;
+      padding: 10px;
+
+      img {
+        height: auto;
+      }
     }
   }
 }

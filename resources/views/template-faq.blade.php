@@ -11,6 +11,15 @@
     @include('partials.content.page')
   </article>
 
+  @if('line_color')
+  <style>
+    #faqs .question .question-answer:before,
+    #faqs .question .question-header:hover:before{
+      background: <?php the_field('line_color') ?> !important;
+    }
+  </style>
+  @endif
+
   @if(have_rows('questions'))
     <section class="faqs container" id="faqs">
       @while(have_rows('questions')) @php the_row(); $id = get_row_index(); @endphp

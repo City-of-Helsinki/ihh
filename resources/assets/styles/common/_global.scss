@@ -30,8 +30,8 @@ a {
   color: $font-green !important;
   text-decoration: underline;
 
-  &[href^=tel],
-  &[href^=mailto] {
+  &[href^="tel"],
+  &[href^="mailto"] {
     text-decoration: none;
 
     &::after {
@@ -99,7 +99,6 @@ a:hover {
 body > nav {
   @include media-breakpoint-down("sm") {
     max-height: 100vh;
-    overflow-y: auto;
   }
 }
 
@@ -161,7 +160,18 @@ h6 {
     height: 16px;
     display: block;
     position: absolute;
+    transition: left ease 0.3s;
   }
+}
+
+a:hover .inline-svg svg,
+a:focus .inline-svg svg {
+  left: 5px;
+}
+
+a:hover .date .inline-svg svg,
+a:focus .date .inline-svg svg {
+  left: 0;
 }
 
 .rotate-90 {
@@ -244,7 +254,10 @@ h6 {
   width: 100vw;
 }
 
-
 html {
   scroll-behavior: smooth;
+}
+
+.chat-button-wrapper {
+  z-index: 9998 !important;
 }

@@ -1,0 +1,44 @@
+{
+    "key": "group_646b415b5de68",
+    "title": "Post start time (don't change)",
+    "fields": [
+        {
+            "key": "field_646b41747109e",
+            "label": "Start time (don't change)",
+            "name": "start_time",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "2099-01-01 00:00:00",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "post"
+            }
+        ]
+    ],
+    "menu_order": 500,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "This field is used for sorting purposes only.",
+    "show_in_rest": 0,
+    "modified": 1684750764
+}

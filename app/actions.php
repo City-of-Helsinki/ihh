@@ -32,6 +32,7 @@ function create_meta_query( \WP_Query $query ) {
                 'value'   => '',
             ],
         ],
+        
     ];
 
     return $meta_query;
@@ -43,7 +44,7 @@ function create_meta_query( \WP_Query $query ) {
 add_action( 'pre_get_posts', __NAMESPACE__ . '\pre_get_posts');
 
 function pre_get_posts ( \WP_Query $query ) {
-    if ( ( ($query->is_posts_page || ($query->get('is_news_and_events_query') === true)) && ! $query->is_admin)
+    if ( ( (($query->get('is_news_and_events_query') === true)) && ! $query->is_admin)
         || (wp_doing_ajax() && $_REQUEST["action"] === 'myfilter') ) {
 
         $default_type = 'post';
@@ -62,16 +63,25 @@ function pre_get_posts ( \WP_Query $query ) {
         } else if ( !empty($user_type) && in_array($user_type, $names) ){
             $type = $default_type;
         } else{
-            $type = $all_types;
+            //$type = $all_types;
+            $type = $default_type;
         }
 
-        $orderBy = 'event' === $type ? 'start_time' : 'publish_date';
+        $metaKey = 'event' === $type ? 'start_time' : '';
+        $orderBy = 'event' === $type ? 'meta_value' : 'publish_date';
         $order   = 'event' === $type ? 'ASC' : 'DESC';
 
         $query->set( 'post_type', $type );
+        $query->set('meta_key', $metaKey);
         $query->set('orderby', $orderBy);
         $query->set('order', $order);
         $query->set('post_status', 'publish');
+
+        //$query->set( 'post_type', $type );
+        //$query->set('meta_key', 'start_time');
+        //$query->set('orderby', array( 'meta_value' => 'ASC', 'date' => 'DESC' ));
+        //$query->set('order', $order);
+        //$query->set('post_status', 'publish');
 
         $query->set( 'meta_query', create_meta_query( $query ) );
     }
@@ -87,7 +97,7 @@ function pre_get_posts ( \WP_Query $query ) {
  * Add chat-script to head
  */
 add_action( 'wp_head', function () {
-    if ( ! get_theme_mod( 'ihh_hide_chat' ) ) {
+    if ( ! get_theme_mod( 'ihh_hide_chat' ) && cmplz_has_consent("functional") ) {
         echo get_theme_mod( 'ihh_chat_script' );
     }
 }, 999 );

@@ -28,6 +28,9 @@
         </div>
       </div>
     </section>
+    <section>
+        @php do_action('ihh_render_flexible_content', 'lift_100_wide' ); @endphp
+    </section>
   @endif
   @endwhile
 @endsection

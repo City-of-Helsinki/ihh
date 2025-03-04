@@ -1,0 +1,44 @@
+{
+    "key": "group_6529176c557c1",
+    "title": "Navigation Quick Link",
+    "fields": [
+        {
+            "key": "field_6529177103eb0",
+            "label": "Quick link",
+            "name": "quick_link",
+            "type": "true_false",
+            "instructions": "Choose this is you want to show quick links on the bottom of the dropdown menu.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "This is a parent menu item of quick links",
+            "default_value": 0,
+            "ui": 0,
+            "ui_on_text": "",
+            "ui_off_text": ""
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "nav_menu_item",
+                "operator": "==",
+                "value": "all"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "show_in_rest": 0,
+    "modified": 1697192117
+}

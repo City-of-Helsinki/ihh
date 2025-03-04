@@ -42,16 +42,19 @@
   <div class="content-block container single-page-layout">
       <div class="row">
           <div class="col-md-8">
-              <article class="content-block">
+              <article class="content-block print-area">
                   @include('partials.content.header')
+                  
+                  <div class="content-block container" style="clear: both; padding-top: 1rem; padding-bottom: 1rem !important;">
                   @include('partials.content.page')
+                  </div>
 
                   @php do_action('ihh_render_flexible_content', 'lift_100_wide' ); @endphp
               </article>
           </div>
 
           <div class="col-md-4 sidebar">
-              @include('components.navigate-pages')
+              @include('components.checklist-navigate')
               @include('components.flexible-content-sidebar')
           </div>
       </div>
@@ -61,5 +64,49 @@
           </div>
       </div>
   </div>
+  <script type="text/javascript">
+    function addPrintEventListeners() {
+      const printPageActions = document.querySelectorAll('.generate-content-pdf');
+      printPageActions.forEach(function (value) {
+        value.addEventListener('click', (e) => printLinkPage(e));
+      });
+    }
+    addPrintEventListeners();
+
+    function printLinkPage(event) {
+      openDetailsForPrinting();
+      // Fallback remove classes
+      const existingPrintArea = document.querySelectorAll('.article.container');
+      existingPrintArea.forEach(function (value) {
+        value.classList.remove("print-area");
+      });
+
+      const allAccordionContents = document.querySelectorAll('div.accordion-collapse');
+      allAccordionContents.forEach(function (accordion) {
+        const accordionContentId = accordion.getAttribute("id");
+        collapse(`#${accordionContentId}`, 'show');
+      });
+
+      const printArea = document.querySelector('article');
+      if (printArea) {
+        printArea.classList.add("print-area");
+      }
+
+      const quickSearch = document.querySelector('.quick-seach-header');
+      if (quickSearch) {
+        quickSearch.classList.add("hide-from-print");
+      }
+
+      window.print();
+      window.onafterprint = function () {
+        printArea.classList.remove("print-area");
+        allAccordionContents.forEach(function (accordion) {
+          const accordionContentId = accordion.getAttribute("id");
+          collapse(`#${accordionContentId}`, 'hide');
+          closeDetailsAfterPrinting();
+        });
+      }
+    }
+  </script>
   @endwhile
 @endsection

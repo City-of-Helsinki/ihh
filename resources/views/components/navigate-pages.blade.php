@@ -1,4 +1,4 @@
-@php
+<?php
     // Argument array
     $pages_args = array(
         'parent' => $post->post_parent,
@@ -22,33 +22,33 @@
     $showPrevious = ($prevID == $nextID || $prevID < 0)  ? false : $showPrevious;
 
     $navigationAriaLabel = has_post_parent($post) ? 'aria-label="Subpages of ' . get_the_title($post->post_parent) . ' page"' : '';
-@endphp
+?>
 
 
-@php if( has_post_parent($post) && count($pages) > 1 ): @endphp
-<nav class="navigation-boxes container" @php echo $navigationAriaLabel; @endphp>
+<?php if( has_post_parent($post) && count($pages) > 1 ): ?>
+<nav class="navigation-boxes container" <?php echo $navigationAriaLabel; ?>>
     <ul class="list-unstyled row">
-        @php if( $showNext ) : @endphp
+        <?php if( $showNext ) : ?>
         <li class="next-article next">
-            <a href="@php echo get_permalink($nextID); @endphp">
+            <a href="<?php echo get_permalink($nextID); ?>">
                 <div>{{ pll_e('Continue next page') }}</div>
                 <div class="link-heading">
                     {!! \App\ihh_inline_svg('icons/arrow-right') !!}
-                    @php echo get_the_title($nextID); @endphp</div>
+                    <?php echo get_the_title($nextID); ?></div>
             </a>
         </li>
-        @php endif @endphp
+        <?php endif; ?>
 
-        @php if( $showPrevious ) : @endphp
+        <?php if( $showPrevious ) : ?>
         <li class="previous-article previous">
-            <a href="@php echo get_permalink($prevID); @endphp">
+            <a href="<?php echo get_permalink($prevID); ?>">
                 <div>{{ pll_e('Continue previous page') }}</div>
                 <div class="link-heading">
                     {!! \App\ihh_inline_svg('icons/arrow-right') !!}
-                    @php echo get_the_title($prevID); @endphp</div>
+                    <?php echo get_the_title($prevID); ?></div>
             </a>
         </li>
-        @php endif @endphp
+        <?php endif; ?>
     </ul>
 </nav>
-@php endif @endphp
+<?php endif; ?>

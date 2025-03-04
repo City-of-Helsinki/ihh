@@ -30,6 +30,13 @@
     #faqs .question.checklist .accordion-body {
         padding: .5rem 1.85rem !important;
     }
+    #faqs .question.checklist .accordion-body .accordion-link-list strong:first-child {
+        padding-top: 0rem;
+    }
+    #faqs .question.checklist .accordion-body .accordion-link-list strong {
+        font-size: 1.2rem;
+        padding-top: .5rem;
+    }
   </style>
 <?php endif; ?>
 
@@ -66,11 +73,29 @@
                         <?php if ( have_rows('accordion_link_list') ) : ?>
                             <div class="accordion-link-list">
                             <?php while( have_rows('accordion_link_list') ) : the_row(); ?>
-                                <strong><?php echo get_sub_field('accordion_link_list_title'); ?></strong>
+                                <?php
+                                    $accordion_title = get_sub_field('accordion_link_list_title');
+                                ?>
+                                <?php 
+                                if ( ! empty( $accordion_title ) ) {
+                                    echo '<strong>' . esc_html( $accordion_title ) . '</strong>';
+                                }
+                                ?>
+                                
                                 <?php while( have_rows('accordion_links') ) : the_row(); ?>
-                                    <?php $accordion_link = get_sub_field('accordion_links_link', false, false); ?>
+                                    <?php 
+                                    $accordion_link = get_sub_field('accordion_links_link', false, false); 
+                                    $accordion_link_information = get_sub_field('accordion_links_information'); 
+                                    if ( ! empty( $accordion_link ) ) {
+                                    ?>
                                     <span><a href="<?php echo $accordion_link['url']; ?>" target="<?php echo $accordion_link['target']; ?>"><?php echo $accordion_link['title']; ?></a></span>
-                                <?php endwhile; ?>
+                                <?php }
+                                    if ( ! empty ( $accordion_link_information ) ) {
+                                    ?>
+                                    <span style="margin: .25rem 0;"><?php echo esc_html( $accordion_link_information ); ?></span>
+                                    <?php
+                                    }
+                                endwhile; ?>
                             <?php endwhile; ?>
                             </div>
                         <?php endif; ?>

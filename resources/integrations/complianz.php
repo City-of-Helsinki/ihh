@@ -164,15 +164,15 @@ function helsinki_complianz_cookiebanner_styles() {
 
 function helsinki_regenerate_banner(){
 	//regenerate banner every 24 hours or plugin version change
-	if (get_transient("helsinki_cmplz_banner_regeneration") != cmplz_version) {
-		$banners = cmplz_get_cookiebanners();
+	if (get_transient("helsinki_cmplz_banner_regeneration") != 'cmplz_version' ) {
+		//$banners = cmplz_get_cookiebanners();
 		if ( $banners ) {
 			foreach ( $banners as $banner_item ) {
 				$banner = new CMPLZ_COOKIEBANNER( $banner_item->ID );
 				$banner->save();
 			}
 		}
-		set_transient("helsinki_cmplz_banner_regeneration", cmplz_version, 60*60*24);
+		set_transient("helsinki_cmplz_banner_regeneration", 'cmplz_version', 60*60*24);
 	}
 }
 add_action('init', 'helsinki_regenerate_banner');

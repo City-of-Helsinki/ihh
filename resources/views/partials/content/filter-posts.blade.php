@@ -9,7 +9,8 @@
 <div class="post-filter">
     <form action="{{$ajax_url}}" method="GET" id="filter" class="filters d-flex flex-wrap" data-group="type" aria-label="@php pll_e('Filter News and Events'); @endphp">
         <input type="hidden" name="base" value="{{$base}}" />
-        <fieldset>
+        <input type="radio" data-category="News" name="type" value="news" id="type_post_7" checked hidden>
+        <!--<fieldset>
             <legend>@php pll_e('Content type'); @endphp</legend>
             <ul class="list-unstyled list-group list-group-horizontal" aria-labelledby="content_type">
                 <li class="js-filter"><input type="radio" name="type" value="all" checked id="type_all" /><label for="type_all">@php pll_e('All content'); @endphp</label></li>
@@ -18,7 +19,7 @@
                     @endforeach
                 <li class="js-filter"><input type="radio" name="type" value="event" id="type_event" @php echo ('event' === $cur_type ) ? 'checked' : '' @endphp /><label for="type_event">@php pll_e('Event'); @endphp</label></li>
             </ul>
-        </fieldset>
+        </fieldset>-->
 
 
         <fieldset>

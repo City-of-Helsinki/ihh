@@ -56,7 +56,7 @@
             {
                 "param": "post_type",
                 "operator": "==",
-                "value": "service"
+                "value": "post"
             }
         ],
         [
@@ -75,5 +75,6 @@
     "hide_on_screen": "",
     "active": true,
     "description": "",
-    "modified": 1633599388
+    "show_in_rest": 0,
+    "modified": 1740037797
 }

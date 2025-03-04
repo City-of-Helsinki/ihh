@@ -33,9 +33,6 @@ add_action( 'wp_enqueue_scripts', function () {
     }
 }, 100 );
 
-
-
-
 /**
  * Theme setup
  */
@@ -166,3 +163,59 @@ add_action( 'after_setup_theme', function () {
         return "<?= " . __NAMESPACE__ . "\\asset_path({$asset}); ?>";
     } );
 } );
+
+register_post_type( 'notification',
+    array(
+        'labels'      => array(
+            'name'          => __( 'Notification', 'ihh' ),
+            'singular_name' => __( 'Notifications', 'ihh' ),
+        ),
+        'supports'    => [ 'title', 'editor' ],
+        'public'      => true,
+        'has_archive' => false,
+        'exclude_from_search' => true,
+        'publicly_queryable'  => false,
+        'menu_position'       => 5,
+        'rewrite'     => array( 'slug' => 'notifications' ), 
+        'menu_icon' => 'dashicons-warning',
+    )
+);
+
+register_post_type( 'event',
+    array(
+        'labels'      => array(
+            'name'          => __( 'Event', 'ihh' ),
+            'singular_name' => __( 'Events', 'ihh' ),
+        ),
+        'supports'    => [ 'title', 'editor', 'thumbnail' ],
+        'public'      => true,
+        'has_archive' => false,
+        'menu_position'       => 6,
+        'rewrite'       => [
+            'with_front' => false,
+            'slug' => 'events',
+        ],
+        'menu_icon' => 'dashicons-calendar-alt',
+    )
+);
+
+register_post_type( 'newsletter',
+    array(
+        'labels'      => array(
+            'name'          => __( 'Newsletter', 'ihh' ),
+            'singular_name' => __( 'Newsletters', 'ihh' ),
+        ),
+        'supports'    => [ 'title', 'thumbnail' ],
+        'public'      => true,
+        'has_archive' => false,
+        'hierarchical' => false,
+        'exclude_from_search' => true,
+        'publicly_queryable'  => false,
+        'menu_position'       => 8,
+        'rewrite'       => [
+            'slug' => 'newsletters',
+        ],
+        'menu_icon' => 'dashicons-edit',
+    )
+);
+

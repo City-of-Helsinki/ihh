@@ -34,7 +34,7 @@
                 @endif
 
                   @if(get_sub_field('video_link'))
-                  <a href="{{ the_sub_field('video_link') }}" class="image venobox" data-autoplay="true" data-vbtype="video">
+                  <a href="{{ the_sub_field('video_link') }}" class="image fancybox-youtube" data-autoplay="true" data-vbtype="video" aria-label="Video">
 
                   @php $has_content = true; @endphp
                   @endif
