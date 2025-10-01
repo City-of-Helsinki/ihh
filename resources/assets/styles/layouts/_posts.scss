@@ -164,6 +164,7 @@
   header {
     overflow: hidden;
     max-height: 383px;
+
     @include media-breakpoint-up("sm") {
       max-height: 172px;
     }
