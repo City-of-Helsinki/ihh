@@ -160,6 +160,13 @@
                 "operator": "==",
                 "value": "default"
             }
+        ],
+        [
+            {
+                "param": "page_template",
+                "operator": "==",
+                "value": "views\/template-checklist.blade.php"
+            }
         ]
     ],
     "menu_order": 0,
@@ -170,5 +177,6 @@
     "hide_on_screen": "",
     "active": true,
     "description": "",
-    "modified": 1655987480
+    "show_in_rest": 0,
+    "modified": 1734428325
 }

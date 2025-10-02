@@ -19,7 +19,7 @@ $step-indicator-size: 2.5rem;
     padding-bottom: 1.875rem;
     padding-left: $step-indicator-size;
     margin-left: -#{$step-indicator-size};
-    border-left: 1px solid #92c8c2;
+    border-left: 1px solid #83cac6;
 
     @include media-breakpoint-up("md") {
       flex-wrap: nowrap;
@@ -39,14 +39,14 @@ $step-indicator-size: 2.5rem;
       font-weight: 600;
       line-height: 2.25rem;
       text-align: center;
-      border: 1px solid #92c8c2;
+      border: 1px solid #83cac6;
       border-radius: 50%;
       background: #fff;
     }
 
     &:nth-of-type(1) {
       &::before {
-        background: #92c8c2;
+        background: #83cac6;
       }
     }
 
@@ -98,12 +98,28 @@ $step-indicator-size: 2.5rem;
       background: $bg-yellow;
     }
 
+    .background-midyellow {
+      background: $color-mid-yellow;
+    }
+
+    .background-lightyellow {
+      background: $color-light-yellow;
+    }
+
     .background-green {
       background: $bg-green;
     }
 
     .background-red {
       background: $bg-red;
+    }
+
+    .background-midred {
+      background: $color-mid-red;
+    }
+
+    .background-lightred {
+      background: $color-light-red;
     }
 
     .background-orange {

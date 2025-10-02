@@ -159,3 +159,26 @@
     }
   }
 }
+
+.newsletter-post-grid-item {
+  header {
+    overflow: hidden;
+    max-height: 383px;
+
+    @include media-breakpoint-up("sm") {
+      max-height: 172px;
+    }
+
+    @include media-breakpoint-up("md") {
+      max-height: 156px;
+    }
+
+    @include media-breakpoint-up("lg") {
+      max-height: 209px;
+    }
+
+    @include media-breakpoint-up("xl") {
+      max-height: 248px;
+    }
+  }
+}

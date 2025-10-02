@@ -70,6 +70,10 @@
         text-decoration: none;
       }
 
+      &:focus-within {
+        outline: 1px solid $kuvittaja-green;
+      }
+
       &.collapsed {
         &::after {
           content: "\f107";
@@ -147,12 +151,12 @@
   a {
     color: $font-green;
 
-    &[href^=tel]::after {
+    &[href^="tel"]::after {
       content: "";
       text-decoration: none;
     }
 
-    &[href^=mailto]::after {
+    &[href^="mailto"]::after {
       content: "";
       text-decoration: none;
     }

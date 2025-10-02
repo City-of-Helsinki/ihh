@@ -3,11 +3,13 @@
   display: inline-block;
   width: 15px;
   height: 15px;
-  background: url("../images/icons/arrow-right-green.svg") center center no-repeat;
+  background: url("../images/icons/arrow-right-green.svg") center center
+    no-repeat;
   margin-bottom: -2px;
 }
 
-.pagination {
+.pagination,
+.pagination-events {
   ul {
     padding: 0 1%;
 
@@ -43,6 +45,26 @@
     a:hover,
     a:focus {
       text-decoration: underline;
+    }
+  }
+}
+
+#show_past_events_btn {
+  .inline-svg {
+    svg {
+      top: 2px;
+      transform: rotate(90deg);
+      transition: top ease 0.3s;
+    }
+  }
+
+  &:hover,
+  &:focus {
+    .inline-svg {
+      svg {
+        top: 6px;
+        left: 0;
+      }
     }
   }
 }

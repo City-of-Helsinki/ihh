@@ -35,6 +35,11 @@ if ( version_compare( '4.7.0', get_bloginfo( 'version' ), '>=' ) ) {
     $ihh_error( __( 'You must be using WordPress 4.7.0 or greater.', 'ihh' ), __( 'Invalid WordPress version', 'ihh' ) );
 }
 
+function add_theme_scripts() {
+    wp_enqueue_style( 'style', get_template_directory_uri() . '/assets/ihh-style.css' );
+}
+add_action ( 'wp_enqueue_scripts', 'add_theme_scripts' );
+
 /**
  * Ensure dependencies are loaded
  */
@@ -182,3 +187,49 @@ function flattenArray(array $array) {
     });
     return $return;
 }
+
+function ihh_acf_input_admin_footer() {
+    
+    ?>
+    <script type="text/javascript">
+    (function($) {
+        acf.add_filter('color_picker_args', function( args, $field ){
+            
+            // Add colors to color palette
+            args.palettes = ['#01a090', '#4dbdb1', '#83cac6', '#f7a091', '#f9bdb2', '#fad0c9', '#f0942f', '#f8ca97', '#f0e856', '#f4ee84', '#f7f3b7']
+            
+            
+            // return
+            return args;
+                    
+        });
+})(jQuery); 
+</script>
+<?php
+        
+}
+
+add_action('acf/input/admin_footer', 'ihh_acf_input_admin_footer');
+
+// [ihh-cta text="some text" href="some url" background="#F7A091" color="#000000" rectangle="false" border="false"]
+add_shortcode('ihh-cta', function($atts) {
+    $a = shortcode_atts( array(
+        'text' => '',
+        'href' => '',
+        'rectangle' => false,
+        'background' => '',
+        'color' => '',
+        'border' => 'false',
+    ), $atts );
+
+    $text = esc_attr( $a['text'] );
+    $href = esc_attr( $a['href'] );
+    $rectangle = ( $a['rectangle'] !== "false" ) ? 'rounded-0' : '';
+    $background = ( ! empty( $a['background'] ) ) ? esc_attr( $a['background'] ) : '#F7A091';
+    $color = ( ! empty( $a['color'] ) ) ? esc_attr( $a['color'] ) : '#000';
+    $border = ( $a['border'] !== "false" ) ? 'btn-outline-dark' : '';
+
+    $cta_button = '<a style="background: ' . $background . '; color: ' . $color . ' !important;" class="btn ' . $border . ' mr-auto py-3 px-3 ihh-cta ' . $rectangle . '" href="' . $href . '">' . $text . '</a>';
+
+    return $cta_button;
+} );

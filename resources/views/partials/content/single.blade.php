@@ -9,7 +9,10 @@
 
 <section class="single-container">
   <article @php post_class('content-block content-single') @endphp>
-    <a href="{!! get_the_permalink($news_page) !!}" class="go-back"><i class="fa fa-angle-left"></i></a>
+    <a href="{!! get_the_permalink($news_page) !!}" class="go-back" aria-label="{{ pll_e('Go back to News and Events') }}"><i class="fa fa-angle-left"></i></a>
+    @if(!$is_event)
+      <p>{{ get_the_date('j.n.Y') }}</p>
+    @endif
     <h1>{!! $title !!}</h1>
 
     @if($is_event)

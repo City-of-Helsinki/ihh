@@ -2,6 +2,7 @@
   $has_image_class = '';
   $phone = get_sub_field("info_box_phone_number");
   $phone_trim = preg_replace('/\s+/', '', $phone);
+  $phone_arialabel = implode(' ',str_split($phone));
 
   $info_svg = '<svg class="hds-icon-info" viewBox="0 0 24 24" role="img" xmlns="http://www.w3.org/2000/svg"><g fill="none" fill-rule="evenodd"><path d="M0 0h24v24H0z"></path><path d="M12 2c5.523 0 10 4.477 10 10s-4.477 10-10 10S2 17.523 2 12 6.477 2 12 2zm0 2a8 8 0 100 16 8 8 0 000-16zm1 6v6.5h2V18H9v-1.5h2v-5H9V10h4zm-1.187-4a1.312 1.312 0 110 2.625 1.312 1.312 0 010-2.625z" fill="currentColor"></path></g></svg>'
 ?>
@@ -31,14 +32,18 @@
                     <p class="info-box__description"><?php if (get_sub_field("icon_visibility") == true) { echo $info_svg; };?><?php the_sub_field("info_box_description"); ?></p>
                   <?php endif; ?>
                   <?php if( get_sub_field('info_box_phone_number') ): ?>
-                    <a class="info-box__phone_number" href="tel:+358<?php echo $phone_trim; ?>"><?php the_sub_field("info_box_phone_number"); ?></a>
+                    <a class="info-box__phone_number" aria-label="<?php pll_e('Call'); echo ' ' . $phone_arialabel; ?>"  href="tel:<?php echo $phone_trim; ?>"><?php the_sub_field("info_box_phone_number"); ?></a>
                   <?php endif; ?>
                   <?php if( get_sub_field('info_box_email') ): ?>
                     <a class="info-box__email" href="mailto:<?php the_sub_field("info_box_email"); ?>"><?php the_sub_field("info_box_email"); ?></a>
                   <?php endif; ?>
-                  <?php if( get_sub_field('info_box_external_link_description') ): ?>
+                  <?php if(have_rows('links')): ?>
+                    <?php while( have_rows('links') ): the_row(); ?>
+                        <a href=<?php the_sub_field("link"); ?>><?php the_sub_field("link_text"); ?></a>
+                    <?php endwhile; ?>
+                  <?php elseif(get_sub_field('info_box_external_link_description')): ?>
                     <a href=<?php the_sub_field("info_box_external_link"); ?>><?php the_sub_field("info_box_external_link_description"); ?></a>
-                  <?php endif; ?>
+                  <?php endif ?>
                   <div class="info-box__contact-hours mt-3 p-0">
                       <?php while( have_rows('contact_hours') ): the_row();
                           $days = get_sub_field("contact_hours_days");

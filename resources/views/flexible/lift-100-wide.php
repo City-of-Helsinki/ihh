@@ -1,9 +1,14 @@
 <?php
     $color_selection = get_sub_field("background_color");
     $colors = [
-        'green' => '#92c8c2',
-        'yellow' => '#f3e565',
-        'red' => '#f7a091'
+        'green' => '#83cac6',
+        'yellow' => '#f0e856',
+        'red' => '#f7a091',
+        'midyellow' => '#f4ee84',
+        'lightyellow' => '#f7f3b7',
+        'midred' => '#f9bdb2',
+        'lightred' => '#fad0c9',
+        'orange' => '#f8ca97'
     ];
 
     $bg_color = $colors['green']; //default color
@@ -13,6 +18,8 @@
     $bg_color_style = sprintf("style=background-color:%s;", $bg_color);
 
     $arrow_right = '<svg class="hds-arrow-right" viewBox="0 0 24 24" role="img" xmlns="http://www.w3.org/2000/svg"><g fill="none" fill-rule="evenodd"><rect width="24" height="24"></rect><polygon fill="currentColor" points="10.5 5.5 12 7 8 11 20.5 11 20.5 13 8 13 12 17 10.5 18.5 4 12" transform="matrix(-1 0 0 1 24.5 0)"></polygon></g></svg>';
+
+    $card_title = get_sub_field("title");
 ?>
 
 <div class="container">
@@ -28,7 +35,13 @@
                         <?php while( have_rows('links') ): the_row();
                             $link = get_sub_field("link");
                             $text = get_sub_field("link_text");
-                            printf('<li class="my-2"><a class="arrow" href="%s">%s</a></li>', $link, $text);
+                            $arialabel = '';
+                            if(str_contains($text, 'more')):
+                                $arialabel = 'aria-label="More about '.  $card_title .'"';
+                            elseif(str_contains($text, 'lisää')):
+                                $arialabel = 'aria-label="Lisää aiheesta '.  $card_title .'"';
+                            endif;
+                            printf('<li class="my-2"><a class="arrow" %s href="%s">%s</a></li>', $arialabel, $link, $text);
                         endwhile; ?>
                         </ul>
                     </div>

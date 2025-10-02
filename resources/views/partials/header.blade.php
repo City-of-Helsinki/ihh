@@ -2,6 +2,11 @@
 
 @php
   $id = is_home() ? get_option('page_for_posts') : get_the_ID();
+
+  if(is_archive()){
+    $id = get_option('page_for_posts');
+  }
+  
   $header_img = has_post_thumbnail($id) ? get_the_post_thumbnail_url($id) : \App\get_default_image();
   if(is_search()){
     $search_main_id = get_page_by_path('search');

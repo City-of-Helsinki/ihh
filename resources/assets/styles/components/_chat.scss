@@ -32,7 +32,8 @@ $user-message-color: #5ac8bd !default;
           width: 40px;
           height: 40px;
           display: inline-block;
-          background: center center no-repeat url("../images/chat/chat-logo.svg");
+          background: center center no-repeat
+            url("../images/chat/chat-logo.svg");
           margin-right: 20px;
         }
       }
@@ -134,7 +135,8 @@ $user-message-color: #5ac8bd !default;
           content: "";
           width: 15px;
           height: 15px;
-          background: url("../images/chat/user-arrow.svg") center center no-repeat;
+          background: url("../images/chat/user-arrow.svg") center center
+            no-repeat;
           display: block;
           position: absolute;
           bottom: -9px;
@@ -166,7 +168,8 @@ $user-message-color: #5ac8bd !default;
           content: "";
           width: 15px;
           height: 15px;
-          background: url("../images/chat/system-arrow.svg") center center no-repeat;
+          background: url("../images/chat/system-arrow.svg") center center
+            no-repeat;
           display: block;
           position: absolute;
           bottom: -9px;
@@ -227,4 +230,16 @@ $user-message-color: #5ac8bd !default;
   right: 20px !important;
   bottom: 0 !important;
   background: url("../images/chat/chat-header.svg") !important;
+}
+
+@media only screen and (max-height: 300px) {
+  #aca--widget-frame.aca--widget--desktop {
+    bottom: 0 !important;
+  }
+
+  #aca--widget-frame #aca--widget-content,
+  #aca--widget-frame #aca--widget-iframe {
+    min-height: 257px !important;
+    bottom: 0 !important;
+  }
 }

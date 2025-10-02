@@ -21,15 +21,10 @@ module.exports = {
     'ecmaVersion': 2017,
     'sourceType': 'module',
   },
-  'plugins': [
-    'import',
-  ],
+  'plugins': ['import'],
   'settings': {
     'import/core-modules': [],
-    'import/ignore': [
-      'node_modules',
-      '\\.(coffee|scss|css|less|hbs|svg|json)$',
-    ],
+    'import/ignore': ['node_modules', '\\.(coffee|scss|css|less|hbs|svg|json)$'],
   },
   'rules': {
     'no-console': 0,
