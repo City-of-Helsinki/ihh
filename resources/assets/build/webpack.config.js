@@ -101,11 +101,8 @@ let webpackConfig = {
             {
               loader: 'sass',
               options: {
-                // ↓↓↓ tämä kytkee dart-sassin (npm-paketti "sass")
                 implementation: require('sass'),
-                // sass-loader@7 vaatii tämän, jotta resolve-url saa lähteet
                 sourceMap: true,
-                // Poista node-sassin optiot (esim. sourceComments) – eivät koske dart-sassia
               },
             },
           ],
