@@ -13,7 +13,7 @@ img {
 body {
   line-height: 1.25 !important;
 
-  @include media-breakpoint-down("sm") {
+  @include media-breakpoint-down('sm') {
     * {
       word-break: break-word;
     }
@@ -30,17 +30,17 @@ a {
   color: $font-green !important;
   text-decoration: underline;
 
-  &[href^="tel"],
-  &[href^="mailto"] {
+  &[href^='tel'],
+  &[href^='mailto'] {
     text-decoration: none;
 
     &::after {
-      content: "";
+      content: '';
     }
   }
 
   &.no-blank-icon::before {
-    content: "";
+    content: '';
     margin: 0;
   }
 
@@ -97,7 +97,7 @@ a:hover {
 }
 
 body > nav {
-  @include media-breakpoint-down("sm") {
+  @include media-breakpoint-down('sm') {
     max-height: 100vh;
   }
 }
@@ -111,25 +111,60 @@ h1 {
 .h2,
 h2 {
   font-family: $font-roboto;
-  font-size: 2.5rem;
   font-weight: bold;
   hyphens: auto;
+  font-size: 2.375rem;
+
+  @include media-breakpoint-down('sm') {
+    font-size: 1.875rem;
+  }
 }
 
 h3 {
-  font-size: 1.5rem;
+  font-size: 1.875rem;
+
+  @include media-breakpoint-down('sm') {
+    font-size: 1.625rem;
+  }
 }
 
 h4 {
-  font-size: 1.25rem;
+  font-size: 1.625rem;
+
+  @include media-breakpoint-down('sm') {
+    font-size: 1.375rem;
+  }
 }
 
 h5 {
-  font-size: 1.15rem;
+  font-size: 1.375rem;
+
+  @include media-breakpoint-down('sm') {
+    font-size: 1.125rem;
+  }
 }
 
 h6 {
-  font-size: 1.05rem;
+  font-size: 1.125rem;
+
+  @include media-breakpoint-down('sm') {
+    font-size: 1rem;
+  }
+}
+
+h1,
+.h1,
+h2,
+.h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: bold;
+
+  strong {
+    font-weight: bold;
+  }
 }
 
 .ingress {
@@ -228,7 +263,7 @@ a:focus .date .inline-svg svg {
 }
 
 .direction-column-md {
-  @include media-breakpoint-down("md") {
+  @include media-breakpoint-down('md') {
     flex-direction: column;
 
     > a {

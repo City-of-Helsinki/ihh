@@ -34,26 +34,26 @@
 
   h2 {
     @include media-breakpoint-down('sm') {
-      font-size: 30px;
+      font-size: 1.875rem;
     }
 
-    font-size: 38px;
+    font-size: 2.375rem;
   }
 
   h3 {
     @include media-breakpoint-down('sm') {
-      font-size: 26px;
+      font-size: 1.625rem;
     }
 
-    font-size: 30px;
+    font-size: 1.875rem;
   }
 
   h4 {
     @include media-breakpoint-down('sm') {
-      font-size: 22px;
+      font-size: 1.375rem;
     }
 
-    font-size: 26px;
+    font-size: 1.625rem;
   }
 
   h2,
