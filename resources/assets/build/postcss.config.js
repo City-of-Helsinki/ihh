@@ -17,7 +17,10 @@ module.exports = (ctx = {}) => {
       ...(isProd
         ? [
             require('cssnano')({
-              preset: ['default', { discardComments: { removeAll: true }, mergeRules: false }],
+              preset: [
+                'default',
+                { svgo: false, discardComments: { removeAll: true }, mergeRules: false },
+              ],
             }),
           ]
         : []),
