@@ -216,7 +216,7 @@ function ihh_acf_input_admin_footer() {
 
 add_action('acf/input/admin_footer', 'ihh_acf_input_admin_footer');
 
-// [ihh-cta text="some text" href="some url" background="#F7A091" color="#000000" rectangle="false" border="false"]
+// [ihh-cta text="some text" href="some url" background="#F7A091" color="#000000" rectangle="true|false" border="true|false" target="_self|_blank"]
 add_shortcode('ihh-cta', function($atts) {
     $a = shortcode_atts(array(
         'text' => '',
@@ -225,6 +225,7 @@ add_shortcode('ihh-cta', function($atts) {
         'background' => '',
         'color' => '',
         'border' => 'false',
+        'target' => '_self',
     ), $atts);
 
     $text = esc_attr($a['text']);
@@ -233,6 +234,7 @@ add_shortcode('ihh-cta', function($atts) {
     $background = (!empty($a['background'])) ? esc_attr($a['background']) : '#F7A091';
     $color = (!empty($a['color'])) ? esc_attr($a['color']) : '#000';
     $border = ($a['border'] !== "false") ? 'btn-outline-dark' : '';
+    $target = esc_attr($a['target']);
 
     // Create a unique ID for this CTA ...
     $unique_id = 'ihh-cta-' . uniqid();
@@ -240,7 +242,7 @@ add_shortcode('ihh-cta', function($atts) {
     // ... and limit SVG color style to this specific element only
     $svg_style = '<style>#' . $unique_id . ' .inline-svg svg { fill: ' . $color . '; }</style>';
 
-    $cta_button = '<a id="' . $unique_id . '" style="background:' . $background . '; color:' . $color . ' !important;" class="btn ' . $border . ' mr-auto py-3 px-3 ihh-cta ' . $rectangle . '" href="' . $href . '">' . $text . '</a>' . $svg_style;
+    $cta_button = '<a id="' . $unique_id . '" style="background:' . $background . '; color:' . $color . ' !important;" class="btn ' . $border . ' mr-auto py-3 px-3 ihh-cta ' . $rectangle . '" href="' . $href . '" target="' . $target . '">' . $text . '</a>' . $svg_style;
 
     return $cta_button;
 });
