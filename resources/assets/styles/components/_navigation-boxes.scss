@@ -1,12 +1,22 @@
 .navigation-boxes {
-  ul {
+  @include media-breakpoint-down('sm') {
+    margin-bottom: -2rem;
+  }
+
+  ul.list-unstyled.row {
     display: flex;
     justify-content: space-between;
+    flex-direction: row;
+    margin: 0;
 
     li {
       width: 100%;
       max-width: 21.875rem;
       margin-bottom: 1rem;
+
+      @include media-breakpoint-down('sm') {
+        max-width: unset;
+      }
     }
   }
 
@@ -39,8 +49,14 @@
     }
   }
 
-  .next a {
-    text-align: right;
+  .next {
+    // Make sure next article is on the right side
+    // even when prev article is missing.
+    margin-left: auto;
+
+    a {
+      text-align: right;
+    }
   }
 }
 

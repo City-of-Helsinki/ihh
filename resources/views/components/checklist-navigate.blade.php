@@ -13,7 +13,6 @@
         <?php if( $showParent ) : ?>
         <li class="previous-article previous">
             <a href="<?php echo get_permalink($parentID); ?>">
-                <div>{{ pll_e('Continue previous page') }}</div>
                 <div class="link-heading">
                     {!! \App\ihh_inline_svg('icons/arrow-right') !!}
                     <?php echo get_the_title($parentID); ?></div>
