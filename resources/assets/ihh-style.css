@@ -1,11 +1,6 @@
-.ihh-cta {
-
+a.ihh-cta {
+  font-weight: bold;
 }
 
-.ihh-cta:hover {
-
-}
-
-.ihh-cta .inline-svg {
-    display: none !important;
+a.ihh-cta:hover {
 }
