@@ -2252,8 +2252,8 @@
         [
             {
                 "param": "page_template",
-                "operator": "!=",
-                "value": "views\/template-contact.blade.php"
+                "operator": "==",
+                "value": "default"
             }
         ]
     ],
@@ -2266,5 +2266,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1739224589
+    "modified": 1760092934
 }

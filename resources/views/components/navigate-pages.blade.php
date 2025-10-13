@@ -1,4 +1,7 @@
 <?php
+    $show_navigation = get_field("show_nextprev_navigation", $post->ID);
+    if( $show_navigation === false ) return;
+
     // Argument array
     $pages_args = array(
         'parent' => $post->post_parent,

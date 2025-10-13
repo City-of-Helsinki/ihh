@@ -1,0 +1,36 @@
+.ihhce {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.ihhp {
+  padding-right: 15px;
+  padding-left: 15px;
+}
+
+@media (min-width: 1200px) {
+  .ihhce {
+    max-width: 1140px;
+  }
+}
+
+@media (min-width: 992px) {
+  .ihhce {
+    max-width: 960px;
+  }
+}
+
+@media (min-width: 768px) {
+  .ihhce {
+    max-width: 720px;
+  }
+}
+
+.ihhce {
+  --mw-a: 540px;
+  --mw-b: calc(100vw - 30px);
+
+  // By default, set to the smaller of the two max-widths
+  // This will make sure the element has always 15px padding on each side
+  max-width: min(var(--mw-a), var(--mw-b));
+}

@@ -86,16 +86,16 @@
     "location": [
         [
             {
-                "param": "page_template",
+                "param": "page",
                 "operator": "==",
-                "value": "views\/template-about.blade.php"
+                "value": "20"
             }
         ],
         [
             {
-                "param": "page_template",
+                "param": "page",
                 "operator": "==",
-                "value": "views\/template-contact.blade.php"
+                "value": "4103"
             }
         ]
     ],
@@ -107,5 +107,6 @@
     "hide_on_screen": "",
     "active": true,
     "description": "",
-    "modified": 1675256076
+    "show_in_rest": 0,
+    "modified": 1760073636
 }

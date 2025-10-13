@@ -480,7 +480,7 @@
             {
                 "param": "page_template",
                 "operator": "==",
-                "value": "views\/template-employers.blade.php"
+                "value": "default"
             }
         ]
     ],
@@ -492,5 +492,6 @@
     "hide_on_screen": "",
     "active": true,
     "description": "",
-    "modified": 1675085494
+    "show_in_rest": 0,
+    "modified": 1760092877
 }

@@ -1,6 +1,6 @@
 {
     "key": "group_5d277ab57d70b",
-    "title": "Where is International House Helisnki",
+    "title": "Where is International House Helsinki",
     "fields": [
         {
             "key": "field_6329ba1f0bfd7",
@@ -351,9 +351,16 @@
     "location": [
         [
             {
-                "param": "page_template",
+                "param": "page",
                 "operator": "==",
-                "value": "views\/template-contact.blade.php"
+                "value": "20"
+            }
+        ],
+        [
+            {
+                "param": "page",
+                "operator": "==",
+                "value": "4103"
             }
         ]
     ],
@@ -376,5 +383,6 @@
     ],
     "active": true,
     "description": "",
-    "modified": 1675256063
+    "show_in_rest": 0,
+    "modified": 1760074163
 }
