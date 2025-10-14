@@ -28,27 +28,28 @@
 <?php if( has_post_parent($post) && count($pages) > 1 ): ?>
 <nav class="navigation-boxes container" <?php echo $navigationAriaLabel; ?>>
     <ul class="list-unstyled row">
-        <?php if( $showNext ) : ?>
-        <li class="next-article next">
-            <a href="<?php echo get_permalink($nextID); ?>">
-                <div>{{ pll_e('Continue next page') }}</div>
+        <?php if( $showPrevious ) : ?>
+        <li class="previous-article previous">
+            <a href="<?php echo get_permalink($prevID); ?>">
                 <div class="link-heading">
                     {!! \App\ihh_inline_svg('icons/arrow-right') !!}
-                    <?php echo get_the_title($nextID); ?></div>
+                    <?php echo get_the_title($prevID); ?>
+                </div>
             </a>
         </li>
         <?php endif; ?>
 
-        <?php if( $showPrevious ) : ?>
-        <li class="previous-article previous">
-            <a href="<?php echo get_permalink($prevID); ?>">
-                <div>{{ pll_e('Continue previous page') }}</div>
-                <div class="link-heading">
+        <?php if( $showNext ) : ?>
+        <li class="next-article next">
+            <a href="<?php echo get_permalink($nextID); ?>">
+                <div class="link-heading next">
+                    <?php echo get_the_title($nextID); ?>
                     {!! \App\ihh_inline_svg('icons/arrow-right') !!}
-                    <?php echo get_the_title($prevID); ?></div>
+                </div>
             </a>
         </li>
         <?php endif; ?>
+
     </ul>
 </nav>
 <?php endif; ?>
