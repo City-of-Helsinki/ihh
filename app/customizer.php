@@ -17,11 +17,6 @@ add_action( 'customize_register', function ( \WP_Customize_Manager $wp_customize
         'priority' => 200,
     ] );
 
-    $wp_customize->add_section( 'ihh_twitter_feed_settings', [
-        'title'    => __( 'Twitter feed', 'ihh' ),
-        'priority' => 210,
-    ] );
-
     $wp_customize->add_section( 'ihh_footer_settings', [
         'title'    => __( 'Footer', 'ihh' ),
         'priority' => 220,
@@ -42,48 +37,6 @@ add_action( 'customize_register', function ( \WP_Customize_Manager $wp_customize
         'settings'    => 'ihh_default_lift_image',
         'description' => pll__( 'The default lift image if item does not have one.' ),
     ] ) );
-
-    /**
-     * Twitter-feed
-     */
-    $wp_customize->add_setting( 'ihh_twitter_username' );
-    $wp_customize->add_control( 'ihh_twitter_username', [
-        'type'    => 'text',
-        'section' => 'ihh_twitter_feed_settings',
-        'label'   => 'Twitter username',
-    ] );
-
-    $wp_customize->add_setting( 'ihh_twitter_oauth_consumer_key' );
-    $wp_customize->add_control( 'ihh_twitter_oauth_consumer_key', [
-        'type'        => 'text',
-        'section'     => 'ihh_twitter_feed_settings',
-        'label'       => 'Twitter oAuth consumer key',
-        'input_attrs' => [],
-    ] );
-
-    $wp_customize->add_setting( 'ihh_twitter_oauth_consumer_secret' );
-    $wp_customize->add_control( 'ihh_twitter_oauth_consumer_secret', [
-        'type'        => 'password',
-        'section'     => 'ihh_twitter_feed_settings',
-        'label'       => 'Twitter oAuth consumer secret',
-        'input_attrs' => [],
-    ] );
-
-    $wp_customize->add_setting( 'ihh_twitter_oauth_access_token' );
-    $wp_customize->add_control( 'ihh_twitter_oauth_access_token', [
-        'type'        => 'text',
-        'section'     => 'ihh_twitter_feed_settings',
-        'label'       => 'Twitter oAuth access token',
-        'input_attrs' => [],
-    ] );
-
-    $wp_customize->add_setting( 'ihh_twitter_oauth_access_token_secret' );
-    $wp_customize->add_control( 'ihh_twitter_oauth_access_token_secret', [
-        'type'        => 'password',
-        'section'     => 'ihh_twitter_feed_settings',
-        'label'       => 'Twitter oAuth access token secrets',
-        'input_attrs' => [],
-    ] );
 
     /**
      * Social media
@@ -144,7 +97,7 @@ add_action( 'customize_register', function ( \WP_Customize_Manager $wp_customize
     for( $i=0; $i<count($translations); $i++){
         $slug = $translations[$i];
         $wp_customize->add_setting( 'ihh_footer_text_' . $slug );
-        
+
         $wp_customize->add_control( 'ihh_footer_text_' . $slug, [
             'type'        => 'textarea',
             'section'     => 'ihh_footer_settings',
@@ -160,7 +113,7 @@ add_action( 'customize_register', function ( \WP_Customize_Manager $wp_customize
             'input_attrs' => [],
         ] );
     }
-    
+
 
 
     $wp_customize->add_setting( 'ihh_chat_script' );
