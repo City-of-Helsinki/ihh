@@ -1,6 +1,6 @@
 .page-template-template-faq {
   .content-block {
-    @include media-breakpoint-down("sm") {
+    @include media-breakpoint-down('sm') {
       padding: 0 15px 30px 15px;
     }
 
@@ -8,20 +8,15 @@
   }
 }
 
-.content-block #faqs,
-.content-block .ihh-accordion {
-  padding-left: 0;
-  padding-right: 0;
-}
-
 #faqs,
 .ihh-accordion {
-  @include media-breakpoint-down("sm") {
+  @include media-breakpoint-down('sm') {
     margin-bottom: 80px;
   }
 
   margin-bottom: 60px;
-  padding: 20px 15px;
+  padding-top: 20px;
+  padding-bottom: 20px;
 
   .question {
     font-family: $font-source-sans;
@@ -52,7 +47,7 @@
       }
 
       &:hover::before {
-        content: "";
+        content: '';
         background: $kuvittaja-yellow;
         width: 7px;
         height: calc(100% + 2px);
@@ -76,7 +71,7 @@
 
       &.collapsed {
         &::after {
-          content: "\f107";
+          content: '\f107';
           font-family: FontAwesome, sans-serif;
           //float: right;
           color: #000;
@@ -84,7 +79,7 @@
       }
 
       &::after {
-        content: "\f106";
+        content: '\f106';
         font-family: FontAwesome, sans-serif;
         float: right;
         color: #000;
@@ -98,7 +93,7 @@
       //color: #6d6d6d;
 
       &::before {
-        content: " ";
+        content: ' ';
         position: absolute;
         width: 7px;
         height: 100%;
@@ -118,7 +113,7 @@
       }
 
       .faq-answer-close-button::after {
-        content: "\F106";
+        content: '\F106';
         font-family: FontAwesome, sans-serif;
         color: #000;
         margin-right: 6px;
@@ -151,13 +146,13 @@
   a {
     color: $font-green;
 
-    &[href^="tel"]::after {
-      content: "";
+    &[href^='tel']::after {
+      content: '';
       text-decoration: none;
     }
 
-    &[href^="mailto"]::after {
-      content: "";
+    &[href^='mailto']::after {
+      content: '';
       text-decoration: none;
     }
   }

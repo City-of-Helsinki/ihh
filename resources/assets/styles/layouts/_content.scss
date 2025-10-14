@@ -5,6 +5,11 @@
 
   padding: 0 0 0 0;
 
+  & > div.row {
+    // Force elements inside content-block to stack vertically
+    display: block;
+  }
+
   .content-block {
     padding-left: 0;
     padding-right: 0;

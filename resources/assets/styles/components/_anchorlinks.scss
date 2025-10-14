@@ -2,6 +2,7 @@
 .anchorlink-container {
   background: $kuvittaja-yellow;
   margin-bottom: 3rem;
+  width: 100%;
 
   .anchorlink-navigation {
     margin: 0 auto;
@@ -55,7 +56,7 @@
   margin-left: -15px;
   margin-right: -15px;
 
-  &[style*="background"] {
+  &[style*='background'] {
     margin-left: 0;
     margin-right: 0;
   }
