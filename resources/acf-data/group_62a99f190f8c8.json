@@ -1068,7 +1068,7 @@
                             "key": "field_62ac787597bb4",
                             "label": "Background color",
                             "name": "background_color",
-                            "type": "select",
+                            "type": "color_picker",
                             "instructions": "",
                             "required": 0,
                             "conditional_logic": 0,
@@ -1077,17 +1077,9 @@
                                 "class": "",
                                 "id": ""
                             },
-                            "choices": {
-                                "green": "Green",
-                                "red": "Red"
-                            },
-                            "default_value": "green",
-                            "allow_null": 0,
-                            "multiple": 0,
-                            "ui": 0,
-                            "return_format": "value",
-                            "ajax": 0,
-                            "placeholder": ""
+                            "default_value": "#83cac6",
+                            "enable_opacity": 0,
+                            "return_format": "string"
                         },
                         {
                             "key": "field_62ac790b97bb5",
@@ -2238,5 +2230,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1760521107
+    "modified": 1760524986
 }
