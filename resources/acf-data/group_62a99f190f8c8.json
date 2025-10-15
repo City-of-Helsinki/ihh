@@ -1223,7 +1223,7 @@
                             "key": "field_62a7244d0c08f",
                             "label": "Background color",
                             "name": "background_color",
-                            "type": "select",
+                            "type": "color_picker",
                             "instructions": "Background color of the text box",
                             "required": 1,
                             "conditional_logic": 0,
@@ -1232,23 +1232,9 @@
                                 "class": "",
                                 "id": ""
                             },
-                            "choices": {
-                                "yellow": "Yellow",
-                                "midyellow": "Mid yellow",
-                                "lightyellow": "Light yellow",
-                                "green": "Light green",
-                                "red": "Red",
-                                "midred": "Mid red",
-                                "lightred": "Light red",
-                                "orange": "Orange"
-                            },
-                            "default_value": "green",
-                            "allow_null": 0,
-                            "multiple": 0,
-                            "ui": 0,
-                            "return_format": "value",
-                            "ajax": 0,
-                            "placeholder": ""
+                            "default_value": "#83cac6",
+                            "enable_opacity": 0,
+                            "return_format": "string"
                         },
                         {
                             "key": "field_62a7259b8a904",
@@ -2266,5 +2252,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1760509821
+    "modified": 1760518846
 }
