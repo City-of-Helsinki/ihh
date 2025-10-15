@@ -92,6 +92,7 @@ add_action('init', 'amb_custom_post_type');
 
 require_once('integrations/complianz.php');
 require_once('integrations/show-cookie-banner.php');
+require_once('acf-migration.php');
 
 require_once(get_template_directory().'/tinymce-editor-styles.php');
 
@@ -192,7 +193,7 @@ function flattenArray(array $array) {
 }
 
 function ihh_acf_input_admin_footer() {
-    
+
     ?>
 <script type="text/javascript">
 (function($) {
@@ -211,7 +212,7 @@ function ihh_acf_input_admin_footer() {
 })(jQuery);
 </script>
 <?php
-        
+
 }
 
 add_action('acf/input/admin_footer', 'ihh_acf_input_admin_footer');
