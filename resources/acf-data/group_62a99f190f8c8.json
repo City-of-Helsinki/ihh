@@ -201,7 +201,7 @@
                                     "key": "field_630760d188ee2",
                                     "label": "Select background color",
                                     "name": "background_color",
-                                    "type": "select",
+                                    "type": "color_picker",
                                     "instructions": "",
                                     "required": 0,
                                     "conditional_logic": 0,
@@ -210,23 +210,9 @@
                                         "class": "",
                                         "id": ""
                                     },
-                                    "choices": {
-                                        "yellow": "Yellow",
-                                        "midyellow": "Mid yellow",
-                                        "lightyellow": "Light yellow",
-                                        "green": "Light green",
-                                        "red": "Red",
-                                        "midred": "Mid red",
-                                        "lightred": "Light red",
-                                        "orange": "Orange"
-                                    },
-                                    "default_value": "yellow",
-                                    "allow_null": 0,
-                                    "multiple": 0,
-                                    "ui": 1,
-                                    "ajax": 0,
-                                    "return_format": "value",
-                                    "placeholder": ""
+                                    "default_value": "#f0e856",
+                                    "enable_opacity": 0,
+                                    "return_format": "string"
                                 },
                                 {
                                     "key": "field_62a9ceaa1a279",
@@ -2252,5 +2238,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1760518846
+    "modified": 1760521107
 }
