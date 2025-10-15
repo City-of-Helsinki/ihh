@@ -92,7 +92,7 @@ add_action('init', 'amb_custom_post_type');
 
 require_once('integrations/complianz.php');
 require_once('integrations/show-cookie-banner.php');
-require_once('acf-migration.php');
+require_once('acf-field-normalize-colors.php');
 
 require_once(get_template_directory().'/tinymce-editor-styles.php');
 
