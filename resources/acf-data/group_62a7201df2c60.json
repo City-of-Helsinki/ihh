@@ -94,7 +94,7 @@
                             "key": "field_62a724450c08e",
                             "label": "Text body",
                             "name": "text_body",
-                            "type": "text",
+                            "type": "wysiwyg",
                             "instructions": "",
                             "required": 0,
                             "conditional_logic": 0,
@@ -104,10 +104,10 @@
                                 "id": ""
                             },
                             "default_value": "",
-                            "placeholder": "",
-                            "prepend": "",
-                            "append": "",
-                            "maxlength": ""
+                            "tabs": "all",
+                            "toolbar": "full",
+                            "media_upload": 0,
+                            "delay": 0
                         },
                         {
                             "key": "field_62a7244d0c08f",
@@ -1498,5 +1498,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1760077649
+    "modified": 1760509832
 }

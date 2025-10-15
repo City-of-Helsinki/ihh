@@ -31,7 +31,7 @@
                 <div class="lift-100-wide__card p-lg-4 p-sm-3 col-lg-6 d-flex flex-column justify-content-center"
                     <?php echo $bg_color_style; ?>>
                     <h3 class="lift-100-wide__title"><?php the_sub_field("title"); ?></h3>
-                    <p class="lift-100-wide__text"><?php the_sub_field("text_body"); ?></p>
+                    <?php the_sub_field("text_body"); ?>
                     <div class="lift-100-wide__links">
                         <ul class="m-0 p-0">
                             <?php while( have_rows('links') ): the_row();
