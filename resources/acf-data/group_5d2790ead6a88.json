@@ -1,6 +1,6 @@
 {
     "key": "group_5d2790ead6a88",
-    "title": "FAQ Meta",
+    "title": "Accordion",
     "fields": [
         {
             "key": "field_5d2790f4e4972",
@@ -97,5 +97,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1686239868
+    "modified": 1760606786
 }

@@ -89,7 +89,7 @@
                 "layout_62a9cdec58af9": {
                     "key": "layout_62a9cdec58af9",
                     "name": "timeline",
-                    "label": "Timeline",
+                    "label": "Sequence",
                     "display": "block",
                     "sub_fields": [
                         {
@@ -462,7 +462,7 @@
                 "layout_62ac70306352e": {
                     "key": "layout_62ac70306352e",
                     "name": "editor_container",
-                    "label": "Editor container",
+                    "label": "Text Editor Block",
                     "display": "block",
                     "sub_fields": [
                         {
@@ -750,7 +750,7 @@
                 "layout_62b1c7563089b": {
                     "key": "layout_62b1c7563089b",
                     "name": "faq",
-                    "label": "FAQ",
+                    "label": "Accordion",
                     "display": "block",
                     "sub_fields": [
                         {
@@ -855,7 +855,7 @@
                 "layout_63c14ef72fdbf": {
                     "key": "layout_63c14ef72fdbf",
                     "name": "accordion_with_textarea",
-                    "label": "Accordion with filter option",
+                    "label": "Accordion with highlight",
                     "display": "row",
                     "sub_fields": [
                         {
@@ -1107,7 +1107,7 @@
                 "layout_62a7239c15056": {
                     "key": "layout_62a7239c15056",
                     "name": "lift-100-wide",
-                    "label": "100% wide element with background image and text",
+                    "label": "Image and text box",
                     "display": "block",
                     "sub_fields": [
                         {
@@ -2230,5 +2230,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1760524986
+    "modified": 1760606682
 }
