@@ -1,10 +1,10 @@
 {
     "key": "group_5d2790ead6a88",
-    "title": "FAQ Meta",
+    "title": "Accordion",
     "fields": [
         {
             "key": "field_5d2790f4e4972",
-            "label": "Questions",
+            "label": "Accordion",
             "name": "questions",
             "type": "repeater",
             "instructions": "",
@@ -23,7 +23,7 @@
             "sub_fields": [
                 {
                     "key": "field_5d279104e4973",
-                    "label": "Question",
+                    "label": "Header",
                     "name": "question",
                     "type": "text",
                     "instructions": "",
@@ -42,7 +42,7 @@
                 },
                 {
                     "key": "field_5d27910ee4974",
-                    "label": "Answer",
+                    "label": "Text",
                     "name": "answer",
                     "type": "textarea",
                     "instructions": "",
@@ -97,5 +97,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1686239868
+    "modified": 1760607266
 }

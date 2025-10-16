@@ -18,6 +18,10 @@
   padding-top: 20px;
   padding-bottom: 20px;
 
+  .accordion-header {
+    margin-bottom: 1rem;
+  }
+
   .question {
     font-family: $font-source-sans;
     border-bottom: 1px solid #d8d8d8;

@@ -1,6 +1,6 @@
 {
     "key": "group_5d2788cfb4e28",
-    "title": "About meta",
+    "title": "Link images",
     "fields": [
         {
             "key": "field_633bf796c0b0b",
@@ -108,5 +108,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1760073636
+    "modified": 1760606747
 }
