@@ -2014,7 +2014,7 @@
                 "layout_63a02f13cd028": {
                     "key": "layout_63a02f13cd028",
                     "name": "about_meta",
-                    "label": "About meta",
+                    "label": "Link images",
                     "display": "block",
                     "sub_fields": [
                         {
@@ -2208,5 +2208,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1760612624
+    "modified": 1760613736
 }
