@@ -757,7 +757,7 @@
                             "key": "field_62b1c75d3089c",
                             "label": "Section heading",
                             "name": "section_heading",
-                            "type": "text",
+                            "type": "wysiwyg",
                             "instructions": "",
                             "required": 0,
                             "conditional_logic": 0,
@@ -767,14 +767,14 @@
                                 "id": ""
                             },
                             "default_value": "",
-                            "placeholder": "",
-                            "prepend": "",
-                            "append": "",
-                            "maxlength": ""
+                            "tabs": "all",
+                            "toolbar": "full",
+                            "media_upload": 0,
+                            "delay": 0
                         },
                         {
                             "key": "field_62b1c7703089d",
-                            "label": "FAQ accordion",
+                            "label": "Accordion",
                             "name": "faq_accordion",
                             "type": "repeater",
                             "instructions": "",
@@ -793,7 +793,7 @@
                             "sub_fields": [
                                 {
                                     "key": "field_62b1c78d3089e",
-                                    "label": "Question",
+                                    "label": "Header",
                                     "name": "question",
                                     "type": "text",
                                     "instructions": "",
@@ -812,7 +812,7 @@
                                 },
                                 {
                                     "key": "field_62b1c7a43089f",
-                                    "label": "Answer",
+                                    "label": "Text",
                                     "name": "answer",
                                     "type": "wysiwyg",
                                     "instructions": "",
@@ -2230,5 +2230,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1760606682
+    "modified": 1760608068
 }
