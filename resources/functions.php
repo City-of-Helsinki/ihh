@@ -248,28 +248,16 @@ add_shortcode('ihh-cta', function($atts) {
 });
 
 
-function ihh_add_chatbot_script() {
-    ?>
-<!-- START Chatbot Code -->
-<script type="text/javascript">
-var lang = document.documentElement.lang;
+/**
+ * Add ACF header code to wp_head
+ * Makes it easier to handle custom code snippets for tracking etc.
+ * without having to edit theme files
+ */
+add_action('wp_head', function() {
+    // Get the ACF field value from the options page
+    $header_code = get_field('code', 'option');
 
-if ('en-US' === lang) {
-    var scripts = [
-        'https://coh-chat-app-prod.ow6i4n9pdzm.eu-de.codeengine.appdomain.cloud/get-widget-options?tenantId=www-hel-fi-prod&assistantId=ihh&engagementId=ihh',
-        'https://coh-chat-app-prod.ow6i4n9pdzm.eu-de.codeengine.appdomain.cloud/get-widget?tenantId=www-hel-fi-prod&assistantId=ihh&engagementId=ihh',
-        'https://coh-chat-app-prod.ow6i4n9pdzm.eu-de.codeengine.appdomain.cloud/get-widget-default?tenantId=www-hel-fi-prod&assistantId=ihh&engagementId=ihh'
-    ];
-
-    scripts.forEach(function(src) {
-        var el = document.createElement("script");
-        el.type = "text/javascript";
-        el.src = src;
-        document.body.appendChild(el);
-    });
-}
-</script>
-<!-- END Chatbot Code -->
-<?php
-}
-add_action( 'wp_head', 'ihh_add_chatbot_script' );
+    if ($header_code) {
+        echo $header_code;
+    }
+});
