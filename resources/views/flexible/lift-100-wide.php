@@ -1,21 +1,8 @@
 <?php
-    $color_selection = get_sub_field("background_color");
-    $colors = [
-        'green' => '#83cac6',
-        'yellow' => '#f0e856',
-        'red' => '#f7a091',
-        'midyellow' => '#f4ee84',
-        'lightyellow' => '#f7f3b7',
-        'midred' => '#f9bdb2',
-        'lightred' => '#fad0c9',
-        'orange' => '#f8ca97'
-    ];
-
-    $bg_color = $colors['green']; //default color
-    if (array_key_exists($color_selection, $colors)) {
-        $bg_color = $colors[$color_selection];
-    }
-    $bg_color_style = sprintf("style=background-color:%s;", $bg_color);
+    $raw  = get_sub_field('background_color');
+    $bg   = ihh_color_normalize($raw);
+    // Fallback for invalid color values
+    $style = $bg ? ' style="background-color:' . esc_attr($bg) . ';"' : '';
 
     $arrow_right = '<svg class="hds-arrow-right" viewBox="0 0 24 24" role="img" xmlns="http://www.w3.org/2000/svg"><g fill="none" fill-rule="evenodd"><rect width="24" height="24"></rect><polygon fill="currentColor" points="10.5 5.5 12 7 8 11 20.5 11 20.5 13 8 13 12 17 10.5 18.5 4 12" transform="matrix(-1 0 0 1 24.5 0)"></polygon></g></svg>';
 
@@ -29,9 +16,9 @@
                 <img class="lift-100-wide__bg-img h-100 col-lg-8 p-0" alt=""
                     src="<?php the_sub_field("background_image");?>">
                 <div class="lift-100-wide__card p-lg-4 p-sm-3 col-lg-6 d-flex flex-column justify-content-center"
-                    <?php echo $bg_color_style; ?>>
+                    <?php echo $style; ?>>
                     <h3 class="lift-100-wide__title"><?php the_sub_field("title"); ?></h3>
-                    <p class="lift-100-wide__text"><?php the_sub_field("text_body"); ?></p>
+                    <?php the_sub_field("text_body"); ?>
                     <div class="lift-100-wide__links">
                         <ul class="m-0 p-0">
                             <?php while( have_rows('links') ): the_row();

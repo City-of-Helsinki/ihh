@@ -94,7 +94,7 @@
                             "key": "field_67613dcd92450",
                             "label": "Text body",
                             "name": "text_body",
-                            "type": "text",
+                            "type": "wysiwyg",
                             "instructions": "",
                             "required": 0,
                             "conditional_logic": 0,
@@ -104,16 +104,16 @@
                                 "id": ""
                             },
                             "default_value": "",
-                            "placeholder": "",
-                            "prepend": "",
-                            "append": "",
-                            "maxlength": ""
+                            "tabs": "all",
+                            "toolbar": "full",
+                            "media_upload": 0,
+                            "delay": 0
                         },
                         {
                             "key": "field_67613dcd9283a",
                             "label": "Background color",
                             "name": "background_color",
-                            "type": "select",
+                            "type": "color_picker",
                             "instructions": "Background color of the text box",
                             "required": 1,
                             "conditional_logic": 0,
@@ -122,23 +122,9 @@
                                 "class": "",
                                 "id": ""
                             },
-                            "choices": {
-                                "yellow": "Yellow",
-                                "midyellow": "Mid yellow",
-                                "lightyellow": "Light yellow",
-                                "green": "Light green",
-                                "red": "Red",
-                                "midred": "Mid red",
-                                "lightred": "Light red",
-                                "orange": "Orange"
-                            },
-                            "default_value": "green",
-                            "allow_null": 0,
-                            "multiple": 0,
-                            "ui": 0,
-                            "return_format": "value",
-                            "ajax": 0,
-                            "placeholder": ""
+                            "default_value": "#83cac6",
+                            "enable_opacity": 0,
+                            "return_format": "string"
                         },
                         {
                             "key": "field_67613dcd92c1e",
@@ -1798,5 +1784,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1740659420
+    "modified": 1760518877
 }

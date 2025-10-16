@@ -104,16 +104,16 @@ Edit `app/setup.php` to enable or disable theme features, setup navigation menus
 
 Contributions are welcome from everyone. We have [contributing guidelines](https://github.com/roots/guidelines/blob/master/CONTRIBUTING.md) to help you get started.
 
-## ACF Field Groups
+## ACF Field Group Display Rules
 
-The following ACF field groups are configured to display only on specific pages,
-based on their assigned page IDs.
+The following Advanced Custom Fields (ACF) groups are configured to appear only on specific pages, based on their assigned WordPress page IDs.
 
-| Field Group                           | Target     | Display Rules        |
-| ------------------------------------- | ---------- | -------------------- |
-| Home meta                             | Home page  | Page IDs 2 and 4195  |
-| About meta                            | About page | Page IDs 20 and 4103 |
-| Where is International House Helsinki | About page | Page IDs 20 and 4103 |
+| Field Group                               | Target Page(s)   | Display Condition                      |
+| ----------------------------------------- | ---------------- | -------------------------------------- |
+| **Home meta**                             | Home page        | Shown on page IDs **2** and **4195**   |
+| **About meta**                            | About page       | Shown on page IDs **20** and **4103**  |
+| **Where is International House Helsinki** | About page       | Shown on page IDs **20** and **4103**  |
+| **Employers meta**                        | Other pages only | Hidden on page IDs **20** and **4103** |
 
 ## Sage sponsors
 
