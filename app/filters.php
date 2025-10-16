@@ -129,28 +129,6 @@ add_filter( 'acf/settings/load_json', function () {
 } );
 
 /**
- * Init Twitter
- */
-add_filter( 'dude-twitter-feed/oauth_consumer_key', function () {
-    return get_theme_mod( 'ihh_twitter_oauth_consumer_key' );
-} );
-add_filter( 'dude-twitter-feed/oauth_consumer_secret', function () {
-    return get_theme_mod( 'ihh_twitter_oauth_consumer_secret' );
-} );
-add_filter( 'dude-twitter-feed/oauth_access_token', function () {
-    return get_theme_mod( 'ihh_twitter_oauth_access_token' );
-} );
-add_filter( 'dude-twitter-feed/oauth_access_token_secret', function () {
-    return get_theme_mod( 'ihh_twitter_oauth_access_token_secret' );
-} );
-add_filter( 'dude-twitter-feed/user_tweets_parameters', function ( $args ) {
-    $args['count']       = 6;
-    $args['include_rts'] = true;
-
-    return $args;
-} );
-
-/**
  * Mail
  */
 
@@ -187,10 +165,6 @@ add_filter('wp_nav_menu_items', function($items, $args){
     }
     return $items;
 } ,9, 2);
-
-//add_filter('acf_the_content', 'eae_encode_emails');
-//add_filter('acf/load_value', 'eae_encode_emails');
-
 
 add_filter('query_vars', function($qvars){
     $qvars[] = 'type';

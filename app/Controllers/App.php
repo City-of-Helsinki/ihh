@@ -14,7 +14,7 @@ class App extends Controller {
     public function siteName() {
         return get_bloginfo( 'name' );
     }
-    
+
     /**
      * @return \WP_Query
      */
@@ -42,20 +42,6 @@ class App extends Controller {
             'orderby'        => 'menu_order',
             'order'          => 'ASC',
         ] );
-    }
-
-    /**
-     * @return array|bool|mixed|object|void
-     */
-    public static function tweets() {
-        return dude_twitter_feed()->get_user_tweets( get_theme_mod( 'ihh_twitter_username' ) );
-    }
-
-    /**
-     * @return array|bool|mixed|object|void
-     */
-    public static function tweet_info() {
-        return dude_twitter_feed()->get_user_info( get_theme_mod( 'ihh_twitter_username' ) );
     }
 
     /**
@@ -94,7 +80,7 @@ class App extends Controller {
             }
 
             $primary = \yoast_get_primary_term( $cat );
-            
+
             if ($primary){
                 return $primary;
             }
@@ -112,7 +98,7 @@ class App extends Controller {
             if (count($category) > 0 ){
                 return $category[0]->name;
             }
-            
+
         }
     }
 
