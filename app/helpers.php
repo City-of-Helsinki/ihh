@@ -57,7 +57,7 @@ function template( $file, $data = [] ) {
     if (is_redirection_page()){
         $page_obj = get_redirection_page_object();
         $template = get_post_meta( $page_obj->ID, '_wp_page_template', true );
-       
+
         if ( empty($template) || $template === 'default' ){
             $template = 'page.blade.php';
         }
@@ -252,6 +252,24 @@ function get_target_groups(){
     return $terms;
 }
 
+/**
+ * Get image caption by URL
+ * @return string|null
+ */
+function get_image_caption_by_url($image_url) {
+    global $wpdb;
+
+    // Get attachment ID by URL
+    $attachment_id = attachment_url_to_postid($image_url);
+    if (!$attachment_id) {
+        return null;
+    }
+
+    // Get caption
+    $caption = wp_get_attachment_caption($attachment_id);
+    return $caption;
+}
+
 
 /*
 * Post filter function
@@ -297,43 +315,43 @@ function get_redirection_page_object(){
 
 /**
  * Render Link section li content
- * 
+ *
  * @param boolean $show_images
  * @param string $link_type
  * @return boolean
- */ 
+ */
 function render_link_section_li( bool $show_images, string $link_type ):void {
     if ( 'description_box' === $link_type ) {
         ?>
-        <li class="list-item">
-            <?php if( $show_images ) : ?>
-            <div class="image-container aspect-ratio-1-96">
-                <?php if( get_sub_field('image') ) : ?>
-                    <img src="<?php the_sub_field('image'); ?>" alt="" class="image-fit" />
-                <?php endif ?>
-            </div>
-            <?php endif ?>
-            <h3 class="item-heading"><?php the_sub_field('heading'); ?></h3>
-            <p class="item-description">
-                <?php the_sub_field('description'); ?>
-            </p>
-            <?php if(get_sub_field('cta_url') ) : ?>
-            <a href="<?php the_sub_field('cta_url'); ?>" class="arrow"><?php the_sub_field('cta_text'); ?></a>
-            <?php endif ?>
-        </li>
-        <?php
+<li class="list-item">
+    <?php if( $show_images ) : ?>
+    <div class="image-container aspect-ratio-1-96">
+        <?php if( get_sub_field('image') ) : ?>
+        <img src="<?php the_sub_field('image'); ?>" alt="" class="image-fit" />
+        <?php endif ?>
+    </div>
+    <?php endif ?>
+    <h3 class="item-heading"><?php the_sub_field('heading'); ?></h3>
+    <p class="item-description">
+        <?php the_sub_field('description'); ?>
+    </p>
+    <?php if(get_sub_field('cta_url') ) : ?>
+    <a href="<?php the_sub_field('cta_url'); ?>" class="arrow"><?php the_sub_field('cta_text'); ?></a>
+    <?php endif ?>
+</li>
+<?php
         return;
     }
 
     if ( 'simple' === $link_type ) {
         ?>
-        <li class="list-item">
-            <h3 class="item-heading"><?php the_sub_field('heading'); ?></h3>
-            <?php if(get_sub_field('cta_url') ) : ?>
-            <a href="<?php the_sub_field('cta_url'); ?>" class="arrow"><?php the_sub_field('cta_text'); ?></a>
-            <?php endif ?>
-        </li>
-        <?php
+<li class="list-item">
+    <h3 class="item-heading"><?php the_sub_field('heading'); ?></h3>
+    <?php if(get_sub_field('cta_url') ) : ?>
+    <a href="<?php the_sub_field('cta_url'); ?>" class="arrow"><?php the_sub_field('cta_text'); ?></a>
+    <?php endif ?>
+</li>
+<?php
         return;
     }
 
@@ -349,14 +367,14 @@ function render_link_section_li( bool $show_images, string $link_type ):void {
         }
 
         ?>
-        <li class="list-item service-link icon-list-item">
-            <span class="li-icon <?php echo $icon_class; ?>"></span>
-            <a href="<?php echo $href; ?>" class="icon-link">
-                <?php the_sub_field('heading'); ?>
-                <span class="list-item-arrow"><?php echo \App\ihh_inline_svg('icons/arrow-right'); ?></span>
-            </a>
-        </li>
-        <?php
+<li class="list-item service-link icon-list-item">
+    <span class="li-icon <?php echo $icon_class; ?>"></span>
+    <a href="<?php echo $href; ?>" class="icon-link">
+        <?php the_sub_field('heading'); ?>
+        <span class="list-item-arrow"><?php echo \App\ihh_inline_svg('icons/arrow-right'); ?></span>
+    </a>
+</li>
+<?php
         return;
     }
 }

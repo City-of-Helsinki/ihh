@@ -3,6 +3,18 @@
     font-weight: 700;
   }
 
+  figure {
+    margin: 0;
+  }
+
+  figcaption {
+    width: 100%;
+    font-style: italic;
+    margin-top: 0.25rem;
+    position: absolute;
+    bottom: -1.5rem;
+  }
+
   ul {
     list-style: none;
   }
@@ -35,12 +47,26 @@
       .lift-100-wide__card {
         right: 0;
         margin-right: 0;
+
+        &.side-by-side {
+          border-left: 10px solid white;
+        }
       }
     }
 
     &--right {
+      .lift-100-wide__card {
+        &.side-by-side {
+          border-right: 10px solid white;
+        }
+      }
+
+      figcaption {
+        text-align: right;
+      }
+
       .lift-100-wide__bg-img {
-        margin-left: calc(100% / 3);
+        margin-left: 41.66666666666%;
       }
     }
   }
