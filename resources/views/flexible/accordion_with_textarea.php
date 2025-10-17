@@ -28,7 +28,7 @@
 
 <?php if( have_rows('accordions') ) : ?>
 <div id="faqs_<?php echo $accordionName; ?>"
-    class="container ihh-accordion accordion-with-description <?php echo $accordionAlignment; ?>">
+    class="container ihh-accordion accordion-with-description <?php echo $accordionAlignment; ?> ihhce">
     <?php while( have_rows('accordions') ) : the_row(); $id = get_row_index(); ?>
     <?php
             $assignedTags = '';

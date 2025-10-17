@@ -10,6 +10,11 @@
     display: block;
   }
 
+  figure {
+    // Prevent images from overflowing content area on small screens
+    max-width: 100%;
+  }
+
   .content-block {
     padding-left: 0;
     padding-right: 0;
