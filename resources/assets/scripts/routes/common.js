@@ -96,21 +96,6 @@ export default {
       if (headings && anchorNavigation) {
         let ul = document.createElement('ul');
 
-        /* Relocate anchorlink container if position_at_top */
-        const anchorlinksAtTop = document.querySelector('.anchorlink-container.position_at_top');
-
-        if (anchorlinksAtTop) {
-          const articleBlock = document.querySelector('.content-block');
-          const h1 = articleBlock.querySelectorAll('h1');
-          const ingress = articleBlock.querySelector('p.ingress');
-
-          if (ingress) {
-            jQuery('.anchorlink-container').insertAfter(ingress);
-          } else if (h1) {
-            jQuery('.anchorlink-container').insertAfter(h1[0]);
-          }
-        }
-
         for (let i = 0; i < headings.length; i++) {
           const headingInnerText = headings[i].innerText;
           /* Compare: H2 position relative to anchorlink-navigation. */

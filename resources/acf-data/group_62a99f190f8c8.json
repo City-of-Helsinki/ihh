@@ -23,54 +23,11 @@
                     "display": "table",
                     "sub_fields": [
                         {
-                            "key": "field_62aaf5e1e738b",
-                            "label": "Show anchorlinks",
-                            "name": "show_anchorlinks",
-                            "type": "true_false",
-                            "instructions": "",
-                            "required": 0,
-                            "conditional_logic": 0,
-                            "wrapper": {
-                                "width": "",
-                                "class": "",
-                                "id": ""
-                            },
-                            "message": "",
-                            "default_value": 1,
-                            "ui": 1,
-                            "ui_on_text": "Yes",
-                            "ui_off_text": "No"
-                        },
-                        {
-                            "key": "field_63bfe81cd57fb",
-                            "label": "Anchorlinks position",
-                            "name": "anchorlinks_position",
-                            "type": "radio",
-                            "instructions": "Show anchor links at the top of the article by activating \"At the top of the article\" option.  Use this option on pages that are using \"Default\" page template.",
-                            "required": 0,
-                            "conditional_logic": 0,
-                            "wrapper": {
-                                "width": "",
-                                "class": "",
-                                "id": ""
-                            },
-                            "choices": {
-                                "position_default": "Default position",
-                                "position_at_top": "At the top of the article"
-                            },
-                            "allow_null": 0,
-                            "other_choice": 0,
-                            "default_value": "position_default",
-                            "layout": "horizontal",
-                            "return_format": "value",
-                            "save_other_choice": 0
-                        },
-                        {
                             "key": "field_631f20a8a4514",
                             "label": "Background color",
                             "name": "background_color",
                             "type": "color_picker",
-                            "instructions": "Theme green: #83cac6 <br\/>\r\nTheme red: #f9bdb2 <br\/>\r\nTheme yellow: #f0e856",
+                            "instructions": "Theme green: #83cac6 | Theme red: #f9bdb2 | Theme yellow: #f0e856",
                             "required": 0,
                             "conditional_logic": 0,
                             "wrapper": {
@@ -2129,60 +2086,6 @@
                     ],
                     "min": "",
                     "max": ""
-                },
-                "layout_6464795e44b15": {
-                    "key": "layout_6464795e44b15",
-                    "name": "links_to_next_and_previous_pages",
-                    "label": "Links to next and previous pages",
-                    "display": "block",
-                    "sub_fields": [
-                        {
-                            "key": "field_6464798644b16",
-                            "label": "Previous page",
-                            "name": "previous_page",
-                            "type": "post_object",
-                            "instructions": "",
-                            "required": 0,
-                            "conditional_logic": 0,
-                            "wrapper": {
-                                "width": "50",
-                                "class": "",
-                                "id": ""
-                            },
-                            "post_type": [
-                                "page"
-                            ],
-                            "taxonomy": "",
-                            "allow_null": 1,
-                            "multiple": 0,
-                            "return_format": "id",
-                            "ui": 1
-                        },
-                        {
-                            "key": "field_646479c244b17",
-                            "label": "Next page",
-                            "name": "next_page",
-                            "type": "post_object",
-                            "instructions": "",
-                            "required": 0,
-                            "conditional_logic": 0,
-                            "wrapper": {
-                                "width": "50",
-                                "class": "",
-                                "id": ""
-                            },
-                            "post_type": [
-                                "page"
-                            ],
-                            "taxonomy": "",
-                            "allow_null": 1,
-                            "multiple": 0,
-                            "return_format": "id",
-                            "ui": 1
-                        }
-                    ],
-                    "min": "",
-                    "max": ""
                 }
             },
             "button_label": "Add Block",
@@ -2208,5 +2111,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1760613736
+    "modified": 1760684730
 }
