@@ -1801,40 +1801,13 @@
                             "maxlength": ""
                         },
                         {
-                            "key": "field_62fdfb6644db1",
-                            "label": "List latests News and Events",
-                            "name": "list_latests_news_and_events",
-                            "type": "true_false",
-                            "instructions": "",
-                            "required": 0,
-                            "conditional_logic": 0,
-                            "wrapper": {
-                                "width": "",
-                                "class": "",
-                                "id": ""
-                            },
-                            "message": "",
-                            "default_value": 0,
-                            "ui": 1,
-                            "ui_on_text": "On",
-                            "ui_off_text": "Off"
-                        },
-                        {
                             "key": "field_646b5435ecb79",
                             "label": "List latests news",
                             "name": "list_latests_news",
                             "type": "true_false",
                             "instructions": "",
                             "required": 0,
-                            "conditional_logic": [
-                                [
-                                    {
-                                        "field": "field_62fdfb6644db1",
-                                        "operator": "!=",
-                                        "value": "1"
-                                    }
-                                ]
-                            ],
+                            "conditional_logic": 0,
                             "wrapper": {
                                 "width": "",
                                 "class": "",
@@ -1853,15 +1826,7 @@
                             "type": "true_false",
                             "instructions": "",
                             "required": 0,
-                            "conditional_logic": [
-                                [
-                                    {
-                                        "field": "field_62fdfb6644db1",
-                                        "operator": "!=",
-                                        "value": "1"
-                                    }
-                                ]
-                            ],
+                            "conditional_logic": 0,
                             "wrapper": {
                                 "width": "",
                                 "class": "",
@@ -2111,5 +2076,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1760684730
+    "modified": 1760689436
 }
