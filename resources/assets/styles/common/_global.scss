@@ -227,6 +227,13 @@ a:focus .date .inline-svg svg {
   transform: scaleX(-1);
 }
 
+.internal-link {
+  .inline-svg {
+    margin-right: 5px;
+    margin-left: 4px;
+  }
+}
+
 .external-link {
   svg {
     fill: $kuvittaja-green;

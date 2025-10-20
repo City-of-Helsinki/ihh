@@ -29,13 +29,6 @@
     }
   }
 
-  &.columns-two {
-    @include media-breakpoint-up('lg') {
-      columns: 2 auto;
-      column-gap: 32px;
-    }
-  }
-
   a {
     text-decoration: none;
     color: $black !important;

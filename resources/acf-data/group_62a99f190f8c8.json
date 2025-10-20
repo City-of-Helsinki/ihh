@@ -1015,25 +1015,6 @@
                             "default_value": "#83cac6",
                             "enable_opacity": 0,
                             "return_format": "string"
-                        },
-                        {
-                            "key": "field_62ac790b97bb5",
-                            "label": "Divide content into columns",
-                            "name": "divide_content_into_columns",
-                            "type": "true_false",
-                            "instructions": "",
-                            "required": 0,
-                            "conditional_logic": 0,
-                            "wrapper": {
-                                "width": "",
-                                "class": "",
-                                "id": ""
-                            },
-                            "message": "",
-                            "default_value": 0,
-                            "ui": 1,
-                            "ui_on_text": "Yes",
-                            "ui_off_text": "No"
                         }
                     ],
                     "min": "",
@@ -2114,5 +2095,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1760692799
+    "modified": 1760937822
 }

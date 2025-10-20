@@ -8,11 +8,9 @@
   // Build classes and styles
   $bg_class = (!$bg_norm && $bg_raw) ? ' background-' . sanitize_html_class($bg_raw) : '';
   $bg_style = $bg_norm ? ' style="background-color:' . esc_attr($bg_norm) . ';"' : '';
-  // Other classes
-  $divideIntoColumns = get_sub_field('divide_content_into_columns') ? ' columns-two' : '';
   ?>
 
-<div class="highlighted-content<?php echo esc_attr($bg_class . $divideIntoColumns); ?> ihhce" <?php echo $bg_style; ?>>
+<div class="highlighted-content<?php echo esc_attr($bg_class); ?> ihhce" <?php echo $bg_style; ?>>
     <?php the_sub_field('content'); ?>
 </div>
 <?php endif; ?>

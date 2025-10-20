@@ -25,6 +25,7 @@ export default {
       });
 
       detectExternalLinks('.main a');
+      detectInternalLinks('.highlighted-content a');
       createAnchorlinks('.anchorlink-navigation', '#main h2');
 
       window.CXBus.configure({
@@ -211,6 +212,42 @@ export default {
       if (inlineSVG === null) {
         jQuery(link).prepend(svgArrow45);
       }
+    }
+
+    /**
+     * Finds internal links within the specified selector and adds an arrow icon and class to them.
+     *
+     * @param {string} selector
+     */
+    function detectInternalLinks(selector) {
+      const currentHost = window.location.host;
+      const links = document.querySelectorAll(selector);
+
+      links.forEach((link) => {
+        const href = link.getAttribute('href');
+
+        // Bypass invalid hrefs
+        if (!href || href.startsWith('#') || href.startsWith('javascript:')) return;
+
+        // Create URL safely (handles relative links)
+        const url = new URL(href, window.location.origin);
+
+        // Check if the link is internal
+        const isInternal = url.host === currentHost;
+
+        if (isInternal) {
+          const svgArrow45 = '<span class="inline-svg">' + ARROW_SVG_RIGHT + '</span>';
+          const inlineSVG = link.querySelector('.inline-svg');
+
+          // Add the SVG icon if not already present
+          if (inlineSVG === null) {
+            jQuery(link).prepend(svgArrow45);
+          }
+
+          // Add internal-link class
+          link.classList.add('internal-link');
+        }
+      });
     }
   },
   finalize() {},
