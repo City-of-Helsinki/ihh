@@ -27,9 +27,6 @@
         </div>
       @endif
       <div class="event-details">
-        <span class="event-publish-date">
-          <time datetime="{!! get_the_date('c') !!}" itemprop="datePublished">{!! get_the_date() !!}</time>
-        </span>
         <h1>{!! $title !!}</h1>
         <div class="event-short-description">{!! get_field('event_short_description') !!}</div>
         <div class="event-meta">
