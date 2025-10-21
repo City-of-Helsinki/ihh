@@ -56,6 +56,11 @@
               @endif
             </tbody>
           </table>
+
+          @if(get_field('event_url'))
+            <a class="btn ihh-cta sign-up" href="{!! get_field('event_url') !!}" target="_blank">{{ $event_url_text }}</a>
+          @endif
+
         </div>
       </div>
       <div class="clear"></div>
@@ -105,7 +110,7 @@
     @if($is_event && get_field('event_url'))
     <div class="event-read-more">
       <div class="event-read-more-cta">
-        <a href="{!! get_field('event_url') !!}" class="event-url" target="_blank">{{ $event_url_text }}</a>
+        <a href="{!! get_field('event_url') !!}" class="event-url btn ihh-cta" target="_blank">{{ $event_url_text }}</a>
       </div>
     </div>
     @endif

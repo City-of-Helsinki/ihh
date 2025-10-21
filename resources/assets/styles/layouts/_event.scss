@@ -91,6 +91,16 @@
               border-bottom: 2px solid #ccc;
             }
           }
+
+          .btn.sign-up {
+            margin-top: 1rem;
+            background-color: #f7a091;
+            color: black !important;
+
+            svg {
+              fill: black;
+            }
+          }
         }
       }
     }
@@ -166,6 +176,7 @@
         text-decoration: none;
         font-weight: 700;
         margin-top: 10px;
+        text-transform: none;
 
         @include media-breakpoint-down('sm') {
           width: auto;
