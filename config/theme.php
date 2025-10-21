@@ -85,6 +85,8 @@ return [
         'The default lift image if item does not have one.',
         'Continue next page',
         'Continue previous page',
+        'Date',
+        'Time',
         'Ajankohta',
         'Paikka',
         'See all news and events',

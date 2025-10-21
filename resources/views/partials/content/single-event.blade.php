@@ -34,8 +34,13 @@
             <thead></thead>
             <tbody>
               <tr>
-                <td>{{ pll_e('Ajankohta') }}</td>
-                <td>{!! \App\format_event_date() !!}</td>
+                <td>{{ pll_e('Date') }}</td>
+                <td>{!! \App\format_event_date_only() !!}</td>
+              </tr>
+
+              <tr>
+                <td>{{ pll_e('Time') }}</td>
+                <td>{!! \App\format_event_time_only() !!}</td>
               </tr>
 
               <tr>
