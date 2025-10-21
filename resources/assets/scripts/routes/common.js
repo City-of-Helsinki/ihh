@@ -51,8 +51,11 @@ export default {
       // Code for smooth scrolling to accordion header after closing
       // Responsive offset for accordion scroll
       function getAccordionOffset() {
+        const header = document.querySelector('.main-nav-container');
+        const headerHeight = Math.ceil(header.getBoundingClientRect().height);
+        const margin = 10;
         const ww = window.innerWidth;
-        return ww < 1110 ? 10 : 75;
+        return ww < 1110 ? margin : headerHeight + margin;
       }
 
       // Mark the panel when it is being closed by Close button
@@ -79,10 +82,8 @@ export default {
         if (!$header.length) return;
 
         // Scroll to header with offset
-        setTimeout(function () {
-          const y = Math.max(0, $header.offset().top - getAccordionOffset());
-          $('html, body').stop(true).animate({ scrollTop: y }, 250);
-        }, 50);
+        const y = Math.max(0, $header.offset().top - getAccordionOffset());
+        $('html, body').stop(true).animate({ scrollTop: y }, 250);
       });
       // END ACCORDION SCROLL
     });

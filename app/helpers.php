@@ -257,8 +257,6 @@ function get_target_groups(){
  * @return string|null
  */
 function get_image_caption_by_url($image_url) {
-    global $wpdb;
-
     // Get attachment ID by URL
     $attachment_id = attachment_url_to_postid($image_url);
     if (!$attachment_id) {
@@ -368,9 +366,9 @@ function render_link_section_li( bool $show_images, string $link_type ):void {
 
         ?>
 <li class="list-item service-link icon-list-item">
-    <span class="li-icon <?php echo $icon_class; ?>"></span>
-    <a href="<?php echo $href; ?>" class="icon-link">
-        <?php the_sub_field('heading'); ?>
+    <span class="li-icon <?php echo esc_attr($icon_class); ?>"></span>
+    <a href="<?php echo esc_url($href); ?>" class="icon-link">
+        <?php echo esc_html(get_sub_field('heading')); ?>
         <span class="list-item-arrow"><?php echo \App\ihh_inline_svg('icons/arrow-right'); ?></span>
     </a>
 </li>
