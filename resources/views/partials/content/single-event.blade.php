@@ -89,22 +89,6 @@
         </div>
         @endif
       </div>
-      <div class="event-body-navigation">
-        <h3>{!! $title !!}</h3>
-        <div class="event-body-navigation-items">
-          <a href="#event-info">{{ pll_e('Event info') }}</a><br>
-          @if($is_event && get_field('description'))
-          <a href="#description">{{ pll_e('Description') }}</a><br>
-          @endif
-          @if($is_event && get_field('streaming'))
-          <a href="#streaming">{{ pll_e('Streaming') }}</a><br>
-          @endif
-          @if($is_event && get_field('program'))
-          <a href="#program">{{ pll_e('Program') }}</a><br>
-          @endif
-        </div>
-
-      </div>
       <div class="clear"></div>
     </div>
     @if($is_event && get_field('event_url'))
