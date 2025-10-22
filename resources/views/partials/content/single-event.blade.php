@@ -27,9 +27,6 @@
         </div>
       @endif
       <div class="event-details">
-        <span class="event-publish-date">
-          <time datetime="{!! get_the_date('c') !!}" itemprop="datePublished">{!! get_the_date() !!}</time>
-        </span>
         <h1>{!! $title !!}</h1>
         <div class="event-short-description">{!! get_field('event_short_description') !!}</div>
         <div class="event-meta">
@@ -37,8 +34,13 @@
             <thead></thead>
             <tbody>
               <tr>
-                <td>{{ pll_e('Ajankohta') }}</td>
-                <td>{!! \App\format_event_date() !!}</td>
+                <td>{{ pll_e('Date') }}</td>
+                <td>{!! \App\format_event_date_only() !!}</td>
+              </tr>
+
+              <tr>
+                <td>{{ pll_e('Time') }}</td>
+                <td>{!! \App\format_event_time_only() !!}</td>
               </tr>
 
               <tr>
@@ -54,56 +56,43 @@
               @endif
             </tbody>
           </table>
+
+          @if(get_field('event_url'))
+            <a class="btn ihh-cta sign-up" href="{!! get_field('event_url') !!}" target="_blank">{{ $event_url_text }}</a>
+          @endif
+
         </div>
       </div>
       <div class="clear"></div>
     </div>
     <div class="event-body">
       <div class="event-body-content">
+        @include('components.activity-banner')
         @if($is_event && get_field('description'))
-        <a name="description"></a>
         <div class="event-description">
           <h2>{{ pll_e('Description') }}</h2>
           {!! get_field('description') !!}
         </div>
         @endif
         @if($is_event && get_field('streaming'))
-        <a name="streaming"></a>
         <div class="event-streaming">
           <h2>{{ pll_e('Streaming') }}</h2>
           {!! get_field('streaming') !!}
         </div>
         @endif
         @if($is_event && get_field('program'))
-        <a name="program"></a>
         <div class="event-program">
           <h2>{{ pll_e('Program') }}</h2>
           {!! get_field('program') !!}
         </div>
         @endif
       </div>
-      <div class="event-body-navigation">
-        <h3>{!! $title !!}</h3>
-        <div class="event-body-navigation-items">
-          <a href="#event-info">{{ pll_e('Event info') }}</a><br>
-          @if($is_event && get_field('description'))
-          <a href="#description">{{ pll_e('Description') }}</a><br>
-          @endif
-          @if($is_event && get_field('streaming'))
-          <a href="#streaming">{{ pll_e('Streaming') }}</a><br>
-          @endif
-          @if($is_event && get_field('program'))
-          <a href="#program">{{ pll_e('Program') }}</a><br>
-          @endif
-        </div>
-
-      </div>
       <div class="clear"></div>
     </div>
     @if($is_event && get_field('event_url'))
     <div class="event-read-more">
       <div class="event-read-more-cta">
-        <a href="{!! get_field('event_url') !!}" class="event-url" target="_blank">{{ $event_url_text }}</a>
+        <a href="{!! get_field('event_url') !!}" class="event-url btn ihh-cta" target="_blank">{{ $event_url_text }}</a>
       </div>
     </div>
     @endif

@@ -169,10 +169,40 @@ function format_event_date() {
     $end   = strtotime( get_field( 'end_time' ) );
 
     if ( ( $end - $start ) >= 1 * DAY_IN_SECONDS ) {
-        return date_i18n( 'D, j M Y, H:i', $start ) . ' - ' . date_i18n( 'D, j M Y, H:i', $end );
+        return date_i18n( 'j M Y H:i', $start ) . ' – ' . date_i18n( 'j M Y H:i', $end );
     }
 
-    return date( 'H:i', $start ) . ' - ' . date_i18n( 'H:i D, j M Y', $end );
+    return date_i18n( 'l j M Y', $start ) . " " .  date( 'H:i', $start ) . ' - ' . date( 'H:i', $end );
+}
+
+/**
+ * Returns event date (or date range).
+ *
+ * @return string
+ */
+function format_event_date_only() {
+    $start = strtotime( get_field( 'start_time' ) );
+    $end   = strtotime( get_field( 'end_time' ) );
+
+    // If the event spans multiple days
+    if ( ( $end - $start ) >= DAY_IN_SECONDS ) {
+        return date_i18n( 'l j M Y', $start ) . ' – ' . date_i18n( 'l j M Y', $end );
+    }
+
+    // Otherwise, just one date
+    return date_i18n( 'l j M Y', $start );
+}
+
+/**
+ * Returns event time range only.
+ *
+ * @return string
+ */
+function format_event_time_only() {
+    $start = strtotime( get_field( 'start_time' ) );
+    $end   = strtotime( get_field( 'end_time' ) );
+
+    return date_i18n( 'H:i', $start ) . ' – ' . date_i18n( 'H:i', $end );
 }
 
 /**
