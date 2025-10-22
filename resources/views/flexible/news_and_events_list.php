@@ -68,7 +68,7 @@
                         $query->the_post();
                         echo \App\template('partials/content/grid');
                     }
-                    wp_reset_query();
+                    wp_reset_postdata();
                 ?>
         </div>
     </div>
@@ -102,7 +102,7 @@
                             $query->the_post();
                             echo \App\template('partials/content/grid');
                         }
-                        wp_reset_query();
+                        wp_reset_postdata();
                     }
                 ?>
         </div>
