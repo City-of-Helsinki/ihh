@@ -67,22 +67,20 @@
     </div>
     <div class="event-body">
       <div class="event-body-content">
+        @include('components.activity-banner')
         @if($is_event && get_field('description'))
-        <a name="description"></a>
         <div class="event-description">
           <h2>{{ pll_e('Description') }}</h2>
           {!! get_field('description') !!}
         </div>
         @endif
         @if($is_event && get_field('streaming'))
-        <a name="streaming"></a>
         <div class="event-streaming">
           <h2>{{ pll_e('Streaming') }}</h2>
           {!! get_field('streaming') !!}
         </div>
         @endif
         @if($is_event && get_field('program'))
-        <a name="program"></a>
         <div class="event-program">
           <h2>{{ pll_e('Program') }}</h2>
           {!! get_field('program') !!}
