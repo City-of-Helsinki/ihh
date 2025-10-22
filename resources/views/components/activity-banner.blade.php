@@ -12,11 +12,6 @@
   $banner_title     = isset($banner['title']) ? $banner['title'] : '';
   $banner_text_body = isset($banner['text_body']) ? $banner['text_body'] : '';
 
-  $id_name = !empty($banner['title']) ? $banner['title'] : (isset($banner['text_body']) ? $banner['text_body'] : '');
-  $id_name = sanitize_title( wp_strip_all_tags( $id_name ) );
-  $id_name = substr($id_name, 0, 12);
-  $img_id  = 'img_' . $id_name;
-
   // Banner settings
   $settings = isset($banner['banner_settings']) ? $banner['banner_settings'] : [];
   $settings = is_array($settings) ? $settings : [];
@@ -30,7 +25,7 @@
 ?>
 
 <div class="banner-container" style="color: <?php echo esc_attr($banner_text_color); ?>; background-color: <?php echo esc_attr($banner_bg_color); ?>;">
-  <div id="<?php echo esc_attr($id_name); ?>" class="lift-100-wide lift-100-wide-drop lift-100-wide-- w-100 h-100 my-5" >
+  <div class="lift-100-wide lift-100-wide-drop lift-100-wide-- w-100 h-100 my-5" >
     <?php if( !$banner_img_only ):?>
       <div class="banner-shape" style="background-image: url('<?php echo esc_url($banner_bg_image); ?>');"></div>
         <div class="row position-relative">
