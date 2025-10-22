@@ -19,7 +19,7 @@
                 "layout_62a7239c15056": {
                     "key": "layout_62a7239c15056",
                     "name": "lift-100-wide",
-                    "label": "100% wide element with background image and text",
+                    "label": "Image and text box",
                     "display": "block",
                     "sub_fields": [
                         {
@@ -184,6 +184,44 @@
                                     "maxlength": ""
                                 }
                             ]
+                        },
+                        {
+                            "key": "field_68f2087e159ea",
+                            "label": "Show image caption",
+                            "name": "show_image_caption",
+                            "type": "true_false",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "message": "",
+                            "default_value": 0,
+                            "ui": 1,
+                            "ui_on_text": "Yes",
+                            "ui_off_text": "No"
+                        },
+                        {
+                            "key": "field_68f208e1159eb",
+                            "label": "Text overlay",
+                            "name": "text_overlay",
+                            "type": "true_false",
+                            "instructions": "Choose whether the text should overlay the image or appear beside it.",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "message": "",
+                            "default_value": 1,
+                            "ui": 1,
+                            "ui_on_text": "Overlay",
+                            "ui_off_text": "Side by side"
                         }
                     ],
                     "min": "",
@@ -897,7 +935,7 @@
                 "layout_62c815c0e999b": {
                     "key": "layout_62c815c0e999b",
                     "name": "editor_container",
-                    "label": "Editor container",
+                    "label": "Text Editor Block",
                     "display": "block",
                     "sub_fields": [
                         {
@@ -949,40 +987,13 @@
                             "maxlength": ""
                         },
                         {
-                            "key": "field_62fdfb6644db1",
-                            "label": "List latests News and Events",
-                            "name": "list_latests_news_and_events",
-                            "type": "true_false",
-                            "instructions": "",
-                            "required": 0,
-                            "conditional_logic": 0,
-                            "wrapper": {
-                                "width": "",
-                                "class": "",
-                                "id": ""
-                            },
-                            "message": "",
-                            "default_value": 0,
-                            "ui": 1,
-                            "ui_on_text": "On",
-                            "ui_off_text": "Off"
-                        },
-                        {
                             "key": "field_646b538f1e8f9",
                             "label": "List latests news",
                             "name": "list_latests_news",
                             "type": "true_false",
                             "instructions": "",
                             "required": 0,
-                            "conditional_logic": [
-                                [
-                                    {
-                                        "field": "field_62fdfb6644db1",
-                                        "operator": "!=",
-                                        "value": "1"
-                                    }
-                                ]
-                            ],
+                            "conditional_logic": 0,
                             "wrapper": {
                                 "width": "",
                                 "class": "",
@@ -1001,15 +1012,7 @@
                             "type": "true_false",
                             "instructions": "",
                             "required": 0,
-                            "conditional_logic": [
-                                [
-                                    {
-                                        "field": "field_62fdfb6644db1",
-                                        "operator": "!=",
-                                        "value": "1"
-                                    }
-                                ]
-                            ],
+                            "conditional_logic": 0,
                             "wrapper": {
                                 "width": "",
                                 "class": "",
@@ -1344,14 +1347,14 @@
                 "layout_652e464c69875": {
                     "key": "layout_652e464c69875",
                     "name": "faq",
-                    "label": "FAQ",
+                    "label": "Accordion",
                     "display": "block",
                     "sub_fields": [
                         {
                             "key": "field_652e46cc69876",
                             "label": "Section heading",
                             "name": "section_heading",
-                            "type": "text",
+                            "type": "wysiwyg",
                             "instructions": "",
                             "required": 0,
                             "conditional_logic": 0,
@@ -1361,14 +1364,14 @@
                                 "id": ""
                             },
                             "default_value": "",
-                            "placeholder": "",
-                            "prepend": "",
-                            "append": "",
-                            "maxlength": ""
+                            "tabs": "all",
+                            "toolbar": "full",
+                            "media_upload": 0,
+                            "delay": 0
                         },
                         {
                             "key": "field_652e46d569877",
-                            "label": "FAQ accordion",
+                            "label": "Accordion",
                             "name": "faq_accordion",
                             "type": "repeater",
                             "instructions": "",
@@ -1387,7 +1390,7 @@
                             "sub_fields": [
                                 {
                                     "key": "field_652e46f269878",
-                                    "label": "Question",
+                                    "label": "Header",
                                     "name": "question",
                                     "type": "text",
                                     "instructions": "",
@@ -1406,7 +1409,7 @@
                                 },
                                 {
                                     "key": "field_652e46fd69879",
-                                    "label": "Answer",
+                                    "label": "Text",
                                     "name": "answer",
                                     "type": "wysiwyg",
                                     "instructions": "",
@@ -1484,5 +1487,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1760518862
+    "modified": 1760692734
 }

@@ -165,26 +165,6 @@ Container::getInstance()
              ] );
          }, true );
 
-
-function customize_acf_admin_head() {
-    // .wp-tags-inline is a custom css class (set in acf settings)
-?>
-<style type="text/css">
-.wp-tags-inline .acf-checkbox-list ul {
-    display: flex;
-}
-
-.wp-tags-inline .acf-checkbox-list label span {
-    display: inline-flex;
-    vertical-align: middle;
-    margin-right: 1rem;
-}
-</style>
-<?php
-}
-add_action('acf/input/admin_head', 'customize_acf_admin_head');
-
-
 function flattenArray(array $array) {
     $return = array();
     array_walk_recursive($array, function($a) use (&$return) {

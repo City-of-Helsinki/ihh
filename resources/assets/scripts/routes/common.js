@@ -25,6 +25,7 @@ export default {
       });
 
       detectExternalLinks('.main a');
+      detectInternalLinks('.highlighted-content a');
       createAnchorlinks('.anchorlink-navigation', '#main h2');
 
       window.CXBus.configure({
@@ -45,6 +46,46 @@ export default {
           });
         }, 1000);
       }
+
+      // START ACCORDION SCROLL
+      // Code for smooth scrolling to accordion header after closing
+      // Responsive offset for accordion scroll
+      function getAccordionOffset() {
+        const header = document.querySelector('.main-nav-container');
+        const headerHeight = Math.ceil(header.getBoundingClientRect().height);
+        const margin = 10;
+        const ww = window.innerWidth;
+        return ww < 1110 ? margin : headerHeight + margin;
+      }
+
+      // Mark the panel when it is being closed by Close button
+      // This is needed to differentiate between header click and Close button click
+      $('.faqs-container').on('click', '.faq-answer-close-button', function () {
+        const targetSel = $(this).attr('data-target') || $(this).attr('href');
+        if (!targetSel) return;
+        const $panel = $(targetSel);
+        $panel.data('closeClicked', true);
+      });
+
+      // Code for scrolling
+      $('.faqs-container').on('hide.bs.collapse', function (e) {
+        const $panel = $(e.target);
+
+        // If "closeClicked" flag is not set → no scroll (e.g. header click)
+        if (!$panel.data('closeClicked')) return;
+
+        // Remove flag
+        $panel.removeData('closeClicked');
+
+        // Get closest header
+        const $header = $panel.closest('.question').find('.question-header').first();
+        if (!$header.length) return;
+
+        // Scroll to header with offset
+        const y = Math.max(0, $header.offset().top - getAccordionOffset());
+        $('html, body').stop(true).animate({ scrollTop: y }, 250);
+      });
+      // END ACCORDION SCROLL
     });
 
     function createAnchorlinks(navigationEl, anchorTargetEl) {
@@ -56,21 +97,6 @@ export default {
 
       if (headings && anchorNavigation) {
         let ul = document.createElement('ul');
-
-        /* Relocate anchorlink container if position_at_top */
-        const anchorlinksAtTop = document.querySelector('.anchorlink-container.position_at_top');
-
-        if (anchorlinksAtTop) {
-          const articleBlock = document.querySelector('.content-block');
-          const h1 = articleBlock.querySelectorAll('h1');
-          const ingress = articleBlock.querySelector('p.ingress');
-
-          if (ingress) {
-            jQuery('.anchorlink-container').insertAfter(ingress);
-          } else if (h1) {
-            jQuery('.anchorlink-container').insertAfter(h1[0]);
-          }
-        }
 
         for (let i = 0; i < headings.length; i++) {
           const headingInnerText = headings[i].innerText;
@@ -189,57 +215,41 @@ export default {
       }
     }
 
-    function filterAccordions(elements) {
-      const buttons = document.querySelectorAll(elements);
+    /**
+     * Finds internal links within the specified selector and adds an arrow icon and class to them.
+     *
+     * @param {string} selector
+     */
+    function detectInternalLinks(selector) {
+      const currentHost = window.location.host;
+      const links = document.querySelectorAll(selector);
 
-      buttons.forEach((button) => {
-        button.addEventListener('click', () => {
-          const targetTagId = button.dataset.tagid;
-          const isSelected = button.classList.contains('selected');
-          const parent = button.closest('.ihh-accordion');
-          const accordions = parent.querySelectorAll('[data-tags]');
+      links.forEach((link) => {
+        const href = link.getAttribute('href');
 
-          accordions.forEach((item) => {
-            const itemTags = item.dataset.tags;
-            const itemLI = item.closest('li');
+        // Bypass invalid hrefs
+        if (!href || href.startsWith('#') || href.startsWith('javascript:')) return;
 
-            if (isSelected) {
-              jQuery(itemLI).fadeIn('fast');
-            } else {
-              itemTags.includes(targetTagId)
-                ? jQuery(itemLI).fadeIn('fast')
-                : jQuery(itemLI).fadeOut('fast');
-            }
-          });
+        // Create URL safely (handles relative links)
+        const url = new URL(href, window.location.origin);
 
-          if (isSelected) {
-            button.classList.remove('selected');
-            button.setAttribute('aria-pressed', 'false');
-          } else {
-            parent.querySelectorAll('.accordion-filters button').forEach((btn) => {
-              btn.classList.remove('selected');
-              btn.setAttribute('aria-pressed', 'false');
-            });
+        // Check if the link is internal
+        const isInternal = url.host === currentHost;
 
-            button.classList.add('selected');
-            button.setAttribute('aria-pressed', 'true');
+        if (isInternal) {
+          const svgArrow45 = '<span class="inline-svg">' + ARROW_SVG_RIGHT + '</span>';
+          const inlineSVG = link.querySelector('.inline-svg');
+
+          // Add the SVG icon if not already present
+          if (inlineSVG === null) {
+            jQuery(link).prepend(svgArrow45);
           }
 
-          // After filtering accordion list, focus first item
-          setTimeout(() => {
-            const visibleFilteredAccordion = parent.querySelectorAll(
-              '.accordion-with-description--accordions li:not([style="display: none;"])'
-            );
-            const firstItem = visibleFilteredAccordion[0].querySelector('.question-header');
-
-            if (firstItem) {
-              firstItem.focus();
-            }
-          }, 400);
-        });
+          // Add internal-link class
+          link.classList.add('internal-link');
+        }
       });
     }
-    filterAccordions('.accordion-filters button');
   },
   finalize() {},
 };
