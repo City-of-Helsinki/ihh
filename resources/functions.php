@@ -243,3 +243,204 @@ add_action('wp_head', function() {
         echo $header_code;
     }
 });
+
+
+
+
+
+
+
+
+/*
+
+
+function ihh_acf_get_field_by_name(string $name) {
+    if (!function_exists('acf_get_field')) return null;
+    $f = acf_get_field($name);
+    return is_array($f) ? $f : null;
+}
+
+function ihh_acf_flex_layout_maps(array $flexField): array {
+    $out = [];
+    if (empty($flexField['layouts']) || !is_array($flexField['layouts'])) return $out;
+
+    foreach ($flexField['layouts'] as $layout) {
+        if (empty($layout['name'])) continue;
+
+        $by_name = [];
+        $by_key  = [];
+        foreach (($layout['sub_fields'] ?? []) as $sf) {
+            if (!empty($sf['name'])) $by_name[$sf['name']] = $sf;
+            if (!empty($sf['key']))  $by_key[$sf['key']]   = $sf;
+        }
+
+        $out[$layout['name']] = [
+            'layout'   => $layout,
+            'by_name'  => $by_name,
+            'by_key'   => $by_key,
+        ];
+    }
+    return $out;
+}
+
+
+function ihh_acf_map_value_by_field(array $srcField, array $dstField, $value) {
+    // Sama tyyppi? Muuten palautetaan sellaisenaan (ACF usein handlaa kun nimet/tyypit täsmäävät).
+    $type = $dstField['type'] ?? $srcField['type'] ?? null;
+
+    if ($type === 'group' && is_array($value)) {
+        // Mapataan groupin alikentät key->key nimen perusteella
+        $srcSubsByKey  = [];
+        foreach (($srcField['sub_fields'] ?? []) as $sf) {
+            if (!empty($sf['key'])) $srcSubsByKey[$sf['key']] = $sf;
+        }
+        $dstSubsByName = [];
+        $dstSubsByKey  = [];
+        foreach (($dstField['sub_fields'] ?? []) as $sf) {
+            if (!empty($sf['name'])) $dstSubsByName[$sf['name']] = $sf;
+            if (!empty($sf['key']))  $dstSubsByKey[$sf['key']]   = $sf;
+        }
+
+        $mapped = [];
+        foreach ($value as $srcKey => $subVal) {
+            if (!isset($srcSubsByKey[$srcKey])) {
+                // tuntematon avain -> säilytä varmuuden vuoksi
+                $mapped[$srcKey] = $subVal;
+                continue;
+            }
+            $srcSub = $srcSubsByKey[$srcKey];
+            $name   = $srcSub['name'] ?? null;
+            if (!$name || !isset($dstSubsByName[$name])) {
+                // ei vastaavaa kohteessa -> säilytä
+                $mapped[$srcKey] = $subVal;
+                continue;
+            }
+            $dstSub = $dstSubsByName[$name];
+            $dstKey = $dstSub['key'];
+
+            $mapped[$dstKey] = ihh_acf_map_value_by_field($srcSub, $dstSub, $subVal);
+        }
+        return $mapped;
+    }
+
+    if ($type === 'repeater' && is_array($value)) {
+        // Repeater: $value on rivilista; kukin rivi on array keyed by src subfield keys
+        $srcSubsByKey = [];
+        foreach (($srcField['sub_fields'] ?? []) as $sf) {
+            if (!empty($sf['key'])) $srcSubsByKey[$sf['key']] = $sf;
+        }
+        $dstSubsByName = [];
+        foreach (($dstField['sub_fields'] ?? []) as $sf) {
+            if (!empty($sf['name'])) $dstSubsByName[$sf['name']] = $sf;
+        }
+
+        $rows = [];
+        foreach ($value as $row) {
+            if (!is_array($row)) { $rows[] = $row; continue; }
+
+            $mappedRow = [];
+            foreach ($row as $srcKey => $subVal) {
+                if (!isset($srcSubsByKey[$srcKey])) {
+                    $mappedRow[$srcKey] = $subVal;
+                    continue;
+                }
+                $srcSub = $srcSubsByKey[$srcKey];
+                $name   = $srcSub['name'] ?? null;
+                if (!$name || !isset($dstSubsByName[$name])) {
+                    $mappedRow[$srcKey] = $subVal;
+                    continue;
+                }
+                $dstSub = $dstSubsByName[$name];
+                $dstKey = $dstSub['key'];
+
+                $mappedRow[$dstKey] = ihh_acf_map_value_by_field($srcSub, $dstSub, $subVal);
+            }
+            $rows[] = $mappedRow;
+        }
+        return $rows;
+    }
+
+    // Default: palauta arvo sellaisenaan
+    return $value;
+}
+
+
+function ihh_acf_remap_flexible_rows(array $rows, array $srcFlexDef, array $dstFlexDef): array {
+    $srcLayouts = ihh_acf_flex_layout_maps($srcFlexDef);
+    $dstLayouts = ihh_acf_flex_layout_maps($dstFlexDef);
+
+    $out = [];
+    foreach ($rows as $row) {
+        if (!is_array($row) || empty($row['acf_fc_layout'])) {
+            $out[] = $row;
+            continue;
+        }
+        $layout = $row['acf_fc_layout'];
+        $outRow = ['acf_fc_layout' => $layout];
+
+        $srcL = $srcLayouts[$layout] ?? null;
+        $dstL = $dstLayouts[$layout] ?? null;
+        if (!$srcL || !$dstL) {
+            // Layout puuttuu jommasta kummasta — kopioi sellaisenaan
+            $out[] = $row;
+            continue;
+        }
+
+        // Rivi on keyed by *source* field keys -> mapataan kohteen keyt
+        foreach ($row as $k => $v) {
+            if ($k === 'acf_fc_layout') continue;
+
+            // Etsi src-subfield keyllä
+            $srcSub = $srcL['by_key'][$k] ?? null;
+            if (!$srcSub) {
+                $outRow[$k] = $v;
+                continue;
+            }
+
+            $name = $srcSub['name'] ?? null;
+            if (!$name || !isset($dstL['by_name'][$name])) {
+                $outRow[$k] = $v;
+                continue;
+            }
+
+            $dstSub = $dstL['by_name'][$name];
+            $dstKey = $dstSub['key'];
+
+            // Rekursiivinen map group/repeaterille
+            $outRow[$dstKey] = ihh_acf_map_value_by_field($srcSub, $dstSub, $v);
+        }
+
+        $out[] = $outRow;
+    }
+
+    return $out;
+}
+
+
+add_filter('acf/load_value/name=lift_100_wide', function ($value, $post_id, $field) {
+    if (!empty($value)) {
+        return $value; // uutta dataa on jo
+    }
+
+    // Hae RAaka arvo lähteestä (keyt = source-keyt)
+    $srcRows = get_field('components', $post_id, false);
+    if (empty($srcRows) || !is_array($srcRows)) {
+        return $value;
+    }
+
+    // Hae field-määrittelyt (rakenne) molemmille
+    $srcFlex = ihh_acf_get_field_by_name('components');
+    $dstFlex = ihh_acf_get_field_by_name('lift_100_wide');
+
+    if (!$srcFlex || !$dstFlex) {
+        // Ei määrittelyjä saatavilla – palauta edes jotain
+        return $srcRows;
+    }
+
+    // Remappaa lähteen keyt -> kohteen keyt nimen perusteella (myös repeater/group rekursiivisesti)
+    $remapped = ihh_acf_remap_flexible_rows($srcRows, $srcFlex, $dstFlex);
+
+    return $remapped;
+}, 10, 3);
+
+*/

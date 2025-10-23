@@ -68,10 +68,6 @@ class App extends Controller {
         return get_the_title();
     }
 
-    public static function service_status(){
-        return IHH\fetch_service_status();
-    }
-
     public static function get_category(){
         if (function_exists('yoast_get_primary_term')){
             $cat = 'category';
