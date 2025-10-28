@@ -156,6 +156,7 @@
                             "max": 0,
                             "layout": "table",
                             "button_label": "Lisää rivi",
+                            "rows_per_page": 20,
                             "sub_fields": [
                                 {
                                     "key": "field_67613dcdaf4d9",
@@ -199,8 +200,7 @@
                                     "maxlength": "",
                                     "parent_repeater": "field_67613dcd92c1e"
                                 }
-                            ],
-                            "rows_per_page": 20
+                            ]
                         },
                         {
                             "key": "field_68f209c1ed1ca",
@@ -436,6 +436,7 @@
                             "max": 0,
                             "layout": "table",
                             "button_label": "Lisää rivi",
+                            "rows_per_page": 20,
                             "sub_fields": [
                                 {
                                     "key": "field_67613dcdd6e22",
@@ -479,8 +480,7 @@
                                     "maxlength": "",
                                     "parent_repeater": "field_67613dcd94f46"
                                 }
-                            ],
-                            "rows_per_page": 20
+                            ]
                         },
                         {
                             "key": "field_67613dcd95330",
@@ -501,6 +501,7 @@
                             "max": 0,
                             "layout": "table",
                             "button_label": "Lisää rivi",
+                            "rows_per_page": 20,
                             "sub_fields": [
                                 {
                                     "key": "field_67613dcde448a",
@@ -565,8 +566,7 @@
                                     "maxlength": "",
                                     "parent_repeater": "field_67613dcd95330"
                                 }
-                            ],
-                            "rows_per_page": 20
+                            ]
                         },
                         {
                             "key": "field_67613dcd9571d",
@@ -694,6 +694,7 @@
                             "max": 0,
                             "layout": "block",
                             "button_label": "Lisää rivi",
+                            "rows_per_page": 20,
                             "sub_fields": [
                                 {
                                     "key": "field_67613dce0eb08",
@@ -865,8 +866,7 @@
                                     "save_options": 0,
                                     "parent_repeater": "field_67613dcd966b4"
                                 }
-                            ],
-                            "rows_per_page": 20
+                            ]
                         }
                     ],
                     "min": "",
@@ -954,6 +954,7 @@
                             "max": 0,
                             "layout": "table",
                             "button_label": "Lisää rivi",
+                            "rows_per_page": 20,
                             "sub_fields": [
                                 {
                                     "key": "field_67613dce343fe",
@@ -997,8 +998,7 @@
                                     "maxlength": "",
                                     "parent_repeater": "field_67613dcd97655"
                                 }
-                            ],
-                            "rows_per_page": 20
+                            ]
                         }
                     ],
                     "min": "",
@@ -1150,6 +1150,7 @@
                             "max": 2,
                             "layout": "row",
                             "button_label": "Add Contact",
+                            "rows_per_page": 20,
                             "sub_fields": [
                                 {
                                     "key": "field_67613dce55394",
@@ -1258,6 +1259,8 @@
                                     "max": 0,
                                     "layout": "table",
                                     "button_label": "Lisää rivi",
+                                    "rows_per_page": 20,
+                                    "parent_repeater": "field_67613dcd991b4",
                                     "sub_fields": [
                                         {
                                             "key": "field_67613dce6712b",
@@ -1301,9 +1304,7 @@
                                             "maxlength": "",
                                             "parent_repeater": "field_67613dce56362"
                                         }
-                                    ],
-                                    "rows_per_page": 20,
-                                    "parent_repeater": "field_67613dcd991b4"
+                                    ]
                                 },
                                 {
                                     "key": "field_67613dce56748",
@@ -1324,6 +1325,8 @@
                                     "max": 0,
                                     "layout": "table",
                                     "button_label": "Add opening time",
+                                    "rows_per_page": 20,
+                                    "parent_repeater": "field_67613dcd991b4",
                                     "sub_fields": [
                                         {
                                             "key": "field_67613dce747f8",
@@ -1388,9 +1391,7 @@
                                             "maxlength": "",
                                             "parent_repeater": "field_67613dce56748"
                                         }
-                                    ],
-                                    "rows_per_page": 20,
-                                    "parent_repeater": "field_67613dcd991b4"
+                                    ]
                                 },
                                 {
                                     "key": "field_67613dce56b35",
@@ -1413,8 +1414,7 @@
                                     "ui_off_text": "",
                                     "parent_repeater": "field_67613dcd991b4"
                                 }
-                            ],
-                            "rows_per_page": 20
+                            ]
                         }
                     ],
                     "min": "",
@@ -1495,6 +1495,7 @@
                             "max": 0,
                             "layout": "block",
                             "button_label": "Lisää rivi",
+                            "rows_per_page": 20,
                             "sub_fields": [
                                 {
                                     "key": "field_67613dce93008",
@@ -1538,8 +1539,7 @@
                                     "delay": 0,
                                     "parent_repeater": "field_67613dcd99d67"
                                 }
-                            ],
-                            "rows_per_page": 20
+                            ]
                         },
                         {
                             "key": "field_67613dcd9a14d",
@@ -1611,6 +1611,7 @@
                             "max": 0,
                             "layout": "block",
                             "button_label": "Lisää rivi",
+                            "rows_per_page": 20,
                             "sub_fields": [
                                 {
                                     "key": "field_67856ec2913a7",
@@ -1673,6 +1674,8 @@
                                     "max": 0,
                                     "layout": "block",
                                     "button_label": "Lisää rivi",
+                                    "rows_per_page": 20,
+                                    "parent_repeater": "field_67856ec2913a6",
                                     "sub_fields": [
                                         {
                                             "key": "field_6799b3486db97",
@@ -1714,6 +1717,8 @@
                                             "max": 0,
                                             "layout": "block",
                                             "button_label": "Lisää rivi",
+                                            "rows_per_page": 20,
+                                            "parent_repeater": "field_6799b3276db96",
                                             "sub_fields": [
                                                 {
                                                     "key": "field_6799b3776db99",
@@ -1753,16 +1758,11 @@
                                                     "maxlength": "",
                                                     "parent_repeater": "field_6799b35d6db98"
                                                 }
-                                            ],
-                                            "rows_per_page": 20,
-                                            "parent_repeater": "field_6799b3276db96"
+                                            ]
                                         }
-                                    ],
-                                    "rows_per_page": 20,
-                                    "parent_repeater": "field_67856ec2913a6"
+                                    ]
                                 }
-                            ],
-                            "rows_per_page": 20
+                            ]
                         },
                         {
                             "key": "field_67856ec2913a9",
@@ -1868,6 +1868,7 @@
                             "max": 0,
                             "layout": "block",
                             "button_label": "Lisää rivi",
+                            "rows_per_page": 20,
                             "sub_fields": [
                                 {
                                     "key": "field_67bc162df7f99",
@@ -1908,8 +1909,7 @@
                                     "show_color_wheel": true,
                                     "parent_repeater": "field_67bc160ff7f97"
                                 }
-                            ],
-                            "rows_per_page": 20
+                            ]
                         }
                     ],
                     "min": "",
@@ -1924,39 +1924,14 @@
     "location": [
         [
             {
-                "param": "post_template",
-                "operator": "!=",
-                "value": "default"
+                "param": "post_type",
+                "operator": "==",
+                "value": "page"
             },
             {
-                "param": "post_template",
+                "param": "post_type",
                 "operator": "!=",
-                "value": "views\/template-checklist.blade.php"
-            },
-            {
-                "param": "post_template",
-                "operator": "!=",
-                "value": "views\/template-events.blade.php"
-            },
-            {
-                "param": "post_template",
-                "operator": "!=",
-                "value": "views\/template-faq.blade.php"
-            },
-            {
-                "param": "post_template",
-                "operator": "!=",
-                "value": "views\/template-newsletters.blade.php"
-            },
-            {
-                "param": "post_template",
-                "operator": "!=",
-                "value": "views\/template-redirection.blade.php"
-            },
-            {
-                "param": "post_template",
-                "operator": "!=",
-                "value": "views\/template-search.blade.php"
+                "value": "page"
             }
         ]
     ],
@@ -1970,5 +1945,5 @@
     "description": "",
     "show_in_rest": 0,
     "display_title": "",
-    "modified": 1761191872
+    "modified": 1761289644
 }

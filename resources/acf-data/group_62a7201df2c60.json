@@ -1,6 +1,6 @@
 {
     "key": "group_62a7201df2c60",
-    "title": "Flexible components",
+    "title": "Blocks",
     "fields": [
         {
             "key": "field_62a723820c08a",
@@ -8,7 +8,7 @@
             "name": "lift_100_wide",
             "aria-label": "",
             "type": "flexible_content",
-            "instructions": "Featured items for the frontpage",
+            "instructions": "",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -1260,6 +1260,7 @@
                                     "layout": "table",
                                     "button_label": "Lisää rivi",
                                     "rows_per_page": 20,
+                                    "parent_repeater": "field_62e13d6bd8961",
                                     "sub_fields": [
                                         {
                                             "key": "field_646f24bc8ddb3",
@@ -1303,8 +1304,7 @@
                                             "maxlength": "",
                                             "parent_repeater": "field_646f24a38ddb2"
                                         }
-                                    ],
-                                    "parent_repeater": "field_62e13d6bd8961"
+                                    ]
                                 },
                                 {
                                     "key": "field_62e13c246b5e7",
@@ -1326,6 +1326,7 @@
                                     "layout": "table",
                                     "button_label": "Add opening time",
                                     "rows_per_page": 20,
+                                    "parent_repeater": "field_62e13d6bd8961",
                                     "sub_fields": [
                                         {
                                             "key": "field_62e13c246b5e8",
@@ -1390,8 +1391,7 @@
                                             "maxlength": "",
                                             "parent_repeater": "field_62e13c246b5e7"
                                         }
-                                    ],
-                                    "parent_repeater": "field_62e13d6bd8961"
+                                    ]
                                 },
                                 {
                                     "key": "field_63120e06c336c",
@@ -1804,6 +1804,7 @@
                                     "layout": "table",
                                     "button_label": "Lisää rivi",
                                     "rows_per_page": 20,
+                                    "parent_repeater": "field_62a9ce321a276",
                                     "sub_fields": [
                                         {
                                             "key": "field_646df1caec4f4",
@@ -1847,8 +1848,7 @@
                                             "maxlength": "",
                                             "parent_repeater": "field_646def81ec4f3"
                                         }
-                                    ],
-                                    "parent_repeater": "field_62a9ce321a276"
+                                    ]
                                 },
                                 {
                                     "key": "field_663b81cf4e279",
@@ -2597,6 +2597,7 @@
                                     "layout": "block",
                                     "button_label": "Lisää rivi",
                                     "rows_per_page": 20,
+                                    "parent_repeater": "field_67856ec2913a6",
                                     "sub_fields": [
                                         {
                                             "key": "field_6799b3486db97",
@@ -2639,6 +2640,7 @@
                                             "layout": "block",
                                             "button_label": "Lisää rivi",
                                             "rows_per_page": 20,
+                                            "parent_repeater": "field_6799b3276db96",
                                             "sub_fields": [
                                                 {
                                                     "key": "field_6799b3776db99",
@@ -2678,11 +2680,9 @@
                                                     "maxlength": "",
                                                     "parent_repeater": "field_6799b35d6db98"
                                                 }
-                                            ],
-                                            "parent_repeater": "field_6799b3276db96"
+                                            ]
                                         }
-                                    ],
-                                    "parent_repeater": "field_67856ec2913a6"
+                                    ]
                                 }
                             ]
                         },
@@ -2782,11 +2782,107 @@
                     ],
                     "min": "",
                     "max": ""
+                },
+                "layout_6900610bfebc9": {
+                    "key": "layout_6900610bfebc9",
+                    "name": "video_and_text",
+                    "label": "Video and text",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_69006126febcb",
+                            "label": "Body text",
+                            "name": "body_text",
+                            "aria-label": "",
+                            "type": "textarea",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "maxlength": "",
+                            "allow_in_bindings": 1,
+                            "rows": 4,
+                            "placeholder": "",
+                            "new_lines": ""
+                        },
+                        {
+                            "key": "field_690062a9febcc",
+                            "label": "Image",
+                            "name": "image",
+                            "aria-label": "",
+                            "type": "image",
+                            "instructions": "",
+                            "required": 1,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "return_format": "array",
+                            "library": "all",
+                            "min_width": "",
+                            "min_height": "",
+                            "min_size": "",
+                            "max_width": "",
+                            "max_height": "",
+                            "max_size": "",
+                            "mime_types": "",
+                            "allow_in_bindings": 1,
+                            "preview_size": "medium"
+                        },
+                        {
+                            "key": "field_690062d2febcd",
+                            "label": "Video link",
+                            "name": "video_link",
+                            "aria-label": "",
+                            "type": "url",
+                            "instructions": "",
+                            "required": 1,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "allow_in_bindings": 1,
+                            "placeholder": ""
+                        },
+                        {
+                            "key": "field_690062ebfebce",
+                            "label": "Show play button",
+                            "name": "show_play_button",
+                            "aria-label": "",
+                            "type": "true_false",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "message": "",
+                            "default_value": 0,
+                            "allow_in_bindings": 0,
+                            "ui_on_text": "Show",
+                            "ui_off_text": "Hide",
+                            "ui": 1
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
                 }
             },
-            "button_label": "Add Block",
             "min": "",
-            "max": ""
+            "max": "",
+            "button_label": "Add Block"
         }
     ],
     "location": [
@@ -2829,5 +2925,5 @@
     "description": "",
     "show_in_rest": 0,
     "display_title": "",
-    "modified": 1761191606
+    "modified": 1761634444
 }

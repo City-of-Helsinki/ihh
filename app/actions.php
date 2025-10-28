@@ -32,7 +32,7 @@ function create_meta_query( \WP_Query $query ) {
                 'value'   => '',
             ],
         ],
-        
+
     ];
 
     return $meta_query;
@@ -113,7 +113,7 @@ add_action( 'wp_head', function () {
         $post_obj = get_redirection_page_object();
         $post_id = $post_obj->ID;
     }
-    
+
     if (have_rows($field, $post_id) ){
         while(have_rows($field, $post_id)){
             the_row();
