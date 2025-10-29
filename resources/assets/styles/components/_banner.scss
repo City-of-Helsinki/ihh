@@ -1,0 +1,29 @@
+.banner {
+  background-color: #f7a091;
+  padding: 3rem 0;
+
+  .content {
+    text-align: left;
+    max-width: 600px;
+    margin: auto;
+
+    h2 {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+    }
+
+    p,
+    a {
+      color: black !important;
+
+      svg {
+        fill: black;
+      }
+    }
+
+    .cta-wrapper {
+      margin-top: 2rem;
+      text-align: center;
+    }
+  }
+}
