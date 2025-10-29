@@ -248,6 +248,29 @@ add_action('wp_head', function() {
 
 
 
+/**
+ * Set custom background color for the Events page.
+ *
+ * Applies inline <style> in the <head> if the current page
+ * uses the custom archive template: views/template-events.blade.php.
+ */
+add_action('wp_head', function () {
+    $id = get_queried_object_id();
+
+    if (is_page() && get_page_template_slug($id) === 'views/template-events.blade.php') {
+
+        $color = get_field('events_page_background_color', $id);
+
+        if ($color) {
+            echo '<style>
+                body { background-color: ' . esc_attr($color) . '; }
+            </style>';
+        }
+    }
+});
+
+
+
 
 
 

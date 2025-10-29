@@ -12,7 +12,7 @@
 
 @if(have_rows('testimonial'))
   @while(have_rows('testimonial')) @php the_row() @endphp
-  <section class="testimonials">
+  <section class="testimonials ihhce">
     <div class="container">
       @php $testimonialDescription = trim(get_sub_field('description')); @endphp
 

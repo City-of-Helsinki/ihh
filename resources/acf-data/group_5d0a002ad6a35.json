@@ -6,6 +6,7 @@
             "key": "field_5d0a1cf593531",
             "label": "Start time",
             "name": "start_time",
+            "aria-label": "",
             "type": "date_time_picker",
             "instructions": "",
             "required": 1,
@@ -17,12 +18,14 @@
             },
             "display_format": "j.m.Y H:i",
             "return_format": "Y-m-d H:i:s",
-            "first_day": 1
+            "first_day": 1,
+            "default_to_current_date": 0
         },
         {
             "key": "field_5d0a1dba3d4ff",
             "label": "End time",
             "name": "end_time",
+            "aria-label": "",
             "type": "date_time_picker",
             "instructions": "",
             "required": 1,
@@ -34,15 +37,47 @@
             },
             "display_format": "j.m.Y H:i",
             "return_format": "Y-m-d H:i:s",
-            "first_day": 1
+            "first_day": 1,
+            "default_to_current_date": 0
+        },
+        {
+            "key": "field_69010caeaab3f",
+            "label": "Event type",
+            "name": "event_type",
+            "aria-label": "",
+            "type": "select",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "Online": "Online",
+                "In person": "In person",
+                "Hybrid": "Hybrid"
+            },
+            "default_value": "Online",
+            "return_format": "value",
+            "multiple": 0,
+            "allow_null": 0,
+            "allow_in_bindings": 0,
+            "ui": 0,
+            "ajax": 0,
+            "placeholder": "",
+            "create_options": 0,
+            "save_options": 0
         },
         {
             "key": "field_5d0a1e97e4b50",
             "label": "Location",
             "name": "location",
+            "aria-label": "",
             "type": "text",
             "instructions": "",
-            "required": 1,
+            "required": 0,
             "conditional_logic": 0,
             "wrapper": {
                 "width": "",
@@ -50,15 +85,17 @@
                 "id": ""
             },
             "default_value": "",
+            "maxlength": "",
+            "allow_in_bindings": 0,
             "placeholder": "Mannerheiminkatu 10 C 2, 00100, Helsinki",
             "prepend": "",
-            "append": "",
-            "maxlength": ""
+            "append": ""
         },
         {
             "key": "field_5d0a1eb9e4b51",
             "label": "Attachment",
             "name": "attachment",
+            "aria-label": "",
             "type": "file",
             "instructions": "",
             "required": 0,
@@ -78,6 +115,7 @@
             "key": "field_5d0a1ecce4b52",
             "label": "Event url",
             "name": "event_url",
+            "aria-label": "",
             "type": "url",
             "instructions": "",
             "required": 0,
@@ -94,6 +132,7 @@
             "key": "field_5da9a49795ecc",
             "label": "Attachment Text",
             "name": "attachment_text",
+            "aria-label": "",
             "type": "text",
             "instructions": "Text for the attachment button",
             "required": 0,
@@ -113,6 +152,7 @@
             "key": "field_5da9a4b695ecd",
             "label": "Read More Text",
             "name": "read_more_text",
+            "aria-label": "",
             "type": "text",
             "instructions": "Text for the external link (event url)",
             "required": 0,
@@ -132,6 +172,7 @@
             "key": "field_60bdd90470168",
             "label": "Event short description",
             "name": "event_short_description",
+            "aria-label": "",
             "type": "text",
             "instructions": "",
             "required": 0,
@@ -151,6 +192,7 @@
             "key": "field_68f739abd2467",
             "label": "Event \/ Activity banner",
             "name": "event__activity_banner",
+            "aria-label": "",
             "type": "group",
             "instructions": "",
             "required": 0,
@@ -166,6 +208,7 @@
                     "key": "field_68f7439f8be62",
                     "label": "Show banner",
                     "name": "show_banner",
+                    "aria-label": "",
                     "type": "true_false",
                     "instructions": "",
                     "required": 0,
@@ -185,6 +228,7 @@
                     "key": "field_68f73a15d2469",
                     "label": "Background image",
                     "name": "background_image",
+                    "aria-label": "",
                     "type": "image",
                     "instructions": "",
                     "required": 1,
@@ -217,6 +261,7 @@
                     "key": "field_68f739fcd2468",
                     "label": "Title",
                     "name": "title",
+                    "aria-label": "",
                     "type": "text",
                     "instructions": "",
                     "required": 0,
@@ -244,6 +289,7 @@
                     "key": "field_68f73aded246c",
                     "label": "Text body",
                     "name": "text_body",
+                    "aria-label": "",
                     "type": "wysiwyg",
                     "instructions": "",
                     "required": 0,
@@ -271,6 +317,7 @@
                     "key": "field_68f73afcd246d",
                     "label": "Extra fields",
                     "name": "extra_fields",
+                    "aria-label": "",
                     "type": "repeater",
                     "instructions": "",
                     "required": 0,
@@ -292,12 +339,14 @@
                     "min": 0,
                     "max": 0,
                     "layout": "table",
-                    "button_label": "",
+                    "button_label": "Add Row",
+                    "rows_per_page": 20,
                     "sub_fields": [
                         {
                             "key": "field_68f73b1fd246e",
                             "label": "Extra field prefix",
                             "name": "extra_field_prefix",
+                            "aria-label": "",
                             "type": "text",
                             "instructions": "Add event round nro. etc. extra information.",
                             "required": 0,
@@ -311,12 +360,14 @@
                             "placeholder": "",
                             "prepend": "",
                             "append": "",
-                            "maxlength": ""
+                            "maxlength": "",
+                            "parent_repeater": "field_68f73afcd246d"
                         },
                         {
                             "key": "field_68f73b42d246f",
                             "label": "Extra field",
                             "name": "extra_field",
+                            "aria-label": "",
                             "type": "text",
                             "instructions": "Add event round header etc. extra information.",
                             "required": 0,
@@ -330,7 +381,8 @@
                             "placeholder": "",
                             "prepend": "",
                             "append": "",
-                            "maxlength": ""
+                            "maxlength": "",
+                            "parent_repeater": "field_68f73afcd246d"
                         }
                     ]
                 },
@@ -338,6 +390,7 @@
                     "key": "field_68f73be6d2472",
                     "label": "Banner settings",
                     "name": "banner_settings",
+                    "aria-label": "",
                     "type": "group",
                     "instructions": "",
                     "required": 0,
@@ -361,6 +414,7 @@
                             "key": "field_68f73a62d246a",
                             "label": "Image only?",
                             "name": "image_only",
+                            "aria-label": "",
                             "type": "true_false",
                             "instructions": "",
                             "required": 0,
@@ -380,6 +434,7 @@
                             "key": "field_68f73a95d246b",
                             "label": "Banner background color",
                             "name": "banner_background_color",
+                            "aria-label": "",
                             "type": "color_picker",
                             "instructions": "",
                             "required": 0,
@@ -391,12 +446,16 @@
                             },
                             "default_value": "#f7a091",
                             "enable_opacity": 0,
-                            "return_format": "string"
+                            "return_format": "string",
+                            "custom_palette_source": "",
+                            "palette_colors": "",
+                            "show_color_wheel": true
                         },
                         {
                             "key": "field_68f73b7fd2471",
                             "label": "Banner accent color",
                             "name": "banner_accent_color",
+                            "aria-label": "",
                             "type": "color_picker",
                             "instructions": "",
                             "required": 0,
@@ -408,12 +467,16 @@
                             },
                             "default_value": "#015149",
                             "enable_opacity": 0,
-                            "return_format": "string"
+                            "return_format": "string",
+                            "custom_palette_source": "",
+                            "palette_colors": "",
+                            "show_color_wheel": true
                         },
                         {
                             "key": "field_68f73b5bd2470",
                             "label": "Text color",
                             "name": "text_color",
+                            "aria-label": "",
                             "type": "color_picker",
                             "instructions": "",
                             "required": 0,
@@ -425,7 +488,10 @@
                             },
                             "default_value": "#000000",
                             "enable_opacity": 0,
-                            "return_format": "string"
+                            "return_format": "string",
+                            "custom_palette_source": "",
+                            "palette_colors": "",
+                            "show_color_wheel": true
                         }
                     ]
                 }
@@ -435,6 +501,7 @@
             "key": "field_60be1dcdd1618",
             "label": "Description",
             "name": "description",
+            "aria-label": "",
             "type": "wysiwyg",
             "instructions": "",
             "required": 0,
@@ -454,6 +521,7 @@
             "key": "field_60be1ddad1619",
             "label": "Streaming",
             "name": "streaming",
+            "aria-label": "",
             "type": "wysiwyg",
             "instructions": "",
             "required": 0,
@@ -473,6 +541,7 @@
             "key": "field_60be1de5d161a",
             "label": "Program",
             "name": "program",
+            "aria-label": "",
             "type": "wysiwyg",
             "instructions": "",
             "required": 0,
@@ -507,5 +576,6 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1761037989
+    "display_title": "",
+    "modified": 1761717635
 }
