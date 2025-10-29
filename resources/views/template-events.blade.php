@@ -3,6 +3,7 @@
 --}}
 
 @php
+  $template = get_page_template_slug(get_queried_object_id());
   $target_groups = App\get_target_groups();
   $page_for_posts = get_permalink(get_option('page_for_posts'));
 @endphp
