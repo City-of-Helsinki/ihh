@@ -27,7 +27,7 @@
     }
 ?>
 
-<div class="section-news-and-events py-5 container">
+<div class="section-news-and-events py-5 container ihhce">
     <?php if( $listNews || $listEvents ) : ?>
     <?php if( $section_heading ): ?>
     <h<?php echo $subheading_size; ?> class="section-heading d-flex direction-column-md"

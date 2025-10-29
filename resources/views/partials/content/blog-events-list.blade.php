@@ -1,48 +1,72 @@
 @php
-$paged = isset($_GET['paged-events']) && (!empty( (int) $_GET['paged-events'] ) ) ? esc_attr($_GET['paged-events']) : 1;
-$events_target_group = isset($_GET['events_target_group']) && ( 'all' !== $_GET['events_target_group']) ? esc_attr( $_GET['events_target_group']) : 0;
+  $is_past_events_page = get_field("pastupcoming_events");
 
-if($events_target_group === 0){
-    $args = array(
-        'posts_per_page' => 6,
-        'post_type',
-        'is_news_and_events_query' => true,
-        'type' => 'event',
-        'paged' => $paged,
-    );
-}else{
-    $args = array(
-        'posts_per_page' => 6,
-        'post_type',
-        'is_news_and_events_query' => true,
-        'type' => 'event',
-        'paged' => $paged,
-        'tax_query' => array( array ( 'taxonomy' => 'target_group', 'field' => 'slug', 'terms' => $events_target_group, )),
-    );
-}
-query_posts($args);
+  $base_args = [
+    'posts_per_page'            => 6,
+    'post_type'                 => 'event',
+    'type'                      => 'event',
+    'paged'                     => 1,
+    'post_status'               => 'publish',
+  ];
+
+  if ($is_past_events_page) {
+    $base_args['meta_query'] = [
+      [
+        'key'     => 'end_time',
+        'value'   => current_time('mysql'),
+        'compare' => '<',
+        'type'    => 'DATETIME',
+      ],
+    ];
+    $base_args['meta_key'] = 'end_time';
+    $base_args['orderby']  = 'meta_value';
+    $base_args['order']    = 'DESC';
+  } else {
+    $base_args['meta_query'] = [
+      [
+        'key'     => 'end_time',
+        'value'   => current_time('mysql'),
+        'compare' => '>=',
+        'type'    => 'DATETIME',
+      ],
+    ];
+    $base_args['meta_key'] = 'start_time';
+    $base_args['orderby']  = 'meta_value';
+    $base_args['order']    = 'ASC';
+  }
+
+  $events_query = new WP_Query($base_args);
 @endphp
 
 
-@if (!have_posts())
-      <div class="alert alert-warning">
-        {{ pll__('Sorry, no news were found.') }}
-      </div>
-@endif
+@if (!$events_query->have_posts())
+    <div class="alert alert-warning">
+      {{ pll__('Sorry, no news were found.') }}
+    </div>
+@else
+    <div id="blog-events" class="list posts-container">
+        @while ($events_query->have_posts()) @php $events_query->the_post() @endphp
+          @include('partials.content.grid')
+        @endwhile
+    </div>
 
-<div id="blog-events" class="list posts-container">
-    @while (have_posts()) @php the_post() @endphp
-        @include ('partials.content.grid')
-    @endwhile
-</div>
-
-<nav class="pagination-events" aria-label="@php pll_e('Pagination'); @endphp">
     @php
-    echo paginate_links( array(
-                'format' => '?paged-events=%#%',
-                'prev_text'          => pll__('Newer events'),
-                'next_text'          => pll__('Older events'),
-                'type' => 'list'
-            ) );
+      $has_more = ($events_query->max_num_pages > $paged);
+      wp_reset_postdata();
     @endphp
-</nav>
+
+    <div class="load-more-wrapper">
+        <button
+          id="load-more-events"
+          class="btn ihh-cta"
+          @if(!$has_more) style="display:none" @endif
+          data-current-page="1"
+          data-offset="6"
+          data-per-page="9"
+          data-range="{{ $is_past_events_page ? 'past' : 'upcoming' }}"
+          data-nonce="{{ wp_create_nonce('load_more_events') }}"
+        >
+          @php pll_e('Show more events') @endphp
+        </button>
+    </div>
+@endif

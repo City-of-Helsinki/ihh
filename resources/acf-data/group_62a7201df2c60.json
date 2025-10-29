@@ -1104,6 +1104,108 @@
                     "min": "",
                     "max": ""
                 },
+                "layout_6901a34425cd4": {
+                    "key": "layout_6901a34425cd4",
+                    "name": "news_list",
+                    "label": "News list",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_6901a34425cd5",
+                            "label": "Section heading",
+                            "name": "section_heading",
+                            "aria-label": "",
+                            "type": "text",
+                            "instructions": "",
+                            "required": 1,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "maxlength": "",
+                            "allow_in_bindings": 1,
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": ""
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
+                },
+                "layout_6901a34925cd9": {
+                    "key": "layout_6901a34925cd9",
+                    "name": "events_list",
+                    "label": "Events list",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_6901a34925cda",
+                            "label": "Section heading",
+                            "name": "section_heading",
+                            "aria-label": "",
+                            "type": "text",
+                            "instructions": "",
+                            "required": 1,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "maxlength": "",
+                            "allow_in_bindings": 1,
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": ""
+                        },
+                        {
+                            "key": "field_6901a34925cdd",
+                            "label": "Events background color",
+                            "name": "events_background_color",
+                            "aria-label": "",
+                            "type": "color_picker",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "#f7a091",
+                            "enable_opacity": 0,
+                            "return_format": "string",
+                            "allow_in_bindings": 0,
+                            "show_custom_palette": 0,
+                            "show_color_wheel": 1,
+                            "custom_palette_source": "",
+                            "palette_colors": ""
+                        },
+                        {
+                            "key": "field_6901a37825cde",
+                            "label": "Events page link",
+                            "name": "events_page_link",
+                            "aria-label": "",
+                            "type": "link",
+                            "instructions": "",
+                            "required": 1,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "return_format": "url",
+                            "allow_in_bindings": 0
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
+                },
                 "layout_62e13a74ed939": {
                     "key": "layout_62e13a74ed939",
                     "name": "contact_50-50",
@@ -2925,5 +3027,5 @@
     "description": "",
     "show_in_rest": 0,
     "display_title": "",
-    "modified": 1761634444
+    "modified": 1761716049
 }
