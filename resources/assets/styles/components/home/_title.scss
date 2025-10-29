@@ -4,7 +4,7 @@
   .title {
     @include make-col(6);
 
-    @include media-breakpoint-down("md") {
+    @include media-breakpoint-down('md') {
       @include make-col(12);
 
       text-align: left;
@@ -19,8 +19,9 @@
       font-weight: 700;
       line-height: 74px;
       text-transform: uppercase;
+      margin-bottom: 0;
 
-      @include media-breakpoint-down("sm") {
+      @include media-breakpoint-down('sm') {
         font-size: 32px;
         line-height: 40px;
       }
@@ -32,7 +33,7 @@
       font-weight: 700;
       line-height: 26px;
 
-      @include media-breakpoint-down("sm") {
+      @include media-breakpoint-down('sm') {
         font-size: 16px;
       }
     }

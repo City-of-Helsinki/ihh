@@ -8,11 +8,13 @@
             <article class="content-block ihhce">
                 @include('components.navigate-pages')
                 @include('partials.content.header')
-                @include('partials.content.page')
+                @if (!is_front_page())
+                    @include('partials.content.page')
+                @endif
             </article>
         </div>
         @include('components.home.testimonials')
-        @include('components.employers-flexible-content')
+        {{-- @include('components.employers-flexible-content') --}}
     </div>
     <section class="full_flexible_content">
         @php do_action('ihh_render_flexible_content', 'lift_100_wide' ); @endphp
