@@ -248,35 +248,6 @@ function ihh_inline_svg($file) {
     return $svg;
 }
 
-/*
-* Post Filters
-*/
-if (!function_exists(__NAMESPACE__ . '\\filter_posts')) :
-    function filter_posts(){
-
-        $data = array(
-            "ajax_url" => \admin_url( 'admin-ajax.php' ),
-            "categories" => get_post_categories(),
-            "target_groups" => get_target_groups(),
-            "base" => \home_url( $_SERVER['REQUEST_URI'] ),
-        );
-        echo template('partials/content/filter-posts', $data);
-    }
-endif;
-
-if (!function_exists(__NAMESPACE__ . '\\filter_events')) :
-    function filter_events(){
-
-        $data = array(
-            "ajax_url" => \admin_url( 'admin-ajax.php' ),
-            "categories" => get_post_categories(),
-            "target_groups" => get_target_groups(),
-            "base" => \home_url( $_SERVER['REQUEST_URI'] ),
-        );
-        echo template('partials/content/filter-events', $data);
-    }
-endif;
-
 function get_post_categories($list_pluck = false){
     $cats = get_categories(
         array(
@@ -289,14 +260,6 @@ function get_post_categories($list_pluck = false){
 
     return $cats;
 
-}
-
-function get_target_groups(){
-    $terms = get_terms([
-        'taxonomy' => 'target_group',
-        'hide_empty' => false,
-    ]);
-    return $terms;
 }
 
 /**

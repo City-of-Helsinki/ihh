@@ -28,31 +28,6 @@
       return false;
     });
 
-    $('.js-filter-events input[type="radio"]').on('change', function () {
-      const filter = $('#filter-events');
-      const statusSrOnly = $('.sr-only.status');
-      const inputValue = $(this).val();
-
-      $.ajax({
-        url: filter.attr('action'),
-        data: filter.serialize(),
-        type: filter.attr('method'), // POST
-        beforeSend: function () {
-          statusSrOnly.text('Loading ' + inputValue);
-        },
-        success: function (data) {
-          $('#blog-events-container').html(data);
-        },
-        error: function (result) {
-          console.warn(result);
-        },
-        complete: function () {
-          statusSrOnly.text('Loading ' + inputValue + ' completed');
-        },
-      });
-      return false;
-    });
-
     /*
      * Services target groups
      */
