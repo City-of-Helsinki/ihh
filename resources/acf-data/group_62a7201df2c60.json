@@ -1285,6 +1285,29 @@
                             "placeholder": "",
                             "prepend": "",
                             "append": ""
+                        },
+                        {
+                            "key": "field_69031cbb97fa0",
+                            "label": "News background color",
+                            "name": "news_background_color",
+                            "aria-label": "",
+                            "type": "color_picker",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "#f7a091",
+                            "enable_opacity": 0,
+                            "return_format": "string",
+                            "allow_in_bindings": 0,
+                            "show_custom_palette": 0,
+                            "palette_colors": "",
+                            "show_color_wheel": 1,
+                            "custom_palette_source": ""
                         }
                     ],
                     "min": "",
@@ -3182,5 +3205,5 @@
     "description": "",
     "show_in_rest": 0,
     "display_title": "",
-    "modified": 1761723722
+    "modified": 1761811998
 }
