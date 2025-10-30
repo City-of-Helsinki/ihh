@@ -6,15 +6,12 @@
 @extends('layouts.app')
 
 @section('content')
-  <section class="content-block container">
+  <section class="content-block container ihhce">
     @include('partials.content.header')
 
     <div class="content-block-content">
       {!! apply_filters('the_content', $content) !!}
     </div>
-
-
-    <h2>@php pll_e('All news'); @endphp</h2>
 
     <div id="blog-posts-container">
         @include ('partials.content.blog-post-list')

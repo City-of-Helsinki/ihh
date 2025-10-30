@@ -69,6 +69,7 @@ return [
         'All groups',
         'Past events',
         'Show more events',
+        'Show more news',
         'Online',
         'In person',
         'Hybrid',

@@ -388,6 +388,75 @@ function render_link_section_li( bool $show_images, string $link_type ):void {
 }
 
 /**
+ * AJAX handler to load more news
+ *
+ */
+function ihh_load_more_news() {
+    check_ajax_referer('load_more_news', 'nonce');
+
+    $page  = isset($_POST['page']) ? max(1, (int) $_POST['page']) : 1;
+    $ppp   = isset($_POST['per_page']) ? max(1, (int) $_POST['per_page']) : 9;
+    $offset = isset($_POST['offset'])   ? max(0, (int) $_POST['offset'])   : 6;
+
+    // Basic query args
+    $args = [
+        'post_type'                => 'post',
+        'post_status'              => 'publish',
+        'posts_per_page'           => $ppp,
+        'offset'                   => $offset,
+        'paged'                    => $page,
+        'no_found_rows'            => false,
+        'meta_query'               => [
+            'relation' => 'OR',
+            [
+                'relation' => 'OR',
+                [
+                    'key'     => 'end_time',
+                    'value'   => date( 'Y-m-d H:i:s' ),
+                    'compare' => '>=',
+                    'type'    => 'DATETIME',
+                ],
+                [
+                    'key'     => 'end_time',
+                    'value'   => '',
+                    'compare' => '==',
+                ],
+            ],
+            [
+                [
+                    'key'     => 'end_time',
+                    'compare' => 'NOT EXISTS',
+                    'value'   => '',
+                ],
+            ],
+        ]
+    ];
+
+    $q = new \WP_Query($args);
+
+    ob_start();
+    if ($q->have_posts()) {
+        while ($q->have_posts()) { $q->the_post();
+            echo template('partials/content/grid');
+        }
+    }
+    $html = ob_get_clean();
+    wp_reset_postdata();
+
+    // Has more?
+    $total    = (int) $q->found_posts;
+    $has_more = ($page * $ppp) < $total;
+
+    wp_send_json_success([
+        'html'     => $html,
+        'has_more' => $has_more,
+    ]);
+}
+
+add_action('wp_ajax_load_more_news', __NAMESPACE__ . '\\ihh_load_more_news');
+add_action('wp_ajax_nopriv_load_more_news', __NAMESPACE__ . '\\ihh_load_more_news');
+
+/**
  * AJAX handler to load more events
  *
  */

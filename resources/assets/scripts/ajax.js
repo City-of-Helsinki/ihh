@@ -88,6 +88,53 @@
       });
     });
 
+    $(document).on('click', '#load-more-news', function (evt) {
+      evt.preventDefault();
+
+      const btn = $(this);
+      const statusSrOnly = $('.sr-only.status');
+
+      const currentPage = parseInt(btn.data('current-page')) || 1;
+      const nextPage = currentPage + 1;
+      const perPage = btn.data('per-page') || 9;
+      const offset = btn.data('offset') || 6;
+      const nonce = btn.data('nonce');
+
+      $.ajax({
+        url: '/wp-admin/admin-ajax.php',
+        type: 'post',
+        data: {
+          action: 'load_more_news',
+          nonce: nonce,
+          page: nextPage,
+          per_page: perPage,
+          offset: offset,
+        },
+        beforeSend: function () {
+          statusSrOnly.text('Loading page ' + nextPage);
+          btn.prop('disabled', true).addClass('is-loading');
+        },
+        success: function (res) {
+          if (res.success && res.data && res.data.html) {
+            $('#blog-posts').append(res.data.html);
+            btn.data('current-page', nextPage);
+            btn.data('offset', offset + perPage);
+
+            if (!res.data.has_more) {
+              btn.hide();
+            }
+          }
+        },
+        error: function (err) {
+          console.warn('Load more failed:', err);
+        },
+        complete: function () {
+          statusSrOnly.text('Loading completed');
+          btn.prop('disabled', false).removeClass('is-loading');
+        },
+      });
+    });
+
     $(document).on('click', '#load-more-events', function (evt) {
       evt.preventDefault();
 

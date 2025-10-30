@@ -2,7 +2,7 @@
 
 $post_content_class = "";
 
-if('event' === get_post_type()) {
+if('event' === get_post_type() || 'post' === get_post_type()) {
   $post_content_class = 'event-content';
 }
 
@@ -24,8 +24,7 @@ if('event' === get_post_type()) {
           </div>
       @endif
 
-      <span class="mb-2">
-        {{ \App\Controllers\App::get_category() }}
+      <span class="mb-2 date">
         @if('post' === get_post_type())
           {{ get_the_date('j.n.Y') }}
         @endif
