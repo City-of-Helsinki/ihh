@@ -115,8 +115,8 @@
           btn.prop('disabled', true).addClass('is-loading');
         },
         success: function (res) {
-          if (res.success && res.data && res.data.html) {
-            $('#blog-posts').append(res.data.html);
+          if (res.success && res.data) {
+            if (res.data.html) $('#blog-posts').append(res.data.html);
             btn.data('current-page', nextPage);
             btn.data('offset', offset + perPage);
 
@@ -164,8 +164,8 @@
           btn.prop('disabled', true).addClass('is-loading');
         },
         success: function (res) {
-          if (res.success && res.data && res.data.html) {
-            $('#blog-events').append(res.data.html);
+          if (res.success && res.data) {
+            if (res.data.html) $('#blog-events').append(res.data.html);
             btn.data('current-page', nextPage);
             btn.data('offset', offset + perPage);
 

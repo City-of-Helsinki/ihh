@@ -479,7 +479,6 @@ function ihh_load_more_events() {
         'offset'                    => $offset,
         'paged'                     => $page,
         'no_found_rows'             => false,
-        'type'                      => 'event',
     ];
 
     // Range specific args
@@ -498,13 +497,13 @@ function ihh_load_more_events() {
     } else {
         $args['meta_query'] = [
             [
-                'key'     => 'start_time',
+                'key'     => 'end_time',
                 'value'   => current_time('mysql'),
                 'compare' => '>=',
                 'type'    => 'DATETIME',
             ]
         ];
-        $args['meta_key'] = 'end_time';
+        $args['meta_key'] = 'start_time';
         $args['orderby']  = 'meta_value';
         $args['order']    = 'ASC';
     }
