@@ -1,4 +1,4 @@
-<section class="video_and_text_wrapper">
+<section class="video_and_text_wrapper ihhce">
     <div class="container">
         <?php $body_text = esc_html(get_sub_field('body_text')); ?>
 

@@ -158,3 +158,29 @@
     }
   }
 }
+
+.load-more-wrapper {
+  text-align: center;
+  margin: 3rem 0;
+
+  button {
+    cursor: pointer;
+    background-color: white;
+    color: black;
+    border: none;
+
+    &:hover {
+      box-shadow: 0 4px 4px rgba(0, 0, 0, 0.1);
+      background-color: white;
+      color: black;
+    }
+
+    &:disabled {
+      pointer-events: none;
+      cursor: not-allowed;
+      opacity: 0.6;
+      background-color: white;
+      color: black;
+    }
+  }
+}

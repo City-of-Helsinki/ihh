@@ -168,11 +168,28 @@ function format_event_date() {
     $start = strtotime( get_field( 'start_time' ) );
     $end   = strtotime( get_field( 'end_time' ) );
 
-    if ( ( $end - $start ) >= 1 * DAY_IN_SECONDS ) {
-        return date_i18n( 'j M Y H:i', $start ) . ' – ' . date_i18n( 'j M Y H:i', $end );
+    if ( ! $start || ! $end ) {
+        return '';
     }
 
-    return date_i18n( 'l j M Y', $start ) . " " .  date( 'H:i', $start ) . ' - ' . date( 'H:i', $end );
+    $current_year = date( 'Y' );
+    $start_year   = date( 'Y', $start );
+    $end_year     = date( 'Y', $end );
+
+    // If the event spans different years
+    // OR
+    // is not in the current year, include the year in the format
+    $include_year = ($start_year !== $end_year) || ($start_year !== $current_year);
+
+    if ( ($end - $start) >= DAY_IN_SECONDS ) {
+        // Multiple day event
+        $format = $include_year ? 'j F Y' : 'j F';
+        return date_i18n( $format, $start ) . ' – ' . date_i18n( $format, $end );
+    }
+
+    // One day event
+    $date_format = $include_year ? 'j F Y' : 'j F';
+    return date_i18n( $date_format, $start ) . ' ' . date( 'H:i', $start ) . ' - ' . date( 'H:i', $end );
 }
 
 /**
@@ -186,7 +203,7 @@ function format_event_date_only() {
 
     // If the event spans multiple days
     if ( ( $end - $start ) >= DAY_IN_SECONDS ) {
-        return date_i18n( 'l j M Y', $start ) . ' – ' . date_i18n( 'l j M Y', $end );
+        return date_i18n( 'j F Y', $start ) . ' – ' . date_i18n( 'j F Y', $end );
     }
 
     // Otherwise, just one date
@@ -231,35 +248,6 @@ function ihh_inline_svg($file) {
     return $svg;
 }
 
-/*
-* Post Filters
-*/
-if (!function_exists(__NAMESPACE__ . '\\filter_posts')) :
-    function filter_posts(){
-
-        $data = array(
-            "ajax_url" => \admin_url( 'admin-ajax.php' ),
-            "categories" => get_post_categories(),
-            "target_groups" => get_target_groups(),
-            "base" => \home_url( $_SERVER['REQUEST_URI'] ),
-        );
-        echo template('partials/content/filter-posts', $data);
-    }
-endif;
-
-if (!function_exists(__NAMESPACE__ . '\\filter_events')) :
-    function filter_events(){
-
-        $data = array(
-            "ajax_url" => \admin_url( 'admin-ajax.php' ),
-            "categories" => get_post_categories(),
-            "target_groups" => get_target_groups(),
-            "base" => \home_url( $_SERVER['REQUEST_URI'] ),
-        );
-        echo template('partials/content/filter-events', $data);
-    }
-endif;
-
 function get_post_categories($list_pluck = false){
     $cats = get_categories(
         array(
@@ -272,14 +260,6 @@ function get_post_categories($list_pluck = false){
 
     return $cats;
 
-}
-
-function get_target_groups(){
-    $terms = get_terms([
-        'taxonomy' => 'target_group',
-        'hide_empty' => false,
-    ]);
-    return $terms;
 }
 
 /**
@@ -406,3 +386,148 @@ function render_link_section_li( bool $show_images, string $link_type ):void {
         return;
     }
 }
+
+/**
+ * AJAX handler to load more news
+ *
+ */
+function ihh_load_more_news() {
+    check_ajax_referer('load_more_news', 'nonce');
+
+    $page  = isset($_POST['page']) ? max(1, (int) $_POST['page']) : 1;
+    $ppp   = isset($_POST['per_page']) ? max(1, (int) $_POST['per_page']) : 9;
+    $offset = isset($_POST['offset'])   ? max(0, (int) $_POST['offset'])   : 6;
+
+    // Basic query args
+    $args = [
+        'post_type'                => 'post',
+        'post_status'              => 'publish',
+        'posts_per_page'           => $ppp,
+        'offset'                   => $offset,
+        'paged'                    => $page,
+        'no_found_rows'            => false,
+        'meta_query'               => [
+            'relation' => 'OR',
+            [
+                'relation' => 'OR',
+                [
+                    'key'     => 'end_time',
+                    'value'   => date( 'Y-m-d H:i:s' ),
+                    'compare' => '>=',
+                    'type'    => 'DATETIME',
+                ],
+                [
+                    'key'     => 'end_time',
+                    'value'   => '',
+                    'compare' => '==',
+                ],
+            ],
+            [
+                [
+                    'key'     => 'end_time',
+                    'compare' => 'NOT EXISTS',
+                    'value'   => '',
+                ],
+            ],
+        ]
+    ];
+
+    $q = new \WP_Query($args);
+
+    ob_start();
+    if ($q->have_posts()) {
+        while ($q->have_posts()) { $q->the_post();
+            echo template('partials/content/grid');
+        }
+    }
+    $html = ob_get_clean();
+    wp_reset_postdata();
+
+    // Has more?
+    $total    = (int) $q->found_posts;
+    $has_more = ($page * $ppp) < $total;
+
+    wp_send_json_success([
+        'html'     => $html,
+        'has_more' => $has_more,
+    ]);
+}
+
+add_action('wp_ajax_load_more_news', __NAMESPACE__ . '\\ihh_load_more_news');
+add_action('wp_ajax_nopriv_load_more_news', __NAMESPACE__ . '\\ihh_load_more_news');
+
+/**
+ * AJAX handler to load more events
+ *
+ */
+function ihh_load_more_events() {
+    check_ajax_referer('load_more_events', 'nonce');
+
+    $page  = isset($_POST['page']) ? max(1, (int) $_POST['page']) : 1;
+    $ppp   = isset($_POST['per_page']) ? max(1, (int) $_POST['per_page']) : 9;
+    $offset = isset($_POST['offset'])   ? max(0, (int) $_POST['offset'])   : 6;
+    $range = isset($_POST['range']) ? sanitize_text_field($_POST['range']) : 'upcoming';
+    if ($range !== 'past' && $range !== 'upcoming') {
+        $range = 'upcoming';
+    }
+
+    // Basic query args
+    $args = [
+        'post_type'                 => 'event',
+        'post_status'               => 'publish',
+        'posts_per_page'            => $ppp,
+        'offset'                    => $offset,
+        'paged'                     => $page,
+        'no_found_rows'             => false,
+    ];
+
+    // Range specific args
+    if ($range === 'past') {
+        $args['meta_query'] = [
+            [
+                'key'     => 'end_time',
+                'value'   => current_time('mysql'),
+                'compare' => '<',
+                'type'    => 'DATETIME',
+            ],
+        ];
+        $args['meta_key'] = 'end_time';
+        $args['orderby']  = 'meta_value';
+        $args['order']    = 'DESC';
+    } else {
+        $args['meta_query'] = [
+            [
+                'key'     => 'end_time',
+                'value'   => current_time('mysql'),
+                'compare' => '>=',
+                'type'    => 'DATETIME',
+            ]
+        ];
+        $args['meta_key'] = 'start_time';
+        $args['orderby']  = 'meta_value';
+        $args['order']    = 'ASC';
+    }
+
+    $q = new \WP_Query($args);
+
+    ob_start();
+    if ($q->have_posts()) {
+        while ($q->have_posts()) { $q->the_post();
+            echo template('partials/content/grid');
+        }
+    }
+    $html = ob_get_clean();
+    wp_reset_postdata();
+
+    // Has more?
+    $total    = (int) $q->found_posts;
+    $has_more = ($page * $ppp) < $total;
+
+    wp_send_json_success([
+        'html'     => $html,
+        'has_more' => $has_more,
+    ]);
+}
+
+add_action('wp_ajax_load_more_events', __NAMESPACE__ . '\\ihh_load_more_events');
+add_action('wp_ajax_nopriv_load_more_events', __NAMESPACE__ . '\\ihh_load_more_events');

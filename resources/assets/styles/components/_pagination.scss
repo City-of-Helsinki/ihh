@@ -1,10 +1,9 @@
 %pagination-arrow {
-  content: "";
+  content: '';
   display: inline-block;
   width: 15px;
   height: 15px;
-  background: url("../images/icons/arrow-right-green.svg") center center
-    no-repeat;
+  background: url('../images/icons/arrow-right-green.svg') center center no-repeat;
   margin-bottom: -2px;
 }
 
@@ -49,12 +48,19 @@
   }
 }
 
+#show_past_events_wrapper {
+  text-align: center;
+  margin: -1rem 0 3rem 0;
+}
+
 #show_past_events_btn {
+  font-weight: bold;
+
   .inline-svg {
     svg {
       top: 2px;
-      transform: rotate(90deg);
-      transition: top ease 0.3s;
+      transform: rotate(0deg);
+      transition: left ease 0.3s;
     }
   }
 
@@ -62,8 +68,8 @@
   &:focus {
     .inline-svg {
       svg {
-        top: 6px;
-        left: 0;
+        top: 2px;
+        left: 6px;
       }
     }
   }
