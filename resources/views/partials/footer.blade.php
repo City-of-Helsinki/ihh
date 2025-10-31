@@ -10,16 +10,17 @@
   if (function_exists('pll_current_language')){
     $lang = pll_current_language();
   }
+
+  $current_id = get_queried_object_id();
+  $is_events_or_posts = (is_home() || $current_id === (int)(function_exists('pll_get_post') ? pll_get_post(get_option('page_for_posts')) : get_option('page_for_posts')) || basename(get_page_template_slug($current_id)) === 'template-events.blade.php' );
 @endphp
 
 <footer class="footer container-wide">
-  {{--  <img src="@asset('images/footer.jpg')" alt="">--}}
-
-  @php 
+  @php
     if( $footer['footer_image'] ):
       $image = $footer['footer_image'];
       $size = 'full'; // (thumbnail, medium, large, full or custom size)
-      if( $image ) {
+      if( $image && !$is_events_or_posts ) {
         echo wp_get_attachment_image( $image, $size );
       }
     endif;
@@ -28,14 +29,14 @@
   <div class="container">
     <div class="footer-content">
       <div class="footer-content-some hide-on-mobile">
-        <img src="@asset('images/ihh_logo_black.png')" alt="International House Helsinki" class="footer-logo">
+      <img src="@asset('images/ihh_logo_black.png')" alt="International House Helsinki" class="footer-logo">
 
         @php if( have_rows('footer', 'option') ): while ( have_rows('footer', 'option') ) : the_row();  @endphp
 
           <ul class="some-icons">
 
-          @php if( have_rows('social_media_links') ): while ( have_rows('social_media_links') ) : the_row(); @endphp  
-            
+          @php if( have_rows('social_media_links') ): while ( have_rows('social_media_links') ) : the_row(); @endphp
+
                 <li><a class="no-blank-icon" href="{{ the_sub_field('url')}}" target="_blank">
                   <img src="{{ the_sub_field('icon')}}" />
                   <span class="ihh-visually-hidden">External content: {{ the_sub_field('name')}} page for Internal House Helsinki</span>
@@ -50,14 +51,14 @@
       </div>
 
       <div class="footer-content-info">
-        @php 
+        @php
           if( $lang == 'fi' ):
             if( $footer['footer_text_fi'] ):
-              echo $footer['footer_text_fi']; 
+              echo $footer['footer_text_fi'];
             endif;
           else:
             if( $footer['footer_text_en'] ):
-              echo $footer['footer_text_en']; 
+              echo $footer['footer_text_en'];
             endif;
           endif;
         @endphp
@@ -66,10 +67,10 @@
 
         <div class="d-flex justify-content-start footer-logos mt-4">
 
-          @php if( have_rows('list_of_logos') ): while ( have_rows('list_of_logos') ) : the_row(); @endphp  
-          
+          @php if( have_rows('list_of_logos') ): while ( have_rows('list_of_logos') ) : the_row(); @endphp
+
             <div class="footer-logo align-self-center">
-                @php 
+                @php
                   if( get_sub_field('logo') ):
                     if(get_sub_field('url_optional')):
                       echo '<a href="' . get_sub_field('url_optional') . '" target="_blank">';
@@ -97,14 +98,14 @@
       </div>
 
       <div class="footer-content-contact">
-        @php 
+        @php
           if( $lang == 'fi' ):
             if( $footer['contact_text_fi'] ):
-              echo $footer['contact_text_fi']; 
+              echo $footer['contact_text_fi'];
             endif;
           else:
             if( $footer['contact_text_en'] ):
-              echo $footer['contact_text_en']; 
+              echo $footer['contact_text_en'];
             endif;
           endif;
         @endphp
@@ -117,8 +118,8 @@
 
           <ul class="some-icons">
 
-          @php if( have_rows('social_media_links') ): while ( have_rows('social_media_links') ) : the_row(); @endphp  
-            
+          @php if( have_rows('social_media_links') ): while ( have_rows('social_media_links') ) : the_row(); @endphp
+
                 <li><a class="no-blank-icon" href="{{ the_sub_field('url')}}" target="_blank">
                   <img src="{{ the_sub_field('icon')}}" />
                   <span class="ihh-visually-hidden">External content: {{ the_sub_field('name')}} page for Internal House Helsinki</span>
