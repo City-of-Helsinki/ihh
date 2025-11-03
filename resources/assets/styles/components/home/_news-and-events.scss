@@ -1,5 +1,22 @@
 .section-news-and-events {
-  .posts-container {
-    margin-left: -1%;
+  .section-events {
+    padding: 3rem 0;
+
+    .load-more-wrapper {
+      text-align: center;
+      margin: 0;
+
+      a.ihh-cta {
+        cursor: pointer;
+        background-color: white;
+        color: black !important;
+
+        &:hover {
+          box-shadow: 0 4px 4px rgba(0, 0, 0, 0.1);
+          background-color: white;
+          color: black;
+        }
+      }
+    }
   }
 }

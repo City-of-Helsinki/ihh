@@ -1,3 +1,13 @@
+@php
+
+$post_content_class = "";
+
+if('event' === get_post_type()) {
+  $post_content_class = 'event-content';
+}
+
+@endphp
+
 <div @php post_class('post-grid-item') @endphp role="listitem">
   <a href="{{the_permalink()}}">
     <header>
@@ -7,12 +17,10 @@
           <img role="presentation" src="{{ \App\get_default_image('lift') }}" alt="">
         @endif
     </header>
-    <div class="post-content">
+    <div class="post-content {{ esc_attr($post_content_class) }}">
       @if('event' === get_post_type())
           <div class="post-content-event-meta">
-            @if($location = get_field('location'))
-                <p class="location"> {{$location}}</p>
-            @endif
+              <p class="location">{!! get_field('event_type') ?? "Online" !!}</p>
           </div>
       @endif
 
@@ -28,7 +36,7 @@
       @if('event' === get_post_type())
         <div class="post-content-event-meta">
           @if($date = get_field('start_time'))
-            <p class="date"> {!! \App\ihh_inline_svg('icons/clock_outlines') !!} {{\App\format_event_date()}}</p>
+            <p class="date">{{\App\format_event_date()}}</p>
           @endif
         </div>
       @endif
