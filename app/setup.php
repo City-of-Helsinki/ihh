@@ -219,3 +219,51 @@ register_post_type( 'newsletter',
     )
 );
 
+register_post_type('contact', [
+    'labels' => [
+        'name' => __('Contacts', 'ihh'),
+        'singular_name' => __('Contact', 'ihh'),
+    ],
+    'supports' => ['title'],
+    'public' => true,
+    'has_archive' => false,
+    'exclude_from_search' => true,
+    'publicly_queryable' => true,
+    'menu_position' => 9,
+    'rewrite' => [
+        'slug' => 'contacts',
+    ],
+    'menu_icon' => 'dashicons-email-alt',
+]);
+
+/**
+ * Register contact post type for Polylang
+ */
+add_filter(
+    'pll_get_post_types',
+    function ($types, $is_settings) {
+        $types['contact'] = 'contact';
+        return $types;
+    },
+    10,
+    2,
+);
+
+/**
+ * ACF validation: limit contact selection to 2
+ */
+add_filter(
+    'acf/validate_value/key=field_69086caf3b2ad',
+    function ($valid, $value) {
+        if (!$valid) {
+            return $valid;
+        }
+
+        if (is_array($value) && count($value) > 2) {
+            return 'Too many contacts selected. Please select a maximum of 2 contacts.';
+        }
+        return $valid;
+    },
+    10,
+    2,
+);

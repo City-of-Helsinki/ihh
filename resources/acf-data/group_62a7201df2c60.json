@@ -3135,6 +3135,43 @@
                     ],
                     "min": "",
                     "max": ""
+                },
+                "layout_69086c8c3b2ab": {
+                    "key": "layout_69086c8c3b2ab",
+                    "name": "contact_block",
+                    "label": "Contact block [NEW]",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_69086caf3b2ad",
+                            "label": "Contacts",
+                            "name": "selected_contacts",
+                            "aria-label": "",
+                            "type": "post_object",
+                            "instructions": "You can select up to 2 contacts.",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "post_type": [
+                                "contact"
+                            ],
+                            "post_status": "",
+                            "taxonomy": "",
+                            "return_format": "object",
+                            "multiple": 1,
+                            "allow_null": 0,
+                            "allow_in_bindings": 0,
+                            "bidirectional": 0,
+                            "ui": 1,
+                            "bidirectional_target": []
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
                 }
             },
             "min": "",
@@ -3182,5 +3219,5 @@
     "description": "",
     "show_in_rest": 0,
     "display_title": "",
-    "modified": 1761723722
+    "modified": 1762168554
 }
