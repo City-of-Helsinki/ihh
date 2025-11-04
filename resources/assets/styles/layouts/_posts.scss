@@ -15,7 +15,7 @@
   align-items: stretch;
   margin: 30px 0;
 
-  $gap: 2rem;
+  $gap: 3rem;
 
   gap: $gap;
 
@@ -90,6 +90,10 @@
 
     .event-content {
       background-color: white;
+
+      .date {
+        color: black;
+      }
     }
 
     .post-content-event-meta {

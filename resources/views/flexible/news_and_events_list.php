@@ -1,6 +1,4 @@
 <?php
-    $target_groups = App\get_target_groups();
-
     $section_heading = get_sub_field('section_heading');
     $page_for_posts = get_permalink(get_option('page_for_posts'));
 

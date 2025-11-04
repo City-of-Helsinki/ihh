@@ -68,36 +68,6 @@ class App extends Controller {
         return get_the_title();
     }
 
-    public static function get_category(){
-        if (function_exists('yoast_get_primary_term')){
-            $cat = 'category';
-            if ( 'event' === get_post_type() ){
-                $cat = 'events_category';
-            }
-
-            $primary = \yoast_get_primary_term( $cat );
-
-            if ($primary){
-                return $primary;
-            }
-
-            // Fallback if primary category is not set
-            if ( 'event' === get_post_type() ){
-                $category = get_terms(array('taxonomy' => 'events_category'));
-            } else {
-                $category = get_the_category();
-            }
-            if (is_wp_error($category)){
-                return;
-            }
-
-            if (count($category) > 0 ){
-                return $category[0]->name;
-            }
-
-        }
-    }
-
     public static function get_footer_text(){
         $footer_text  = 'ihh_footer_text';
         if (function_exists('pll_current_language')){

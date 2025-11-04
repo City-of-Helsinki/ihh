@@ -249,26 +249,55 @@ add_action('wp_head', function() {
 
 
 /**
- * Set custom background color for the Events page.
+ * Set custom background color for the News/Events page.
  *
- * Applies inline <style> in the <head> if the current page
- * uses the custom archive template: views/template-events.blade.php.
  */
 add_action('wp_head', function () {
     $id = get_queried_object_id();
 
-    if (is_page() && get_page_template_slug($id) === 'views/template-events.blade.php') {
+    $color = get_field('events_page_background_color', $id)
+        ?: get_field('news_page_background_color', $id);
 
-        $color = get_field('events_page_background_color', $id);
-
-        if ($color) {
-            echo '<style>
-                body { background-color: ' . esc_attr($color) . '; }
-            </style>';
-        }
+    if (!empty($color)) {
+        echo '<style>
+            body { background-color: ' . esc_attr($color) . '; }
+        </style>';
     }
 });
 
+
+
+
+
+/**
+ * Force Classic editor for the Posts page (blog index)
+ */
+add_action('load-post.php', 'ihh_enable_classic_editor_for_posts_page');
+add_action('load-post-new.php', 'ihh_enable_classic_editor_for_posts_page');
+
+function ihh_enable_classic_editor_for_posts_page() {
+    $screen = get_current_screen();
+    if (!$screen || $screen->id !== 'page') {
+        return;
+    }
+
+    // Get the ID of the page assigned as the Posts page
+    $posts_page_id = (int) get_option('page_for_posts');
+    // Get the ID of the page being edited
+    $editing_id    = isset($_GET['post']) ? (int) $_GET['post'] : 0;
+
+    // If posts page is not set or we're not editing the posts page, bail out
+    if (!$posts_page_id || $editing_id !== $posts_page_id) {
+        return;
+    }
+
+    // Add editor support for posts page if not already present
+    add_action('add_meta_boxes_page', function () {
+        if (!post_type_supports('page', 'editor')) {
+            add_post_type_support('page', 'editor');
+        }
+    });
+}
 
 
 
