@@ -29,47 +29,43 @@
                     'value'   => '',
                 ],
             ],
-            
+
     ];
 
 
     $paged = isset($_GET['paged']) && (!empty( (int) $_GET['paged'] ) ) ? esc_attr($_GET['paged']) : 1;
-    $target_group = isset($_GET['target_group']) && ( 'all' !== $_GET['target_group']) ? esc_attr( $_GET['target_group']) : 0;
 
-    if($target_group === 0){
-        $args = array(
-            'post_type',
-            'is_news_and_events_query' => true,
-            'type' => 'post',
-            'paged' => $paged,
-            'meta_query' => $meta_query,
-        );
-    }else{
-        $args = array(
-            'post_type',
-            'is_news_and_events_query' => true,
-            'type' => 'post',
-            'paged' => $paged,
-            'meta_query' => $meta_query,
-            'tax_query' => array( array ( 'taxonomy' => 'target_group', 'field' => 'slug', 'terms' => $target_group, )),
-        );
-    }
+    $args = array(
+      'posts_per_page'=> 6,
+      'post_type'     => 'post',
+      'paged'         => $paged,
+      'meta_query'    => $meta_query,
+      'post_status'   => 'publish',
+    );
 
-    query_posts($args);
+    $events_query = new WP_Query($args);
     @endphp
 
-    @while (have_posts()) @php the_post() @endphp
+    @while ($events_query->have_posts()) @php $events_query->the_post() @endphp
         @include ('partials.content.grid')
     @endwhile
 </div>
 
-<nav class="pagination" aria-label="@php pll_e('Pagination'); @endphp">
-    @php
-    echo paginate_links( array(
-                'format' => '?paged=%#%',
-                'prev_text'          => pll__('Newer posts'),
-                'next_text'          => pll__('Older posts'),
-                'type' => 'list'
-            ) );
-    @endphp
-</nav>
+@php
+  $has_more = ($events_query->max_num_pages > $paged);
+  wp_reset_postdata();
+@endphp
+
+<div class="load-more-wrapper">
+    <button
+      id="load-more-news"
+      class="btn ihh-cta"
+      @if(!$has_more) style="display:none" @endif
+      data-current-page="1"
+      data-offset="6"
+      data-per-page="9"
+      data-nonce="{{ wp_create_nonce('load_more_news') }}"
+    >
+      @php pll_e('Show more news') @endphp
+    </button>
+</div>
