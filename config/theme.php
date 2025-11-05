@@ -1,7 +1,6 @@
 <?php
 
 return [
-
     /*
     |--------------------------------------------------------------------------
     | Theme Directory
@@ -111,5 +110,7 @@ return [
         'Filter Events by category',
         'EU',
         'NON EU',
+        'Opening hours',
+        'Closed',
     ],
 ];

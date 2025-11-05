@@ -1,0 +1,92 @@
+.contact-blocks {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    margin-top: 2rem;
+
+    & > ul {
+        display: flex;
+        gap: 2rem;
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        width: 100%;
+
+        @include media-breakpoint-down('md') {
+            flex-direction: column;
+        }
+
+        li {
+            margin: 0 !important;
+            width: calc(50% - 1rem);
+
+            @include media-breakpoint-down('md') {
+                width: 100%;
+            }
+
+            .contact-header {
+                padding: 1rem 2rem;
+
+                h2 {
+                    margin: 0;
+                    font-size: 1.5rem;
+                }
+            }
+
+            .contact-content {
+                padding: 2rem;
+
+                .contact-description {
+                    margin: 0;
+                }
+
+                .contact-details {
+                    display: flex;
+                    flex-wrap: wrap;
+                    gap: 2rem;
+                    row-gap: 1rem;
+                    margin: 0;
+
+                    a {
+                        white-space: nowrap;
+
+                        svg {
+                            width: auto;
+                            height: 1.25rem;
+                            margin-right: 0.5rem;
+
+                            &.phone {
+                                height: 1rem;
+                                margin-right: 0.4rem;
+                            }
+                        }
+                    }
+                }
+
+                .contact-opening-hours {
+                    h3 {
+                        margin: 2rem 0 1rem;
+                        font-size: 1.25rem;
+                    }
+
+                    ul {
+                        margin: 0;
+                        padding: 0;
+
+                        li.opening-hours__row {
+                            display: flex;
+                            width: 100%;
+                            justify-content: space-between;
+                            border-bottom: 1px solid #cfcfcf;
+                            padding: 0.5rem 0;
+
+                            &:last-child {
+                                border-bottom: none;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
