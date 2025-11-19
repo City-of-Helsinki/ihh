@@ -112,5 +112,7 @@ return [
         'NON EU',
         'Opening hours',
         'Closed',
+        'Menu',
+        'Language',
     ],
 ];
