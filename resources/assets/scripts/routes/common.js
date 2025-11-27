@@ -85,8 +85,8 @@ export default {
                 const y = Math.max(0, $header.offset().top - getAccordionOffset());
                 $('html, body').stop(true).animate({ scrollTop: y }, 250);
             });
-            // END ACCORDION SCROLL
         });
+        // END ACCORDION SCROLL
 
         /**
          * Handles clicks on navigation items that have children in the dropdown menu.

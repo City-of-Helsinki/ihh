@@ -13,9 +13,12 @@
 
 @if('line_color')
 <style>
-#faqs .question .question-answer:before,
-#faqs .question .question-header:hover:before {
-    background: <?php the_field('line_color') ?> !important;
+#faqs .question .question-answer,
+#faqs .question .question-header:hover {
+    border-left-color: <?php the_field('line_color'); ?> !important;
+}
+#faqs .question .question-header:not(.collapsed) {
+    border-left-color: <?php the_field('line_color'); ?> !important;
 }
 </style>
 @endif
