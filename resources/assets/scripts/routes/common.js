@@ -98,6 +98,10 @@ export default {
             'click',
             '.has-children > .nav-heading, .has-children > a.nav-link',
             function (e) {
+                const ww = window.innerWidth;
+                // Only apply for mobile widths
+                if (ww > 1110) return;
+
                 e.preventDefault();
                 e.stopPropagation();
 
@@ -142,27 +146,6 @@ export default {
         });
 
         // ### Language menu END
-
-        // ### Desktop search START
-
-        /**
-         * Handle focus and blur events on the desktop search input to toggle
-         * the visibility of the main navigation.
-         *
-         */
-        $(document).on('focus', '#desktop-search-input', function () {
-            $('.desktop-search-form').addClass('active');
-            $('#main-navigation').addClass('is-hidden');
-        });
-
-        $(document).on('blur', '#desktop-search-input', function () {
-            $('.desktop-search-form').removeClass('active');
-            $('.desktop-search-form').one('animationend transitionend', function () {
-                $('#main-navigation').removeClass('is-hidden');
-            });
-        });
-
-        // ### Desktop search END
 
         function createAnchorlinks(navigationEl, anchorTargetEl) {
             const UNDESIRABLE_PARENTS = '.question, .sidebar, .cmplz-cookiebanner';
