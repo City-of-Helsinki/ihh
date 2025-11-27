@@ -157,15 +157,30 @@ $menu-light-pink: #fbd0c8;
     }
 
     #breadcrumbs {
-        margin-bottom: 25px;
+        margin-top: 1.5rem;
+        margin-bottom: 1.5rem;
 
-        @include media-breakpoint-down('sm') {
-            padding-left: 15px;
-            padding-right: 15px;
-        }
+        & > span {
+            display: flex;
+            gap: 0.65rem;
+            flex-wrap: wrap;
+            row-gap: 0.1rem;
+            padding: 0 !important;
 
-        a {
-            color: $black !important;
+            .breadcrumb-separator {
+                font-size: 1.5rem;
+                line-height: 1;
+                transform: translateY(-3px);
+            }
+
+            @include media-breakpoint-down('sm') {
+                padding-left: 15px;
+                padding-right: 15px;
+            }
+
+            a {
+                color: $black !important;
+            }
         }
     }
 }
