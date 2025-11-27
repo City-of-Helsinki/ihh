@@ -3074,7 +3074,7 @@
                             "label": "Body text",
                             "name": "body_text",
                             "aria-label": "",
-                            "type": "textarea",
+                            "type": "wysiwyg",
                             "instructions": "",
                             "required": 0,
                             "conditional_logic": 0,
@@ -3084,11 +3084,11 @@
                                 "id": ""
                             },
                             "default_value": "",
-                            "maxlength": "",
-                            "allow_in_bindings": 1,
-                            "rows": 4,
-                            "placeholder": "",
-                            "new_lines": ""
+                            "allow_in_bindings": 0,
+                            "tabs": "all",
+                            "toolbar": "full",
+                            "media_upload": 0,
+                            "delay": 0
                         },
                         {
                             "key": "field_690062a9febcc",
@@ -3153,6 +3153,27 @@
                             "allow_in_bindings": 0,
                             "ui_on_text": "Show",
                             "ui_off_text": "Hide",
+                            "ui": 1
+                        },
+                        {
+                            "key": "field_6927f7f71effc",
+                            "label": "Layout",
+                            "name": "layout",
+                            "aria-label": "",
+                            "type": "true_false",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "message": "",
+                            "default_value": 0,
+                            "allow_in_bindings": 0,
+                            "ui_on_text": "Image on the left",
+                            "ui_off_text": "Image on the right",
                             "ui": 1
                         }
                     ],
@@ -3242,5 +3263,5 @@
     "description": "",
     "show_in_rest": 0,
     "display_title": "",
-    "modified": 1762168554
+    "modified": 1764227163
 }
