@@ -1,4 +1,4 @@
-<?php if( get_sub_field('line_color')): ?>
+<?php if (get_sub_field('line_color')): ?>
 <style>
 #faqs .question .question-answer:before,
 #faqs .question .question-header:hover:before {
@@ -8,16 +8,20 @@
 </style>
 <?php endif; ?>
 
-<div class="container" id="faqs">
+<div class="container ihhce" id="faqs">
 
-    <?php if( get_sub_field('section_heading')): ?>
-      <div class="accordion-header" id="section-heading-<?php echo get_the_ID(); ?>">
-          <?php the_sub_field('section_heading'); ?>
-      </div>
+    <?php if (get_sub_field('section_heading')): ?>
+    <div class="accordion-header" id="section-heading-<?php echo get_the_ID(); ?>">
+        <?php the_sub_field('section_heading'); ?>
+    </div>
     <?php endif; ?>
 
-    <?php if( have_rows('faq_accordion') ) : ?>
-    <?php while( have_rows('faq_accordion') ) : the_row(); $id = get_row_index(); ?>
+    <?php if (have_rows('faq_accordion')): ?>
+    <?php while (have_rows('faq_accordion')):
+
+        the_row();
+        $id = get_row_index();
+        ?>
     <?php $id_name = preg_replace('/[^A-Za-z0-9\-]/', '', get_sub_field('question')); ?>
     <div class="question accordion">
         <button class="question-header collapsed" data-toggle="collapse"
@@ -37,6 +41,7 @@
                 data-target="#accordion_content_<?php echo $id_name; ?>">Close</button>
         </div>
     </div>
-    <?php endwhile; ?>
+    <?php
+    endwhile; ?>
     <?php endif; ?>
 </div>

@@ -49,7 +49,7 @@
 <div class="content-block container single-page-layout">
     <div class="row">
         <div class="col-md">
-            <article class="content-block print-area">
+            <article class="content-block print-area ihhce">
                 @include('components.checklist-navigate')
                 @include('partials.content.header')
 
