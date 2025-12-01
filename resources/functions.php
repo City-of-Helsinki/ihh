@@ -194,7 +194,8 @@ function ihh_acf_input_admin_footer()
     acf.add_filter('color_picker_args', function(args, $field) {
 
         // Add colors to color palette
-        args.palettes = ['#01a090', '#4dbdb1', '#83cac6', '#f7a091', '#f9bdb2', '#fad0c9', '#f0942f',
+        args.palettes = ['#231f20', '#ffffff', '#01a090', '#4dbdb1', '#83cac6', '#f7a091', '#f9bdb2',
+            '#fad0c9', '#f0942f',
             '#f8ca97', '#f0e856', '#f4ee84', '#f7f3b7'
         ]
 
@@ -633,4 +634,11 @@ jQuery(function($) {
 });
 </script>
 <?php
+});
+
+/**
+ * Customize Yoast SEO breadcrumb separator
+ */
+add_filter('wpseo_breadcrumb_separator', function ($separator) {
+    return '<span class="breadcrumb-separator">›</span>';
 });
