@@ -634,3 +634,10 @@ jQuery(function($) {
 </script>
 <?php
 });
+
+/**
+ * Customize Yoast SEO breadcrumb separator
+ */
+add_filter('wpseo_breadcrumb_separator', function ($separator) {
+    return '<span class="breadcrumb-separator">›</span>';
+});
