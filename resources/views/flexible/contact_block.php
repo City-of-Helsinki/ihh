@@ -4,7 +4,7 @@ $contacts = get_sub_field('selected_contacts');
 
 /**
  * Helper method to normalize time strings.
- * e.g. "9", "9.5", "09:30", "9:3" => "09:00", "09:30", "09:30", "09:03"
+ * e.g. "9", "9.5", "09:30", "9:3" => "09.00", "09.30", "09.30", "09.03"
  */
 if (!function_exists('ihh_normalize_time')) {
     function ihh_normalize_time($t)
@@ -16,11 +16,11 @@ if (!function_exists('ihh_normalize_time')) {
         $t = str_replace('.', ':', $t);
         if (preg_match('/^\d{1,2}$/', $t)) {
             // Only hour
-            return sprintf('%02d:00', (int) $t);
+            return sprintf('%02d.00', (int) $t);
         }
         if (preg_match('/^(\d{1,2}):(\d{1,2})$/', $t, $m)) {
             // h:mm OR hh:m
-            return sprintf('%02d:%02d', (int) $m[1], (int) $m[2]);
+            return sprintf('%02d.%02d', (int) $m[1], (int) $m[2]);
         }
         return $t;
     }
@@ -65,7 +65,7 @@ if (!function_exists('ihh_normalize_time')) {
             } ?>>
                 <?php if ($has_desc): ?>
                 <div class="contact-description">
-                    <?php echo wp_kses_post($desc); ?>
+                    <?php echo apply_filters('the_content', $desc); ?>
                 </div>
                 <?php endif; ?>
 
