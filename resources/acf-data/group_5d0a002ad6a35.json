@@ -339,7 +339,7 @@
                     "min": 0,
                     "max": 0,
                     "layout": "table",
-                    "button_label": "Add Row",
+                    "button_label": "Lisää rivi",
                     "rows_per_page": 20,
                     "sub_fields": [
                         {
@@ -496,66 +496,6 @@
                     ]
                 }
             ]
-        },
-        {
-            "key": "field_60be1dcdd1618",
-            "label": "Description",
-            "name": "description",
-            "aria-label": "",
-            "type": "wysiwyg",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "default_value": "",
-            "tabs": "all",
-            "toolbar": "full",
-            "media_upload": 1,
-            "delay": 0
-        },
-        {
-            "key": "field_60be1ddad1619",
-            "label": "Streaming",
-            "name": "streaming",
-            "aria-label": "",
-            "type": "wysiwyg",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "default_value": "",
-            "tabs": "all",
-            "toolbar": "full",
-            "media_upload": 1,
-            "delay": 0
-        },
-        {
-            "key": "field_60be1de5d161a",
-            "label": "Program",
-            "name": "program",
-            "aria-label": "",
-            "type": "wysiwyg",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "default_value": "",
-            "tabs": "all",
-            "toolbar": "full",
-            "media_upload": 1,
-            "delay": 0
         }
     ],
     "location": [
@@ -577,5 +517,5 @@
     "description": "",
     "show_in_rest": 0,
     "display_title": "",
-    "modified": 1761717635
+    "modified": 1764562351
 }

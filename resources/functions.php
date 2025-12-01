@@ -634,3 +634,67 @@ jQuery(function($) {
 </script>
 <?php
 });
+
+/**
+ * Fix Yoast breadcrumbs for Events custom post type (Singular view)
+ */
+add_filter('wpseo_breadcrumb_links', function ($links) {
+    if (is_singular('event')) {
+        $events_page = my_get_events_page();
+
+        if ($events_page) {
+            $breadcrumb = [
+                'url' => get_permalink($events_page->ID),
+                'text' => get_the_title($events_page->ID),
+            ];
+
+            array_splice($links, count($links) - 1, 0, [$breadcrumb]);
+        }
+    }
+
+    return $links;
+});
+
+/**
+ * Get the Events page (template-events.blade.php, pastupcoming_events = false)
+ *
+ * @return \WP_Post|null
+ */
+function my_get_events_page()
+{
+    $args = [
+        'post_type' => 'page',
+        'post_status' => 'publish',
+        'posts_per_page' => 1,
+        'meta_query' => [
+            'relation' => 'AND',
+            [
+                'key' => '_wp_page_template',
+                'value' => 'template-events.blade.php',
+                'compare' => 'LIKE',
+            ],
+            [
+                'relation' => 'OR',
+                [
+                    'key' => 'pastupcoming_events',
+                    'value' => '0',
+                    'compare' => '=',
+                ],
+                [
+                    'key' => 'pastupcoming_events',
+                    'compare' => 'NOT EXISTS',
+                ],
+            ],
+        ],
+
+        'suppress_filters' => false,
+    ];
+
+    $query = new WP_Query($args);
+
+    if ($query->have_posts()) {
+        return $query->posts[0];
+    }
+
+    return null;
+}
