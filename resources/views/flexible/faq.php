@@ -11,7 +11,7 @@
 </style>
 <?php endif; ?>
 
-<div class="container" id="faqs">
+<div class="container ihhce" id="faqs">
 
     <?php if (get_sub_field('section_heading')): ?>
     <div class="accordion-header" id="section-heading-<?php echo get_the_ID(); ?>">
