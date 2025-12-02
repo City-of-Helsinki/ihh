@@ -108,7 +108,7 @@ if (!function_exists('ihh_normalize_time')) {
                         <li class="opening-hours__row">
                             <span class="opening-hours__days"><?php echo esc_html($days); ?></span>
                             <?php if (!$open): ?>
-                            <span class="opening-hours__status opening-hours__status--closed">
+                            <span class="opening-hours__time closed">
                                 <?php echo esc_html(pll__('Closed')); ?>
                             </span>
                             <?php else: ?>
