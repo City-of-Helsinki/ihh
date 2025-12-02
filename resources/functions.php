@@ -43,7 +43,7 @@ if (version_compare('4.7.0', get_bloginfo('version'), '>=')) {
 
 function add_theme_scripts()
 {
-    wp_enqueue_style('style', get_template_directory_uri() . '/assets/ihh-style.css');
+    wp_enqueue_style('style', get_template_directory_uri() . '/assets/ihh-style.css?v1');
 }
 add_action('wp_enqueue_scripts', 'add_theme_scripts');
 

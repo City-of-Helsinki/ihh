@@ -32,11 +32,11 @@
 
     ];
 
-
+    $posts_per_page = 6;
     $paged = isset($_GET['paged']) && (!empty( (int) $_GET['paged'] ) ) ? esc_attr($_GET['paged']) : 1;
 
     $args = array(
-      'posts_per_page'=> 6,
+      'posts_per_page'=> $posts_per_page,
       'post_type'     => 'post',
       'paged'         => $paged,
       'meta_query'    => $meta_query,
@@ -52,7 +52,10 @@
 </div>
 
 @php
-  $has_more = ($events_query->max_num_pages > $paged);
+  $has_more = (
+      $events_query->max_num_pages > $paged // has more pages to show
+      && $events_query->found_posts > $posts_per_page // has more posts than one page
+  );
   wp_reset_postdata();
 @endphp
 

@@ -1,22 +1,22 @@
 .section-news-and-events {
-  .section-events {
-    padding: 3rem 0;
+    .section-events {
+        padding: 3rem 0;
 
-    .load-more-wrapper {
-      text-align: center;
-      margin: 0;
+        .load-more-wrapper {
+            text-align: center;
+            margin: 0;
 
-      a.ihh-cta {
-        cursor: pointer;
-        background-color: white;
-        color: black !important;
+            a.ihh-cta {
+                cursor: pointer;
+                background-color: white;
+                color: black !important;
+                margin: auto;
 
-        &:hover {
-          box-shadow: 0 4px 4px rgba(0, 0, 0, 0.1);
-          background-color: white;
-          color: black;
+                &:hover {
+                    background-color: white;
+                    color: black;
+                }
+            }
         }
-      }
     }
-  }
 }

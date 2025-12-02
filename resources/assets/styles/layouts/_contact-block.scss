@@ -38,6 +38,12 @@
 
                 .contact-description {
                     margin: 0;
+
+                    .ihh-cta {
+                        svg {
+                            fill: $black !important;
+                        }
+                    }
                 }
 
                 .contact-details {

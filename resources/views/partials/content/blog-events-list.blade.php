@@ -61,7 +61,7 @@
           class="btn ihh-cta"
           @if(!$has_more) style="display:none" @endif
           data-current-page="1"
-          data-offset="6"
+          data-offset="{{ $posts_per_page }}"
           data-per-page="9"
           data-range="{{ $is_past_events_page ? 'past' : 'upcoming' }}"
           data-nonce="{{ wp_create_nonce('load_more_events') }}"
