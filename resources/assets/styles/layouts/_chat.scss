@@ -1,0 +1,32 @@
+#chat-app-button {
+    position: fixed !important;
+    bottom: 0.5rem !important;
+    right: 0.5rem !important;
+    min-width: unset !important;
+    width: 84px !important;
+    height: 97px !important;
+
+    #chat-app-button-icon-logo {
+        min-width: unset !important;
+        width: 84px !important;
+        height: 97px !important;
+        background: transparent
+            url('/wp-content/themes/ihh/resources/assets/images/chat/chat-mobile.png') no-repeat
+            center center !important;
+    }
+
+    @media screen and (min-width: 577px) {
+        height: 67px !important;
+        width: 151px !important;
+        min-width: unset !important;
+
+        #chat-app-button-icon-logo {
+            height: 67px !important;
+            width: 151px !important;
+            min-width: unset !important;
+            background: transparent
+                url('/wp-content/themes/ihh/resources/assets/images/chat/chat-desktop.png')
+                no-repeat center center !important;
+        }
+    }
+}
