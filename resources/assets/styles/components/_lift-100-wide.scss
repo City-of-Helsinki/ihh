@@ -1,90 +1,93 @@
 .lift-100-wide {
-  h3 {
-    font-weight: 700;
-  }
-
-  figure {
-    margin: 0;
-  }
-
-  figcaption {
-    width: 100%;
-    font-style: italic;
-    margin-top: 0.25rem;
-    position: absolute;
-    bottom: -1.5rem;
-  }
-
-  ul {
-    list-style: none;
-  }
-
-  li {
-    font-weight: 700;
-  }
-
-  @media screen and (max-width: 768px) {
     h3 {
-      font-weight: 500;
+        font-weight: 700;
     }
 
-    .lift-100-wide__card {
-      padding: 1.5rem;
-    }
-  }
-
-  @media screen and (min-width: 992px) {
-    position: relative;
-
-    &__card {
-      position: absolute;
-      top: 50%;
-      transform: translateY(-50%);
-      min-height: 250px;
+    figure {
+        margin: 0;
     }
 
-    img.col-lg-8 {
-      max-width: 60%;
+    figcaption {
+        width: 100%;
+        font-style: italic;
+        margin-top: 0.25rem;
+        position: absolute;
+        bottom: -1.5rem;
     }
 
-    &--left {
-      .lift-100-wide__card {
-        right: 0;
-        margin-right: 0;
+    ul {
+        list-style: none;
+    }
 
-        &.side-by-side {
-          border-left: 10px solid white;
+    li {
+        font-weight: 700;
+    }
+
+    @media screen and (max-width: 768px) {
+        h3 {
+            font-weight: 500;
         }
-      }
-    }
 
-    &--right {
-      .lift-100-wide__card {
-        &.side-by-side {
-          border-right: 10px solid white;
+        .lift-100-wide__card {
+            padding: 1.5rem;
         }
-      }
-
-      figcaption {
-        text-align: right;
-      }
-
-      .lift-100-wide__bg-img {
-        margin-left: 40%;
-      }
     }
-  }
 
-  .arrow {
-    color: $black !important;
-    text-decoration: none;
-    width: 1.5rem;
-    height: 1.5rem;
+    @media screen and (min-width: 992px) {
+        position: relative;
 
-    &:hover,
-    &:focus {
-      color: $kuvittaja-darker-green !important;
-      text-decoration: underline;
+        &__card {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            min-height: 250px;
+        }
+
+        img.col-lg-8 {
+            max-width: 60%;
+        }
+
+        &--left {
+            .lift-100-wide__card {
+                right: 0;
+                margin-right: 0;
+
+                &.side-by-side {
+                    border-left: 10px solid white;
+                }
+            }
+        }
+
+        &--right {
+            .lift-100-wide__card {
+                &.side-by-side {
+                    border-right: 10px solid white;
+                }
+            }
+
+            figcaption {
+                text-align: right;
+            }
+
+            .lift-100-wide__bg-img {
+                margin-left: 40%;
+            }
+        }
     }
-  }
+
+    .arrow {
+        color: $black !important;
+        text-decoration: none;
+        height: 1.5rem;
+
+        svg {
+            fill: $black !important;
+        }
+
+        &:hover,
+        &:focus {
+            color: $kuvittaja-darker-green !important;
+            text-decoration: underline;
+        }
+    }
 }

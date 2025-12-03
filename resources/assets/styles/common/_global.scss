@@ -190,7 +190,7 @@ h6 {
     margin-right: 10px;
 
     svg {
-        top: 2px;
+        top: 3px;
         left: 0;
         width: 16px;
         height: 16px;
@@ -203,6 +203,19 @@ h6 {
 a:hover .inline-svg svg,
 a:focus .inline-svg svg {
     left: 5px;
+}
+
+a.internal-link {
+    .inline-svg svg {
+        left: -2px;
+    }
+
+    &:hover,
+    &:focus {
+        .inline-svg svg {
+            left: 2px;
+        }
+    }
 }
 
 a:hover .date .inline-svg svg,
@@ -228,13 +241,18 @@ a:focus .date .inline-svg svg {
 }
 
 .internal-link {
+    display: inline-block;
+
     .inline-svg {
+        fill: $kuvittaja-green;
         margin-right: 5px;
         margin-left: 4px;
     }
 }
 
 .external-link {
+    display: inline-block;
+
     svg {
         fill: $kuvittaja-green;
     }
@@ -244,7 +262,8 @@ a:focus .date .inline-svg svg {
 .background-red,
 .background-orange,
 .highlighted-content {
-    .external-link svg {
+    .external-link svg,
+    .internal-link svg {
         fill: #000;
     }
 }
