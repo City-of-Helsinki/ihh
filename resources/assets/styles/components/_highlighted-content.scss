@@ -1,45 +1,49 @@
 .highlighted-content {
-  font-weight: 500;
-  padding: 2.5rem 2.875rem;
-  margin: 2rem auto 3rem auto;
-  margin-left: 0;
+    font-weight: 500;
+    padding: 2.5rem 2.875rem;
+    margin: 2rem auto 3rem auto;
+    margin-left: 0;
 
-  @include media-breakpoint-down('sm') {
-    padding: 2rem 1.5rem;
-  }
-
-  h2,
-  h3 {
-    font-size: 1.25rem;
-    font-weight: 600;
-    margin-bottom: 1.25rem;
-  }
-
-  p {
-    margin-bottom: 1.625rem;
-  }
-
-  &.background- {
-    &red {
-      background: #f7a091;
+    @include media-breakpoint-down('sm') {
+        padding: 2rem 1.5rem;
     }
 
-    &green {
-      background: #83cac6;
+    .content-wrapper {
+        max-width: 700px;
     }
-  }
 
-  a {
-    text-decoration: none;
-    color: $black !important;
-
-    &:hover,
-    &:focus {
-      text-decoration: underline;
+    h2,
+    h3 {
+        font-size: 1.25rem;
+        font-weight: 600;
+        margin-bottom: 1.25rem;
     }
-  }
 
-  > :last-child {
-    margin-bottom: 0 !important;
-  }
+    p {
+        margin-bottom: 1.625rem;
+    }
+
+    &.background- {
+        &red {
+            background: #f7a091;
+        }
+
+        &green {
+            background: #83cac6;
+        }
+    }
+
+    a {
+        text-decoration: none;
+        color: $black !important;
+
+        &:hover,
+        &:focus {
+            text-decoration: underline;
+        }
+    }
+
+    > :last-child {
+        margin-bottom: 0 !important;
+    }
 }
