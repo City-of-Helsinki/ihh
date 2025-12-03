@@ -27,11 +27,18 @@
             .event-image {
                 width: 35%;
                 height: 400px;
+                padding-top: 400px;
                 background-position: center center;
                 background-repeat: no-repeat;
                 background-size: cover;
                 float: left;
                 margin-right: 5%;
+
+                .event-image__caption {
+                    font-style: italic;
+                    padding-top: 0.25rem;
+                    display: block;
+                }
 
                 @media only screen and (max-width: 992px) {
                     width: 100%;
@@ -47,7 +54,7 @@
                 @media only screen and (max-width: 992px) {
                     width: 100%;
                     float: none;
-                    margin-top: 20px;
+                    margin-top: 2rem;
                 }
 
                 h1 {
@@ -63,6 +70,8 @@
                 .event-short-description {
                     margin-top: 20px;
                     margin-bottom: 20px;
+                    font-weight: 700;
+                    font-size: 1.2rem;
                 }
 
                 .event-meta {
@@ -70,8 +79,6 @@
                         width: 100%;
 
                         tr {
-                            border-top: 2px solid #ccc;
-
                             td {
                                 padding-top: 10px;
                                 padding-bottom: 10px;
@@ -83,12 +90,8 @@
                             }
 
                             td:last-child {
-                                text-align: right;
+                                text-align: left;
                             }
-                        }
-
-                        tr:last-child {
-                            border-bottom: 2px solid #ccc;
                         }
                     }
 
@@ -101,6 +104,13 @@
                             fill: black;
                         }
                     }
+                }
+
+                .attachment-link {
+                    margin: 1rem 0;
+                    display: block;
+                    font-weight: 700;
+                    text-decoration: underline;
                 }
             }
         }
@@ -168,7 +178,6 @@
         background-color: white;
         color: black;
         border: none;
-        margin: auto;
 
         &:hover {
             background-color: white;

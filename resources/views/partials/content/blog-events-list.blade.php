@@ -36,6 +36,7 @@
   }
 
   $events_query = new WP_Query($base_args);
+  $posts_per_page = $base_args['posts_per_page'];
 @endphp
 
 
@@ -51,7 +52,7 @@
     </div>
 
     @php
-      $has_more = ($events_query->max_num_pages > $paged);
+      $has_more = ($events_query->post_count >= $posts_per_page);
       wp_reset_postdata();
     @endphp
 
