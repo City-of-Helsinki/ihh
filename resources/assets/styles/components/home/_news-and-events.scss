@@ -12,6 +12,10 @@
                 color: black !important;
                 margin: auto;
 
+                svg {
+                    fill: black;
+                }
+
                 &:hover {
                     background-color: white;
                     color: black;
