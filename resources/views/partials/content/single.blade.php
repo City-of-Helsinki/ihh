@@ -35,30 +35,5 @@
         <a href="{!! get_field('event_url') !!}" class="event-url" target="_blank">{{ $event_url_text }}</a>
       @endif
     </div>
-
-    <ul class="article-meta">
-      <li class="share">
-        <a href="http://twitter.com/share?text={!! $title !!}&url={!! $url !!}" target="_blank">
-          <i class="fa fa-twitter"></i>
-        </a>
-      </li>
-      <li class="share">
-        <a href="http://www.facebook.com/sharer.php?u={!! $url !!}&p={!! $title !!}">
-          <i class="fa fa-facebook"></i>
-        </a>
-      </li>
-      <li class="share">
-        <a href="https://www.linkedin.com/sharing/share-offsite/?url={!! $url !!}">
-          <i class="fa fa-linkedin"></i>
-        </a>
-      </li>
-      @if($is_event && get_field('attachment'))
-        <li class="attachment">
-          <a href="{!! get_field('attachment') !!}" target="_blank">
-            <i class="fa fa-paperclip"></i> {{ $attachment_text }}
-          </a>
-        </li>
-      @endif
-    </ul>
   </article>
 </section>
