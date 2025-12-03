@@ -642,3 +642,86 @@ jQuery(function($) {
 add_filter('wpseo_breadcrumb_separator', function ($separator) {
     return '<span class="breadcrumb-separator">›</span>';
 });
+
+/**
+ * Metabox for showing where a current contact is used (which pages)
+ */
+add_action('add_meta_boxes', function () {
+    add_meta_box(
+        'contact_usage',
+        __('Used on pages', 'ihh'),
+        'ihh_render_contact_usage_metabox',
+        'contact', // CPT
+        'side',
+        'default',
+    );
+});
+
+/**
+ * Metabox list callback
+ */
+function ihh_render_contact_usage_metabox($post)
+{
+    global $wpdb;
+
+    $contact_id = (int) $post->ID;
+
+    $flex_name = 'lift_100_wide';
+
+    // ACF meta key for selected contacts
+    $meta_key_like = $flex_name . '_%_selected_contacts';
+
+    // Run the query
+    $results = $wpdb->get_col(
+        $wpdb->prepare(
+            "
+            SELECT DISTINCT pm.post_id
+            FROM {$wpdb->postmeta} pm
+            JOIN {$wpdb->posts} p ON p.ID = pm.post_id
+            WHERE p.post_type IN ('page')
+              AND pm.meta_key LIKE %s
+              AND (pm.meta_value = %d OR pm.meta_value LIKE %s)
+            ",
+            $meta_key_like,
+            $contact_id,
+            '%\"' . $contact_id . '\"%',
+        ),
+    );
+
+    // Limit results to the same language as the contact (Polylang)
+    if (function_exists('pll_get_post_language')) {
+        $contact_lang = pll_get_post_language($contact_id, 'slug');
+
+        if ($contact_lang) {
+            // Filter results to match contact language
+            $results = array_filter($results, function ($page_id) use ($contact_lang) {
+                return pll_get_post_language($page_id, 'slug') === $contact_lang;
+            });
+
+            $results = array_values($results);
+        }
+    }
+
+    if (empty($results)) {
+        echo '<p>' . esc_html__('This contact is not used on any page.', 'ihh') . '</p>';
+        return;
+    }
+
+    // Output the list of pages
+    echo '<ul>';
+    foreach ($results as $page_id) {
+        $front_link = get_permalink($page_id);
+        $title = get_the_title($page_id);
+
+        if (!$front_link) {
+            continue;
+        }
+
+        echo '<li><a href="' .
+            esc_url($front_link) .
+            '" target="_blank" rel="noopener noreferrer">' .
+            esc_html($title) .
+            '</a></li>';
+    }
+    echo '</ul>';
+}
