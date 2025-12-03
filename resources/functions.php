@@ -637,6 +637,46 @@ jQuery(function($) {
 });
 
 /**
+ * Display "cheklist_block" layout ONLY if the page template is "checklist-template"
+ */
+add_filter('acf/load_field/name=lift_100_wide', function ($field) {
+    // Only in admin
+    if (!is_admin()) {
+        return $field;
+    }
+
+    // Determine the current post_id
+    $post_id = 0;
+    if (isset($_GET['post'])) {
+        $post_id = (int) $_GET['post'];
+    } elseif (isset($_POST['post_ID'])) {
+        $post_id = (int) $_POST['post_ID'];
+    }
+
+    if (!$post_id) {
+        return $field;
+    }
+
+    // Check the page template
+    $template = get_page_template_slug($post_id);
+
+    // If the checklist-template is NOT in use, remove the layout from the list
+    if ($template !== 'views/template-checklist.blade.php') {
+        // Change if necessary 'views/template-checklist.blade.php'
+        if (!empty($field['layouts'])) {
+            foreach ($field['layouts'] as $key => $layout) {
+                if ($layout['name'] === 'checklist') {
+                    // Layout name
+                    unset($field['layouts'][$key]);
+                }
+            }
+        }
+    }
+
+    return $field;
+});
+  
+ /**
  * Customize Yoast SEO breadcrumb separator
  */
 add_filter('wpseo_breadcrumb_separator', function ($separator) {
