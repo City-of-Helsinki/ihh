@@ -1,12 +1,6 @@
 @php
-  $footer_img = wp_get_attachment_image_url( get_theme_mod( 'ihh_footer_image' ), 'full' );
-  $youtube = App::get_some_link('youtube');
-  $twitter = App::get_some_link('twitter');
-  $linkedin = App::get_some_link('linkedin');
-  $facebook = App::get_some_link('facebook');
-
   $footer = get_field('footer', 'option');
-  $footerimg = $footer['footer_image'];
+
   if (function_exists('pll_current_language')){
     $lang = pll_current_language();
   }
