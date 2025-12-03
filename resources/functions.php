@@ -43,7 +43,7 @@ if (version_compare('4.7.0', get_bloginfo('version'), '>=')) {
 
 function add_theme_scripts()
 {
-    wp_enqueue_style('style', get_template_directory_uri() . '/assets/ihh-style.css');
+    wp_enqueue_style('style', get_template_directory_uri() . '/assets/ihh-style.css?v1');
 }
 add_action('wp_enqueue_scripts', 'add_theme_scripts');
 
@@ -701,8 +701,131 @@ function my_get_events_page()
 }
 
 /**
+ * Display "cheklist_block" layout ONLY if the page template is "checklist-template"
+ */
+add_filter('acf/load_field/name=lift_100_wide', function ($field) {
+    // Only in admin
+    if (!is_admin()) {
+        return $field;
+    }
+
+    // Determine the current post_id
+    $post_id = 0;
+    if (isset($_GET['post'])) {
+        $post_id = (int) $_GET['post'];
+    } elseif (isset($_POST['post_ID'])) {
+        $post_id = (int) $_POST['post_ID'];
+    }
+
+    if (!$post_id) {
+        return $field;
+    }
+
+    // Check the page template
+    $template = get_page_template_slug($post_id);
+
+    // If the checklist-template is NOT in use, remove the layout from the list
+    if ($template !== 'views/template-checklist.blade.php') {
+        // Change if necessary 'views/template-checklist.blade.php'
+        if (!empty($field['layouts'])) {
+            foreach ($field['layouts'] as $key => $layout) {
+                if ($layout['name'] === 'checklist') {
+                    // Layout name
+                    unset($field['layouts'][$key]);
+                }
+            }
+        }
+    }
+
+    return $field;
+});
+  
+ /**
  * Customize Yoast SEO breadcrumb separator
  */
 add_filter('wpseo_breadcrumb_separator', function ($separator) {
     return '<span class="breadcrumb-separator">›</span>';
 });
+
+/**
+ * Metabox for showing where a current contact is used (which pages)
+ */
+add_action('add_meta_boxes', function () {
+    add_meta_box(
+        'contact_usage',
+        __('Used on pages', 'ihh'),
+        'ihh_render_contact_usage_metabox',
+        'contact', // CPT
+        'side',
+        'default',
+    );
+});
+
+/**
+ * Metabox list callback
+ */
+function ihh_render_contact_usage_metabox($post)
+{
+    global $wpdb;
+
+    $contact_id = (int) $post->ID;
+
+    $flex_name = 'lift_100_wide';
+
+    // ACF meta key for selected contacts
+    $meta_key_like = $flex_name . '_%_selected_contacts';
+
+    // Run the query
+    $results = $wpdb->get_col(
+        $wpdb->prepare(
+            "
+            SELECT DISTINCT pm.post_id
+            FROM {$wpdb->postmeta} pm
+            JOIN {$wpdb->posts} p ON p.ID = pm.post_id
+            WHERE p.post_type IN ('page')
+              AND pm.meta_key LIKE %s
+              AND (pm.meta_value = %d OR pm.meta_value LIKE %s)
+            ",
+            $meta_key_like,
+            $contact_id,
+            '%\"' . $contact_id . '\"%',
+        ),
+    );
+
+    // Limit results to the same language as the contact (Polylang)
+    if (function_exists('pll_get_post_language')) {
+        $contact_lang = pll_get_post_language($contact_id, 'slug');
+
+        if ($contact_lang) {
+            // Filter results to match contact language
+            $results = array_filter($results, function ($page_id) use ($contact_lang) {
+                return pll_get_post_language($page_id, 'slug') === $contact_lang;
+            });
+
+            $results = array_values($results);
+        }
+    }
+
+    if (empty($results)) {
+        echo '<p>' . esc_html__('This contact is not used on any page.', 'ihh') . '</p>';
+        return;
+    }
+
+    // Output the list of pages
+    echo '<ul>';
+    foreach ($results as $page_id) {
+        $front_link = get_permalink($page_id);
+        $title = get_the_title($page_id);
+
+        if (!$front_link) {
+            continue;
+        }
+
+        echo '<li><a href="' .
+            esc_url($front_link) .
+            '" target="_blank" rel="noopener noreferrer">' .
+            esc_html($title) .
+            '</a></li>';
+    }
+    echo '</ul>';
+}

@@ -38,6 +38,12 @@
 
                 .contact-description {
                     margin: 0;
+
+                    .ihh-cta {
+                        svg {
+                            fill: $black !important;
+                        }
+                    }
                 }
 
                 .contact-details {
@@ -79,6 +85,18 @@
                             justify-content: space-between;
                             border-bottom: 1px solid #cfcfcf;
                             padding: 0.5rem 0;
+
+                            .opening-hours__days {
+                                max-width: 75%;
+                            }
+
+                            .opening-hours__time {
+                                white-space: nowrap;
+                                width: 25%;
+                                min-width: fit-content;
+                                text-align: right;
+                                padding-left: 0.5rem;
+                            }
 
                             &:last-child {
                                 border-bottom: none;

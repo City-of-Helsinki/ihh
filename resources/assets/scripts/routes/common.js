@@ -25,7 +25,7 @@ export default {
             });
 
             detectExternalLinks('.main a');
-            detectInternalLinks('.highlighted-content a');
+            detectInternalLinks('.main a');
             createAnchorlinks('.anchorlink-navigation', '#main h2');
 
             window.CXBus.configure({
@@ -284,6 +284,26 @@ export default {
             const links = document.querySelectorAll(selector);
 
             links.forEach((link) => {
+                const isIhhCta = link.classList.contains('ihh-cta');
+
+                // Skip only for non-CTA links
+                if (!isIhhCta) {
+                    // Skip links within content blocks
+                    if (link.closest('.content-block-content')) return;
+                    // Skip links within blog events section
+                    if (link.closest('#blog-events')) return;
+                    // Skip links within blog posts section
+                    if (link.closest('#blog-posts')) return;
+                    // Skip links within event body
+                    if (link.closest('.event-body')) return;
+                    // Skip "go back" links
+                    if (link.matches('.go-back')) return;
+                    // Skip post grid items
+                    if (link.closest('.post-grid-item')) return;
+                    // Skip links within media bank items
+                    if (link.closest('.media-bank-item')) return;
+                }
+
                 const href = link.getAttribute('href');
 
                 // Bypass invalid hrefs
