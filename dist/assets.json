@@ -2,8 +2,10 @@
   "images/chat/Chat_logo_en.png": "images/chat/Chat_logo_en_78038a7e.png",
   "images/chat/Chat_logo_fi.png": "images/chat/Chat_logo_fi_79a23cf4.png",
   "images/chat/HELSINKI_Tunnus_MUSTA.png": "images/chat/HELSINKI_Tunnus_MUSTA_a7248b23.png",
+  "images/chat/chat-desktop.png": "images/chat/chat-desktop_74ecfa9f.png",
   "images/chat/chat-header.svg": "images/chat/chat-header_6c094505.svg",
   "images/chat/chat-logo.svg": "images/chat/chat-logo_6d187325.svg",
+  "images/chat/chat-mobile.png": "images/chat/chat-mobile_f23eb377.png",
   "images/chat/close_black_24dp.svg": "images/chat/close_black_24dp_dd4f8c6a.svg",
   "images/chat/keyboard.svg": "images/chat/keyboard_5f841c11.svg",
   "images/chat/minimize.svg": "images/chat/minimize_399d4307.svg",
@@ -41,7 +43,7 @@
   "images/logo_white.svg": "images/logo_white_8a76fca8.svg",
   "images/wave.svg": "images/wave_152903d9.svg",
   "images/wave_2.svg": "images/wave_2_4bdaa8c6.svg",
-  "scripts/customizer.js": "scripts/customizer_52633eac.js",
-  "styles/main.css": "styles/main_52633eac.css",
-  "scripts/main.js": "scripts/main_52633eac.js"
+  "scripts/customizer.js": "scripts/customizer_c83f7122.js",
+  "styles/main.css": "styles/main_c83f7122.css",
+  "scripts/main.js": "scripts/main_c83f7122.js"
 }
