@@ -59,6 +59,7 @@ return [
         'Services',
         'Show address on a map',
         'Sorry, no news were found.',
+        'Sorry, no events were found.',
         'Sorry, no results were found.',
         'Streaming',
         'The default lift image if item does not have one.',

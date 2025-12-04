@@ -1,5 +1,7 @@
 @php
   $is_past_events_page = get_field("pastupcoming_events");
+  $events_page_button_color = get_field("events_page_button_color");
+  $button_style = $events_page_button_color ? 'style="background-color:' . esc_attr($events_page_button_color) . ';"' : "";
 
   $base_args = [
     'posts_per_page'            => 6,
@@ -42,7 +44,7 @@
 
 @if (!$events_query->have_posts())
     <div class="alert alert-warning">
-      {{ pll__('Sorry, no news were found.') }}
+      {{ pll__('Sorry, no events were found.') }}
     </div>
 @else
     <div id="blog-events" class="list posts-container">
@@ -66,6 +68,7 @@
           data-per-page="9"
           data-range="{{ $is_past_events_page ? 'past' : 'upcoming' }}"
           data-nonce="{{ wp_create_nonce('load_more_events') }}"
+          {!! $button_style !!}
         >
           @php pll_e('Show more events') @endphp
         </button>
