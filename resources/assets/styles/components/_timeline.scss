@@ -6,11 +6,14 @@ $step-indicator-size: 2.5rem;
     .timeline-steps {
         counter-reset: section;
         list-style-type: none;
-        padding-left: #{$step-indicator-size * 1.5};
         max-width: 56.75rem;
 
-        @include media-breakpoint-up('md') {
-            padding-left: #{$step-indicator-size * 2.25};
+        &:not(.without-numbers) {
+            padding-left: #{$step-indicator-size * 1.5};
+
+            @include media-breakpoint-up('md') {
+                padding-left: #{$step-indicator-size * 2.25};
+            }
         }
     }
 
