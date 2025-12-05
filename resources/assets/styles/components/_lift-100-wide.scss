@@ -1,93 +1,118 @@
 .lift-100-wide {
-    h3 {
-        font-weight: 700;
-    }
+    margin-top: 3rem;
 
-    figure {
-        margin: 0;
-    }
+    .lift-100-wide-wrapper {
+        display: flex;
+        gap: 3rem;
+        align-items: center;
 
-    figcaption {
-        width: 100%;
-        font-style: italic;
-        margin-top: 0.25rem;
-        position: absolute;
-        bottom: -1.5rem;
-    }
+        @include media-breakpoint-down('md') {
+            flex-direction: column !important;
+            gap: 0 !important;
+        }
 
-    ul {
-        list-style: none;
-    }
-
-    li {
-        font-weight: 700;
-    }
-
-    @media screen and (max-width: 768px) {
         h3 {
-            font-weight: 500;
+            font-weight: 700;
         }
 
-        .lift-100-wide__card {
-            padding: 1.5rem;
-        }
-    }
+        figure {
+            margin: 0;
+            max-width: 66%;
+            flex: 1 1 auto;
+            display: flex;
+            flex-direction: column;
+            position: relative;
 
-    @media screen and (min-width: 992px) {
-        position: relative;
+            @include media-breakpoint-down('md') {
+                flex-direction: column-reverse;
+                width: 100%;
+                max-width: 100%;
+            }
 
-        &__card {
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-            min-height: 250px;
-        }
+            figcaption {
+                font-style: italic;
+                position: absolute;
+                bottom: -1.5rem;
+                display: block;
 
-        img.col-lg-8 {
-            max-width: 60%;
-        }
-
-        &--left {
-            .lift-100-wide__card {
-                right: 0;
-                margin-right: 0;
-
-                &.side-by-side {
-                    border-left: 10px solid white;
+                @include media-breakpoint-down('md') {
+                    position: unset;
+                    margin-bottom: 0.25rem;
+                    text-align: left !important;
                 }
             }
         }
 
-        &--right {
-            .lift-100-wide__card {
-                &.side-by-side {
-                    border-right: 10px solid white;
+        ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        li {
+            font-weight: 700;
+        }
+
+        .card {
+            flex: 1 1 auto;
+            width: 33%;
+            padding: 2rem;
+            border: none !important;
+            border-radius: 0 !important;
+
+            @include media-breakpoint-down('md') {
+                width: 100% !important;
+                position: unset !important;
+            }
+        }
+
+        position: relative;
+
+        &.left {
+            &.overlay {
+                .card {
+                    width: 50%;
+                    position: absolute;
+                    right: 0;
+                }
+            }
+
+            figcaption {
+                text-align: left;
+            }
+        }
+
+        &.right {
+            flex-direction: row-reverse;
+
+            &.overlay {
+                .card {
+                    width: 50%;
+                    position: absolute;
+                    left: 0;
                 }
             }
 
             figcaption {
                 text-align: right;
-            }
-
-            .lift-100-wide__bg-img {
-                margin-left: 40%;
+                right: 0;
             }
         }
-    }
 
-    .arrow {
-        color: $black !important;
-        text-decoration: none;
-        height: 1.5rem;
+        .arrow {
+            color: $black !important;
+            text-decoration: none;
+            height: 1.5rem;
 
-        svg {
-            fill: $black !important;
-        }
+            svg {
+                fill: $black !important;
+            }
 
-        &:hover,
-        &:focus {
-            color: $kuvittaja-darker-green !important;
-            text-decoration: underline;
+            &:hover,
+            &:focus {
+                color: $kuvittaja-darker-green !important;
+                text-decoration: underline;
+            }
         }
     }
 }
