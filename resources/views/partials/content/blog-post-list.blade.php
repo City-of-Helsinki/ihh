@@ -6,6 +6,10 @@
 
 <div id="blog-posts" class="list posts-container">
     @php
+    $posts_page_id = get_option('page_for_posts');
+    $news_page_button_color = get_field('news_page_button_color', $posts_page_id);
+    $button_style = $news_page_button_color ? 'style="background-color:' . esc_attr($news_page_button_color) . ';"' : "";
+
     $meta_query[] = [
             'relation' => 'OR',
             [
@@ -68,6 +72,7 @@
       data-offset="6"
       data-per-page="9"
       data-nonce="{{ wp_create_nonce('load_more_news') }}"
+      {!! $button_style !!}
     >
       @php pll_e('Show more news') @endphp
     </button>
