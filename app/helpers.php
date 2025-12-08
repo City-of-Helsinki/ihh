@@ -342,64 +342,34 @@ function get_redirection_page_object()
  * Render Link section li content
  *
  * @param boolean $show_images
- * @param string $link_type
  * @return boolean
  */
-function render_link_section_li(bool $show_images, string $link_type): void
+function render_link_section_li(bool $show_images): void
 {
-    if ('description_box' === $link_type) { ?>
+    ?>
 <li class="list-item">
-    <?php if ($show_images): ?>
-    <div class="image-container aspect-ratio-1-96">
-        <?php if (get_sub_field('image')): ?>
-        <img src="<?php the_sub_field('image'); ?>" alt="" class="image-fit" />
+    <a href="<?php the_sub_field('cta_url'); ?>" class="arrow">
+        <?php if ($show_images): ?>
+        <div class="image-container aspect-ratio-1-96">
+            <?php if (get_sub_field('image')): ?>
+            <img src="<?php the_sub_field('image'); ?>" alt="" class="image-fit" />
+            <?php endif; ?>
+        </div>
         <?php endif; ?>
-    </div>
-    <?php endif; ?>
-    <h3 class="item-heading"><?php the_sub_field('heading'); ?></h3>
-    <p class="item-description">
-        <?php the_sub_field('description'); ?>
-    </p>
-    <?php if (get_sub_field('cta_url')): ?>
-    <a href="<?php the_sub_field('cta_url'); ?>" class="arrow"><?php the_sub_field(
-    'cta_text',
-); ?></a>
-    <?php endif; ?>
-</li>
-<?php return;}
 
-    if ('simple' === $link_type) { ?>
-<li class="list-item">
-    <h3 class="item-heading"><?php the_sub_field('heading'); ?></h3>
-    <?php if (get_sub_field('cta_url')): ?>
-    <a href="<?php the_sub_field('cta_url'); ?>" class="arrow"><?php the_sub_field(
-    'cta_text',
-); ?></a>
-    <?php endif; ?>
-</li>
-<?php return;}
-
-    if ('icon' === $link_type) {
-
-        $icon_class = 'icon-default';
-        if ('icon' === $link_type && get_sub_field('icon')) {
-            $icon_class = 'icon-' . get_sub_field('icon');
-        }
-
-        $href = '#';
-        if (get_sub_field('cta_url')) {
-            $href = get_sub_field('cta_url');
-        }
-        ?>
-<li class="list-item service-link icon-list-item">
-    <span class="li-icon <?php echo esc_attr($icon_class); ?>"></span>
-    <a href="<?php echo esc_url($href); ?>" class="icon-link">
-        <?php echo esc_html(get_sub_field('heading')); ?>
-        <span class="list-item-arrow"><?php echo \App\ihh_inline_svg('icons/arrow-right'); ?></span>
+        <div class="list-content">
+            <h3 class="item-heading"><?php the_sub_field('heading'); ?></h3>
+            <p class="item-description"><?php the_sub_field('description'); ?></p>
+            <span class="inline-svg rotate-0"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32.6 32.1"
+                    xml:space="preserve" role="presentation">
+                    <path style="fill-rule:evenodd;clip-rule:evenodd"
+                        d="M32.6 16.1 16.5 0l-2.8 2.8 11.4 11.3H0v4h25L13.7 29.3l2.8 2.8z"></path>
+                </svg>
+            </span>
+        </div>
     </a>
 </li>
-<?php return;
-    }
+<?php
 }
 
 /**

@@ -787,50 +787,6 @@
                                     "max_size": "",
                                     "mime_types": "",
                                     "parent_repeater": "field_63d0e7b63a3bb"
-                                },
-                                {
-                                    "key": "field_63d0e7b63a3c1",
-                                    "label": "Icon",
-                                    "name": "icon",
-                                    "aria-label": "",
-                                    "type": "select",
-                                    "instructions": "",
-                                    "required": 0,
-                                    "conditional_logic": [
-                                        [
-                                            {
-                                                "field": "field_63d0e7b63a3b9",
-                                                "operator": "==",
-                                                "value": "icon"
-                                            }
-                                        ]
-                                    ],
-                                    "wrapper": {
-                                        "width": "",
-                                        "class": "",
-                                        "id": ""
-                                    },
-                                    "choices": {
-                                        "backpack": "Backpack",
-                                        "briefcase": "Briefcase",
-                                        "buildings": "Buildings",
-                                        "conversation": "Conversation",
-                                        "hospital": "Hospital",
-                                        "house": "House",
-                                        "notebook": "Notebook",
-                                        "pram": "Pram",
-                                        "sales_results": "Sales results"
-                                    },
-                                    "default_value": false,
-                                    "allow_null": 1,
-                                    "multiple": 0,
-                                    "ui": 0,
-                                    "return_format": "value",
-                                    "ajax": 0,
-                                    "placeholder": "",
-                                    "create_options": 0,
-                                    "save_options": 0,
-                                    "parent_repeater": "field_63d0e7b63a3bb"
                                 }
                             ]
                         }
@@ -3131,5 +3087,5 @@
     "description": "",
     "show_in_rest": 0,
     "display_title": "",
-    "modified": 1764912193
+    "modified": 1764915872
 }
