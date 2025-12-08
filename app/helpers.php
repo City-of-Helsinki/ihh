@@ -202,7 +202,7 @@ function format_event_date()
 
     // One day event
     $date_format = $include_year ? 'j F Y' : 'j F';
-    return date_i18n($date_format, $start) . ' ' . date('H:i', $start) . ' - ' . date('H:i', $end);
+    return date_i18n($date_format, $start) . ' ' . date('H.i', $start) . ' – ' . date('H.i', $end);
 }
 
 /**
@@ -234,7 +234,7 @@ function format_event_time_only()
     $start = strtotime(get_field('start_time'));
     $end = strtotime(get_field('end_time'));
 
-    return date_i18n('H:i', $start) . ' – ' . date_i18n('H:i', $end);
+    return date_i18n('H.i', $start) . ' – ' . date_i18n('H.i', $end);
 }
 
 /**

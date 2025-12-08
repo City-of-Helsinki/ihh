@@ -1,0 +1,48 @@
+.highlighted-content-x2 {
+    margin: 2rem auto 3rem auto;
+    display: flex;
+    gap: 3rem;
+
+    @include media-breakpoint-down('md') {
+        flex-direction: column;
+    }
+
+    .highlighted-content-box {
+        font-weight: 500;
+        padding: 2.5rem 2.875rem;
+        flex: 1;
+
+        @include media-breakpoint-down('sm') {
+            padding: 2rem;
+        }
+
+        .content-wrapper {
+            max-width: 700px;
+
+            h2,
+            h3 {
+                font-size: 1.25rem;
+                font-weight: 600;
+                margin-bottom: 1.25rem;
+            }
+
+            p {
+                margin-bottom: 1.625rem;
+            }
+
+            a {
+                text-decoration: none;
+                color: $black !important;
+
+                &:hover,
+                &:focus {
+                    text-decoration: underline;
+                }
+            }
+
+            > :last-child {
+                margin-bottom: 0 !important;
+            }
+        }
+    }
+}

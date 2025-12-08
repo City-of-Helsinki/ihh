@@ -3,6 +3,29 @@
     "title": "Events Page Settings",
     "fields": [
         {
+            "key": "field_693130a3c37ed",
+            "label": "Button color",
+            "name": "events_page_button_color",
+            "aria-label": "",
+            "type": "color_picker",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "#ffffff",
+            "enable_opacity": 0,
+            "return_format": "string",
+            "allow_in_bindings": 0,
+            "show_custom_palette": 0,
+            "palette_colors": "",
+            "show_color_wheel": 1,
+            "custom_palette_source": ""
+        },
+        {
             "key": "field_6900b98ada83b",
             "label": "Background color",
             "name": "events_page_background_color",
@@ -91,5 +114,5 @@
     "description": "",
     "show_in_rest": 0,
     "display_title": "",
-    "modified": 1761711152
+    "modified": 1764831464
 }

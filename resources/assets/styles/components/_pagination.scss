@@ -1,76 +1,65 @@
 %pagination-arrow {
-  content: '';
-  display: inline-block;
-  width: 15px;
-  height: 15px;
-  background: url('../images/icons/arrow-right-green.svg') center center no-repeat;
-  margin-bottom: -2px;
+    content: '';
+    display: inline-block;
+    width: 15px;
+    height: 15px;
+    background: url('../images/icons/arrow-right-green.svg') center center no-repeat;
+    margin-bottom: -2px;
 }
 
 .pagination,
 .pagination-events {
-  ul {
-    padding: 0 1%;
+    ul {
+        padding: 0 1%;
 
-    > li {
-      display: inline-block;
+        > li {
+            display: inline-block;
+        }
+
+        .page-numbers {
+            list-style: none;
+            padding: 0.25rem 0.35rem;
+            text-decoration: unset;
+            font-weight: 400;
+
+            &.current {
+                background: #91c8c2;
+                border-radius: 4px;
+            }
+
+            &.prev::before {
+                @extend %pagination-arrow;
+
+                transform: rotate(180deg);
+                margin-right: 6px;
+            }
+
+            &.next::after {
+                @extend %pagination-arrow;
+
+                margin-left: 6px;
+            }
+        }
+
+        a:hover,
+        a:focus {
+            text-decoration: underline;
+        }
     }
-
-    .page-numbers {
-      list-style: none;
-      padding: 0.25rem 0.35rem;
-      text-decoration: unset;
-      font-weight: 400;
-
-      &.current {
-        background: #91c8c2;
-        border-radius: 4px;
-      }
-
-      &.prev::before {
-        @extend %pagination-arrow;
-
-        transform: rotate(180deg);
-        margin-right: 6px;
-      }
-
-      &.next::after {
-        @extend %pagination-arrow;
-
-        margin-left: 6px;
-      }
-    }
-
-    a:hover,
-    a:focus {
-      text-decoration: underline;
-    }
-  }
 }
 
 #show_past_events_wrapper {
-  text-align: center;
-  margin: -1rem 0 3rem 0;
+    text-align: center;
+    margin: -1rem 0 3rem 0;
 }
 
 #show_past_events_btn {
-  font-weight: bold;
+    font-weight: bold;
+    color: black !important;
 
-  .inline-svg {
-    svg {
-      top: 2px;
-      transform: rotate(0deg);
-      transition: left ease 0.3s;
-    }
-  }
-
-  &:hover,
-  &:focus {
     .inline-svg {
-      svg {
-        top: 2px;
-        left: 6px;
-      }
+        svg {
+            fill: black;
+        }
     }
-  }
 }
