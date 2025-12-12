@@ -20,6 +20,10 @@ $menu-light-pink: #fbd0c8;
             flex: 0 0 auto;
             transition: opacity 0.3s linear;
 
+            ul#menu-paavalikko > li > a > span {
+                white-space: nowrap;
+            }
+
             &.is-hidden {
                 display: none !important;
                 opacity: 0;
@@ -1034,7 +1038,7 @@ $menu-light-pink: #fbd0c8;
 
         input[type='search'] {
             border: 1px solid #ccc;
-            padding: 0.5rem 1rem;
+            padding: 0.5rem 2.5rem 0.5rem 1rem;
             font-size: 1rem;
             border-radius: 2rem;
             width: 90%;
@@ -1072,6 +1076,7 @@ $menu-light-pink: #fbd0c8;
 
 .language-menu {
     position: relative;
+    cursor: pointer;
 
     @media (min-width: 1111px) {
         transform: translate(0, 5px);
@@ -1080,6 +1085,8 @@ $menu-light-pink: #fbd0c8;
     .language-menu__toggle {
         border: none;
         background: transparent;
+        white-space: nowrap;
+        cursor: pointer;
 
         &:focus,
         &:active {
@@ -1099,6 +1106,7 @@ $menu-light-pink: #fbd0c8;
             svg {
                 width: auto;
                 height: 1.35rem;
+                transform: translateY(-2px);
             }
 
             .language-menu__current {
