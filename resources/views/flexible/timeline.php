@@ -82,7 +82,7 @@ endwhile;
 
                 <?php if (have_rows('links')): ?>
                 <div class="lift-100-wide">
-                    <ul class="m-0 p-0">
+                    <ul class="m-0 p-0 no-list-style">
                         <?php while (have_rows('links')):
                             the_row();
                             $link = get_sub_field('link');
