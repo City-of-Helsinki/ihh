@@ -35,7 +35,6 @@
 
                 .image-container {
                     position: relative;
-                    margin-bottom: 1.25rem;
                     overflow: hidden;
                 }
 
@@ -44,6 +43,7 @@
                     flex: 1;
                     display: flex;
                     flex-direction: column;
+                    margin-top: 1.25rem;
 
                     .item-heading {
                         font-size: 1.25rem;

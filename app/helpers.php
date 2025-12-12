@@ -346,9 +346,20 @@ function get_redirection_page_object()
  */
 function render_link_section_li(bool $show_images): void
 {
+    $url = get_sub_field('cta_url');
+    $is_external = false;
+
+    if ($url) {
+        $site_host = parse_url(home_url(), PHP_URL_HOST);
+        $link_host = parse_url($url, PHP_URL_HOST);
+
+        $is_external = $link_host && $link_host !== $site_host;
+    }
     ?>
 <li class="list-item">
-    <a href="<?php the_sub_field('cta_url'); ?>" class="arrow">
+    <a href="<?php the_sub_field(
+        'cta_url',
+    ); ?>" class="arrow" target="<?php echo $is_external ? '_blank' : '_self'; ?>">
         <?php if ($show_images): ?>
         <div class="image-container aspect-ratio-1-96">
             <?php if (get_sub_field('image')): ?>
@@ -360,8 +371,10 @@ function render_link_section_li(bool $show_images): void
         <div class="list-content">
             <h3 class="item-heading"><?php the_sub_field('heading'); ?></h3>
             <p class="item-description"><?php the_sub_field('description'); ?></p>
-            <span class="inline-svg rotate-0"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32.6 32.1"
-                    xml:space="preserve" role="presentation">
+            <span class="inline-svg rotate-<?php echo $is_external
+                ? '45'
+                : '0'; ?>"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32.6 32.1" xml:space="preserve"
+                    role="presentation">
                     <path style="fill-rule:evenodd;clip-rule:evenodd"
                         d="M32.6 16.1 16.5 0l-2.8 2.8 11.4 11.3H0v4h25L13.7 29.3l2.8 2.8z"></path>
                 </svg>
