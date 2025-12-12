@@ -295,7 +295,8 @@ export default {
                     // Skip links within blog posts section
                     if (link.closest('#blog-posts')) return;
                     // Skip links within event body
-                    if (link.closest('.event-body')) return;
+                    const inBanner = link.closest('.banner-text');
+                    if (link.closest('.event-body') && !inBanner) return;
                     // Skip "go back" links
                     if (link.matches('.go-back')) return;
                     // Skip post grid items
