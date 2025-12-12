@@ -1,5 +1,5 @@
 <?php
-$body_text = wp_kses_post(get_sub_field('body_text'));
+$body_text = get_sub_field('body_text');
 $image = get_sub_field('image');
 $video_link = get_sub_field('video_link');
 $show_button = get_sub_field('show_play_button');
@@ -15,7 +15,7 @@ $layout_class = $layout ? 'image-left' : 'image-right';
 
             <?php if (!empty($body_text)): ?>
             <div class="content">
-                <?php echo $body_text; ?>
+                <?php echo apply_filters('the_content', $body_text); ?>
             </div>
             <?php endif; ?>
 
