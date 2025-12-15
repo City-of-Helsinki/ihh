@@ -194,11 +194,30 @@ function ihh_acf_input_admin_footer()
     acf.add_filter('color_picker_args', function(args, $field) {
 
         // Add colors to color palette
-        args.palettes = ['#231f20', '#ffffff', '#01a090', '#4dbdb1', '#83cac6', '#f7a091', '#f9bdb2',
-            '#fad0c9', '#f0942f',
-            '#f8ca97', '#f0e856', '#f4ee84', '#f7f3b7'
-        ]
+        args.palettes = [
+            '#231f20', // black
+            '#ffffff', // white
 
+            // green
+            '#01a090',
+            '#4dbdb1',
+            '#80d0c8',
+
+            // pink
+            '#f7a091',
+            '#f9bdb2',
+            '#fbd0c8',
+
+            // orange
+            '#f0942f',
+            '#f5b46d',
+            '#f8ca97',
+
+            // yellow
+            '#f0e856',
+            '#f5ef89',
+            '#f8f3ab',
+        ];
 
         // return
         return args;
