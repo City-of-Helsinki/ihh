@@ -639,66 +639,71 @@ jQuery(function($) {
 /**
  * Fix Yoast breadcrumbs for Events custom post type (Singular view)
  */
-add_filter('wpseo_breadcrumb_links', function ($links) {
-    if (is_singular('event')) {
-        $events_page = my_get_events_page();
-
-        if ($events_page) {
-            $breadcrumb = [
-                'url' => get_permalink($events_page->ID),
-                'text' => get_the_title($events_page->ID),
-            ];
-
-            array_splice($links, count($links) - 1, 0, [$breadcrumb]);
+add_filter(
+    'wpseo_breadcrumb_links',
+    function ($links) {
+        if (!is_singular('event')) {
+            return $links;
         }
-    }
 
-    return $links;
-});
+        $event_id = get_queried_object_id();
 
-/**
- * Get the Events page (template-events.blade.php, pastupcoming_events = false)
- *
- * @return \WP_Post|null
- */
-function my_get_events_page()
-{
-    $args = [
-        'post_type' => 'page',
-        'post_status' => 'publish',
-        'posts_per_page' => 1,
-        'meta_query' => [
-            'relation' => 'AND',
-            [
-                'key' => '_wp_page_template',
-                'value' => 'template-events.blade.php',
-                'compare' => 'LIKE',
-            ],
-            [
-                'relation' => 'OR',
-                [
-                    'key' => 'pastupcoming_events',
-                    'value' => '0',
-                    'compare' => '=',
-                ],
-                [
-                    'key' => 'pastupcoming_events',
-                    'compare' => 'NOT EXISTS',
-                ],
-            ],
-        ],
+        // Decide whether this event is past based on end_time (same logic as listing)
+        $end_time_raw = get_post_meta($event_id, 'end_time', true);
 
-        'suppress_filters' => false,
-    ];
+        if ($end_time_raw) {
+            $end_time = DateTime::createFromFormat('Y-m-d H:i:s', $end_time_raw, wp_timezone());
+            $end_time_ts = $end_time ? $end_time->getTimestamp() : 0;
+            $is_past_event = $end_time_ts && $end_time_ts < current_time('timestamp');
+        } else {
+            $is_past_event = false;
+        }
 
-    $query = new WP_Query($args);
+        // Get all pages using Events template (upcoming + past)
+        $pages = get_posts([
+            'post_type' => 'page',
+            'post_status' => 'publish',
+            'posts_per_page' => -1,
+            'meta_key' => '_wp_page_template',
+            'meta_value' => 'views/template-events.blade.php',
+            'orderby' => 'menu_order',
+            'order' => 'ASC',
+        ]);
 
-    if ($query->have_posts()) {
-        return $query->posts[0];
-    }
+        if (empty($pages)) {
+            return $links;
+        }
 
-    return null;
-}
+        $events_page_id = 0;
+
+        // Select the page whose ACF pastupcoming_events matches the event's status
+        foreach ($pages as $page) {
+            // ACF true/false field -> boolean
+            $is_past_page = (bool) get_field('pastupcoming_events', $page->ID);
+
+            if ($is_past_page === (bool) $is_past_event) {
+                $events_page_id = $page->ID;
+                break;
+            }
+        }
+
+        // Fallback: if no match was found, use the first Events page
+        if (!$events_page_id) {
+            $events_page_id = $pages[0]->ID;
+        }
+
+        $breadcrumb = [
+            'url' => get_permalink($events_page_id),
+            'text' => get_the_title($events_page_id),
+        ];
+
+        // Insert before the last crumb (current page)
+        array_splice($links, max(count($links) - 1, 0), 0, [$breadcrumb]);
+
+        return $links;
+    },
+    20,
+);
 
 /**
  * Display "cheklist_block" layout ONLY if the page template is "checklist-template"
@@ -739,8 +744,8 @@ add_filter('acf/load_field/name=lift_100_wide', function ($field) {
 
     return $field;
 });
-  
- /**
+
+/**
  * Customize Yoast SEO breadcrumb separator
  */
 add_filter('wpseo_breadcrumb_separator', function ($separator) {
