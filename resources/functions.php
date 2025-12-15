@@ -649,15 +649,25 @@ add_filter(
         $event_id = get_queried_object_id();
 
         // Decide whether this event is past based on end_time (same logic as listing)
-        $end_time = get_post_meta($event_id, 'end_time', true);
-        $is_past_event = $end_time && $end_time < current_time('mysql');
+        $end_time_raw = get_post_meta($event_id, 'end_time', true);
+
+        if ($end_time_raw) {
+            $end_time = DateTime::createFromFormat('Y-m-d H:i:s', $end_time_raw, wp_timezone());
+            $end_time_ts = $end_time ? $end_time->getTimestamp() : 0;
+            $is_past_event = $end_time_ts && $end_time_ts < current_time('timestamp');
+        } else {
+            $is_past_event = false;
+        }
 
         // Get all pages using Events template (upcoming + past)
-        $pages = get_pages([
+        $pages = get_posts([
             'post_type' => 'page',
             'post_status' => 'publish',
+            'posts_per_page' => -1,
             'meta_key' => '_wp_page_template',
             'meta_value' => 'views/template-events.blade.php',
+            'orderby' => 'menu_order',
+            'order' => 'ASC',
         ]);
 
         if (empty($pages)) {
