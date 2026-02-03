@@ -29,6 +29,27 @@
             flex-direction: column;
             position: relative;
 
+            img {
+                width: unset;
+                height: unset;
+            }
+
+            // Tall images
+            &.is-tall {
+                .lift-media {
+                    width: 100%;
+                    /* stylelint-disable-next-line property-no-unknown */
+                    aspect-ratio: 1;
+                    overflow: hidden;
+                }
+
+                img {
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover; // crop to fit
+                }
+            }
+
             @include media-breakpoint-down('md') {
                 flex-direction: column-reverse;
                 width: 100%;
@@ -81,6 +102,10 @@
             &.overlay {
                 figure {
                     max-width: 66%;
+
+                    @include media-breakpoint-down('md') {
+                        max-width: 100% !important;
+                    }
                 }
 
                 .card {
@@ -101,6 +126,10 @@
             &.overlay {
                 figure {
                     max-width: 66%;
+
+                    @include media-breakpoint-down('md') {
+                        max-width: 100% !important;
+                    }
                 }
 
                 .card {
