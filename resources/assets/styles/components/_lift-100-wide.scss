@@ -23,7 +23,7 @@
 
         figure {
             margin: 0;
-            max-width: 66%;
+            width: 50%;
             flex: 1 1 auto;
             display: flex;
             flex-direction: column;
@@ -32,7 +32,6 @@
             @include media-breakpoint-down('md') {
                 flex-direction: column-reverse;
                 width: 100%;
-                max-width: 100%;
             }
 
             figcaption {
@@ -65,7 +64,7 @@
 
         .card {
             flex: 1 1 auto;
-            width: 33%;
+            width: 50%;
             padding: 2rem;
             border: none !important;
             border-radius: 0 !important;
@@ -80,6 +79,10 @@
 
         &.left {
             &.overlay {
+                figure {
+                    max-width: 66%;
+                }
+
                 .card {
                     width: 50%;
                     position: absolute;
@@ -96,6 +99,10 @@
             flex-direction: row-reverse;
 
             &.overlay {
+                figure {
+                    max-width: 66%;
+                }
+
                 .card {
                     width: 50%;
                     position: absolute;
