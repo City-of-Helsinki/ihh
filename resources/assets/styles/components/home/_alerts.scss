@@ -1,99 +1,99 @@
 .alert-area {
-  .alert {
-    @include media-breakpoint-down("sm") {
-      padding-top: 10px;
-      padding-bottom: 10px;
-      padding-right: 15px;
-      max-width: 100%;
+    .alert {
+        @include media-breakpoint-down('sm') {
+            padding-top: 10px;
+            padding-bottom: 10px;
+            padding-right: 15px;
+            max-width: 100%;
+        }
+
+        .notification-icon {
+            display: inline-block;
+            width: 25px;
+            height: 100%;
+            background: url('../images/icons/notice.svg') center center no-repeat;
+            background-size: contain;
+            margin: 0 10px -4px 0;
+            position: absolute;
+            left: -10px;
+            top: 0;
+
+            @include media-breakpoint-up('sm') {
+                left: -15px;
+            }
+        }
+
+        font-family: $font-roboto;
+        background: $kuvittaja-yellow;
+        border: none;
+        border-radius: 0;
+        color: #000;
+        font-weight: inherit;
+        line-height: 18px;
+        padding-top: 15px;
+        padding-bottom: 15px;
+        margin: 0;
+        border-bottom: 1px solid darken($kuvittaja-yellow, 20%);
+
+        &:last-child {
+            border-bottom-color: transparent;
+        }
+
+        .fa {
+            font-size: 20px;
+            margin-right: 10px;
+        }
+
+        .close {
+            @include media-breakpoint-down('sm') {
+                position: relative;
+                padding: 0;
+                top: -3px;
+                flex: 1;
+                text-align: right;
+                margin-left: 10px;
+            }
+
+            padding: 14px 1.25rem;
+            top: -14px;
+            opacity: 1;
+            text-shadow: none;
+        }
+
+        > .container {
+            @include media-breakpoint-only('s') {
+                padding-left: 40px;
+            }
+
+            @include media-breakpoint-down('md') {
+                padding-left: 30px;
+            }
+
+            @include media-breakpoint-down('sm') {
+                display: flex;
+                flex-direction: column;
+            }
+
+            align-items: center;
+            padding-left: 40px;
+            position: relative;
+
+            > .notification-body {
+                font-size: 85%;
+                margin: 1rem 0;
+            }
+        }
     }
+}
 
-    .notification-icon {
-      display: inline-block;
-      width: 25px;
-      height: 100%;
-      background: url("../images/icons/notice.svg") center center no-repeat;
-      background-size: contain;
-      margin: 0 10px -4px 0;
-      position: absolute;
-      left: -10px;
-      top: 0;
-
-      @include media-breakpoint-up("sm") {
-        left: -15px;
-      }
-    }
-
-    font-family: $font-roboto;
+.alert-warning {
     background: $kuvittaja-yellow;
     border: none;
     border-radius: 0;
     color: #000;
-    font-weight: inherit;
+    font-weight: bold;
     line-height: 18px;
-    padding-top: 15px;
-    padding-bottom: 15px;
-    margin: 0;
-    border-bottom: 1px solid darken($kuvittaja-yellow, 20%);
-
-    &:last-child {
-      border-bottom-color: transparent;
-    }
-
-    .fa {
-      font-size: 20px;
-      margin-right: 10px;
-    }
-
-    .close {
-      @include media-breakpoint-down("sm") {
-        position: relative;
-        padding: 0;
-        top: -3px;
-        flex: 1;
-        text-align: right;
-        margin-left: 10px;
-      }
-
-      padding: 14px 1.25rem;
-      top: -14px;
-      opacity: 1;
-      text-shadow: none;
-    }
-
-    > .container {
-      @include media-breakpoint-only("s") {
-        padding-left: 40px;
-      }
-
-      @include media-breakpoint-down("md") {
-        padding-left: 30px;
-      }
-
-      @include media-breakpoint-down("sm") {
-        display: flex;
-        flex-direction: column;
-      }
-
-      align-items: center;
-      padding-left: 40px;
-      position: relative;
-
-      > .notification-body {
-        font-size: 85%;
-        margin: 1rem 0;
-      }
-    }
-  }
-}
-
-.alert-warning {
-  background: $kuvittaja-yellow;
-  border: none;
-  border-radius: 0;
-  color: #000;
-  font-weight: bold;
-  line-height: 18px;
-  padding-top: 20px;
-  padding-bottom: 20px;
-  margin: 20px 0 0 0;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    margin: 20px 0 2rem 0 !important;
 }
