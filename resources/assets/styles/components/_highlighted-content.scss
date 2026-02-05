@@ -48,7 +48,13 @@
         }
     }
 
-    > :last-child {
-        margin-bottom: 0 !important;
+    .ihh-cta {
+        margin-bottom: 1.625rem;
+    }
+
+    .text-wrapper {
+        > :last-child {
+            margin-bottom: 0 !important;
+        }
     }
 }
