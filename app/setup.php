@@ -223,7 +223,7 @@ register_post_type('event', [
         'name' => __('Event', 'ihh'),
         'singular_name' => __('Events', 'ihh'),
     ],
-    'supports' => ['title', 'editor', 'thumbnail'],
+    'supports' => ['title', 'editor', 'thumbnail', 'revisions'],
     'public' => true,
     'has_archive' => false,
     'menu_position' => 6,
