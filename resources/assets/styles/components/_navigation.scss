@@ -1,5 +1,6 @@
 $menu-dark-pink: #f7a091;
 $menu-light-pink: #fbd0c8;
+$mobile-bp: 1300px;
 
 .main-nav-container {
     padding-bottom: 0;
@@ -398,23 +399,23 @@ $menu-light-pink: #fbd0c8;
 
 .main-nav-container .navbar-nav .dropdown-toggle + .dropdown-menu {
     border: none;
-    max-width: 1110px;
+    max-width: $mobile-bp;
     width: 100%;
     position: absolute;
     left: 50%;
     transform: translate(-50%, -2px);
 
     &.columns-1 {
-        max-width: calc(1110px * 1 / 4);
+        max-width: calc($mobile-bp * 1 / 4);
     }
 
     &.columns-2,
     &.columns-3 {
-        max-width: calc(1110px * 3 / 4);
+        max-width: calc($mobile-bp * 3 / 4);
     }
 
     &.columns-4 {
-        max-width: 1110px;
+        max-width: $mobile-bp;
     }
 }
 
@@ -637,7 +638,7 @@ $menu-light-pink: #fbd0c8;
     transform: rotate(-180deg);
 }
 
-@media (max-width: 1110px) {
+@media (max-width: $mobile-bp) {
     .dropdown-inner-menu,
     .dropdown-submenu {
         padding: 0.5rem 0 !important;
@@ -1027,7 +1028,7 @@ $menu-light-pink: #fbd0c8;
         }
     }
 
-    @media (max-width: 1110px) {
+    @media (max-width: $mobile-bp) {
         display: none;
     }
 
@@ -1079,7 +1080,7 @@ $menu-light-pink: #fbd0c8;
     position: relative;
     cursor: pointer;
 
-    @media (min-width: 1111px) {
+    @media (min-width: #{$mobile-bp + 1px}) {
         transform: translate(0, 5px);
     }
 
@@ -1098,7 +1099,7 @@ $menu-light-pink: #fbd0c8;
         .language-menu__label {
             font-size: 0.75rem;
 
-            @media (min-width: 1111px) {
+            @media (min-width: #{$mobile-bp + 1px}) {
                 display: none;
             }
         }
@@ -1114,7 +1115,7 @@ $menu-light-pink: #fbd0c8;
                 text-transform: none;
                 font-weight: 700;
 
-                @media (max-width: 1110px) {
+                @media (max-width: $mobile-bp) {
                     display: none;
                 }
             }
@@ -1152,7 +1153,7 @@ $menu-light-pink: #fbd0c8;
         right: -0.5rem;
         transform: translateY(17px);
 
-        @media (max-width: 1110px) {
+        @media (max-width: $mobile-bp) {
             right: -1.5rem;
         }
 
