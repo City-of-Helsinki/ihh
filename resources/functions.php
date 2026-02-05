@@ -113,7 +113,7 @@ function add_custom_taxonomies()
 {
     register_taxonomy(
         'target_group',
-        ['post', 'event'],
+        ['post'],
         [
             'hierarchical' => true,
 
