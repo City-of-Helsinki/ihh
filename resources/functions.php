@@ -98,6 +98,7 @@ require_once 'integrations/complianz.php';
 require_once 'integrations/show-cookie-banner.php';
 require_once 'acf-field-normalize-colors.php';
 require_once 'disable-comments.php';
+require_once 'event-acf-preview.php';
 
 require_once get_template_directory() . '/tinymce-editor-styles.php';
 
@@ -198,34 +199,34 @@ function ihh_acf_input_admin_footer()
             '#231f20', // black
             '#ffffff', // white
 
-            // green
-            '#01a090',
-            '#4dbdb1',
-            '#80d0c8',
+                    // green
+                    '#01a090',
+                    '#4dbdb1',
+                    '#80d0c8',
 
-            // pink
-            '#f7a091',
-            '#f9bdb2',
-            '#fbd0c8',
+                    // pink
+                    '#f7a091',
+                    '#f9bdb2',
+                    '#fbd0c8',
 
-            // orange
-            '#f0942f',
-            '#f5b46d',
-            '#f8ca97',
+                    // orange
+                    '#f0942f',
+                    '#f5b46d',
+                    '#f8ca97',
 
-            // yellow
-            '#f0e856',
-            '#f5ef89',
-            '#f8f3ab',
-        ];
+                    // yellow
+                    '#f0e856',
+                    '#f5ef89',
+                    '#f8f3ab',
+                ];
 
-        // return
-        return args;
+                // return
+                return args;
 
-    });
-})(jQuery);
-</script>
-<?php
+            });
+        })(jQuery);
+    </script>
+    <?php
 }
 
 add_action('acf/input/admin_footer', 'ihh_acf_input_admin_footer');
@@ -581,7 +582,7 @@ if (true) {
  */
 add_action('admin_print_footer_scripts-nav-menus.php', function () {
     ?>
-<script>
+    <script>
 jQuery(function($) {
 
     function updateMenuSectionTitleUI() {
@@ -591,47 +592,47 @@ jQuery(function($) {
 
             // Check depth from class menu-item-depth-X
             var match = $item.attr('class').match(/menu-item-depth-(\d+)/);
-            var depth = match ? parseInt(match[1], 10) : 0;
+                    var depth = match ? parseInt(match[1], 10) : 0;
 
-            // ACF-field for "Menu Section Title" checkbox
-            var $sectionField = $item.find('.acf-field[data-name="menu_section_title"]');
-            if (!$sectionField.length) {
-                return; // No such field in this item
+                    // ACF-field for "Menu Section Title" checkbox
+                    var $sectionField = $item.find('.acf-field[data-name="menu_section_title"]');
+                    if (!$sectionField.length) {
+                        return; // No such field in this item
+                    }
+
+                    var $checkbox = $sectionField.find('input[type="checkbox"]');
+                    var $urlField = $item.find('p.field-url');
+                    var $quickField = $item.find('.acf-field[data-name="quick_link"]'); // Quick links field
+
+                    // CHANGE this value if "level 2" means a different depth
+                    var allowedDepth = 1; // 0 = top level, 1 = next, etc.
+
+                    if (depth !== allowedDepth) {
+                        // NOT the allowed level: hide section-title field, but show URL + quick_link
+                        $sectionField.hide();
+                        $urlField.show();
+                        $quickField.show();
+                    } else {
+                        // Correct level: show section-title field
+                        $sectionField.show();
+
+                        if ($checkbox.is(':checked')) {
+                            // This item is a title → hide URL field + quick_link field
+                            $urlField.hide();
+                            $quickField.hide();
+                        } else {
+                            // Regular item → show URL and quick_link fields
+                            $urlField.show();
+                            $quickField.show();
+                        }
+                    }
+                });
             }
 
-            var $checkbox = $sectionField.find('input[type="checkbox"]');
-            var $urlField = $item.find('p.field-url');
-            var $quickField = $item.find('.acf-field[data-name="quick_link"]'); // Quick links field
+            // BELOW: the event bindings to trigger the UI update function
 
-            // CHANGE this value if "level 2" means a different depth
-            var allowedDepth = 1; // 0 = top level, 1 = next, etc.
-
-            if (depth !== allowedDepth) {
-                // NOT the allowed level: hide section-title field, but show URL + quick_link
-                $sectionField.hide();
-                $urlField.show();
-                $quickField.show();
-            } else {
-                // Correct level: show section-title field
-                $sectionField.show();
-
-                if ($checkbox.is(':checked')) {
-                    // This item is a title → hide URL field + quick_link field
-                    $urlField.hide();
-                    $quickField.hide();
-                } else {
-                    // Regular item → show URL and quick_link fields
-                    $urlField.show();
-                    $quickField.show();
-                }
-            }
-        });
-    }
-
-    // BELOW: the event bindings to trigger the UI update function
-
-    // 1) on initial page load
-    updateMenuSectionTitleUI();
+            // 1) on initial page load
+            updateMenuSectionTitleUI();
 
     // 2) when menu-items are sorted (level changes)
     $('#menu-to-edit').on('sortstop', function() {
@@ -650,9 +651,9 @@ jQuery(function($) {
         }
     });
 
-});
-</script>
-<?php
+        });
+    </script>
+    <?php
 });
 
 /**
