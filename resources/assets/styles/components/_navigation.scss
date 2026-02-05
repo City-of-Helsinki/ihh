@@ -662,14 +662,22 @@ $mobile-bp: 1300px;
     }
 
     .dropdown-menu li.has-children {
-        & > a > span::after {
+        /* Add arrow to link element */
+        & > a {
+            position: relative;
+        }
+
+        & > a::after {
             display: inline-block;
             content: '\F078';
             font-family: FontAwesome, sans-serif;
             font-size: 12px !important;
             font-weight: 500;
-            margin-left: 0.5rem;
-            transform: translate(0, -2px);
+            position: absolute;
+            right: -1rem;
+            top: 50%;
+            transform: translateY(-50%);
+            padding: 1rem;
         }
 
         & > ul {
@@ -688,8 +696,8 @@ $mobile-bp: 1300px;
     }
 
     .dropdown-menu li.has-children.is-open {
-        & > a > span::after {
-            transform: rotate(-180deg);
+        & > a::after {
+            transform: translateY(-50%) rotate(-180deg);
         }
 
         & > ul {

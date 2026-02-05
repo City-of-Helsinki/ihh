@@ -100,10 +100,18 @@ export default {
             function (e) {
                 const ww = window.innerWidth;
                 // Only apply for mobile widths
-                if (ww > 1110) return;
+                if (ww > 1300) return;
 
-                e.preventDefault();
-                e.stopPropagation();
+                // Link: toggle only if the <a> itself was clicked (i.e., the after area)
+                if ($(this).is('a.nav-link')) {
+                    if (e.target !== this) {
+                        // Do navigation
+                        return;
+                    }
+                    // Prevent navigation
+                    e.preventDefault();
+                    e.stopPropagation();
+                }
 
                 var $li = $(this).closest('li.has-children');
                 var $menu = $(this).closest('.dropdown-menu');
