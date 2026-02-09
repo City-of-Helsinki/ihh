@@ -47,18 +47,18 @@
       'post_status'   => 'publish',
     );
 
-    $events_query = new WP_Query($args);
+    $posts_query = new WP_Query($args);
     @endphp
 
-    @while ($events_query->have_posts()) @php $events_query->the_post() @endphp
+    @while ($posts_query->have_posts()) @php $posts_query->the_post() @endphp
         @include ('partials.content.grid')
     @endwhile
 </div>
 
 @php
   $has_more = (
-      $events_query->max_num_pages > $paged // has more pages to show
-      && $events_query->found_posts > $posts_per_page // has more posts than one page
+      $posts_query->max_num_pages > $paged // has more pages to show
+      && $posts_query->found_posts > $posts_per_page // has more posts than one page
   );
   wp_reset_postdata();
 @endphp
@@ -69,8 +69,8 @@
       class="btn ihh-cta"
       @if(!$has_more) style="display:none" @endif
       data-current-page="1"
-      data-offset="6"
-      data-per-page="9"
+      data-offset="{{ $posts_per_page }}"
+      data-per-page="{{ $posts_per_page }}"
       data-nonce="{{ wp_create_nonce('load_more_news') }}"
       {!! $button_style !!}
     >

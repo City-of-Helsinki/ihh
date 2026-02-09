@@ -54,7 +54,7 @@
     </div>
 
     @php
-      $has_more = ($events_query->post_count >= $posts_per_page);
+      $has_more = ($events_query->found_posts > $posts_per_page);
       wp_reset_postdata();
     @endphp
 
@@ -65,7 +65,7 @@
           @if(!$has_more) style="display:none" @endif
           data-current-page="1"
           data-offset="{{ $posts_per_page }}"
-          data-per-page="9"
+          data-per-page="{{ $posts_per_page }}"
           data-range="{{ $is_past_events_page ? 'past' : 'upcoming' }}"
           data-nonce="{{ wp_create_nonce('load_more_events') }}"
           {!! $button_style !!}
