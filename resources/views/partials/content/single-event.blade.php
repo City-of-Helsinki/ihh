@@ -109,18 +109,6 @@
           {!! get_field('description') !!}
         </div>
         @endif
-        @if($is_event && get_field('streaming'))
-        <div class="event-streaming">
-          <h2>{{ pll_e('Streaming') }}</h2>
-          {!! get_field('streaming') !!}
-        </div>
-        @endif
-        @if($is_event && get_field('program'))
-        <div class="event-program">
-          <h2>{{ pll_e('Program') }}</h2>
-          {!! get_field('program') !!}
-        </div>
-        @endif
       </div>
       <div class="clear"></div>
     </div>
