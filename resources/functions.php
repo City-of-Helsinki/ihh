@@ -194,10 +194,10 @@ function ihh_acf_input_admin_footer()
 (function($) {
     acf.add_filter('color_picker_args', function(args, $field) {
 
-        // Add colors to color palette
-        args.palettes = [
-            '#231f20', // black
-            '#ffffff', // white
+                // Add colors to color palette
+                args.palettes = [
+                    '#231f20', // black
+                    '#ffffff', // white
 
                     // green
                     '#01a090',
@@ -261,6 +261,7 @@ add_shortcode('ihh-cta', function ($atts) {
     $svg_style = '<style>#' . $unique_id . ' .inline-svg svg { fill: ' . $color . '; }</style>';
 
     $cta_button =
+        $svg_style .
         '<a id="' .
         $unique_id .
         '" style="background:' .
@@ -277,8 +278,7 @@ add_shortcode('ihh-cta', function ($atts) {
         $target .
         '">' .
         $text .
-        '</a>' .
-        $svg_style;
+        '</a>';
 
     return $cta_button;
 });
