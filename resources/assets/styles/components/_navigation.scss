@@ -1017,7 +1017,7 @@ $mobile-bp: 1300px;
     gap: 0.75rem;
     flex: 1 1 auto;
     justify-content: end;
-    z-index: 1;
+    z-index: 9999;
 }
 
 .desktop-search-form {
