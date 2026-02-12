@@ -229,3 +229,47 @@
         }
     }
 }
+
+@media print {
+    .page-template-template-checklist {
+        @page {
+            size: $print-page-size;
+        }
+
+        padding: 0 2rem !important;
+
+        main {
+            .single-page-layout {
+                min-width: unset !important;
+
+                .row .col-md article {
+                    > * {
+                        display: none !important;
+                    }
+
+                    .content-header {
+                        display: revert !important;
+                    }
+
+                    .checklist-container {
+                        display: revert !important;
+                        min-width: unset !important;
+                        max-width: unset !important;
+                    }
+                }
+            }
+        }
+
+        .ihhce {
+            max-width: unset !important;
+        }
+
+        .header-area,
+        .breadcrumbs-container,
+        .content-footer,
+        #aca-wbc-chat-app-button,
+        footer {
+            display: none !important;
+        }
+    }
+}
