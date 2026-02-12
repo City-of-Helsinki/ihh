@@ -531,6 +531,655 @@
                     "min": "",
                     "max": ""
                 },
+                "layout_67856ec2913a4": {
+                    "key": "layout_67856ec2913a4",
+                    "name": "checklist",
+                    "label": "Checklist",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_67856ec2913a5",
+                            "label": "Section heading",
+                            "name": "section_heading",
+                            "aria-label": "",
+                            "type": "text",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": "",
+                            "maxlength": ""
+                        },
+                        {
+                            "key": "field_67856ec2913a5",
+                            "label": "Section heading",
+                            "name": "section_heading",
+                            "aria-label": "",
+                            "type": "text",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": "",
+                            "maxlength": ""
+                        },
+                        {
+                            "key": "field_67856ec2913a5",
+                            "label": "Section heading",
+                            "name": "section_heading",
+                            "aria-label": "",
+                            "type": "text",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": "",
+                            "maxlength": ""
+                        },
+                        {
+                            "key": "field_67856ec2913a6",
+                            "label": "Accordion",
+                            "name": "faq_accordion",
+                            "aria-label": "",
+                            "type": "repeater",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "collapsed": "",
+                            "min": 0,
+                            "max": 0,
+                            "layout": "block",
+                            "button_label": "Lisää rivi",
+                            "rows_per_page": 20,
+                            "sub_fields": [
+                                {
+                                    "key": "field_67856ec2913a7",
+                                    "label": "Title",
+                                    "name": "question",
+                                    "aria-label": "",
+                                    "type": "text",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "default_value": "",
+                                    "placeholder": "",
+                                    "prepend": "",
+                                    "append": "",
+                                    "maxlength": "",
+                                    "parent_repeater": "field_67856ec2913a6"
+                                },
+                                {
+                                    "key": "field_67856ec2913a8",
+                                    "label": "Content",
+                                    "name": "answer",
+                                    "aria-label": "",
+                                    "type": "wysiwyg",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "default_value": "",
+                                    "tabs": "all",
+                                    "toolbar": "full",
+                                    "media_upload": 1,
+                                    "delay": 0,
+                                    "parent_repeater": "field_67856ec2913a6"
+                                },
+                                {
+                                    "key": "field_6799b3276db96",
+                                    "label": "Accordion list",
+                                    "name": "accordion_link_list",
+                                    "aria-label": "",
+                                    "type": "repeater",
+                                    "instructions": "This will be added after the accordion content",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "collapsed": "",
+                                    "min": 0,
+                                    "max": 0,
+                                    "layout": "block",
+                                    "button_label": "Lisää rivi",
+                                    "rows_per_page": 20,
+                                    "parent_repeater": "field_67856ec2913a6",
+                                    "sub_fields": [
+                                        {
+                                            "key": "field_6799b3486db97",
+                                            "label": "Title",
+                                            "name": "accordion_link_list_title",
+                                            "aria-label": "",
+                                            "type": "text",
+                                            "instructions": "",
+                                            "required": 0,
+                                            "conditional_logic": 0,
+                                            "wrapper": {
+                                                "width": "",
+                                                "class": "",
+                                                "id": ""
+                                            },
+                                            "default_value": "",
+                                            "placeholder": "",
+                                            "prepend": "",
+                                            "append": "",
+                                            "maxlength": "",
+                                            "parent_repeater": "field_6799b3276db96"
+                                        },
+                                        {
+                                            "key": "field_6799b35d6db98",
+                                            "label": "Links or texts",
+                                            "name": "accordion_links",
+                                            "aria-label": "",
+                                            "type": "repeater",
+                                            "instructions": "",
+                                            "required": 0,
+                                            "conditional_logic": 0,
+                                            "wrapper": {
+                                                "width": "",
+                                                "class": "",
+                                                "id": ""
+                                            },
+                                            "collapsed": "",
+                                            "min": 0,
+                                            "max": 0,
+                                            "layout": "block",
+                                            "button_label": "Lisää rivi",
+                                            "rows_per_page": 20,
+                                            "parent_repeater": "field_6799b3276db96",
+                                            "sub_fields": [
+                                                {
+                                                    "key": "field_6799b3776db99",
+                                                    "label": "Link",
+                                                    "name": "accordion_links_link",
+                                                    "aria-label": "",
+                                                    "type": "link",
+                                                    "instructions": "",
+                                                    "required": 0,
+                                                    "conditional_logic": 0,
+                                                    "wrapper": {
+                                                        "width": "",
+                                                        "class": "",
+                                                        "id": ""
+                                                    },
+                                                    "return_format": "array",
+                                                    "parent_repeater": "field_6799b35d6db98"
+                                                },
+                                                {
+                                                    "key": "field_67b34323be94f",
+                                                    "label": "Information",
+                                                    "name": "accordion_links_information",
+                                                    "aria-label": "",
+                                                    "type": "text",
+                                                    "instructions": "",
+                                                    "required": 0,
+                                                    "conditional_logic": 0,
+                                                    "wrapper": {
+                                                        "width": "",
+                                                        "class": "",
+                                                        "id": ""
+                                                    },
+                                                    "default_value": "",
+                                                    "placeholder": "",
+                                                    "prepend": "",
+                                                    "append": "",
+                                                    "maxlength": "",
+                                                    "parent_repeater": "field_6799b35d6db98"
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "key": "field_67856ec2913a6",
+                            "label": "Accordion",
+                            "name": "faq_accordion",
+                            "aria-label": "",
+                            "type": "repeater",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "collapsed": "",
+                            "min": 0,
+                            "max": 0,
+                            "layout": "block",
+                            "button_label": "Lisää rivi",
+                            "rows_per_page": 20,
+                            "sub_fields": [
+                                {
+                                    "key": "field_67856ec2913a7",
+                                    "label": "Title",
+                                    "name": "question",
+                                    "aria-label": "",
+                                    "type": "text",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "default_value": "",
+                                    "placeholder": "",
+                                    "prepend": "",
+                                    "append": "",
+                                    "maxlength": "",
+                                    "parent_repeater": "field_67856ec2913a6"
+                                },
+                                {
+                                    "key": "field_67856ec2913a8",
+                                    "label": "Content",
+                                    "name": "answer",
+                                    "aria-label": "",
+                                    "type": "wysiwyg",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "default_value": "",
+                                    "tabs": "all",
+                                    "toolbar": "full",
+                                    "media_upload": 1,
+                                    "delay": 0,
+                                    "parent_repeater": "field_67856ec2913a6"
+                                },
+                                {
+                                    "key": "field_6799b3276db96",
+                                    "label": "Accordion list",
+                                    "name": "accordion_link_list",
+                                    "aria-label": "",
+                                    "type": "repeater",
+                                    "instructions": "This will be added after the accordion content",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "collapsed": "",
+                                    "min": 0,
+                                    "max": 0,
+                                    "layout": "block",
+                                    "button_label": "Lisää rivi",
+                                    "rows_per_page": 20,
+                                    "parent_repeater": "field_67856ec2913a6",
+                                    "sub_fields": [
+                                        {
+                                            "key": "field_6799b3486db97",
+                                            "label": "Title",
+                                            "name": "accordion_link_list_title",
+                                            "aria-label": "",
+                                            "type": "text",
+                                            "instructions": "",
+                                            "required": 0,
+                                            "conditional_logic": 0,
+                                            "wrapper": {
+                                                "width": "",
+                                                "class": "",
+                                                "id": ""
+                                            },
+                                            "default_value": "",
+                                            "placeholder": "",
+                                            "prepend": "",
+                                            "append": "",
+                                            "maxlength": "",
+                                            "parent_repeater": "field_6799b3276db96"
+                                        },
+                                        {
+                                            "key": "field_6799b35d6db98",
+                                            "label": "Links or texts",
+                                            "name": "accordion_links",
+                                            "aria-label": "",
+                                            "type": "repeater",
+                                            "instructions": "",
+                                            "required": 0,
+                                            "conditional_logic": 0,
+                                            "wrapper": {
+                                                "width": "",
+                                                "class": "",
+                                                "id": ""
+                                            },
+                                            "collapsed": "",
+                                            "min": 0,
+                                            "max": 0,
+                                            "layout": "block",
+                                            "button_label": "Lisää rivi",
+                                            "rows_per_page": 20,
+                                            "parent_repeater": "field_6799b3276db96",
+                                            "sub_fields": [
+                                                {
+                                                    "key": "field_6799b3776db99",
+                                                    "label": "Link",
+                                                    "name": "accordion_links_link",
+                                                    "aria-label": "",
+                                                    "type": "link",
+                                                    "instructions": "",
+                                                    "required": 0,
+                                                    "conditional_logic": 0,
+                                                    "wrapper": {
+                                                        "width": "",
+                                                        "class": "",
+                                                        "id": ""
+                                                    },
+                                                    "return_format": "array",
+                                                    "parent_repeater": "field_6799b35d6db98"
+                                                },
+                                                {
+                                                    "key": "field_67b34323be94f",
+                                                    "label": "Information",
+                                                    "name": "accordion_links_information",
+                                                    "aria-label": "",
+                                                    "type": "text",
+                                                    "instructions": "",
+                                                    "required": 0,
+                                                    "conditional_logic": 0,
+                                                    "wrapper": {
+                                                        "width": "",
+                                                        "class": "",
+                                                        "id": ""
+                                                    },
+                                                    "default_value": "",
+                                                    "placeholder": "",
+                                                    "prepend": "",
+                                                    "append": "",
+                                                    "maxlength": "",
+                                                    "parent_repeater": "field_6799b35d6db98"
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "key": "field_67856ec2913a6",
+                            "label": "Accordion",
+                            "name": "faq_accordion",
+                            "aria-label": "",
+                            "type": "repeater",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "collapsed": "",
+                            "min": 0,
+                            "max": 0,
+                            "layout": "block",
+                            "button_label": "Lisää rivi",
+                            "rows_per_page": 20,
+                            "sub_fields": [
+                                {
+                                    "key": "field_67856ec2913a7",
+                                    "label": "Title",
+                                    "name": "question",
+                                    "aria-label": "",
+                                    "type": "text",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "default_value": "",
+                                    "placeholder": "",
+                                    "prepend": "",
+                                    "append": "",
+                                    "maxlength": "",
+                                    "parent_repeater": "field_67856ec2913a6"
+                                },
+                                {
+                                    "key": "field_67856ec2913a8",
+                                    "label": "Content",
+                                    "name": "answer",
+                                    "aria-label": "",
+                                    "type": "wysiwyg",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "default_value": "",
+                                    "tabs": "all",
+                                    "toolbar": "full",
+                                    "media_upload": 1,
+                                    "delay": 0,
+                                    "parent_repeater": "field_67856ec2913a6"
+                                },
+                                {
+                                    "key": "field_6799b3276db96",
+                                    "label": "Accordion list",
+                                    "name": "accordion_link_list",
+                                    "aria-label": "",
+                                    "type": "repeater",
+                                    "instructions": "This will be added after the accordion content",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "collapsed": "",
+                                    "min": 0,
+                                    "max": 0,
+                                    "layout": "block",
+                                    "button_label": "Lisää rivi",
+                                    "rows_per_page": 20,
+                                    "parent_repeater": "field_67856ec2913a6",
+                                    "sub_fields": [
+                                        {
+                                            "key": "field_6799b3486db97",
+                                            "label": "Title",
+                                            "name": "accordion_link_list_title",
+                                            "aria-label": "",
+                                            "type": "text",
+                                            "instructions": "",
+                                            "required": 0,
+                                            "conditional_logic": 0,
+                                            "wrapper": {
+                                                "width": "",
+                                                "class": "",
+                                                "id": ""
+                                            },
+                                            "default_value": "",
+                                            "placeholder": "",
+                                            "prepend": "",
+                                            "append": "",
+                                            "maxlength": "",
+                                            "parent_repeater": "field_6799b3276db96"
+                                        },
+                                        {
+                                            "key": "field_6799b35d6db98",
+                                            "label": "Links or texts",
+                                            "name": "accordion_links",
+                                            "aria-label": "",
+                                            "type": "repeater",
+                                            "instructions": "",
+                                            "required": 0,
+                                            "conditional_logic": 0,
+                                            "wrapper": {
+                                                "width": "",
+                                                "class": "",
+                                                "id": ""
+                                            },
+                                            "collapsed": "",
+                                            "min": 0,
+                                            "max": 0,
+                                            "layout": "block",
+                                            "button_label": "Lisää rivi",
+                                            "rows_per_page": 20,
+                                            "parent_repeater": "field_6799b3276db96",
+                                            "sub_fields": [
+                                                {
+                                                    "key": "field_6799b3776db99",
+                                                    "label": "Link",
+                                                    "name": "accordion_links_link",
+                                                    "aria-label": "",
+                                                    "type": "link",
+                                                    "instructions": "",
+                                                    "required": 0,
+                                                    "conditional_logic": 0,
+                                                    "wrapper": {
+                                                        "width": "",
+                                                        "class": "",
+                                                        "id": ""
+                                                    },
+                                                    "return_format": "array",
+                                                    "parent_repeater": "field_6799b35d6db98"
+                                                },
+                                                {
+                                                    "key": "field_67b34323be94f",
+                                                    "label": "Information",
+                                                    "name": "accordion_links_information",
+                                                    "aria-label": "",
+                                                    "type": "text",
+                                                    "instructions": "",
+                                                    "required": 0,
+                                                    "conditional_logic": 0,
+                                                    "wrapper": {
+                                                        "width": "",
+                                                        "class": "",
+                                                        "id": ""
+                                                    },
+                                                    "default_value": "",
+                                                    "placeholder": "",
+                                                    "prepend": "",
+                                                    "append": "",
+                                                    "maxlength": "",
+                                                    "parent_repeater": "field_6799b35d6db98"
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "key": "field_67856ec2913a9",
+                            "label": "Line color",
+                            "name": "line_color",
+                            "aria-label": "",
+                            "type": "color_picker",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "#f0e856",
+                            "enable_opacity": 0,
+                            "return_format": "string",
+                            "custom_palette_source": "",
+                            "palette_colors": "",
+                            "show_color_wheel": true
+                        },
+                        {
+                            "key": "field_67856ec2913a9",
+                            "label": "Line color",
+                            "name": "line_color",
+                            "aria-label": "",
+                            "type": "color_picker",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "#f0e856",
+                            "enable_opacity": 0,
+                            "return_format": "string",
+                            "custom_palette_source": "",
+                            "palette_colors": "",
+                            "show_color_wheel": true
+                        },
+                        {
+                            "key": "field_67856ec2913a9",
+                            "label": "Line color",
+                            "name": "line_color",
+                            "aria-label": "",
+                            "type": "color_picker",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "#f0e856",
+                            "enable_opacity": 0,
+                            "return_format": "string",
+                            "custom_palette_source": "",
+                            "palette_colors": "",
+                            "show_color_wheel": true
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
+                },
                 "layout_69086c8c3b2ab": {
                     "key": "layout_69086c8c3b2ab",
                     "name": "contact_block",
@@ -3088,5 +3737,5 @@
     "description": "",
     "show_in_rest": 0,
     "display_title": "",
-    "modified": 1770873860
+    "modified": 1770895071
 }
