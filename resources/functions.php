@@ -726,7 +726,7 @@ add_filter(
 );
 
 /**
- * Show the "checklist" flexible layout only when editing a Page that uses
+ * Show the "checklist" & "link_button" flexible layouts only when editing a Page that uses
  * the "checklist-template" page template.
  */
 add_filter('acf/load_field/name=lift_100_wide', function ($field) {
@@ -768,11 +768,15 @@ add_filter('acf/load_field/name=lift_100_wide', function ($field) {
 
     $template = get_page_template_slug($post_id);
 
-    // If NOT the checklist template, remove the "checklist" layout from the flex field
+    // If NOT "checklist" template, remove "checklist" and "link_button" layouts
     if ($template !== 'views/template-checklist.blade.php') {
         if (!empty($field['layouts'])) {
+            $hide_layouts = ['checklist', 'link_button'];
+
             foreach ($field['layouts'] as $key => $layout) {
-                if (!empty($layout['name']) && $layout['name'] === 'checklist') {
+                $layout_name = $layout['name'] ?? '';
+
+                if ($layout_name && in_array($layout_name, $hide_layouts, true)) {
                     unset($field['layouts'][$key]);
                 }
             }
