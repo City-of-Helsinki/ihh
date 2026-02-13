@@ -4,7 +4,8 @@
 
 <div class="container ihhce">
     <?php if( get_sub_field('section_heading')) : ?>
-    <h2 id="section-heading-<?php echo get_the_ID(); ?>" class="section-heading">
+    <?php $anchor_link = get_sub_field('show_in_anchor_link'); ?>
+    <h2 id="section-heading-<?php echo get_the_ID(); ?>" class="section-heading" <?= $anchor_link ? 'data-anchor="true"' : '';  ?>>
         <?php the_sub_field('section_heading'); ?></h2>
     <?php endif ?>
 

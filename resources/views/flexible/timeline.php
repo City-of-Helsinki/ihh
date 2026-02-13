@@ -16,7 +16,8 @@ endwhile;
 
 <div class="timeline container ihhce">
     <?php if (get_sub_field('section_heading')): ?>
-    <h2 class="section-heading" id="timeline-heading"><?php the_sub_field(
+    <?php $anchor_link = get_sub_field('show_in_anchor_link'); ?>
+    <h2 class="section-heading" id="timeline-heading" <?= $anchor_link ? 'data-anchor="true"' : '';  ?>><?php the_sub_field(
         'section_heading',
     ); ?></h2>
     <?php $hasHeading = true; ?>

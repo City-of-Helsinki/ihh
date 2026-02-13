@@ -10,7 +10,8 @@
     <div class="">
         <div class="contact-liftoff col pl-0">
             <div class="d-flex align-items-center justify-content-between mb-4">
-                <h2><?php the_sub_field("contact_liftoff_section_title"); ?></h2>
+              <?php $anchor_link = get_sub_field('show_in_anchor_link'); ?>
+                <h2 <?= $anchor_link ? 'data-anchor="true"' : '';  ?>><?php the_sub_field("contact_liftoff_section_title"); ?></h2>
                 <?php if ( has_sub_field('contact_liftoff_external_link') ): ?>
                 <div class="more-info">
                     <a class="arrow"
