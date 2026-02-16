@@ -333,6 +333,22 @@ function is_redirection_page()
     return false;
 }
 
+function is_external_link(string $link): bool
+{
+    $link_host = parse_url($link, PHP_URL_HOST);
+    $site_host = parse_url(home_url(), PHP_URL_HOST);
+
+    if (!$link_host || !$site_host) {
+        return false; // treat relative/invalid as not external
+    }
+
+    $link_host = preg_replace('/^www\./i', '', $link_host);
+    $site_host = preg_replace('/^www\./i', '', $site_host);
+
+    return strcasecmp($link_host, $site_host) !== 0;
+}
+
+
 function get_redirection_page_object()
 {
     return get_field('redirect_to', get_the_ID());
@@ -358,8 +374,8 @@ function render_link_section_li(bool $show_images): void
     ?>
 <li class="list-item">
     <a href="<?php the_sub_field(
-        'cta_url',
-    ); ?>" class="arrow" target="<?php echo $is_external ? '_blank' : '_self'; ?>">
+            'cta_url',
+        ); ?>" class="arrow" target="<?php echo $is_external ? '_blank' : '_self'; ?>">
         <?php if ($show_images): ?>
         <div class="image-container aspect-ratio-1-96">
             <?php if (get_sub_field('image')): ?>
@@ -372,8 +388,8 @@ function render_link_section_li(bool $show_images): void
             <h3 class="item-heading"><?php the_sub_field('heading'); ?></h3>
             <p class="item-description"><?php the_sub_field('description'); ?></p>
             <span class="inline-svg rotate-<?php echo $is_external
-                ? '45'
-                : '0'; ?>"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32.6 32.1" xml:space="preserve"
+                    ? '45'
+                    : '0'; ?>"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32.6 32.1" xml:space="preserve"
                     role="presentation">
                     <path style="fill-rule:evenodd;clip-rule:evenodd"
                         d="M32.6 16.1 16.5 0l-2.8 2.8 11.4 11.3H0v4h25L13.7 29.3l2.8 2.8z"></path>

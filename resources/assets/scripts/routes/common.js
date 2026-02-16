@@ -239,15 +239,33 @@ export default {
                     let domain = new URL(links[i]);
                     let linkHostname = domain.hostname.replace('www.', '');
 
+                    // Skip links inside ignored containers
+                    const ignoreSelectors = ['.media-bank-item'];
+                    let shouldIgnore = false;
+
+                    for (let j = 0; j < ignoreSelectors.length; j++) {
+                        if (links[i].closest(ignoreSelectors[j])) {
+                            shouldIgnore = true;
+                            break;
+                        }
+                    }
+
+                    if (shouldIgnore) continue;
+
+                    // Does the link contain an image/icon?
+                    const hasImage = links[i].querySelector('img, picture, svg') !== null;
+
                     if (
                         linkHostname &&
                         locationHostname !== linkHostname &&
                         !links[i].classList.contains('venobox') &&
                         !links[i].classList.contains('fancybox-youtube')
                     ) {
-                        addExternalLinkStyling(links[i]);
+                        if (!hasImage) {
+                            addExternalLinkStyling(links[i]);
+                        }
                     } else {
-                        if (links[i].classList.contains('arrow')) {
+                        if (links[i].classList.contains('arrow') && !hasImage) {
                             addInternalLinkIcon(links[i]);
                         }
                     }
@@ -324,15 +342,16 @@ export default {
                 const isInternal = url.host === currentHost;
 
                 if (isInternal) {
+                    // Does the link contain an image/icon?
+                    const hasImage = link.querySelector('img, picture, svg') !== null;
+
                     const svgArrow45 = '<span class="inline-svg">' + ARROW_SVG_RIGHT + '</span>';
                     const inlineSVG = link.querySelector('.inline-svg');
 
-                    // Add the SVG icon if not already present
-                    if (inlineSVG === null) {
+                    if (inlineSVG === null && !hasImage) {
                         jQuery(link).prepend(svgArrow45);
                     }
 
-                    // Add internal-link class
                     link.classList.add('internal-link');
                 }
             });
