@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-  <section class="content-block container">
+  <section class="content-block container ihhce">
     <div class="content-header">
       <h1>Search result</h1>
     </div>
