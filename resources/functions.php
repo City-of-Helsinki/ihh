@@ -194,10 +194,10 @@ function ihh_acf_input_admin_footer()
 (function($) {
     acf.add_filter('color_picker_args', function(args, $field) {
 
-        // Add colors to color palette
-        args.palettes = [
-            '#231f20', // black
-            '#ffffff', // white
+                // Add colors to color palette
+                args.palettes = [
+                    '#231f20', // black
+                    '#ffffff', // white
 
                     // green
                     '#01a090',
@@ -261,6 +261,7 @@ add_shortcode('ihh-cta', function ($atts) {
     $svg_style = '<style>#' . $unique_id . ' .inline-svg svg { fill: ' . $color . '; }</style>';
 
     $cta_button =
+        $svg_style .
         '<a id="' .
         $unique_id .
         '" style="background:' .
@@ -277,8 +278,7 @@ add_shortcode('ihh-cta', function ($atts) {
         $target .
         '">' .
         $text .
-        '</a>' .
-        $svg_style;
+        '</a>';
 
     return $cta_button;
 });
@@ -590,8 +590,8 @@ jQuery(function($) {
         jQuery('#menu-to-edit .menu-item').each(function() {
             var $item = jQuery(this);
 
-            // Check depth from class menu-item-depth-X
-            var match = $item.attr('class').match(/menu-item-depth-(\d+)/);
+                    // Check depth from class menu-item-depth-X
+                    var match = $item.attr('class').match(/menu-item-depth-(\d+)/);
                     var depth = match ? parseInt(match[1], 10) : 0;
 
                     // ACF-field for "Menu Section Title" checkbox
@@ -648,8 +648,8 @@ jQuery(function($) {
     $(document).ajaxComplete(function(event, xhr, settings) {
         if (settings && settings.data && settings.data.indexOf('action=add-menu-item') !== -1) {
             updateMenuSectionTitleUI();
-        }
-    });
+                }
+            });
 
         });
     </script>
@@ -726,15 +726,30 @@ add_filter(
 );
 
 /**
- * Display "cheklist_block" layout ONLY if the page template is "checklist-template"
+ * Show the "checklist" & "link_button" flexible layouts only when editing a Page that uses
+ * the "checklist-template" page template.
  */
 add_filter('acf/load_field/name=lift_100_wide', function ($field) {
-    // Only in admin
     if (!is_admin()) {
         return $field;
     }
 
-    // Determine the current post_id
+    // Run ONLY on the normal post/page editor screens
+    global $pagenow;
+    if (!in_array($pagenow, ['post.php', 'post-new.php'], true)) {
+        return $field;
+    }
+
+    // Don't run this filter in ACF's Field Group editor.
+    // ACF also loads fields during Field Group save/JSON generation, and altering layouts there can break saving.
+    if (function_exists('get_current_screen')) {
+        $screen = get_current_screen();
+        if ($screen && in_array($screen->post_type ?? '', ['acf-field-group', 'acf-field'], true)) {
+            return $field;
+        }
+    }
+
+    // Determine current post_id (the page/post being edited)
     $post_id = 0;
     if (isset($_GET['post'])) {
         $post_id = (int) $_GET['post'];
@@ -746,16 +761,22 @@ add_filter('acf/load_field/name=lift_100_wide', function ($field) {
         return $field;
     }
 
-    // Check the page template
+    // This logic only makes sense for pages with templates
+    if (get_post_type($post_id) !== 'page') {
+        return $field;
+    }
+
     $template = get_page_template_slug($post_id);
 
-    // If the checklist-template is NOT in use, remove the layout from the list
+    // If NOT "checklist" template, remove "checklist" and "link_button" layouts
     if ($template !== 'views/template-checklist.blade.php') {
-        // Change if necessary 'views/template-checklist.blade.php'
         if (!empty($field['layouts'])) {
+            $hide_layouts = ['checklist', 'link_button'];
+
             foreach ($field['layouts'] as $key => $layout) {
-                if ($layout['name'] === 'checklist') {
-                    // Layout name
+                $layout_name = $layout['name'] ?? '';
+
+                if ($layout_name && in_array($layout_name, $hide_layouts, true)) {
                     unset($field['layouts'][$key]);
                 }
             }

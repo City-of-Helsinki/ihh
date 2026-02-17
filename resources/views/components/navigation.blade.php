@@ -430,7 +430,7 @@
               aria-controls="navbarNav"
               aria-expanded="false"
               aria-label="Toggle navigation">
-        <span class="label">Menu</span>
+        <span class="label">@php pll_e("Menu") @endphp</span>
         <span class="icon">
         </span>
       </button>
