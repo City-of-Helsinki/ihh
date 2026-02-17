@@ -658,10 +658,27 @@ jQuery(function($) {
 
 /**
  * Fix Yoast breadcrumbs for Events custom post type (Singular view)
+ * and past events page
  */
 add_filter(
     'wpseo_breadcrumb_links',
     function ($links) {
+        // Is this an Events page showing past events?
+        if (
+            is_page()
+            && get_page_template_slug(get_queried_object_id()) === 'views/template-events.blade.php' // Is an Events page...
+            && (bool) get_field('pastupcoming_events', get_queried_object_id()) === true // ... for past events
+        ) {
+            $crumb = get_main_events_breadcrumb();
+
+            if ($crumb) {
+                // Insert "the parent" before the last crumb (current page)
+                array_splice($links, max(count($links) - 1, 0), 0, [$crumb]);
+            }
+
+            return $links;
+        }
+
         if (!is_singular('event')) {
             return $links;
         }
@@ -724,6 +741,47 @@ add_filter(
     },
     20,
 );
+
+/**
+ * Returns the "main" events page (template-events + ACF pastupcoming_events = false)
+ * as a Yoast breadcrumb link array: ['url' => ..., 'text' => ...]
+ *
+ * @return array|null
+ */
+function get_main_events_breadcrumb(): ?array
+{
+    // Query for upcoming events page
+    // => template-events
+    // => pastupcoming_events = false
+    $pages = get_posts([
+        'post_type'      => 'page',
+        'post_status'    => 'publish',
+        'posts_per_page' => 1,
+        'orderby'        => 'menu_order',
+        'order'          => 'ASC',
+        'meta_query'     => [
+            'relation' => 'AND',
+            [
+                'key'   => '_wp_page_template',
+                'value' => 'views/template-events.blade.php',
+            ],
+            [
+                'key'     => 'pastupcoming_events',
+                'value'   => '0',
+                'compare' => '=',
+            ],
+        ],
+    ]);
+
+    if (empty($pages)) {
+        return null;
+    }
+
+    return [
+        'url'  => get_permalink($pages[0]->ID),
+        'text' => get_the_title($pages[0]->ID),
+    ];
+}
 
 /**
  * Show the "checklist" & "link_button" flexible layouts only when editing a Page that uses
