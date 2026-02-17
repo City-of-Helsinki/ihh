@@ -247,6 +247,7 @@ $mobile-bp: 1300px;
     font-weight: 500;
     white-space: nowrap;
     transform: translateY(5px);
+    color: $black;
 }
 
 .navbar-toggler > span:not(.label)::before {
@@ -257,6 +258,7 @@ $mobile-bp: 1300px;
     font-size: 0.75rem;
     word-break: keep-all !important;
     font-weight: 500;
+    color: $black;
 }
 
 .navbar-toggler.lang-fi > span:not(.label)::before {
@@ -267,18 +269,18 @@ $mobile-bp: 1300px;
     transform: translateY(1px);
 
     .icon {
-        width: auto;
         height: 1.75rem;
+        width: 1.75rem;
         transform: translateY(2px);
         display: inline-block;
         background-repeat: no-repeat;
         background-size: contain;
-        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke-width='1.5' stroke='currentColor'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' d='M6 18 18 6M6 6l12 12'/%3E%3C/svg%3E");
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke-width='1.5' stroke='%23000'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' d='M6 18 18 6M6 6l12 12'/%3E%3C/svg%3E");
     }
 
     &.collapsed {
         .icon {
-            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke-width='1.5' stroke='currentColor'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' d='M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5'/%3E%3C/svg%3E");
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke-width='1.5' stroke='%23000'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' d='M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5'/%3E%3C/svg%3E");
         }
     }
 }
@@ -1107,6 +1109,7 @@ $mobile-bp: 1300px;
 
         .language-menu__label {
             font-size: 0.75rem;
+            color: $black;
 
             @media (min-width: #{$mobile-bp + 1px}) {
                 display: none;
@@ -1118,6 +1121,7 @@ $mobile-bp: 1300px;
                 width: auto;
                 height: 1.35rem;
                 transform: translateY(-2px);
+                stroke: $black;
             }
 
             .language-menu__current {
@@ -1140,6 +1144,7 @@ $mobile-bp: 1300px;
                     -webkit-transform: translateY(-2px);
                     -o-transform: translateY(-2px);
                     transform: translateY(-2px);
+                    color: $black;
                 }
 
                 &.show::after {
@@ -1147,6 +1152,7 @@ $mobile-bp: 1300px;
                     -moz-transform: rotate(-180deg);
                     -o-transform: rotate(-180deg);
                     transform: rotate(-180deg);
+                    color: $black;
                 }
             }
         }

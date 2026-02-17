@@ -63,7 +63,8 @@ $side = (string) get_sub_field('side');
       </figure>
 
       <div class="card" <?php echo $style; ?>>
-        <h3 class="title"><?php the_sub_field('title'); ?></h3>
+        <?php $anchor_link = get_sub_field('show_in_anchor_link'); ?>
+        <h3 class="title" <?= $anchor_link ? 'data-anchor="true"' : '';  ?>><?php the_sub_field('title'); ?></h3>
 
         <?php the_sub_field('text_body'); ?>
 

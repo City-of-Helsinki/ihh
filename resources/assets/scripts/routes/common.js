@@ -26,7 +26,7 @@ export default {
 
             detectExternalLinks('.main a');
             detectInternalLinks('.main a');
-            createAnchorlinks('.anchorlink-navigation', '#main h2');
+            createAnchorlinks('.anchorlink-navigation');
 
             window.CXBus.configure({
                 pluginsPath: 'https://apps.mypurecloud.ie/widgets/9.0/plugins/',
@@ -155,59 +155,45 @@ export default {
 
         // ### Language menu END
 
-        function createAnchorlinks(navigationEl, anchorTargetEl) {
-            const UNDESIRABLE_PARENTS = '.question, .sidebar, .cmplz-cookiebanner';
+        function createAnchorlinks(navigationEl) {
             const anchorNavigation = document.querySelector(navigationEl);
-            const headings = document.querySelectorAll(anchorTargetEl);
+            const headings = document.querySelectorAll('[data-anchor="true"]');
             const svgArrowRight =
                 '<span class="inline-svg"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32.6 32.1" xml:space="preserve" role="presentation"><path style="fill-rule:evenodd;clip-rule:evenodd" d="M32.6 16.1 16.5 0l-2.8 2.8 11.4 11.3H0v4h25L13.7 29.3l2.8 2.8z"></path></svg></span>';
 
-            if (headings && anchorNavigation) {
-                let ul = document.createElement('ul');
-
-                for (let i = 0; i < headings.length; i++) {
-                    const headingInnerText = headings[i].innerText;
-                    /* Compare: H2 position relative to anchorlink-navigation. */
-                    /* Value 2 = heading is before nav, 4 = after */
-                    const headingPosition = anchorNavigation.compareDocumentPosition(headings[i]);
-
-                    if (
-                        headingInnerText !== '' &&
-                        headingPosition === 4 &&
-                        jQuery(headings[i]).parents(UNDESIRABLE_PARENTS).length === 0
-                    ) {
-                        /* Start anchor link href and target element id with 'to-' if headingInnerText starts with a number */
-                        const curHeadingText = headingInnerText.match(/^\d/)
-                            ? 'to-' + headingInnerText
-                            : headingInnerText;
-
-                        const elementID = curHeadingText
-                            .toLowerCase()
-                            .replace(/\s+/g, '-')
-                            .replace(/[^a-z0-9-]+/gi, '');
-                        const anchorLink_HREF = '#' + elementID;
-
-                        /* Add target anchor */
-                        let span = document.createElement('span');
-                        span.setAttribute('id', elementID);
-                        headings[i].append(span);
-                        headings[i].classList.add('anchor-target');
-
-                        let li = document.createElement('li');
-                        let link = document.createElement('a');
-
-                        link.setAttribute('href', anchorLink_HREF);
-                        link.append(headingInnerText);
-                        link.insertAdjacentHTML('afterbegin', svgArrowRight);
-                        li.append(link);
-                        ul.append(li);
-
-                        scrollToTarget(link);
-                    }
-                }
-
-                anchorNavigation.appendChild(ul);
+            if (!headings && !headings.length) {
+              return;
             }
+
+            const ul = document.createElement('ul');
+
+          headings.forEach(heading => {
+            const headingText = heading.innerText.trim();
+
+            if (!headingText) {
+              return;
+            }
+
+            const elementID = headingText
+              .toLowerCase()
+              .replace(/^\d/, 'to-$&')
+              .replace(/\s+/g, '-')
+              .replace(/[^a-z0-9-]+/gi, '');
+
+            heading.setAttribute('id', elementID);
+
+            const li = document.createElement('li');
+            const link = document.createElement('a');
+
+            link.href = `#${elementID}`;
+            link.innerHTML = `${svgArrowRight}${headingText}`;
+
+            li.append(link);
+            ul.append(li);
+
+          });
+
+          anchorNavigation.append(ul);
         }
 
         function scrollToTarget(element) {
