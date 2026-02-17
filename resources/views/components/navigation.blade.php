@@ -282,11 +282,11 @@
               if ( $has_submenu == true && count( $menu_array ) > 0 ) {
                   $submenu_id = 'submenu_' . $menu_item->ID;
 
-                  $menu_list .= '<li class="nav-item menu-item submenu menu-item-has-children has-children ' . $active_class . '">' . "\n";
-
                   // columns_total calculated above – clamp between 1–4
                   $columns_for_class = max( 1, min( 4, (int) $columns_total ) );
                   $columns_class     = 'columns-' . $columns_for_class;
+
+                  $menu_list .= '<li class="nav-item menu-item submenu menu-item-has-children has-children ' . $active_class . ' ' . $columns_class . '">' . "\n";
 
                   // DEFAULT: normal text-based title
                   $menu_item_label = $menu_item->title . ' <b class="caret"></b>';
