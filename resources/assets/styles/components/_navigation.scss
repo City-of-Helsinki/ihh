@@ -539,6 +539,10 @@ $mobile-bp: 1024px;
     li.nav-item {
         .nav-link {
             font-weight: 400;
+
+            &:hover {
+                text-decoration: underline !important;
+            }
         }
     }
 }
