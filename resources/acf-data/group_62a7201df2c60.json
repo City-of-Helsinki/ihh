@@ -1245,6 +1245,27 @@
                             "translations": "translate"
                         },
                         {
+                          "key": "field_698b0058d98df",
+                          "label": "Display in Anchor Navigation",
+                          "name": "show_in_anchor_link",
+                          "aria-label": "",
+                          "type": "true_false",
+                          "instructions": "",
+                          "required": 0,
+                          "conditional_logic": 0,
+                          "wrapper": {
+                            "width": "",
+                            "class": "",
+                            "id": ""
+                          },
+                          "message": "Choose whether to display the heading in the anchor link navigation.",
+                          "default_value": 0,
+                          "allow_in_bindings": 0,
+                          "ui_on_text": "",
+                          "ui_off_text": "",
+                          "ui": 1
+                        },
+                        {
                             "key": "field_62e13d6bd8961",
                             "label": "Contact Box",
                             "name": "info_box_5050",
@@ -1558,6 +1579,27 @@
                             "prepend": "",
                             "append": "",
                             "maxlength": ""
+                        },
+                        {
+                          "key": "field_698b0135a721f",
+                          "label": "Display in Anchor Navigation",
+                          "name": "show_in_anchor_link",
+                          "aria-label": "",
+                          "type": "true_false",
+                          "instructions": "",
+                          "required": 0,
+                          "conditional_logic": 0,
+                          "wrapper": {
+                            "width": "",
+                            "class": "",
+                            "id": ""
+                          },
+                          "message": "Choose whether to display the heading in the anchor link navigation.",
+                          "default_value": 0,
+                          "allow_in_bindings": 0,
+                          "ui_on_text": "",
+                          "ui_off_text": "",
+                          "ui": 1
                         },
                         {
                             "key": "field_62b1ce86152e5",
@@ -2184,6 +2226,27 @@
                             "maxlength": ""
                         },
                         {
+                          "key": "field_698c149800650",
+                          "label": "Display in Anchor Navigation",
+                          "name": "show_in_anchor_link",
+                          "aria-label": "",
+                          "type": "true_false",
+                          "instructions": "",
+                          "required": 0,
+                          "conditional_logic": 0,
+                          "wrapper": {
+                            "width": "",
+                            "class": "",
+                            "id": ""
+                          },
+                          "message": "Choose whether to display the heading in the anchor link navigation.",
+                          "default_value": 0,
+                          "allow_in_bindings": 0,
+                          "ui_on_text": "",
+                          "ui_off_text": "",
+                          "ui": 1
+                        },
+                        {
                             "key": "field_62a724450c08e",
                             "label": "Text body",
                             "name": "text_body",
@@ -2529,6 +2592,27 @@
                             "maxlength": ""
                         },
                         {
+                          "key": "field_698b12e3fb4f4",
+                          "label": "Display in Anchor Navigation",
+                          "name": "show_in_anchor_link",
+                          "aria-label": "",
+                          "type": "true_false",
+                          "instructions": "",
+                          "required": 0,
+                          "conditional_logic": 0,
+                          "wrapper": {
+                            "width": "",
+                            "class": "",
+                            "id": ""
+                          },
+                          "message": "Choose whether to display the heading in the anchor link navigation.",
+                          "default_value": 0,
+                          "allow_in_bindings": 0,
+                          "ui_on_text": "",
+                          "ui_off_text": "",
+                          "ui": 1
+                        },
+                        {
                             "key": "field_63d0e7b63a3ba",
                             "label": "Show images",
                             "name": "show_images_above_links",
@@ -2730,6 +2814,27 @@
                             "append": "",
                             "maxlength": "",
                             "translations": "translate"
+                        },
+                        {
+                          "key": "field_698aff99d98de",
+                          "label": "Display in Anchor Navigation",
+                          "name": "show_in_anchor_link",
+                          "aria-label": "",
+                          "type": "true_false",
+                          "instructions": "",
+                          "required": 0,
+                          "conditional_logic": 0,
+                          "wrapper": {
+                            "width": "",
+                            "class": "",
+                            "id": ""
+                          },
+                          "message": "Choose whether to display the heading in the anchor link navigation.",
+                          "default_value": 0,
+                          "allow_in_bindings": 0,
+                          "ui_on_text": "",
+                          "ui_off_text": "",
+                          "ui": 1
                         },
                         {
                             "key": "field_6306094e4c5f0",
@@ -3053,6 +3158,27 @@
                             "prepend": "",
                             "append": "",
                             "maxlength": ""
+                        },
+                        {
+                          "key": "field_698af772a3890",
+                          "label": "Display in Anchor Navigation",
+                          "name": "show_in_anchor_link",
+                          "aria-label": "",
+                          "type": "true_false",
+                          "instructions": "",
+                          "required": 0,
+                          "conditional_logic": 0,
+                          "wrapper": {
+                            "width": "",
+                            "class": "",
+                            "id": ""
+                          },
+                          "message": "Choose whether to display the heading in the anchor link navigation.",
+                          "default_value": 0,
+                          "allow_in_bindings": 0,
+                          "ui_on_text": "",
+                          "ui_off_text": "",
+                          "ui": 1
                         },
                         {
                             "key": "field_6385dc8443416",
