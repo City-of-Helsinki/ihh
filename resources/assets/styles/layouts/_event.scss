@@ -82,11 +82,14 @@
                             td {
                                 padding-top: 10px;
                                 padding-bottom: 10px;
+                                vertical-align: top;
                             }
 
                             td:first-child {
                                 text-align: left;
                                 font-weight: 700;
+                                white-space: nowrap;
+                                padding-right: 1rem;
                             }
 
                             td:last-child {

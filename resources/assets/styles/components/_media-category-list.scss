@@ -1,9 +1,9 @@
 .media-posts-container {
-  display: block;
+    display: block;
 
-  a {
-    background-color: transparent !important;
-  }
+    a {
+        background-color: transparent !important;
+    }
 
   a[target="_blank"]::before {
     content: " ";
@@ -12,56 +12,56 @@
   .media-container {
     a[target="_blank"]::before {
       content: " ";
+        }
+
+        a {
+            background-color: transparent !important;
+        }
+
+        .title {
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 25px 2rem;
+        }
+
+        .title.background-keltainen {
+            background-color: #f0e856;
+        }
+
+        .title.background-oranssi {
+            background-color: #f7a091;
+        }
+
+        .title.background-vihrea {
+            background-color: #83cac6;
+        }
+
+        .title p {
+            font-size: 1rem;
+            font-weight: 700;
+            color: #300;
+            margin-bottom: 1px;
+        }
+
+        .image-wrap {
+            height: 0;
+            padding-bottom: 70.31%;
+            background: #e9ebec center center no-repeat;
+            background-size: contain;
+        }
     }
 
-    a {
-      background-color: transparent !important;
+    [class^='icon-'] {
+        display: inline-block;
+        max-width: 20px;
+        height: 100%;
+        background-size: 100%;
+        margin: 0 10px -4px 0;
+        left: 16px;
+        flex: 1 0 20px;
     }
-
-    .title {
-      padding: 25px 20px 25px 48px;
-      position: relative;
-      display: flex;
-      align-items: center;
-    }
-
-    .title.background-keltainen {
-      background-color: #f0e856;
-    }
-
-    .title.background-oranssi {
-      background-color: #f7a091;
-    }
-
-    .title.background-vihrea {
-      background-color: #83cac6;
-    }
-
-    .title p {
-      font-size: 1rem;
-      font-weight: 700;
-      color: #300;
-      margin-bottom: 1px;
-    }
-
-    .image-wrap {
-      height: 0;
-      padding-bottom: 70.31%;
-      background: #e9ebec center center no-repeat;
-      background-size: contain;
-    }
-  }
-
-  [class^="icon-"] {
-    display: inline-block;
-    width: 20px;
-    height: 100%;
-    background-size: 100%;
-    margin: 0 10px -4px 0;
-    position: absolute;
-    left: 16px;
-    top: 0;
-  }
 
   .icon-teksti {
     background: url("../images/icons/textdocument.svg") center center no-repeat;
@@ -81,31 +81,31 @@
 }
 
 .media-categories {
-  h2 {
-    margin-bottom: 2rem;
-  }
-
-  h3 {
-    margin-bottom: 1rem;
-  }
-
-  .media-posts-container {
-    margin-top: 0;
-    padding: 0;
-
-    .media-grid-container {
-      max-width: 320px;
-      margin: 0 20px 20px 0;
-
-      > a {
-        flex-wrap: nowrap;
-      }
+    h2 {
+        margin-bottom: 2rem;
     }
-  }
 
-  &--accordion {
+    h3 {
+        margin-bottom: 1rem;
+    }
+
     .media-posts-container {
-      margin: 0;
+        margin-top: 0;
+        padding: 0;
+
+        .media-grid-container {
+            max-width: 320px;
+            margin: 0 20px 20px 0;
+
+            > a {
+                flex-wrap: nowrap;
+            }
+        }
+    }
+
+    &--accordion {
+        .media-posts-container {
+            margin: 0;
 
       .media-grid-container {
         flex: 0 0 100%;
@@ -114,6 +114,6 @@
           flex: 0 0 42%;
         }
       }
+        }
     }
-  }
 }
