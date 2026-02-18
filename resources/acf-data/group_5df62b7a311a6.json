@@ -6,6 +6,7 @@
             "key": "field_660be1e25d7c7",
             "label": "General settings",
             "name": "",
+            "aria-label": "",
             "type": "tab",
             "instructions": "",
             "required": 0,
@@ -16,12 +17,14 @@
                 "id": ""
             },
             "placement": "top",
-            "endpoint": 0
+            "endpoint": 0,
+            "selected": 0
         },
         {
             "key": "field_660be1ff5d7c8",
             "label": "Footer",
             "name": "footer",
+            "aria-label": "",
             "type": "group",
             "instructions": "",
             "required": 0,
@@ -37,6 +40,7 @@
                     "key": "field_660be2115d7c9",
                     "label": "Footer image",
                     "name": "footer_image",
+                    "aria-label": "",
                     "type": "image",
                     "instructions": "",
                     "required": 0,
@@ -61,6 +65,7 @@
                     "key": "field_660be2325d7ca",
                     "label": "Social media links",
                     "name": "social_media_links",
+                    "aria-label": "",
                     "type": "repeater",
                     "instructions": "",
                     "required": 0,
@@ -74,12 +79,14 @@
                     "min": 0,
                     "max": 0,
                     "layout": "table",
-                    "button_label": "",
+                    "button_label": "Lisää rivi",
+                    "rows_per_page": 20,
                     "sub_fields": [
                         {
                             "key": "field_660be2395d7cb",
                             "label": "Name",
                             "name": "name",
+                            "aria-label": "",
                             "type": "text",
                             "instructions": "",
                             "required": 0,
@@ -93,12 +100,14 @@
                             "placeholder": "",
                             "prepend": "",
                             "append": "",
-                            "maxlength": ""
+                            "maxlength": "",
+                            "parent_repeater": "field_660be2325d7ca"
                         },
                         {
                             "key": "field_660be2465d7cc",
                             "label": "URL",
                             "name": "url",
+                            "aria-label": "",
                             "type": "url",
                             "instructions": "",
                             "required": 0,
@@ -109,12 +118,14 @@
                                 "id": ""
                             },
                             "default_value": "",
-                            "placeholder": ""
+                            "placeholder": "",
+                            "parent_repeater": "field_660be2325d7ca"
                         },
                         {
                             "key": "field_660be2665d7cd",
                             "label": "Icon",
                             "name": "icon",
+                            "aria-label": "",
                             "type": "image",
                             "instructions": "",
                             "required": 0,
@@ -133,7 +144,8 @@
                             "max_width": "",
                             "max_height": "",
                             "max_size": "",
-                            "mime_types": ""
+                            "mime_types": "",
+                            "parent_repeater": "field_660be2325d7ca"
                         }
                     ]
                 },
@@ -141,6 +153,7 @@
                     "key": "field_660be27b5d7ce",
                     "label": "Footer text EN",
                     "name": "footer_text_en",
+                    "aria-label": "",
                     "type": "wysiwyg",
                     "instructions": "",
                     "required": 0,
@@ -160,6 +173,7 @@
                     "key": "field_660be2915d7cf",
                     "label": "Footer text FI",
                     "name": "footer_text_fi",
+                    "aria-label": "",
                     "type": "wysiwyg",
                     "instructions": "",
                     "required": 0,
@@ -179,6 +193,7 @@
                     "key": "field_660be2a15d7d0",
                     "label": "List of logos",
                     "name": "list_of_logos",
+                    "aria-label": "",
                     "type": "repeater",
                     "instructions": "",
                     "required": 0,
@@ -192,12 +207,14 @@
                     "min": 0,
                     "max": 0,
                     "layout": "table",
-                    "button_label": "",
+                    "button_label": "Lisää rivi",
+                    "rows_per_page": 20,
                     "sub_fields": [
                         {
                             "key": "field_660be2b25d7d1",
                             "label": "Logo",
                             "name": "logo",
+                            "aria-label": "",
                             "type": "image",
                             "instructions": "",
                             "required": 0,
@@ -216,12 +233,14 @@
                             "max_width": "",
                             "max_height": "",
                             "max_size": "",
-                            "mime_types": ""
+                            "mime_types": "",
+                            "parent_repeater": "field_660be2a15d7d0"
                         },
                         {
                             "key": "field_660be2bc5d7d2",
                             "label": "URL (optional)",
                             "name": "url_optional",
+                            "aria-label": "",
                             "type": "url",
                             "instructions": "",
                             "required": 0,
@@ -232,7 +251,8 @@
                                 "id": ""
                             },
                             "default_value": "",
-                            "placeholder": ""
+                            "placeholder": "",
+                            "parent_repeater": "field_660be2a15d7d0"
                         }
                     ]
                 },
@@ -240,6 +260,7 @@
                     "key": "field_660be2f45d7d5",
                     "label": "Contact text EN",
                     "name": "contact_text_en",
+                    "aria-label": "",
                     "type": "wysiwyg",
                     "instructions": "",
                     "required": 0,
@@ -259,6 +280,7 @@
                     "key": "field_660be3095d7d6",
                     "label": "Contact text FI",
                     "name": "contact_text_fi",
+                    "aria-label": "",
                     "type": "wysiwyg",
                     "instructions": "",
                     "required": 0,
@@ -277,9 +299,146 @@
             ]
         },
         {
+            "key": "field_6995428aaac84",
+            "label": "Event page settings",
+            "name": "main_events",
+            "aria-label": "",
+            "type": "group",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "layout": "table",
+            "sub_fields": [
+                {
+                    "key": "field_699542b5aac91",
+                    "label": "Main events page (EN)",
+                    "name": "main_events_page_en",
+                    "aria-label": "",
+                    "type": "post_object",
+                    "instructions": "Select the English “main events” page.",
+                    "required": 1,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "post_type": "",
+                    "post_status": "",
+                    "taxonomy": "",
+                    "return_format": "id",
+                    "multiple": 0,
+                    "allow_null": 0,
+                    "allow_in_bindings": 0,
+                    "bidirectional": 0,
+                    "ui": 1,
+                    "bidirectional_target": []
+                },
+                {
+                    "key": "field_699543d2aac92",
+                    "label": "Main events page (FI)",
+                    "name": "main_events_page_fi",
+                    "aria-label": "",
+                    "type": "post_object",
+                    "instructions": "Select the Finnish “main events” page (e.g. Tapahtumat).",
+                    "required": 1,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "post_type": "",
+                    "post_status": "",
+                    "taxonomy": "",
+                    "return_format": "",
+                    "multiple": 0,
+                    "allow_null": 0,
+                    "allow_in_bindings": 0,
+                    "bidirectional": 0,
+                    "ui": 1,
+                    "bidirectional_target": []
+                }
+            ]
+        },
+        {
+            "key": "field_69954af46a46b",
+            "label": "Past event page settings",
+            "name": "past_events",
+            "aria-label": "",
+            "type": "group",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "layout": "table",
+            "sub_fields": [
+                {
+                    "key": "field_69954af46a474",
+                    "label": "Past events page (EN)",
+                    "name": "past_events_page_en",
+                    "aria-label": "",
+                    "type": "post_object",
+                    "instructions": "Select the English “past events” page.",
+                    "required": 1,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "post_type": "",
+                    "post_status": "",
+                    "taxonomy": "",
+                    "return_format": "id",
+                    "multiple": 0,
+                    "allow_null": 0,
+                    "allow_in_bindings": 0,
+                    "bidirectional": 0,
+                    "ui": 1,
+                    "bidirectional_target": []
+                },
+                {
+                    "key": "field_69954af46a475",
+                    "label": "Past events page (FI)",
+                    "name": "past_events_page_fi",
+                    "aria-label": "",
+                    "type": "post_object",
+                    "instructions": "Select the Finnish “past events” page (e.g. \"Menneet tapahtumat\").",
+                    "required": 1,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "post_type": "",
+                    "post_status": "",
+                    "taxonomy": "",
+                    "return_format": "id",
+                    "multiple": 0,
+                    "allow_null": 0,
+                    "allow_in_bindings": 0,
+                    "bidirectional": 0,
+                    "ui": 1,
+                    "bidirectional_target": []
+                }
+            ]
+        },
+        {
             "key": "field_68f08e2114ca0",
             "label": "Header code",
             "name": "",
+            "aria-label": "",
             "type": "tab",
             "instructions": "",
             "required": 0,
@@ -290,12 +449,14 @@
                 "id": ""
             },
             "placement": "top",
-            "endpoint": 0
+            "endpoint": 0,
+            "selected": 0
         },
         {
             "key": "field_68f08e4314ca1",
             "label": "Code",
             "name": "code",
+            "aria-label": "",
             "type": "textarea",
             "instructions": "Add custom code to be injected into the <head> section. Note: wrap JavaScript inside <script> tags. You can also add meta or verification tags. Use with care — invalid code may break the site.",
             "required": 0,
@@ -330,5 +491,6 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1761111863
+    "display_title": "",
+    "modified": 1771391838
 }

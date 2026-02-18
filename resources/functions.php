@@ -657,32 +657,44 @@ jQuery(function($) {
 });
 
 /**
- * Fix Yoast breadcrumbs for Events custom post type (Singular view)
+ * Fix Yoast breadcrumbs for Events CPT (Singular view)
  * and past events page
  */
 add_filter(
     'wpseo_breadcrumb_links',
     function ($links) {
-        // Is this an Events page showing past events?
+
+        /**
+         * CASE 1: Past events listing page (Page using the Events template + pastupcoming_events = true)
+         * Home > Main events > Past events
+         */
         if (
             is_page()
             && get_page_template_slug(get_queried_object_id()) === 'views/template-events.blade.php' // Is an Events page...
             && (bool) get_field('pastupcoming_events', get_queried_object_id()) === true // ... for past events
         ) {
-            $crumb = get_main_events_breadcrumb();
+            $crumb = get_events_breadcrumb(true); // Main events page (from options)
 
             if ($crumb) {
-                // Insert "the parent" before the last crumb (current page)
+                // Insert "Main events" before the last crumb (current page)
                 array_splice($links, max(count($links) - 1, 0), 0, [$crumb]);
             }
 
             return $links;
         }
 
+        /**
+         * CASE 2: Not an Event single
+         * => Don't change anything.
+         */
         if (!is_singular('event')) {
             return $links;
         }
 
+        /**
+         * CASE 3: Event single (singular "event")
+         * We determine whether the current event is in the past.
+         */
         $event_id = get_queried_object_id();
 
         // Decide whether this event is past based on end_time (same logic as listing)
@@ -696,92 +708,88 @@ add_filter(
             $is_past_event = false;
         }
 
-        // Get all pages using Events template (upcoming + past)
-        $pages = get_posts([
-            'post_type' => 'page',
-            'post_status' => 'publish',
-            'posts_per_page' => -1,
-            'meta_key' => '_wp_page_template',
-            'meta_value' => 'views/template-events.blade.php',
-            'orderby' => 'menu_order',
-            'order' => 'ASC',
-        ]);
+        // Insert position: right before the last crumb (current page = current event)
+        $insert_at = max(count($links) - 1, 0);
 
-        if (empty($pages)) {
+        /**
+         * CASE 3A: Singular Past Event
+         * Home > Main events > Past events > Current event
+         */
+        if ($is_past_event) {
+            $main_crumb = get_events_breadcrumb(true);
+            $past_crumb = get_events_breadcrumb(false);
+
+            $to_insert = [];
+
+            if ($main_crumb) {
+                $to_insert[] = $main_crumb;
+            }
+
+            if ($past_crumb) {
+                $to_insert[] = $past_crumb;
+            }
+
+            if (!empty($to_insert)) {
+                array_splice($links, $insert_at, 0, $to_insert);
+            }
+
             return $links;
         }
 
-        $events_page_id = 0;
+        /**
+         * CASE 3B: Singular Upcoming Event
+         * Home > Main events > Current event
+         * => Only insert the "Main events" crumb
+         */
 
-        // Select the page whose ACF pastupcoming_events matches the event's status
-        foreach ($pages as $page) {
-            // ACF true/false field -> boolean
-            $is_past_page = (bool) get_field('pastupcoming_events', $page->ID);
+        $main_crumb = get_events_breadcrumb(true);
 
-            if ($is_past_page === (bool) $is_past_event) {
-                $events_page_id = $page->ID;
-                break;
-            }
+        if ($main_crumb) {
+            array_splice($links, $insert_at, 0, [$main_crumb]);
         }
-
-        // Fallback: if no match was found, use the first Events page
-        if (!$events_page_id) {
-            $events_page_id = $pages[0]->ID;
-        }
-
-        $breadcrumb = [
-            'url' => get_permalink($events_page_id),
-            'text' => get_the_title($events_page_id),
-        ];
-
-        // Insert before the last crumb (current page)
-        array_splice($links, max(count($links) - 1, 0), 0, [$breadcrumb]);
 
         return $links;
     },
     20,
 );
 
+
 /**
- * Returns the "main" events page (template-events + ACF pastupcoming_events = false)
- * as a Yoast breadcrumb link array: ['url' => ..., 'text' => ...]
+ * Returns the "main/past" events page as a Yoast breadcrumb link array: ['url' => ..., 'text' => ...]
  *
  * @return array|null
  */
-function get_main_events_breadcrumb(): ?array
+function get_events_breadcrumb(bool $main = true): ?array
 {
-    // Query for upcoming events page
-    // => template-events
-    // => pastupcoming_events = false
-    $pages = get_posts([
-        'post_type'      => 'page',
-        'post_status'    => 'publish',
-        'posts_per_page' => 1,
-        'orderby'        => 'menu_order',
-        'order'          => 'ASC',
-        'meta_query'     => [
-            'relation' => 'AND',
-            [
-                'key'   => '_wp_page_template',
-                'value' => 'views/template-events.blade.php',
-            ],
-            [
-                'key'     => 'pastupcoming_events',
-                'value'   => '0',
-                'compare' => '=',
-            ],
-        ],
-    ]);
+    // Choose options group + field prefix
+    $group_key   = $main ? 'main_events' : 'past_events';
+    $field_prefix = $main ? 'main_events_page_' : 'past_events_page_';
 
-    if (empty($pages)) {
+    // ACF options group
+    $group = get_field($group_key, 'option');
+    if (empty($group) || !is_array($group)) {
+        return null;
+    }
+
+    // Language (Polylang if available)
+    $lang = function_exists('pll_current_language') ? pll_current_language('slug') : 'fi';
+    $suffix = ($lang === 'en') ? 'en' : 'fi'; // fallback to fi for other languages
+
+    $field_key = $field_prefix . $suffix;
+
+    // Field returns ID
+    $page_id = (int) ($group[$field_key] ?? 0);
+
+    if ($page_id <= 0) {
         return null;
     }
 
     return [
-        'url'  => get_permalink($pages[0]->ID),
-        'text' => get_the_title($pages[0]->ID),
+        'url'  => get_permalink($page_id),
+        'text' => get_the_title($page_id),
     ];
 }
+
 
 /**
  * Show the "checklist" & "link_button" flexible layouts only when editing a Page that uses
