@@ -194,13 +194,25 @@ function format_event_date()
     // is not in the current year, include the year in the format
     $include_year = $start_year !== $end_year || $start_year !== $current_year;
 
+    // Polylang current language
+    $lang = function_exists('pll_current_language') ? pll_current_language('slug') : '';
+    $is_fi = ($lang === 'fi');
+
     if ($end - $start >= DAY_IN_SECONDS) {
         // Multiple day event
+        if ($is_fi) {
+            return date_i18n('j.n.Y', $start) . ' – ' . date_i18n('j.n.Y', $end);
+        }
+
         $format = $include_year ? 'j F Y' : 'j F';
         return date_i18n($format, $start) . ' – ' . date_i18n($format, $end);
     }
 
     // One day event
+    if ($is_fi) {
+        return date_i18n('j.n.Y', $start) . ' klo ' . date('H.i', $start) . ' – ' . date('H.i', $end);
+    }
+
     $date_format = $include_year ? 'j F Y' : 'j F';
     return date_i18n($date_format, $start) . ' ' . date('H.i', $start) . ' – ' . date('H.i', $end);
 }
@@ -213,14 +225,19 @@ function format_event_date()
 function format_event_date_only()
 {
     $start = strtotime(get_field('start_time'));
-    $end = strtotime(get_field('end_time'));
+    $end   = strtotime(get_field('end_time'));
+
+    $lang  = function_exists('pll_current_language') ? pll_current_language('slug') : '';
+    $is_fi = ($lang === 'fi');
 
     // If the event spans multiple days
     if ($end - $start >= DAY_IN_SECONDS) {
+        if ($is_fi) return date_i18n('j.n.Y', $start) . ' – ' . date_i18n('j.n.Y', $end);
         return date_i18n('j F Y', $start) . ' – ' . date_i18n('j F Y', $end);
     }
 
     // Otherwise, just one date
+    if ($is_fi) return date_i18n('j.n.Y', $start);
     return date_i18n('l j M Y', $start);
 }
 

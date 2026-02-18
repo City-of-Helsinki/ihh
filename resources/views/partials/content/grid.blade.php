@@ -20,7 +20,7 @@ if('event' === get_post_type() || 'post' === get_post_type()) {
     <div class="post-content {{ esc_attr($post_content_class) }}">
       @if('event' === get_post_type())
           <div class="post-content-event-meta">
-              <p class="location">{!! get_field('event_type') ?? "Online" !!}</p>
+              <p class="location">{!! pll__(get_field('event_type') ?? "Online") !!}</p>
           </div>
       @endif
 
