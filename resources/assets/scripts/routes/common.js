@@ -100,7 +100,7 @@ export default {
             function (e) {
                 const ww = window.innerWidth;
                 // Only apply for mobile widths
-                if (ww > 1300) return;
+                if (ww > 1024) return;
 
                 // Link: toggle only if the <a> itself was clicked (i.e., the after area)
                 if ($(this).is('a.nav-link')) {
