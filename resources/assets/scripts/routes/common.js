@@ -196,16 +196,6 @@ export default {
           anchorNavigation.append(ul);
         }
 
-        function scrollToTarget(element) {
-            element.addEventListener('click', function (e) {
-                e.preventDefault();
-
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
-                    behavior: 'smooth',
-                });
-            });
-        }
-
         function isValidUrl(url) {
             try {
                 new URL(url);
