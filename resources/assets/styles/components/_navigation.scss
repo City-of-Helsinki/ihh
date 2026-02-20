@@ -415,7 +415,6 @@ $mobile-bp: 1024px;
     transform: translate(-50%, -2px);
 
     &.columns-1 {
-
         @media (min-width: #{$mobile-bp + 1px}) {
           // Fixes dropdown menu positioning when there is only one column (DESKTOP),
           // so that the menu is aligned to the left edge of the parent item instead of being centered
