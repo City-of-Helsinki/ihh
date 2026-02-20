@@ -41,9 +41,9 @@ $banner_text_color = isset($settings['text_color'])
       ); ?>');"></div>
         <div class="row position-relative">
           <div class="col-lg-6 d-flex flex-column justify-content-center banner-content">
-            <h3 class="banner-title" style="color: <?php echo esc_attr(
+            <h2 class="banner-title" style="color: <?php echo esc_attr(
                 $banner_accent_color,
-            ); ?>;"><?php echo esc_html($banner_title); ?></h3>
+            ); ?>;"><?php echo esc_html($banner_title); ?></h2>
             <div class="banner-text"><?php echo apply_filters(
                 'the_content',
                 $banner_text_body,
