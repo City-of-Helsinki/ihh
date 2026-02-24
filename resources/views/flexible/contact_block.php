@@ -57,7 +57,8 @@ if (!function_exists('ihh_normalize_time')) {
             <div class="contact-header" <?php if ($head_bg) {
                 echo 'style="background-color: ' . esc_attr($head_bg) . ';"';
             } ?>>
-                <h2 class="contact-heading"><?php echo esc_html(get_the_title($contact_id)); ?></h2>
+                <?php $anchor_link = get_sub_field('show_in_anchor_link'); ?>
+                <h2 class="contact-heading" <?= $anchor_link ? 'data-anchor="true"' : '';  ?>><?php echo esc_html(get_the_title($contact_id)); ?></h2>
             </div>
 
             <div class="contact-content" <?php if ($cont_bg) {
