@@ -15,7 +15,8 @@ $cta_background_color_style = "style=\"background-color: {$cta_background_color}
 <div class="banner container-fluid" <?php echo $background_color_style; ?>>
     <div class="text-center ihhce">
         <div class="content">
-            <h2><?php echo $section_title; ?></h2>
+            <?php $anchor_link = get_sub_field('show_in_anchor_link'); ?>
+            <h2 <?= $anchor_link ? 'data-anchor="true"' : '';  ?>><?php echo $section_title; ?></h2>
             <?php if ($body_text) {
                 the_sub_field('body_text');
             } ?>

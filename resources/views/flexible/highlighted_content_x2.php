@@ -15,7 +15,8 @@
     ?>
 
     <div class="highlighted-content-box<?php echo esc_attr($bg_class); ?>" <?php echo $bg_style; ?>>
-        <div class="content-wrapper">
+      <?php $anchor_link = get_sub_field('show_in_anchor_link'); ?>
+      <div class="content-wrapper" <?= $anchor_link ? 'data-anchor="true"' : '';  ?>>
             <?php the_sub_field('text_content'); ?>
         </div>
     </div>

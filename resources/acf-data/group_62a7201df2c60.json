@@ -44,6 +44,27 @@
                             "delay": 0
                         },
                         {
+                          "key": "field_d6c3dd185a59",
+                          "label": "Display in Anchor Navigation",
+                          "name": "show_in_anchor_link",
+                          "aria-label": "",
+                          "type": "true_false",
+                          "instructions": "",
+                          "required": 0,
+                          "conditional_logic": 0,
+                          "wrapper": {
+                            "width": "",
+                            "class": "",
+                            "id": ""
+                          },
+                          "message": "Choose whether to display the heading in the anchor link navigation.",
+                          "default_value": 0,
+                          "allow_in_bindings": 0,
+                          "ui_on_text": "",
+                          "ui_off_text": "",
+                          "ui": 1
+                        },
+                        {
                             "key": "field_652e46d569877",
                             "label": "Accordion",
                             "name": "faq_accordion",
@@ -158,6 +179,27 @@
                             "toolbar": "full",
                             "media_upload": 0,
                             "delay": 0
+                        },
+                        {
+                          "key": "field_b8253adbd593",
+                          "label": "Display in Anchor Navigation",
+                          "name": "show_in_anchor_link",
+                          "aria-label": "",
+                          "type": "true_false",
+                          "instructions": "",
+                          "required": 0,
+                          "conditional_logic": 0,
+                          "wrapper": {
+                            "width": "",
+                            "class": "",
+                            "id": ""
+                          },
+                          "message": "Choose whether to display the heading in the anchor link navigation. Note, that for WYSIWYG editors, this setting will target H2 headings only.",
+                          "default_value": 0,
+                          "allow_in_bindings": 0,
+                          "ui_on_text": "",
+                          "ui_off_text": "",
+                          "ui": 1
                         },
                         {
                             "key": "field_63ca63fc0f809",
@@ -402,6 +444,27 @@
                             "placeholder": "",
                             "prepend": "",
                             "append": ""
+                        },
+                        {
+                          "key": "field_464c92b49015",
+                          "label": "Display in Anchor Navigation",
+                          "name": "show_in_anchor_link",
+                          "aria-label": "",
+                          "type": "true_false",
+                          "instructions": "",
+                          "required": 0,
+                          "conditional_logic": 0,
+                          "wrapper": {
+                            "width": "",
+                            "class": "",
+                            "id": ""
+                          },
+                          "message": "Choose whether to display the heading in the anchor link navigation.",
+                          "default_value": 0,
+                          "allow_in_bindings": 0,
+                          "ui_on_text": "",
+                          "ui_off_text": "",
+                          "ui": 1
                         },
                         {
                             "key": "field_6901b94c052ba",
@@ -1212,6 +1275,27 @@
                             "bidirectional": 0,
                             "ui": 1,
                             "bidirectional_target": []
+                        },
+                        {
+                          "key": "field_d108fd49daca",
+                          "label": "Display in Anchor Navigation",
+                          "name": "show_in_anchor_link",
+                          "aria-label": "",
+                          "type": "true_false",
+                          "instructions": "",
+                          "required": 0,
+                          "conditional_logic": 0,
+                          "wrapper": {
+                            "width": "",
+                            "class": "",
+                            "id": ""
+                          },
+                          "message": "Choose whether to display the heading in the anchor link navigation.",
+                          "default_value": 0,
+                          "allow_in_bindings": 0,
+                          "ui_on_text": "",
+                          "ui_off_text": "",
+                          "ui": 1
                         }
                     ],
                     "min": "",
@@ -2042,6 +2126,27 @@
                             "delay": 0
                         },
                         {
+                          "key": "field_63d7e99a216e",
+                          "label": "Display in Anchor Navigation",
+                          "name": "show_in_anchor_link",
+                          "aria-label": "",
+                          "type": "true_false",
+                          "instructions": "",
+                          "required": 0,
+                          "conditional_logic": 0,
+                          "wrapper": {
+                            "width": "",
+                            "class": "",
+                            "id": ""
+                          },
+                          "message": "Choose whether to display the heading in the anchor link navigation. Note, that for WYSIWYG editors, this setting will target H2 headings only.",
+                          "default_value": 0,
+                          "allow_in_bindings": 0,
+                          "ui_on_text": "",
+                          "ui_off_text": "",
+                          "ui": 1
+                        },
+                        {
                             "key": "field_62ac787597bb4",
                             "label": "Background color",
                             "name": "background_color",
@@ -2138,6 +2243,27 @@
                                     "media_upload": 0,
                                     "delay": 0,
                                     "parent_repeater": "field_6932690e1fb77"
+                                },
+                                {
+                                  "key": "field_dce6892ddcff",
+                                  "label": "Display in Anchor Navigation",
+                                  "name": "show_in_anchor_link",
+                                  "aria-label": "",
+                                  "type": "true_false",
+                                  "instructions": "",
+                                  "required": 0,
+                                  "conditional_logic": 0,
+                                  "wrapper": {
+                                    "width": "",
+                                    "class": "",
+                                    "id": ""
+                                  },
+                                  "message": "Choose whether to display the heading in the anchor link navigation. Note, that for WYSIWYG editors, this setting will target H2 headings only.",
+                                  "default_value": 0,
+                                  "allow_in_bindings": 0,
+                                  "ui_on_text": "",
+                                  "ui_off_text": "",
+                                  "ui": 1
                                 }
                             ]
                         }
@@ -2493,6 +2619,27 @@
                             "prepend": "",
                             "append": "",
                             "maxlength": ""
+                        },
+                        {
+                          "key": "field_fc8e87897a93",
+                          "label": "Display in Anchor Navigation",
+                          "name": "show_in_anchor_link",
+                          "aria-label": "",
+                          "type": "true_false",
+                          "instructions": "",
+                          "required": 0,
+                          "conditional_logic": 0,
+                          "wrapper": {
+                            "width": "",
+                            "class": "",
+                            "id": ""
+                          },
+                          "message": "Choose whether to display the heading in the anchor link navigation.",
+                          "default_value": 0,
+                          "allow_in_bindings": 0,
+                          "ui_on_text": "",
+                          "ui_off_text": "",
+                          "ui": 1
                         },
                         {
                             "key": "field_63ae87670bc27",
@@ -3600,6 +3747,27 @@
                             "toolbar": "full",
                             "media_upload": 1,
                             "delay": 0
+                        },
+                        {
+                          "key": "field_b8ed9b33de90",
+                          "label": "Display in Anchor Navigation",
+                          "name": "show_in_anchor_link",
+                          "aria-label": "",
+                          "type": "true_false",
+                          "instructions": "",
+                          "required": 0,
+                          "conditional_logic": 0,
+                          "wrapper": {
+                            "width": "",
+                            "class": "",
+                            "id": ""
+                          },
+                          "message": "Choose whether to display the heading in the anchor link navigation. Note, that for WYSIWYG editors, this setting will target H2 headings only.",
+                          "default_value": 0,
+                          "allow_in_bindings": 0,
+                          "ui_on_text": "",
+                          "ui_off_text": "",
+                          "ui": 1
                         }
                     ],
                     "min": "",
@@ -3631,6 +3799,27 @@
                             "toolbar": "full",
                             "media_upload": 0,
                             "delay": 0
+                        },
+                        {
+                          "key": "field_66cca57fb18e§",
+                          "label": "Display in Anchor Navigation",
+                          "name": "show_in_anchor_link",
+                          "aria-label": "",
+                          "type": "true_false",
+                          "instructions": "",
+                          "required": 0,
+                          "conditional_logic": 0,
+                          "wrapper": {
+                            "width": "",
+                            "class": "",
+                            "id": ""
+                          },
+                          "message": "Choose whether to display the heading in the anchor link navigation. Note, that for WYSIWYG editors, this setting will target H2 headings only.",
+                          "default_value": 0,
+                          "allow_in_bindings": 0,
+                          "ui_on_text": "",
+                          "ui_off_text": "",
+                          "ui": 1
                         },
                         {
                             "key": "field_690062a9febcc",

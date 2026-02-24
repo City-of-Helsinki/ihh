@@ -9,7 +9,8 @@ $bg_style = $bg_norm ? ' style="background-color:' . esc_attr($bg_norm) . ';"' :
 
 <div class="highlighted-content<?php echo esc_attr($bg_class); ?> ihhce">
     <div class="content-wrapper" <?php echo $bg_style; ?>>
-        <div class="text-wrapper">
+      <?php $anchor_link = get_sub_field('show_in_anchor_link'); ?>
+        <div class="text-wrapper" <?= $anchor_link ? 'data-anchor="true"' : '';  ?>>
             <?php the_sub_field('content'); ?>
         </div>
     </div>

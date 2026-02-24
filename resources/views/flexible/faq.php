@@ -14,7 +14,8 @@
 <div class="container ihhce" id="faqs">
 
     <?php if (get_sub_field('section_heading')): ?>
-    <div class="accordion-header" id="section-heading-<?php echo get_the_ID(); ?>">
+    <?php $anchor_link = get_sub_field('show_in_anchor_link'); ?>
+    <div class="accordion-header" id="section-heading-<?php echo get_the_ID(); ?>" <?= $anchor_link ? 'data-anchor="true"' : '';  ?>>
         <?php the_sub_field('section_heading'); ?>
     </div>
     <?php endif; ?>

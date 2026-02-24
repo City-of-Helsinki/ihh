@@ -39,10 +39,12 @@ $accordionContentBgColor = 'background-color: ' . get_sub_field('content_backgro
         ?>
     <?php
     $assignedTags = '';
-
-    foreach (get_sub_field('tags') as $k => $v):
-        $assignedTags .= $v . ',';
-    endforeach;
+    $tags = get_sub_field('tags');
+    if ($tags):
+      foreach (get_sub_field('tags') as $k => $v):
+          $assignedTags .= $v . ',';
+      endforeach;
+    endif;
 
     $LIs .=
         '<li>
@@ -90,7 +92,9 @@ $accordionContentBgColor = 'background-color: ' . get_sub_field('content_backgro
     <?php
     endwhile; ?>
 
-    <div class="accordion-with-description--content" style="<?php echo $accordionContentBgColor; ?>">
+  <?php $anchor_link = get_sub_field('show_in_anchor_link'); ?>
+
+    <div class="accordion-with-description--content" style="<?php echo $accordionContentBgColor; ?>" <?= $anchor_link ? 'data-anchor="true"' : '';  ?>>
         <?php if (get_sub_field('content')):
             the_sub_field('content');
         endif; ?>

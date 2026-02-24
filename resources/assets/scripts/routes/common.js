@@ -168,6 +168,12 @@ export default {
             const ul = document.createElement('ul');
 
           headings.forEach(heading => {
+            // If heading doesn't match a h2 element, we most likely are on a WYSIWYG editor
+            // We can try to fetch the heading from inside the element again
+            if (!heading.matches('h2')) {
+              heading = heading.querySelector('h2');
+            }
+
             const headingText = heading.innerText.trim();
 
             if (!headingText) {
