@@ -8,7 +8,8 @@ if (have_rows('links')): ?>
         <div class="row">
             <?php if (get_field('links_header')): ?>
             <div class="col-12 pb-5">
-                <h2><?php the_field('links_header'); ?></h2>
+              <?php $anchor_link = get_sub_field('show_in_anchor_link'); ?>
+                <h2 <?= $anchor_link ? 'data-anchor="true"' : '';  ?>><?php the_field('links_header'); ?></h2>
             </div>
             <?php endif; ?>
 

@@ -14,7 +14,8 @@ $layout_class = $layout ? 'image-left' : 'image-right';
         <div class="video_and_text <?php echo $layout_class; ?>">
 
             <?php if (!empty($body_text)): ?>
-            <div class="content">
+              <?php $anchor_link = get_sub_field('show_in_anchor_link'); ?>
+            <div class="content" <?= $anchor_link ? 'data-anchor="true"' : '';  ?>>
                 <?php echo apply_filters('the_content', $body_text); ?>
             </div>
             <?php endif; ?>
