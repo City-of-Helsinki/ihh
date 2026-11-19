@@ -188,7 +188,7 @@ add_action('after_setup_theme', function () {
         if (!file_exists($cachePath)) {
             wp_mkdir_p($cachePath);
         }
-        new BladeProvider($app)->register();
+        (new BladeProvider($app))->register();
 
         return new Blade($app['view']);
     });
