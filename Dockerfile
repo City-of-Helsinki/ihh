@@ -7,6 +7,7 @@ ARG COMPOSER_AUTH="{}"
 ARG WP_THEME_VERSION_IHH=""
 
 # Define plugin versions
+ARG WP_PLUGIN_VERSION_ADVANCED_CUSTOM_FIELDS_PRO=""
 ARG WP_PLUGIN_VERSION_ACF_CONTENT_ANALYSIS_FOR_YOAST_SEO=""
 ARG WP_PLUGIN_VERSION_CLASSIC_EDITOR=""
 ARG WP_PLUGIN_VERSION_CLEAN_IMAGE_FILENAMES=""
@@ -32,6 +33,8 @@ RUN mkdir -p /opt/app-root/src/.config/composer && \
     #FIXME: add WP_THEME_VERSION_IHH constraint when realease tag is available
 RUN composer config repositories.nuortenhelsinki vcs https://github.com/City-of-Helsinki/ihh && \
     composer require wphel/ihh:dev-fix/HELIHHSP-133-fix-pipeline && \
+    composer config repositories.advanced-custom-fields-pro vcs https://github.com/City-of-Helsinki/wordpress-helfi-plugin-advanced-custom-fields-pro && \
+    composer require acf/advanced-custom-fields-pro:${WP_PLUGIN_VERSION_ADVANCED_CUSTOM_FIELDS_PRO} && \
     composer config repositories.wpackagist composer https://wpackagist.org && \
     composer require wpackagist-plugin/acf-content-analysis-for-yoast-seo:${WP_PLUGIN_VERSION_ACF_CONTENT_ANALYSIS_FOR_YOAST_SEO} && \
     composer require wpackagist-plugin/classic-editor:${WP_PLUGIN_VERSION_CLASSIC_EDITOR} && \
