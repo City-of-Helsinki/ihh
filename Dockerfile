@@ -30,7 +30,7 @@ RUN mkdir -p /opt/app-root/src/.config/composer && \
 
 # Install plugins via Composer
 RUN composer config repositories.nuortenhelsinki vcs https://github.com/City-of-Helsinki/ihh && \
-    composer require wphel/ihh:$WP_THEME_VERSION_IHH && \
+    composer require wphel/ihh && \ #FIXME: add WP_THEME_VERSION_IHH constraint when realease tag is available
     composer config repositories.wpackagist composer https://wpackagist.org && \
     composer require wpackagist-plugin/acf-content-analysis-for-yoast-seo:${WP_PLUGIN_VERSION_ACF_CONTENT_ANALYSIS_FOR_YOAST_SEO} && \
     composer require wpackagist-plugin/classic-editor:${WP_PLUGIN_VERSION_CLASSIC_EDITOR} && \
