@@ -1,114 +1,49 @@
-FROM nginx:alpine
+FROM helsinki.azurecr.io/ubi9/openshift-wordpress-base:6.9.11-php83
 
-# Remove the default configuration and entrypoint scripts
-RUN rm -f /etc/nginx/conf.d/default.conf && \
-    rm -rf /docker-entrypoint.d
+ARG MOUNT_SECRET="false"
+ARG COMPOSER_AUTH="{}"
 
-# Create writable directories for OpenShift's arbitrary non-root UID
-RUN mkdir -p \
-        /tmp/nginx/client_temp \
-        /tmp/nginx/proxy_temp \
-        /tmp/nginx/fastcgi_temp \
-        /tmp/nginx/uwsgi_temp \
-        /tmp/nginx/scgi_temp && \
-    chmod -R 777 /tmp/nginx
+# Define theme versions
+ARG WP_THEME_VERSION_IHH=""
 
-# Create OpenShift-compatible Nginx configuration
-RUN cat > /etc/nginx/nginx.conf <<'EOF'
-pid /tmp/nginx/nginx.pid;
+# Define plugin versions
+ARG WP_PLUGIN_VERSION_ACF_CONTENT_ANALYSIS_FOR_YOAST_SEO=""
+ARG WP_PLUGIN_VERSION_CLASSIC_EDITOR=""
+ARG WP_PLUGIN_VERSION_CLEAN_IMAGE_FILENAMES=""
+ARG WP_PLUGIN_VERSION_EASY_FANCYBOX=""
+ARG WP_PLUGIN_VERSION_IMSANITY=""
+ARG WP_PLUGIN_VERSION_NATIVE_LAZYLOAD=""
+ARG WP_PLUGIN_VERSION_POLYLANG=""
+ARG WP_PLUGIN_VERSION_REDIRECTION=""
+ARG WP_PLUGIN_VERSION_SIMPLE_PAGE_ORDERING=""
+ARG WP_PLUGIN_VERSION_WORDFENCE=""
+ARG WP_PLUGIN_VERSION_INSERT_HEADERS_AND_FOOTERS=""
+ARG WP_PLUGIN_VERSION_DUPLICATE_POST=""
+ARG WP_PLUGIN_VERSION_WORDPRESS_SEO=""
+ARG WP_PLUGIN_VERSION_BEDROCK_AUTOLOADER=""
 
-worker_processes auto;
+# build volume auth
+RUN mkdir -p /opt/app-root/src/.config/composer && \
+    if [ -n "$MOUNT_SECRET" ] && [ "${MOUNT_SECRET,,}" = "true" ]; then \
+        cp /mnt/secrets/* /opt/app-root/src/.config/composer; \
+    fi
 
-events {
-    worker_connections 1024;
-}
-
-http {
-    include /etc/nginx/mime.types;
-    default_type application/octet-stream;
-
-    access_log /dev/stdout;
-    error_log /dev/stderr;
-
-    sendfile on;
-
-    # Writable temporary locations
-    client_body_temp_path /tmp/nginx/client_temp;
-    proxy_temp_path       /tmp/nginx/proxy_temp;
-    fastcgi_temp_path     /tmp/nginx/fastcgi_temp;
-    uwsgi_temp_path       /tmp/nginx/uwsgi_temp;
-    scgi_temp_path         /tmp/nginx/scgi_temp;
-
-    server {
-        listen 8080;
-        server_name _;
-
-        root /usr/share/nginx/html;
-        index index.html;
-
-        # Kubernetes/OpenShift readiness probe
-        location = /readiness {
-            access_log off;
-            default_type text/plain;
-            return 200 "OK\n";
-        }
-
-        # Application
-        location / {
-            try_files $uri $uri/ =404;
-        }
-    }
-}
-EOF
-
-# Create the test page
-RUN cat > /usr/share/nginx/html/index.html <<'EOF'
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Docker Test Page</title>
-    <style>
-        body {
-            margin: 0;
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-family: Arial, sans-serif;
-            background: #f4f4f5;
-            color: #18181b;
-        }
-
-        .card {
-            padding: 40px;
-            text-align: center;
-            background: white;
-            border-radius: 12px;
-            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
-        }
-
-        h1 {
-            margin-top: 0;
-        }
-
-        .status {
-            color: #16a34a;
-            font-weight: bold;
-        }
-    </style>
-</head>
-<body>
-    <div class="card">
-        <h1>Docker Test Page</h1>
-        <p class="status">✓ Container is running</p>
-        <p>Hello from Nginx!</p>
-    </div>
-</body>
-</html>
-EOF
-
-EXPOSE 9000
-
-CMD ["nginx", "-g", "daemon off;"]
+# Install plugins via Composer
+RUN composer config repositories.nuortenhelsinki vcs https://github.com/City-of-Helsinki/ihh && \
+    composer require wphel/ihh:$WP_THEME_VERSION_IHH && \
+    composer config repositories.wpackagist composer https://wpackagist.org && \
+    composer require wpackagist-plugin/acf-content-analysis-for-yoast-seo:${WP_PLUGIN_VERSION_ACF_CONTENT_ANALYSIS_FOR_YOAST_SEO} && \
+    composer require wpackagist-plugin/classic-editor:${WP_PLUGIN_VERSION_CLASSIC_EDITOR} && \
+    composer require wpackagist-plugin/clean-image-filenames:${WP_PLUGIN_VERSION_CLEAN_IMAGE_FILENAMES} && \
+    composer require wpackagist-plugin/easy-fancybox:${WP_PLUGIN_VERSION_EASY_FANCYBOX} && \
+    composer require wpackagist-plugin/imsanity:${WP_PLUGIN_VERSION_IMSANITY} && \
+    composer require wpackagist-plugin/native-lazyload:${WP_PLUGIN_VERSION_NATIVE_LAZYLOAD} && \
+    composer require wpackagist-plugin/polylang:${WP_PLUGIN_VERSION_POLYLANG} && \
+    composer require wpackagist-plugin/redirection:${WP_PLUGIN_VERSION_REDIRECTION} && \
+    composer require wpackagist-plugin/simple-page-ordering:${WP_PLUGIN_VERSION_SIMPLE_PAGE_ORDERING} && \
+    composer require wpackagist-plugin/wordfence:${WP_PLUGIN_VERSION_WORDFENCE} && \
+    composer require wpackagist-plugin/insert-headers-and-footers:${WP_PLUGIN_VERSION_INSERT_HEADERS_AND_FOOTERS} && \
+    composer require wpackagist-plugin/duplicate-post:${WP_PLUGIN_VERSION_DUPLICATE_POST} && \
+    composer require wpackagist-plugin/wordpress-seo:${WP_PLUGIN_VERSION_WORDPRESS_SEO} && \
+    composer require roots/bedrock-autoloader:${WP_PLUGIN_VERSION_BEDROCK_AUTOLOADER} && \
+    rm -f /opt/app-root/src/.config/composer/auth.json
