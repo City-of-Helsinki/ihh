@@ -30,9 +30,8 @@ RUN mkdir -p /opt/app-root/src/.config/composer && \
     fi
 
 # Install plugins via Composer
-    #FIXME: add WP_THEME_VERSION_IHH constraint when realease tag is available
 RUN composer config repositories.nuortenhelsinki vcs https://github.com/City-of-Helsinki/ihh && \
-    composer require wphel/ihh:dev-fix/HELIHHSP-133-fix-pipeline && \
+    composer require wphel/ihh:${WP_THEME_VERSION_IHH} && \
     composer config repositories.advanced-custom-fields-pro vcs https://github.com/City-of-Helsinki/wordpress-helfi-plugin-advanced-custom-fields-pro && \
     composer require acf/advanced-custom-fields-pro:${WP_PLUGIN_VERSION_ADVANCED_CUSTOM_FIELDS_PRO} && \
     composer config repositories.wpackagist composer https://wpackagist.org && \
